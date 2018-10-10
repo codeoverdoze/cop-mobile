@@ -62,7 +62,9 @@ class RegisterScreen extends React.Component{
                 <Margin/>
 
                 <View style={styles.newUser}>
-                    <StyledText style={{ color: Color.tintColor }}>Already a user? Login</StyledText>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+                        <StyledText style={{ color: Color.tintColor }}>Already a user? Login</StyledText>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
