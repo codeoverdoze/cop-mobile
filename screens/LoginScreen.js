@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
 import { Button, FormInput, FormLabel } from 'react-native-elements';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { StyledText, StyledHeader } from "../components/Typography";
 import Color from '../constants/Colors';
 import Margin from '../components/Margin';
@@ -15,9 +16,13 @@ class LoginScreen extends React.Component{
         this.state = {};
     }
 
+    _navigateToMain(){
+        this.props.navigation.navigate('Main');
+    }
+
     render(){
         return(
-            <View style={styles.root}>
+            <KeyboardAwareScrollView style={styles.root}>
                 <View style={styles.header}>
                     <Image source={require('../assets/images/logo.png')} style={{ width: 55, height: 70}}/>
                 </View>
@@ -50,7 +55,7 @@ class LoginScreen extends React.Component{
 
                 <Margin/><Margin/>
 
-                <View><Button title='Login' raised backgroundColor={Color.tintColor} borderRadius={6} /></View>
+                <View><Button title='Login' raised backgroundColor={Color.tintColor} borderRadius={6} onPress={() => this._navigateToMain()}/></View>
 
                 <Margin/>
 
@@ -59,7 +64,7 @@ class LoginScreen extends React.Component{
                         <StyledText style={{ color: Color.tintColor }}>Create an account</StyledText>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </KeyboardAwareScrollView>
         )
     }
 }
