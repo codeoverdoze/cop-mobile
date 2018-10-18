@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
-import { Button, FormInput, FormLabel } from 'react-native-elements';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { StyledText, StyledHeader } from "../components/Typography";
+import {View, Image, TouchableOpacity, ImageBackground} from 'react-native';
+import {Button, FormInput, FormLabel} from 'react-native-elements';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
+import {StyledText, StyledHeader} from "../components/Typography";
 import Color from '../constants/Colors';
 import Margin from '../components/Margin';
 
-class RegisterScreen extends React.Component{
+
+class RegisterScreen extends React.Component {
     static navigationOptions = {
         title: 'Please sign in',
     };
@@ -16,61 +17,67 @@ class RegisterScreen extends React.Component{
         this.state = {};
     }
 
-    _navigateToMain(){
+    _navigateToMain() {
         this.props.navigation.navigate('Main');
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <KeyboardAwareScrollView style={styles.root}>
-                <View style={styles.header}>
-                    <Image source={require('../assets/images/logo.png')} style={{ width: 55, height: 70}}/>
-                </View>
+                <ImageBackground style={{width: '100%', height: '100%'}}
+                                 source={require('../assets/images/background.png')}>
 
-                <Margin/>
-
-                <View style={styles.header}>
-                    <StyledHeader>Create PCG Account</StyledHeader>
-                </View>
-
-                <Margin/>
-
-                <View>
-                    <FormLabel><StyledText>Telephone Number</StyledText></FormLabel>
-                    <FormInput/>
-                </View>
-
-                <Margin/>
-
-                <View>
-                    <FormLabel><StyledText>Email (Optional)</StyledText></FormLabel>
-                    <FormInput/>
-                </View>
-
-
-                <Margin/>
-
-                <View>
-                    <FormLabel><StyledText>Password</StyledText></FormLabel>
-                    <FormInput type='password'/>
+                    <View style={styles.header}>
+                        <Image source={require('../assets/images/logo.png')} style={{width: 55, height: 70}}/>
+                    </View>
 
                     <Margin/>
 
-                    <FormLabel><StyledText>Confirm Password</StyledText></FormLabel>
-                    <FormInput type='password'/>
-                </View>
+                    <View style={styles.header}>
+                        <StyledHeader>Create PCG Account</StyledHeader>
+                    </View>
 
-                <Margin/><Margin/>
+                    <Margin/>
 
-                <View><Button title='Register' raised backgroundColor={Color.tintColor} borderRadius={6}  onPress={() => this._navigateToMain()}/></View>
+                    <View>
+                        <FormLabel><StyledText>Telephone Number</StyledText></FormLabel>
+                        <FormInput/>
+                    </View>
 
-                <Margin/>
+                    <Margin/>
 
-                <View style={styles.newUser}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-                        <StyledText style={{ color: Color.tintColor }}>Already a user? Login</StyledText>
-                    </TouchableOpacity>
-                </View>
+                    <View>
+                        <FormLabel><StyledText>Email (Optional)</StyledText></FormLabel>
+                        <FormInput/>
+                    </View>
+
+
+                    <Margin/>
+
+                    <View>
+                        <FormLabel><StyledText>Password</StyledText></FormLabel>
+                        <FormInput type='password'/>
+
+                        <Margin/>
+
+                        <FormLabel><StyledText>Confirm Password</StyledText></FormLabel>
+                        <FormInput type='password'/>
+                    </View>
+
+                    <Margin/><Margin/>
+
+                    <View><Button title='Register' raised backgroundColor={Color.tintColor} borderRadius={6}
+                                  onPress={() => this._navigateToMain()}/></View>
+
+                    <Margin/>
+
+                    <View style={styles.newUser}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+                            <StyledText style={{color: Color.tintColor}}>Already a user? Login</StyledText>
+                        </TouchableOpacity>
+                    </View>
+                </ImageBackground>
+
             </KeyboardAwareScrollView>
         )
     }

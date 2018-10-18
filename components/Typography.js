@@ -10,11 +10,19 @@ const StyledHeader = (props) => {
 };
 
 const StyledSubtitle = (props) => {
-    return <Text {...props} h4 style={[{ fontFamily: 'regular', color: '#3E4E5B' }, props.style ]} />;
+    return <Text {...props} h6 style={[{ fontFamily: 'regular', color: '#465867' }, props.style ]} />;
 };
 
-const StyledSubtitleColored = (props) => {
-    return <Text {...props} h4 style={[{ fontFamily: 'regular', color: '#B1BBC5' }, props.style ]} />;
+const StyledTextInverse = (props) => {
+    return <Text {...props} style={[{ fontFamily: 'regular', color: '#FFFFFF' }, props.style ]} />;
 };
 
-export { StyledHeader, StyledText, StyledSubtitle, StyledSubtitleColored };
+const StyledHeaderInverse = (props) => {
+    return <Text {...props} h3 style={[{ fontFamily: 'regular', color: '#FFFFFF' }, props.style ]} />;
+};
+
+const StyledSubtitleInverse = (props) => {
+    return <Text {...props} h6 style={[{ fontFamily: 'regular', color: '#FFFFFF' }, props.style ]} />;
+};
+
+export { StyledHeader, StyledText, StyledSubtitle, StyledHeaderInverse, StyledSubtitleInverse, StyledTextInverse };

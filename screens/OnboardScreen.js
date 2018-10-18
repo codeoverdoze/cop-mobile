@@ -1,65 +1,101 @@
 import React from 'react';
-import { StyledText, StyledHeader } from "../components/Typography";
-import AppIntro from 'react-native-app-intro-slider';
+import {Image, View} from 'react-native';
+import {
+    StyledTextInverse,
+    StyledText,
+    StyledHeaderInverse,
+    StyledHeader,
+    StyledSubtitle,
+    StyledSubtitleInverse
+} from "../components/Typography";
+import {Icon, Button} from 'react-native-elements';
+import Onboarding from 'react-native-onboarding-swiper';
+import Colors from '../constants/Colors';
 
-const styles = {
-    image: {
-        width: 250,
-        height: 320
-    }
-};
 
-const IntroScreens = [
-    {
-        key: '1',
-        title: <StyledHeader>PCG Mobile</StyledHeader>,
-        text: <StyledText>Welcome to Presbyterian Church of Ghana Mobile App</StyledText>,
-        image: require('../assets/images/logo.png'),
-        backgroundColor: '#e6b31e',
-        fontColor: '#fff',
-        imageStyle: styles.image
-    },
-    {
-        key: '2',
-        title: <StyledHeader>Read bible scriptures</StyledHeader>,
-        text: <StyledText>Keep track of bible scriptures and quotations at church</StyledText>,
-        image: require('../assets/images/bible.png'),
-        imageStyle: styles.image,
-        backgroundColor: '#53cde2',
-        fontColor: '#fff',
-    },
-    {
-        key: '3',
-        title: <StyledHeader>Never miss an event</StyledHeader>,
-        text: <StyledText>Keep track of bible scriptures and quotations at church</StyledText>,
-        image: require('../assets/images/calendar.png'),
-        imageStyle: styles.image,
-        backgroundColor: '#73dbc4',
-        fontColor: '#fff',
-    },
-    {
-        key: '4',
-        title: <StyledHeader>Pay your tithes</StyledHeader>,
-        text: <StyledText>Be reminded of tithes and pay them quickly and easily</StyledText>,
-        image: require('../assets/images/coins.png'),
-        imageStyle: {
-            width: 300,
-            height: 300
-        },
-        backgroundColor: '#fb929e',
-        fontColor: '#fff',
-    }
-];
-
-class OnboardScreen extends React.Component{
-    constructor(props){
+class OnboardScreen extends React.Component {
+    constructor(props) {
         super(props);
-        this.state = { };
+        this.state = {};
     }
 
     render() {
         return (
-            <AppIntro slides={IntroScreens} onDone={() => this.props.navigation.navigate('Login')}/>
+            <Onboarding pages={ [
+                {
+                    title: (
+                        <View style={{flex: 1, paddingBottom: 80, borderStyle: 'solid', borderColor: 'black'}}>
+                            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                                <StyledHeader>Welcome to PCG Mobile</StyledHeader>
+                                <StyledSubtitle>Swipe to learn more</StyledSubtitle>
+                            </View>
+                        </View>
+                    ),
+                    subtitle: (
+                        <View>
+                            <StyledText>Hello World</StyledText>
+                        </View>
+                    ),
+                    backgroundColor: '#FFFFFF',
+                    image: (
+                        <View style={{paddingTop: 90, flex: 1}}>
+                            <Image source={require('../assets/images/logo.png')} style={{width: 125, height: 160}}/>
+                        </View>
+                    ),
+                },
+                {
+                    title: <StyledHeaderInverse>Read the Bible</StyledHeaderInverse>,
+                    subtitle: <StyledSubtitleInverse>Get quick and easy access to the bible to look up quotations at
+                        church</StyledSubtitleInverse>,
+                    backgroundColor: '#5e92f3',
+                    image: (
+                        <Icon
+                            name="bible"
+                            type="material-community"
+                            size={100}
+                            color="white"
+                        />
+                    ),
+                },
+                {
+                    title: <StyledHeaderInverse>View church schedule</StyledHeaderInverse>,
+                    subtitle: <StyledTextInverse>Stay informed of church activities and plan ahead of time</StyledTextInverse>,
+                    backgroundColor: '#003c8f',
+                    image: (
+                        <Icon name="calendar" type="font-awesome" size={100} color="white"/>
+                    ),
+                },
+                {
+                    title: <StyledHeaderInverse>Pay your tithe</StyledHeaderInverse>,
+                    subtitle: (
+                        <View>
+                            <StyledTextInverse>Pay your tithe quickly, easily, directly from the app</StyledTextInverse>
+                            <View style={{ marginTop: 20}}>
+                                <View>
+                                    <Button title={<StyledText style={{ color: '#1565c0'}}>Login</StyledText>}
+                                            borderRadius={5} large
+                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft:-10,marginRight:null,width:"105%"}}
+                                            buttonStyle={{width:"100%"}}
+                                            onPress={() => { this.props.navigation.navigate('Login')}}
+                                    />
+                                </View>
+
+                                <View style={{ marginTop: 10}}>
+                                    <Button title={<StyledTextInverse>Register</StyledTextInverse>}
+                                            backgroundColor={Colors.tintColor} outline borderRadius={5}
+                                            large containerViewStyle={{marginLeft:-10,marginRight:null,width:"105%"}}
+                                            onPress={() => { this.props.navigation.navigate('Register')}}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                    ),
+                    backgroundColor: '#1565c0',
+                    image: (
+                        <Icon name="coins" type="material-community" size={100} color="white"/>
+                    ),
+                },
+            ]} showDone={false}/>
         );
     }
 }
