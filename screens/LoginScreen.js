@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
-import { Button, FormInput, FormLabel } from 'react-native-elements';
+import { Button, FormInput, FormLabel, Icon } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { StyledText, StyledHeader } from "../components/Typography";
+import { StyledText, StyledHeader, StyledSubtitle } from "../components/Typography";
 import Color from '../constants/Colors';
 import Margin from '../components/Margin';
 
@@ -24,45 +24,35 @@ class LoginScreen extends React.Component{
         return(
             <KeyboardAwareScrollView style={styles.root}>
                 <View style={styles.header}>
-                    <Image source={require('../assets/images/logo.png')} style={{ width: 55, height: 70}}/>
+                    <Icon name={'sms'} type='material' color={Color.tintColor} size={60}/>
                 </View>
 
                 <Margin/>
 
-                <View style={styles.header}>
-                    <StyledHeader>Login to PCG Account</StyledHeader>
+                <View style={[styles.header, { marginTop: 5}]}>
+                    <StyledHeader>SMS Verification</StyledHeader>
+                </View>
+
+
+                <View style={[styles.header, { marginTop: 5, paddingLeft: 25, paddingRight: 25}]}>
+                    <StyledText>Enter your telephone number. A code will be sent to your phone to verify that this number is yours.</StyledText>
                 </View>
 
                 <Margin/>
-
-                <View>
-                    <FormLabel><StyledText>Telephone Number / Email</StyledText></FormLabel>
-                    <FormInput/>
-                </View>
-
+                <Margin/>
                 <Margin/>
 
-                <View>
-                    <FormLabel><StyledText>Password</StyledText></FormLabel>
-                    <FormInput type='password'/>
-
-                    <Margin/>
-
-                    <View style={styles.forgotPassword}>
-                        <StyledText style={{ color: Color.tintColor }}>Forgot Password</StyledText>
-                    </View>
+                <View style={{ marginLeft: 40, marginRight: 40}}>
+                    <FormInput value={'+233'} keyboardType={'numeric'}/>
                 </View>
 
-                <Margin/><Margin/>
-
-                <View><Button title='Login' raised backgroundColor={Color.tintColor} borderRadius={6} onPress={() => this._navigateToMain()}/></View>
 
                 <Margin/>
+                <Margin/>
+                <Margin/>
 
-                <View style={styles.newUser}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
-                        <StyledText style={{ color: Color.tintColor }}>Create an account</StyledText>
-                    </TouchableOpacity>
+                <View style={{ marginLeft: 40, marginRight: 40}}>
+                    <Button title={<Icon name={'angle-right'} type='font-awesome' color={'#FFFFFF'}/>} backgroundColor={Color.tintColor} borderRadius={5}/>
                 </View>
             </KeyboardAwareScrollView>
         )
@@ -73,12 +63,12 @@ const styles = {
     root: {
         flex: 1,
         marginTop: 40,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
     },
     header: {
+        marginTop: 30,
         marginLeft: 17,
         marginRight: 17,
-        flexDirection: 'column',
         justifyContent: 'center',
         alignSelf: 'center'
     },

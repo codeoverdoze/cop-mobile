@@ -45,8 +45,7 @@ class OnboardScreen extends React.Component {
                 },
                 {
                     title: <StyledHeaderInverse>Read the Bible</StyledHeaderInverse>,
-                    subtitle: <StyledSubtitleInverse>Get quick and easy access to the bible to look up quotations at
-                        church</StyledSubtitleInverse>,
+                    subtitle: <StyledSubtitleInverse>Quick access to the bible to quotations</StyledSubtitleInverse>,
                     backgroundColor: '#5e92f3',
                     image: (
                         <Icon
@@ -74,7 +73,7 @@ class OnboardScreen extends React.Component {
                                 <View>
                                     <Button title={<StyledText style={{ color: '#1565c0'}}>Join Presby Companion</StyledText>}
                                             borderRadius={5}
-                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft: -40,marginRight:null,width:"125%"}}
+                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft: -36,marginRight:null,width:"125%"}}
                                             buttonStyle={{width:"100%"}}
                                             onPress={() => { this.props.navigation.navigate('Login')}}
                                     />
