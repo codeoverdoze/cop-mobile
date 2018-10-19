@@ -6,7 +6,7 @@ const StyledText = (props) => {
 };
 
 const StyledHeader = (props) => {
-    return <Text {...props} h3 style={[{ fontFamily: 'regular', color: '#3E4E5B' }, props.style ]} />;
+    return <Text {...props} h3 style={[{ fontFamily: 'bold', color: '#3E4E5B' }, props.style ]} />;
 };
 
 const StyledSubtitle = (props) => {
@@ -18,7 +18,7 @@ const StyledTextInverse = (props) => {
 };
 
 const StyledHeaderInverse = (props) => {
-    return <Text {...props} h3 style={[{ fontFamily: 'regular', color: '#FFFFFF' }, props.style ]} />;
+    return <Text {...props} h3 style={[{ fontFamily: 'bold', color: '#FFFFFF' }, props.style ]} />;
 };
 
 const StyledSubtitleInverse = (props) => {
