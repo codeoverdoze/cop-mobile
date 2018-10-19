@@ -72,21 +72,15 @@ class OnboardScreen extends React.Component {
                             <StyledTextInverse>Pay your tithe quickly, easily, directly from the app</StyledTextInverse>
                             <View style={{ marginTop: 20}}>
                                 <View>
-                                    <Button title={<StyledText style={{ color: '#1565c0'}}>Login</StyledText>}
-                                            borderRadius={5} large
-                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft:-10,marginRight:null,width:"105%"}}
+                                    <Button title={<StyledText style={{ color: '#1565c0'}}>Join Presby Companion</StyledText>}
+                                            borderRadius={5}
+                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft: -40,marginRight:null,width:"125%"}}
                                             buttonStyle={{width:"100%"}}
                                             onPress={() => { this.props.navigation.navigate('Login')}}
                                     />
                                 </View>
 
-                                <View style={{ marginTop: 10}}>
-                                    <Button title={<StyledTextInverse>Register</StyledTextInverse>}
-                                            backgroundColor={Colors.tintColor} outline borderRadius={5}
-                                            large containerViewStyle={{marginLeft:-10,marginRight:null,width:"105%"}}
-                                            onPress={() => { this.props.navigation.navigate('Register')}}
-                                    />
-                                </View>
+
                             </View>
                         </View>
                     ),
