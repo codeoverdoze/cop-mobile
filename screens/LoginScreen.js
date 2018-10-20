@@ -16,8 +16,8 @@ class LoginScreen extends React.Component{
         this.state = {};
     }
 
-    _navigateToMain(){
-        this.props.navigation.navigate('Main');
+    _navigateToSMSVerify(){
+        this.props.navigation.navigate('SMSVerify');
     }
 
     render(){
@@ -52,7 +52,11 @@ class LoginScreen extends React.Component{
                 <Margin/>
 
                 <View style={{ marginLeft: 40, marginRight: 40}}>
-                    <Button title={<Icon name={'angle-right'} type='font-awesome' color={'#FFFFFF'}/>} backgroundColor={Color.tintColor} borderRadius={5}/>
+                    <Button
+                        title={<Icon name={'angle-right'} type='font-awesome' color={'#FFFFFF'}/>}
+                        backgroundColor={Color.tintColor} borderRadius={5}
+                        onPress={() => this._navigateToSMSVerify()}
+                    />
                 </View>
             </KeyboardAwareScrollView>
         )

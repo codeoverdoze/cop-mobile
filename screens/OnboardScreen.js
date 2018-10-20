@@ -11,6 +11,7 @@ import {
 import {Icon, Button} from 'react-native-elements';
 import Onboarding from 'react-native-onboarding-swiper';
 import Colors from '../constants/Colors';
+import Margin from "../components/Margin";
 
 
 class OnboardScreen extends React.Component {
@@ -26,7 +27,10 @@ class OnboardScreen extends React.Component {
                     title: (
                         <View style={{flex: 1, paddingBottom: 80, borderStyle: 'solid', borderColor: 'black'}}>
                             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                                <StyledHeader>Welcome to PCG Mobile</StyledHeader>
+                                <StyledHeader style={{ textAlign: 'center'}}>Welcome to {"\n"} Presby Companion</StyledHeader>
+
+                                <Margin/>
+
                                 <StyledSubtitle>Swipe to learn more</StyledSubtitle>
                             </View>
                         </View>
