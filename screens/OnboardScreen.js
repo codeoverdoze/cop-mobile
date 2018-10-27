@@ -27,7 +27,8 @@ class OnboardScreen extends React.Component {
                     title: (
                         <View style={{flex: 1, paddingBottom: 80, borderStyle: 'solid', borderColor: 'black'}}>
                             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                                <StyledHeader style={{ textAlign: 'center'}}>Welcome to {"\n"} Presby Companion</StyledHeader>
+                                <StyledHeader style={{ textAlign: 'center'}}>Welcome to</StyledHeader>
+                                <StyledHeader style={{ textAlign: 'center'}}>Presby Companion</StyledHeader>
 
                                 <Margin/>
 
@@ -42,7 +43,7 @@ class OnboardScreen extends React.Component {
                     ),
                     backgroundColor: '#FFFFFF',
                     image: (
-                        <View style={{paddingTop: 90, flex: 1}}>
+                        <View style={{paddingTop: 150, flex: 1}}>
                             <Image source={require('../assets/images/logo.png')} style={{width: 125, height: 160}}/>
                         </View>
                     ),

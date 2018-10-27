@@ -1,18 +1,26 @@
 import React from 'react';
-import {Platform} from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
-import {StyledHeader, StyledSubtitle, StyledText} from '../components/Typography'
-
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/CalendarScreen';
+
+
+// Home screen stack
+import HomeIndex from '../screens/Home/Index';
+import Announcements from '../screens/Home/Announcements';
+import ChurchNews from '../screens/Home/ChurchNews';
+import DailyDevotional from '../screens/Home/DailyDevotional';
+import Hymnal from '../screens/Home/Hymnal';
+
+
+import CalendarScreen from '../screens/CalendarScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import BibleDashboardScreen from '../screens/BibleDashboardScreen';
 import TitheScreen from '../screens/TitheScreen';
 
 const HomeStack = createStackNavigator({
-    Home: HomeScreen,
+    Home: HomeIndex,
+    Announcements: Announcements,
+    ChurchNews, DailyDevotional, Hymnal
 });
 
 HomeStack.navigationOptions = {
@@ -26,11 +34,11 @@ HomeStack.navigationOptions = {
     ),
 };
 
-const LinksStack = createStackNavigator({
-    Links: LinksScreen,
+const CalendarStack = createStackNavigator({
+    Calendar: CalendarScreen,
 });
 
-LinksStack.navigationOptions = {
+CalendarStack.navigationOptions = {
     tabBarLabel: 'Calendar',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
@@ -58,11 +66,11 @@ BibleDashboard.navigationOptions = {
 };
 
 
-const Tithe = createStackNavigator({
+const TitheStack = createStackNavigator({
     Tithe: TitheScreen,
 });
 
-Tithe.navigationOptions = {
+TitheStack.navigationOptions = {
     tabBarLabel: 'Tithe',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
@@ -91,7 +99,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
     HomeStack,
     BibleDashboard,
-    LinksStack,
-    Tithe,
+    CalendarStack,
+    TitheStack,
     SettingsStack,
-});
+}, { tabBarOptions: { activeTintColor: '#000000', style: { backgroundColor: '#F6F6F7', }, animationEnabled: true} });

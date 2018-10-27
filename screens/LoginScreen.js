@@ -66,8 +66,8 @@ class LoginScreen extends React.Component{
 const styles = {
     root: {
         flex: 1,
-        marginTop: 40,
-        backgroundColor: '#FFFFFF',
+        paddingTop: 40,
+        backgroundColor: '#D3D3D3',
     },
     header: {
         marginTop: 30,

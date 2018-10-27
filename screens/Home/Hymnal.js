@@ -1,18 +1,22 @@
 import React from 'react';
-import {ScrollView, TouchableOpacity, View} from "react-native";
-import Header from "../components/CustomHeader";
+import {View, ScrollView, ImageBackground, TouchableOpacity} from 'react-native';
+import {Button, Icon, ListItem} from 'react-native-elements';
+import Card from '../../components/CustomCard';
+import Header from '../../components/CustomHeader';
+import {StyledHeader, StyledHeaderInverse, StyledText, StyledTextInverse} from "../../components/Typography";
+import Colors from "../../constants/Colors";
 
-export default class CalendarScreen extends React.Component {
+
+
+export default class Hymnal extends React.Component {
     static navigationOptions = {
-        header: null
+        header: null,
     };
-
 
     render() {
         return (
             <View style={styles.container}>
-                <Header title={'Calendar'}/>
-
+                <Header title={'Hymnal'}/>
 
                 <ScrollView style={styles.main}>
 
@@ -24,7 +28,6 @@ export default class CalendarScreen extends React.Component {
     }
 }
 
-
 const styles = {
     container: {
         flex: 1,
@@ -35,7 +38,7 @@ const styles = {
         backgroundColor: '#F6F6F7',
         padding: 20,
         paddingTop: 50,
-        height : 100,
+        height: 100,
         justifyContent: 'center',
         borderBottomColor: '#D3D3D3',
         borderBottomWidth: 1,
