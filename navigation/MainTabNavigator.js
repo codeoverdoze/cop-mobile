@@ -11,10 +11,15 @@ import ChurchNews from '../screens/Home/ChurchNews';
 import DailyDevotional from '../screens/Home/DailyDevotional';
 import Hymnal from '../screens/Home/Hymnal';
 
+// Bible screen stack
+import BibleIndex from '../screens/Bible/Index';
 
-import CalendarScreen from '../screens/CalendarScreen';
+
+// Calendar Screen stack
+import CalendarIndex from '../screens/Calendar/Index';
+
+
 import SettingsScreen from '../screens/SettingsScreen';
-import BibleDashboardScreen from '../screens/BibleDashboardScreen';
 import TitheScreen from '../screens/TitheScreen';
 
 const HomeStack = createStackNavigator({
@@ -35,7 +40,7 @@ HomeStack.navigationOptions = {
 };
 
 const CalendarStack = createStackNavigator({
-    Calendar: CalendarScreen,
+    Calendar: CalendarIndex,
 });
 
 CalendarStack.navigationOptions = {
@@ -50,11 +55,11 @@ CalendarStack.navigationOptions = {
 };
 
 
-const BibleDashboard = createStackNavigator({
-    BibleDashboard: BibleDashboardScreen,
+const BibleStack = createStackNavigator({
+    BibleDashboard: BibleIndex,
 });
 
-BibleDashboard.navigationOptions = {
+BibleStack.navigationOptions = {
     tabBarLabel: 'Bible',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
@@ -98,7 +103,7 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
     HomeStack,
-    BibleDashboard,
+    BibleStack,
     CalendarStack,
     TitheStack,
     SettingsStack,

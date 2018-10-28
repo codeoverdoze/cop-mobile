@@ -35,81 +35,91 @@ export default class Index extends React.Component {
             <View style={styles.container}>
                 <Header title={'Home'}/>
 
-                <ScrollView style={styles.main}>
-                    <View style={{flexDirection: 'row'}}>
-                        <TouchableOpacity onPress={() => this.navigate('Announcements')}>
-                            <Card image={require('../../assets/images/announcement-bg.jpg')}
-                                  imageStyle={{
-                                      height: 120,
-                                      width: 154,
-                                      overflow: 'hidden',
-                                      borderTopStartRadius: 10,
-                                      borderTopEndRadius: 10
-                                  }}
-                                  title={<StyledTextInverse>Announcements</StyledTextInverse>}
-                                  titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
-                            >
-                                <StyledText
-                                    style={{justifyContent: 'center', alignSelf: 'center'}}>Announcements</StyledText>
-                            </Card>
-                        </TouchableOpacity>
+                <ScrollView contentContainerStyle={[styles.main]}>
+                    <View style={[styles.grid]}>
+                        <View style={[styles.gridItem]}>
+                            <View style={{ flex: 1}}>
+                                <TouchableOpacity onPress={() => this.navigate('Announcements')}>
+                                    <Card image={require('../../assets/images/announcement-bg.jpg')}
+                                          imageStyle={{
+                                              height: '78%',
+                                              width: '100%',
+                                              borderTopStartRadius: 10,
+                                              borderTopEndRadius: 10,
+                                              overflow: 'hidden'
+                                          }}
+                                          title={<StyledTextInverse>Announcements</StyledTextInverse>}
+                                          titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
+                                    >
+                                        <StyledText
+                                            style={{justifyContent: 'center', alignSelf: 'center'}}>Announcements</StyledText>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
 
 
-                        <TouchableOpacity onPress={() => this.navigate('ChurchNews')}>
-                            <Card image={require('../../assets/images/news-bg.png')}
-                                  imageStyle={{
-                                      height: 120,
-                                      width: 154,
-                                      overflow: 'hidden',
-                                      borderTopStartRadius: 10,
-                                      borderTopEndRadius: 10
-                                  }}
-                                  titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
-                            >
-                                <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Church
-                                    News</StyledText>
-                            </Card>
-                        </TouchableOpacity>
+                            <View style={{ flex: 1}}>
+                                <TouchableOpacity onPress={() => this.navigate('ChurchNews')}>
+                                    <Card image={require('../../assets/images/news-bg.png')}
+                                          imageStyle={{
+                                              height: '78%',
+                                              width: '100%',
+                                              overflow: 'hidden',
+                                              borderTopStartRadius: 10,
+                                              borderTopEndRadius: 10
+                                          }}
+                                          titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
+                                    >
+                                        <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Church
+                                            News</StyledText>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+
+                        <View style={styles.gridItem}>
+                            <View style={{ flex: 1}}>
+                                <TouchableOpacity onPress={() => this.navigate('DailyDevotional')}>
+                                    <Card image={require('../../assets/images/devotional-bg.png')}
+                                          imageStyle={{
+                                              height: '78%',
+                                              width: '100%',
+                                              overflow: 'hidden',
+                                              borderTopStartRadius: 10,
+                                              borderTopEndRadius: 10
+                                          }}
+                                          titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
+                                    >
+                                        <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Daily Devotional</StyledText>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+
+
+                            <View style={{ flex: 1}}>
+                                <TouchableOpacity onPress={() => this.navigate('Hymnal')}>
+                                    <Card image={require('../../assets/images/hymnal-bg.gif')}
+                                          imageStyle={{
+                                              height: '78%',
+                                              width: '100%',
+                                              overflow: 'hidden',
+                                              borderTopStartRadius: 10,
+                                              borderTopEndRadius: 10
+                                          }}
+                                          title={<StyledTextInverse>Announcements</StyledTextInverse>}
+                                          titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
+                                    >
+                                        <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Hymnal</StyledText>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
                     </View>
 
-                    <View style={{flexDirection: 'row'}}>
 
-                        <TouchableOpacity onPress={() => this.navigate('DailyDevotional')}>
-                            <Card image={require('../../assets/images/devotional-bg.png')}
-                                  imageStyle={{
-                                      height: 120,
-                                      width: 154,
-                                      overflow: 'hidden',
-                                      borderTopStartRadius: 10,
-                                      borderTopEndRadius: 10
-                                  }}
-                                  titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
-                            >
-                                <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Daily
-                                    Devotional</StyledText>
-                            </Card>
-                        </TouchableOpacity>
-
-
-                        <TouchableOpacity onPress={() => this.navigate('Hymnal')}>
-                            <Card image={require('../../assets/images/hymnal-bg.gif')}
-                                  imageStyle={{
-                                      height: 120,
-                                      width: 154,
-                                      overflow: 'hidden',
-                                      borderTopStartRadius: 10,
-                                      borderTopEndRadius: 10
-                                  }}
-                                  title={<StyledTextInverse>Announcements</StyledTextInverse>}
-                                  titleStyle={{justifyContent: 'center', alignSelf: 'center'}}
-                            >
-                                <StyledText style={{justifyContent: 'center', alignSelf: 'center'}}>Hymnal</StyledText>
-                            </Card>
-                        </TouchableOpacity>
-
-                    </View>
-
-                    <View style={{ marginTop: 40}}>
+                    <View style={[styles.list]}>
                         {
                             list.map((l, i) => (
                                 <ListItem
@@ -122,6 +132,7 @@ export default class Index extends React.Component {
 
                         }
                     </View>
+
                 </ScrollView>
 
             </View>
@@ -136,18 +147,23 @@ const styles = {
         backgroundColor: '#FFFFFF',
     },
 
-    top: {
-        backgroundColor: '#F6F6F7',
-        padding: 20,
-        paddingTop: 50,
-        height: 100,
-        justifyContent: 'center',
-        borderBottomColor: '#D3D3D3',
-        borderBottomWidth: 1,
-    },
-
     main: {
         flex: 1,
+    },
+
+    grid: {
+        flex: 2,
+        justifyContent: 'space-between',
+    },
+
+    gridItem: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        flex: 1,
+    },
+
+    list: {
+        flex: 1,
+        marginTop: 20
     }
 };

@@ -6,7 +6,7 @@ const CustomCard = (props) => {
     return (
         <Card
             imageStyle={{ ...props.imageStyle }}
-            containerStyle={{ height: 150, width: 155, borderRadius: 10, padding: -10}}
+            containerStyle={{ borderRadius: 10 }}
             image={props.image}
             title={props.title}
             titleStyle={props.titleStyle}

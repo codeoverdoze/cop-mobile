@@ -5,7 +5,8 @@ import Card from '../../components/CustomCard';
 import Header from '../../components/CustomHeader';
 import {StyledHeader, StyledHeaderInverse, StyledText, StyledTextInverse} from "../../components/Typography";
 import Colors from "../../constants/Colors";
-
+import List from '../../components/List';
+import announcementList from '../../sample-data/announcements';
 
 
 export default class Announcements extends React.Component {
@@ -19,7 +20,7 @@ export default class Announcements extends React.Component {
                 <Header title={'Announcements'}/>
 
                 <ScrollView style={styles.main}>
-
+                    <List items={announcementList}/>
                 </ScrollView>
 
             </View>
@@ -46,6 +47,5 @@ const styles = {
 
     main: {
         flex: 1,
-        flexDirection: 'row',
     }
 };
