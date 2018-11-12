@@ -36,7 +36,6 @@ class ListItem extends Component{
                                </View>
                            </View>
 
-                           { /* TODO: Format date properly */ }
                            <View style={{ margin: 5}}>
                                <View>
                                    <StyledText><TimeAgo time={this.props.item.updatedAt}/></StyledText>

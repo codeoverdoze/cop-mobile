@@ -5,7 +5,7 @@ import {EvilIcons} from '@expo/vector-icons';
 import {StyledText} from "../../components/Typography";
 
 // Bible List screen
-import BibleList from './BibleList';
+import BibleBook from './BibleBook';
 
 export default class Index extends React.Component {
     static navigationOptions = {
@@ -49,7 +49,7 @@ export default class Index extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.main}>
-                    <BibleList/>
+                    <BibleBook/>
                 </ScrollView>
             </View>
         );

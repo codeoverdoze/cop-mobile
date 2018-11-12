@@ -5433,6 +5433,13 @@ react-native-card-view@^0.0.3:
   resolved "https://registry.yarnpkg.com/react-native-card-view/-/react-native-card-view-0.0.3.tgz#8db9ac4a3f01d08f8bd9f79343082d87fdf09907"
   integrity sha1-jbmsSj8B0I+L2feTQwgth/3wmQc=
 
+react-native-collapsible@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.3.0.tgz#5eabe4d529730582e72c5cefd2476bb55e81ce05"
+  integrity sha512-v5Hwwp4kmwbBOyrs5vpGTac5NwVV1dgN4MmpRF9bbAgEPCpSjQ2ZhaRMi8ZVBUfeZ+kT3rbxSo0qKFhtqYnd7w==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -5484,6 +5491,11 @@ react-native-keyboard-aware-scroll-view@^0.7.2:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
+react-native-layout-grid@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-layout-grid/-/react-native-layout-grid-0.0.2.tgz#327ce81017a386bb91f009f3193b96b6963e35a8"
+  integrity sha512-OwzkMGisqHz7rykiitH3oOpj4OxDQIppZM85u1nh0q9NquXAU47KvQFPX137OciwKsWEfKfPgeQocqQoTddJaQ==
+
 react-native-maps@0.21.0:
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.21.0.tgz#005f58e93d7623ad59667e8002101970ddf235c2"
@@ -5498,6 +5510,13 @@ react-native-onboarding-swiper@^0.7.1:
   integrity sha512-fu2eGoP+LUNAUyUS2dcxnCyu82wrZ1q8I7LbEh2Tf8vD7uuPI+PMjemFOHdxEaz997nSBuHbRceq+yH8W6n/0g==
   dependencies:
     tinycolor2 "^1.4.1"
+
+react-native-picker-select@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-picker-select/-/react-native-picker-select-5.0.0.tgz#564ff994ae004126fd67340c4fd1188533f4bf91"
+  integrity sha512-/DnOpaJlRLzH8KWeqr5U5rkkuKWTNsTvcWqCXESdf2JHhaAbmQkrE+g2CCkrH5YLf2N38hIJGsenBtwHTllqJA==
+  dependencies:
+    lodash.isequal "^4.5.0"
 
 react-native-platform-touchable@^1.1.1:
   version "1.1.1"
