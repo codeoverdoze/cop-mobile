@@ -13,6 +13,7 @@ import Hymnal from '../screens/Home/Hymnal';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
+import BibleVerse from '../screens/Bible/BibleVerse';
 
 
 // Calendar Screen stack
@@ -57,6 +58,7 @@ CalendarStack.navigationOptions = {
 
 const BibleStack = createStackNavigator({
     BibleDashboard: BibleIndex,
+    BibleVerse: BibleVerse
 });
 
 BibleStack.navigationOptions = {

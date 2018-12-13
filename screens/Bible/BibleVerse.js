@@ -7,6 +7,8 @@ export default class BibleVerse extends React.Component{
         return(
             <View>
                 <Header title={'Chapter'}/>
+
+
             </View>
         )
     }
