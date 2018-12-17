@@ -25,7 +25,7 @@ class OnboardScreen extends React.Component {
             <Onboarding pages={ [
                 {
                     title: (
-                        <View style={{flex: 1, paddingBottom: 80, borderStyle: 'solid', borderColor: 'black'}}>
+                        <View style={{flex: 1, paddingBottom: 80, paddingTop: 80, borderStyle: 'solid', borderColor: 'black'}}>
                             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                                 <StyledHeader style={{ textAlign: 'center'}}>Welcome to</StyledHeader>
                                 <StyledHeader style={{ textAlign: 'center'}}>Presby Companion</StyledHeader>
@@ -73,12 +73,14 @@ class OnboardScreen extends React.Component {
                     title: <StyledHeaderInverse>Pay your tithe</StyledHeaderInverse>,
                     subtitle: (
                         <View>
-                            <StyledTextInverse>Pay your tithe quickly, easily, directly from the app</StyledTextInverse>
+                            <View style={{ alignItems: "center" }}>
+                                <StyledTextInverse>Pay your tithe quickly, easily, directly from the app</StyledTextInverse>
+                            </View>
                             <View style={{ marginTop: 20}}>
                                 <View>
                                     <Button title={<StyledText style={{ color: '#1565c0'}}>Join Presby Companion</StyledText>}
                                             borderRadius={5}
-                                            backgroundColor={'#FFFFFF'} containerViewStyle={{marginLeft: -36,marginRight:null,width:"125%"}}
+                                            backgroundColor={'#FFFFFF'}
                                             buttonStyle={{width:"100%"}}
                                             onPress={() => { this.props.navigation.navigate('Login')}}
                                     />

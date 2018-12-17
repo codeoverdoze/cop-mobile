@@ -53,7 +53,7 @@ class LoginScreen extends React.Component{
 
                 <View style={{ marginLeft: 40, marginRight: 40}}>
                     <Button
-                        title={<Icon name={'angle-right'} type='font-awesome' color={'#FFFFFF'}/>}
+                        title="Login"
                         backgroundColor={Color.tintColor} borderRadius={5}
                         onPress={() => this._navigateToSMSVerify()}
                     />

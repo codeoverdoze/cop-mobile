@@ -13,21 +13,31 @@ import Hymnal from '../screens/Home/Hymnal';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
-import BibleVerse from '../screens/Bible/BibleVerse';
+import BibleBook from '../screens/Bible/BibleBook';
+import BibleChapter from '../screens/Bible/BibleChapter';
 
 
-// Calendar Screen stack
-import CalendarIndex from '../screens/Calendar/Index';
-
-
+// Hymnary Screen stack
+import HymnaryIndex from '../screens/Hymnary/Index';
 import SettingsScreen from '../screens/SettingsScreen';
 import TitheScreen from '../screens/TitheScreen';
+
+
+// Almanac Screen Stack
+import Almanac from "../screens/Almanac/Index";
+import AlmanacCalendar from "../screens/Almanac/Calendar"
+
+const AlmanacStack = createStackNavigator({
+    AlmanacDashboard: Almanac,
+    AlmanacCalendar
+}, { headerMode: "none" });
+
 
 const HomeStack = createStackNavigator({
     Home: HomeIndex,
     Announcements: Announcements,
-    ChurchNews, DailyDevotional, Hymnal
-});
+    ChurchNews, DailyDevotional, Hymnal, Almanac: AlmanacStack
+}, { headerMode: "none"});
 
 HomeStack.navigationOptions = {
     tabBarLabel: 'Home',
@@ -40,29 +50,12 @@ HomeStack.navigationOptions = {
     ),
 };
 
-const CalendarStack = createStackNavigator({
-    Calendar: CalendarIndex,
-});
+const HymnaryStack = createStackNavigator({
+    Hymnary: HymnaryIndex,
+}, { headerMode: "none"});
 
-CalendarStack.navigationOptions = {
-    tabBarLabel: 'Calendar',
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            type='octicon'
-            name='calendar'
-        />
-    ),
-};
-
-
-const BibleStack = createStackNavigator({
-    BibleDashboard: BibleIndex,
-    BibleVerse: BibleVerse
-});
-
-BibleStack.navigationOptions = {
-    tabBarLabel: 'Bible',
+HymnaryStack.navigationOptions = {
+    tabBarLabel: 'Hymnary',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
@@ -73,12 +66,29 @@ BibleStack.navigationOptions = {
 };
 
 
+const BibleStack = createStackNavigator({
+    BibleDashboard: BibleIndex,
+    BibleBook, BibleChapter
+}, { headerMode: "none"});
+
+
+BibleStack.navigationOptions = {
+    tabBarLabel: 'Bible',
+    tabBarIcon: ({focused}) => (
+        <TabBarIcon
+            focused={focused}
+            type='material-community'
+            name='book'
+        />
+    ),
+};
+
 const TitheStack = createStackNavigator({
     Tithe: TitheScreen,
 });
 
 TitheStack.navigationOptions = {
-    tabBarLabel: 'Tithe',
+    tabBarLabel: 'Payments',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
@@ -106,7 +116,7 @@ SettingsStack.navigationOptions = {
 export default createBottomTabNavigator({
     HomeStack,
     BibleStack,
-    CalendarStack,
+    HymnaryStack,
     TitheStack,
     SettingsStack,
 }, { tabBarOptions: { activeTintColor: '#000000', style: { backgroundColor: '#F6F6F7', }, animationEnabled: true} });

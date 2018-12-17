@@ -15,12 +15,12 @@ export default class CustomHeader extends React.Component{
 
 const styles = {
     top: {
-        backgroundColor: '#F6F6F7',
+        backgroundColor: '#FFFFFF',
         padding: 15,
         paddingTop: 50,
         height: 100,
         justifyContent: 'center',
         borderBottomColor: '#D3D3D3',
-        borderBottomWidth: 1,
+        borderBottomWidth: 0.2,
     }
 };

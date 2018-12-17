@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StatusBar, StyleSheet, View} from 'react-native';
+import {Platform, StatusBar, StyleSheet, View, SafeAreaView} from 'react-native';
 import {AppLoading, Asset, Font, Icon} from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
@@ -20,7 +20,6 @@ export default class App extends React.Component {
         } else {
             return (
                 <View style={styles.container}>
-                    {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
                     <AppNavigator/>
                 </View>
             );
@@ -36,11 +35,11 @@ export default class App extends React.Component {
             Font.loadAsync({
                 // This is the font that we are using for our tab bar
                 ...Icon.Ionicons.font,
-                // We include SpaceMono because we use it in Index.jsl free
-                // to remove this if you are not using it in your app
-                'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-                'regular': require('./assets/fonts/san-francisco.ttf'),
-                'bold': require('./assets/fonts/san-francisco-bold.ttf')
+                'regular': require('./assets/fonts/lato.ttf'),
+                'bold': require('./assets/fonts/lato-bold.ttf'),
+                'light': require('./assets/fonts/lato-light.ttf'),
+                'bible': require('./assets/fonts/zila-slab.ttf'),
+                'bible-italic': require('./assets/fonts/zila-slab-italic.ttf')
             }),
         ]);
     };

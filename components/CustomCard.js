@@ -6,10 +6,8 @@ const CustomCard = (props) => {
     return (
         <Card
             imageStyle={{ ...props.imageStyle }}
-            containerStyle={{ borderRadius: 10 }}
+            containerStyle={{ borderRadius: 10, margin: 20 }}
             image={props.image}
-            title={props.title}
-            titleStyle={props.titleStyle}
         >
             {props.children}
         </Card>

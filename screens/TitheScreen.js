@@ -1,6 +1,7 @@
 import React from 'react';
 import {ScrollView, TouchableOpacity, View} from "react-native";
 import Header from "../components/CustomHeader";
+import { StyledText } from "../components/Typography";
 
 export default class TitheScreen extends React.Component {
     static navigationOptions = {
@@ -11,12 +12,12 @@ export default class TitheScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Header title={'Tithe'}/>
+                <Header title={'Payments'}/>
 
 
-                <ScrollView style={styles.main}>
-
-                </ScrollView>
+                <View style={[styles.main, { justifyContent: "center", alignItems: "center"}]}>
+                    <StyledText style={{ fontSize: 20 }}>Coming Soon</StyledText>
+                </View>
 
             </View>
 
@@ -28,7 +29,7 @@ export default class TitheScreen extends React.Component {
 const styles = {
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#FAFAFA',
     },
 
     top: {

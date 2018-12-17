@@ -31,7 +31,7 @@ export default class Hymnal extends React.Component {
 const styles = {
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#F6F6F7',
     },
 
     top: {

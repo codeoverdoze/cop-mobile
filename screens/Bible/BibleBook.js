@@ -1,136 +1,107 @@
-import React from 'react';
-import { View, FlatList, TouchableOpacity, ScrollView } from 'react-native';
-import Modal from 'react-native-modal'
-import {StyledText, StyledHeader, StyledSubtitle} from "../../components/Typography";
-import {Entypo} from "@expo/vector-icons";
-import Color from "../../constants/Colors";
-import Margin from '../../components/Margin';
-import GridLayout from 'react-native-layout-grid';
+import React, { Component } from "react";
+import { View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import GridLayout from "react-native-layout-grid";
+import {StyledHeader, StyledText} from "../../components/Typography";
 
-const bible = require('../../sample-data/bible-kjv-shell');
+import Bible from "../../store/Bible";
+import BibleBar from "./components/BibleBar";
 
 
-export default class BibleBook extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = { activeBook: {}, chapterModalOpen: false };
+import bible from "../../sample-data/bible-kjv-shell.json";
 
-        this.navigateToBibleVerse = this.navigateToBibleVerse.bind(this);
+export default class extends Component{
+    setBibleBook(book){
+        Bible.setBook(book);
+        this.props.navigation.navigate("BibleChapter");
     }
 
-
-    async setActiveBook(book){
-        await this.setState({ activeBook: book, chapterModalOpen: true });
-        console.log(this.state);
-    }
-
-    renderHeader = book => {
-        return(
-           <TouchableOpacity onPress={() => this.setActiveBook(book)}>
-               <View style={{flex: 1}}>
-                   <View style={styles.root}>
-                       <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                           <View style={{flexDirection: 'row'}}>
-                               <View style={{flexDirection: 'column', justifyContent: 'center'}}>
-                                   <View>
-                                       <View><StyledText
-                                           style={{fontSize: 20}}>{book.name}</StyledText></View>
-                                   </View>
-                               </View>
-                           </View>
-
-                           <View style={{margin: 5}}>
-                               <View style={{
-                                   flex: 1,
-                                   flexDirection: 'row',
-                                   alignSelf: 'flex-end',
-                                   alignItems: 'center'
-                               }}>
-                                   <Entypo name='chevron-thin-down' color={Color.tintColor}/>
-                               </View>
-                           </View>
-                       </View>
-                   </View>
-               </View>
-           </TouchableOpacity>
-        )
-    };
-
-    navigateToBibleVerse(){
-        console.log('Props', this.props);
-
-        this.props.navigation.navigate('BibleVerse')
-    }
-
-    renderSingleChapterSelect(chapter){
-        // Building chapter array from chapter object
-        // There is an issue with the gridview library where it keeps rendering the component till the row is exhausted
-        // I am conditionally rendering if there is a chapter to render. It's a bug in the lib and we don't have the time
-        // to fix it
-
-
-        if(chapter){
+    renderGridItem = (item) => {
+        if (item) {
             return(
-                <TouchableOpacity
-                    style={{ backgroundColor: '#F6F6F7', borderRadius: 15 }}
-                    onPress={this.navigateToBibleVerse}
-                >
-                    <StyledSubtitle
-                        style= {{ flex: 1, fontSize: 20, alignSelf: 'center', justifyContent: 'center', margin: 5}}
-                    >
-                        {chapter}
-                    </StyledSubtitle>
+                // We make use of key to set bible name because we made changes to some values for name. 2Kings, etc
+                <TouchableOpacity onPress={() => this.setBibleBook(item.name)} key={item.key}>
+                    <View style={[styles.gridItem, { alignItems: "center"}]}>
+                        <StyledText style={{ fontSize: 18, color: "#FFFFFF", fontWeight: "bold"}}>{item.key.substring(0, 3)}</StyledText>
+                    </View>
                 </TouchableOpacity>
             )
         }
+    };
+
+    navigateToBibleBookScreen(){
+        this.props.navigation.navigate("BibleBook");
     }
 
 
-    render(){
+    navigateToBibleChapterScreen(){
+        this.props.navigation.navigate("BibleChapter");
+    }
+
+
+    render() {
         return (
-            <View style={{ flex: 1}}>
-                <FlatList
-                    data={bible}
-                    renderItem={({ item }) => this.renderHeader(item)}
+            <View style={[styles.container]}>
+                <BibleBar
+                    navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
+                    navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
                 />
-
-                {/*Optionally render modal to show chapters*/}
-
-                <Modal
-                    isVisible={this.state.chapterModalOpen}
-                    useNativeDriver={true}
-                    hideModalContentWhileAnimating={true}
-                    onBackdropPress={() => this.setState({ chapterModalOpen: false })}
-                >
-                    <View style={{ minHeight: '40%', maxHeight: '80%', borderRadius: 10}}>
-                        <View style={{ backgroundColor: '#FFFFFF', borderRadius: 12, padding: 15 }}>
-                            <View>
-                                <StyledHeader style={{ marginLeft: 5}}>{this.state.activeBook.name}</StyledHeader>
-                            </View>
-
-                            <ScrollView style={{ paddingBottom: 10 }}>
-                                <GridLayout
-                                    itemsPerRow={5}
-                                    renderItem={chapter => this.renderSingleChapterSelect(chapter)}
-                                    items={this.state.activeBook.chapters}
-                                />
-                            </ScrollView>
-                        </View>
-
-                        <Margin/>
+                <ScrollView style={[styles.gridContainer]}>
+                    <StyledText style={{ fontSize: 20, margin: 5}}>Old Testament</StyledText>
+                    <View style={[styles.grid]}>
+                        <GridLayout
+                            items={bible.slice(0, 38)}
+                            itemsPerRow={5}
+                            renderItem={this.renderGridItem}
+                            removeClippedSubviews={false}
+                        />
                     </View>
-                </Modal>
+
+                    <StyledText style={{ fontSize: 20, margin: 5}}>New Testament</StyledText>
+                    <View style={[styles.grid]}>
+                        <GridLayout
+                            items={bible.slice(39)}
+                            itemsPerRow={5}
+                            renderItem={this.renderGridItem}
+                            removeClippedSubviews={false}
+                        />
+                    </View>
+                </ScrollView>
             </View>
         )
     }
 }
 
-const styles = {
-    root: {
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        marginBottom: 10,
-        padding: 5,
-        height: 40
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#F8FAF9"
+    },
+
+    gridContainer: {
+        margin: 20,
+        /*shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,*/
+    },
+
+    grid: {
+        backgroundColor: "#FFFFFF",
+        margin: 0,
+        marginBottom: 20,
+        padding: 0
+    },
+
+    gridItem: {
+        borderWidth: 1,
+        borderColor: "#F0F0F0",
+        padding: 10,
+        backgroundColor: "#387ecb"
     }
-};
+});

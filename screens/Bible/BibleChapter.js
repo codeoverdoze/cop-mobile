@@ -1,36 +1,28 @@
 import React, { Component } from "react";
-import { View, StyleSheet, SafeAreaView, FlatList } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import GridLayout from "react-native-layout-grid";
-import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
+import {StyledHeader, StyledText} from "../../components/Typography";
 
+import Bible from "../../store/Bible";
 import BibleBar from "./components/BibleBar";
 
 
-import bible from "../../sample-data/bible-kjv.json";
-import Bible from "../../store/Bible";
+import bible from "../../sample-data/bible-kjv-shell.json";
 
 export default class extends Component{
-    constructor(props){
-        super(props);
-        // Event listener to reload changes in bible
-        const focusSubscription = this.props.navigation.addListener('willFocus', () => {
-            this.forceUpdate();
-        })
+    setBibleChapter(chapter){
+        Bible.setChapter(chapter);
+        this.props.navigation.navigate("BibleDashboard")
     }
 
-
-    renderVerses = (verse) => {
-        console.log(verse);
-        if (verse) {
+    renderGridItem = (item) => {
+        if (item) {
             return(
-                <View style={[styles.gridItem]}>
-                    <View style={{ alignSelf: "flex-start", paddingRight: 10}}>
-                        <StyledText style={{ color: "#ef5350"}}>{verse.index + 1}</StyledText>
+                <TouchableOpacity onPress={() => this.setBibleChapter(item)}>
+                    <View style={[styles.gridItem, { alignItems: "center"}]}>
+                        <StyledText style={{ fontSize: 20}}>{item}</StyledText>
                     </View>
-                    <View style={{ width: "90%"}}>
-                        <StyledText bible style={{ fontSize: 18}}>{verse.item}</StyledText>
-                    </View>
-                </View>
+                </TouchableOpacity>
             )
         }
     };
@@ -44,11 +36,9 @@ export default class extends Component{
         this.props.navigation.navigate("BibleChapter");
     }
 
-
     render() {
         // Finding bible book from data structure
         let selectedBook = Bible.getBook();
-        let selectedChapter = Bible.getChapter();
         let book = {};
         bible.map(bookCandidate => {
             if(bookCandidate.name === selectedBook){
@@ -63,10 +53,14 @@ export default class extends Component{
                     navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
                 />
                 <View style={[styles.gridContainer]}>
-                    <FlatList
-                        data={book.chapters[selectedChapter - 1]}
-                        renderItem={this.renderVerses}
-                    />
+                    <View style={[styles.grid]}>
+                        <GridLayout
+                            items={book.chapters}
+                            itemsPerRow={5}
+                            renderItem={this.renderGridItem}
+                            removeClippedSubviews={false}
+                        />
+                    </View>
                 </View>
             </View>
         )
@@ -77,13 +71,20 @@ export default class extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF",
-        paddingBottom: 60
+        backgroundColor: "#F8FAF9"
     },
 
     gridContainer: {
-        shadowColor: "#000",
         margin: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
 
     grid: {
@@ -94,7 +95,8 @@ const styles = StyleSheet.create({
     },
 
     gridItem: {
-        flexDirection: "row",
-        margin: 10
+        borderWidth: 1,
+        borderColor: "#F0F0F0",
+        padding: 10
     }
 });

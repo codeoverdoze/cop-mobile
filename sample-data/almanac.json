@@ -1,0 +1,2539 @@
+{
+  "January": [
+    {
+      "day": "TUE",
+      "occasion": "NEW YEAR'S DAY.",
+      "theme": "THE PRESENCE OF THE ALMIGHTY",
+      "readings": [
+        "Ex. 33:15-18",
+        "Mark 6:7-13",
+        "2 Cor. 6:1-10"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "God saw that it was good",
+      "readings": [
+        "Genesis 1:14-23"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "Let us make humankind in our image.",
+      "readings": [
+        "Genesis 1:24-31"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "You are free to eat of any tree but.",
+      "readings": [
+        "Genesis 2:1-14"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "They felt no shame.",
+      "readings": [
+        "Genesis 2:15-25"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "BSPG CONVENTION",
+      "theme": "Epiphany of the Lord CHRIST THE LIGHT TO ALL MEN.",
+      "readings": [
+        "Isaiah 60:1-6",
+        "Ephesians 3:1-12",
+        "Matthew 2:1-12"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Then the eyes of both of them was opened.",
+      "readings": [
+        "Gen. 3:1-13"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "The LORD God made garments and clothed them. ",
+      "readings": [
+        "Genesis 3:14-24"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Sin is crouching at your door. ",
+      "readings": [
+        "Genesis 4:1-16"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "God has granted me another child. ",
+      "readings": [
+        "Gen. 4:17-26"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Adam had a son in his own likeness.",
+      "readings": [
+        "Gen. 5:1-17"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Enoch walked with God. ",
+      "readings": [
+        "Genesis 5:18-32"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday after Epiphany",
+      "theme": "BAPTISM OF THE LORD.",
+      "readings": [
+        "Isaiah 43:1-7",
+        "Acts 8:14-17",
+        "Luke 3:15-17, 21-22"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "But Noah found favour in the eyes of the LORD.",
+      "readings": [
+        "Genesis 6:1-10"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "But I will establish my covenant with you.",
+      "readings": [
+        "Genesis 6:11-22"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "I have found you righteous in this generation.",
+      "theme": "",
+      "readings": [
+        "Genesis 7:1-10"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Nat. Children's Workers' Retreat.",
+      "theme": "Everything on dry land died.",
+      "readings": [
+        "Gen. 7:11-24"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Nat. Children's Workers' Retreat.",
+      "theme": "But God remembered Noah.",
+      "readings": [
+        "Gen. 8:1-12"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "National Children's Workers' Retreat.",
+      "theme": "So Noah came out, together with his sons and his wife and his sons' wives.",
+      "readings": [
+        "Genesis 8:13-22"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "2nd Sunday after Epiphany",
+      "theme": "THE WORKINGS OF GOD.",
+      "readings": [
+        "Isaiah 62:1-5",
+        "1 Corinthians 12: 1-11",
+        "John 2:1-11"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "BSPG Prayer & Fasting Week Begins.",
+      "theme": "The fear and dread of you will fall upon all the beasts.",
+      "readings": [
+        "Genesis 9:1-17"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "BSPG Prayer & Fasting  ",
+      "theme": "Noah awakes from his wine.",
+      "readings": [
+        "Genesis 9:18-29"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "BSPG Prayer & Fast. ",
+      "theme": "The account of Shem, Ham and Japheth.",
+      "readings": [
+        "Ge. 10:1-20"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "BSPG Prayer & Fasting",
+      "theme": "Do you know your roots?",
+      "readings": [
+        "Genesis 10:21-32"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "BSPG Pr. & Fast.",
+      "theme": "Come, so that we may make a name for ourselves.",
+      "readings": [
+        "Gen. 11:1-9"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "BSPG Prayer & Fasting.",
+      "theme": "What is your account?",
+      "readings": [
+        "Genesis 11:10-26"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "3rd Sun. after Epiphany",
+      "theme": "WORDS OF LIFE.",
+      "readings": [
+        "Neh.8: 4-10",
+        "Ps.19: 1-14",
+        "Lk.4:14-21"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Now Sarai was barren.",
+      "readings": [
+        "Genesis 11:27-32"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "I will bless you, and you will be a blessing.",
+      "readings": [
+        "Genesis 12:1-9"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Say you are my sister.",
+      "readings": [
+        "Genesis 12:10-20"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "The Canaanites and Perizzites were also living in the land.",
+      "readings": [
+        "Genesis 13:1-18"
+      ]
+    }
+  ],
+
+  "February": [
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Happy are those whose delight is in the law of the LORD.",
+      "readings": [
+        "Psalm 1"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Ask of me, and I will make the nations your heritage. ",
+      "readings": [
+        "Psalm 2"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "4th Sunday after Epiphany",
+      "theme": "ORDAINED TO BE A PROPHET",
+      "readings": [
+        "Jeremiah 1:4-10",
+        "1 Corinthians 13: 1-13",
+        "Luke 4:21-30"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "BIBLE WEEK BEGINS/YAF Evang. Week",
+      "theme": " But you, 0 LORD are a shield around me.",
+      "readings": [
+        "Psalm 3"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "Abaasua Prayer Retreat Starts/YAF Evangelism Week",
+      "theme": "But know that the LORD has set apart the faithful for himself.",
+      "readings": [
+        "Psalm 4"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Abaasua Prayer Retreat/YAF Evangelism Week",
+      "theme": " Lead me O LORD in your righteousness.",
+      "readings": [
+        "Psalm 5"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Abaasua Prayer Retreat/YAF Evang.",
+      "theme": " Week The LORD has heard my supplication.",
+      "readings": [
+        "Psalm 6"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Abaasua Retreat/YAF Evangelism Week/Women Workers' L'ship Course",
+      "theme": "O LORD my God, in you I take refuge.
+      ",
+      "readings": [
+        "Psalm 7"
+      ]
+    },
+    {{
+  "January": [
+    {
+      "day": "TUE",
+      "occasion": "NEW YEAR'S DAY.",
+      "theme": "THE PRESENCE OF THE ALMIGHTY",
+      "readings": [
+        "Ex. 33:15-18",
+        "Mark 6:7-13",
+        "2 Cor. 6:1-10"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "God saw that it was good",
+      "readings": [
+        "Genesis 1:14-23"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "Let us make humankind in our image.",
+      "readings": [
+        "Genesis 1:24-31"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "You are free to eat of any tree but.",
+      "readings": [
+        "Genesis 2:1-14"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "BSPG Presbytery Conv.",
+      "theme": "They felt no shame.",
+      "readings": [
+        "Genesis 2:15-25"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "BSPG CONVENTION",
+      "theme": "Epiphany of the Lord CHRIST THE LIGHT TO ALL MEN.",
+      "readings": [
+        "Isaiah 60:1-6",
+        "Ephesians 3:1-12",
+        "Matthew 2:1-12"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Then the eyes of both of them was opened.",
+      "readings": [
+        "Gen. 3:1-13"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "The LORD God made garments and clothed them. ",
+      "readings": [
+        "Genesis 3:14-24"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Sin is crouching at your door. ",
+      "readings": [
+        "Genesis 4:1-16"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "God has granted me another child. ",
+      "readings": [
+        "Gen. 4:17-26"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Nat. Ministers' Conf",
+      "theme": "Adam had a son in his own likeness.",
+      "readings": [
+        "Gen. 5:1-17"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Enoch walked with God. ",
+      "readings": [
+        "Genesis 5:18-32"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday after Epiphany",
+      "theme": "BAPTISM OF THE LORD.",
+      "readings": [
+        "Isaiah 43:1-7",
+        "Acts 8:14-17",
+        "Luke 3:15-17, 21-22"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "But Noah found favour in the eyes of the LORD.",
+      "readings": [
+        "Genesis 6:1-10"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "But I will establish my covenant with you.",
+      "readings": [
+        "Genesis 6:11-22"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "I have found you righteous in this generation.",
+      "theme": "",
+      "readings": [
+        "Genesis 7:1-10"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Nat. Children's Workers' Retreat.",
+      "theme": "Everything on dry land died.",
+      "readings": [
+        "Gen. 7:11-24"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Nat. Children's Workers' Retreat.",
+      "theme": "But God remembered Noah.",
+      "readings": [
+        "Gen. 8:1-12"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "National Children's Workers' Retreat.",
+      "theme": "So Noah came out, together with his sons and his wife and his sons' wives.",
+      "readings": [
+        "Genesis 8:13-22"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "2nd Sunday after Epiphany",
+      "theme": "THE WORKINGS OF GOD.",
+      "readings": [
+        "Isaiah 62:1-5",
+        "1 Corinthians 12: 1-11",
+        "John 2:1-11"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "BSPG Prayer & Fasting Week Begins.",
+      "theme": "The fear and dread of you will fall upon all the beasts.",
+      "readings": [
+        "Genesis 9:1-17"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "BSPG Prayer & Fasting  ",
+      "theme": "Noah awakes from his wine.",
+      "readings": [
+        "Genesis 9:18-29"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "BSPG Prayer & Fast. ",
+      "theme": "The account of Shem, Ham and Japheth.",
+      "readings": [
+        "Ge. 10:1-20"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "BSPG Prayer & Fasting",
+      "theme": "Do you know your roots?",
+      "readings": [
+        "Genesis 10:21-32"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "BSPG Pr. & Fast.",
+      "theme": "Come, so that we may make a name for ourselves.",
+      "readings": [
+        "Gen. 11:1-9"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "BSPG Prayer & Fasting.",
+      "theme": "What is your account?",
+      "readings": [
+        "Genesis 11:10-26"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "3rd Sun. after Epiphany",
+      "theme": "WORDS OF LIFE.",
+      "readings": [
+        "Neh.8: 4-10",
+        "Ps.19: 1-14",
+        "Lk.4:14-21"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Now Sarai was barren.",
+      "readings": [
+        "Genesis 11:27-32"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "I will bless you, and you will be a blessing.",
+      "readings": [
+        "Genesis 12:1-9"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Say you are my sister.",
+      "readings": [
+        "Genesis 12:10-20"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "The Canaanites and Perizzites were also living in the land.",
+      "readings": [
+        "Genesis 13:1-18"
+      ]
+    }
+  ],
+
+  "February": [
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Happy are those whose delight is in the law of the LORD.",
+      "readings": [
+        "Psalm 1"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Ask of me, and I will make the nations your heritage. ",
+      "readings": [
+        "Psalm 2"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "4th Sunday after Epiphany",
+      "theme": "ORDAINED TO BE A PROPHET",
+      "readings": [
+        "Jeremiah 1:4-10",
+        "1 Corinthians 13: 1-13",
+        "Luke 4:21-30"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "BIBLE WEEK BEGINS/YAF Evang. Week",
+      "theme": " But you, 0 LORD are a shield around me.",
+      "readings": [
+        "Psalm 3"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "Abaasua Prayer Retreat Starts/YAF Evangelism Week",
+      "theme": "But know that the LORD has set apart the faithful for himself.",
+      "readings": [
+        "Psalm 4"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Abaasua Prayer Retreat/YAF Evangelism Week",
+      "theme": " Lead me O LORD in your righteousness.",
+      "readings": [
+        "Psalm 5"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Abaasua Prayer Retreat/YAF Evang.",
+      "theme": " Week The LORD has heard my supplication.",
+      "readings": [
+        "Psalm 6"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Abaasua Retreat/YAF Evangelism Week/Women Workers' L'ship Course",
+      "theme": "O LORD my God, in you I take refuge.
+",
+      "readings": [
+        "Psalm 7"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "Abaasua Retreat/YAF Evangelism Week/Women Workers' L'ship Course",
+      "theme": "How majestic is your name in all the earth.",
+      "readings": [
+        "Psalm 8"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "BIBLE SUNDAY 5th Sunday after Epiphany.",
+      "theme": "BE A DISCIPLE OF CHRIST.",
+      "readings": [
+        "Isaiah 6:1-13",
+        "1 Corinthians 15:1-11",
+        "Luke 5:1-11"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "I will give thanks to the LORD with my whole heart.",
+      "readings": [
+        "Psalm 9:1-10"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "But the needy will not always be forgotten. ",
+      "readings": [
+        "Psalm 9:11-20"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "He says to himself, \"Nothing will shake me.\"  ",
+      "readings": [
+        "Psalm 10:1-10"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "But you, 0 God do see trouble and grief.  ",
+      "readings": [
+        "Psalm. 10:11-18"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "The LORD is on his heavenly throne. ",
+      "readings": [
+        "Psalm 11"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "And the words of the LORD are flawless.",
+      "readings": [
+        "Psalm 12"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "6th Sunday after Epiphany. BLESSINGS AND WOES OF DISCIPLESHIP. ",
+      "readings": [
+        "Jeremiah 17: 5-10",
+        "Psalm 1:1-6",
+        "Luke 6: 17- 26"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "CHILDREN'S WEEK BEGINS",
+      "theme": "How long, O LORD?",
+      "readings": [
+        "Psalm 13"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "The fool says in his heart, \"There is no God.\" ",
+      "readings": [
+        "Psalm 14"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Who may dwell in the LORD's sanctuary? ",
+      "readings": [
+        "Psalm 15"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Keep me safe, O God, for in you I take refuge. ",
+      "readings": [
+        "Psalm 16"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "I have resolved that my mouth will not sin.",
+      "readings": [
+        "Psalm 17:1-7"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Keep me as the apple of your eye.",
+      "readings": [
+        "Psalm. 17:8-15"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "CHILDREN'S SUNDAY",
+      "theme": "GO AND MAKE DISCIPLE OF ALL NATIONS: DISCIPLING THE CHILD.",
+      "readings": [
+        "Dan. 3: 8-18",
+        "2 Tim. 1:1-7",
+        "Matthew 28:18-20"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "The LORD is my rock, my fortress and my deliverer.",
+      "readings": [
+        "Psalm18:1-6"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "He rescued me from my powerful enemy.",
+      "readings": [
+        "Psalm 18:7-19"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "To the faithful, you show yourself faithful.",
+      "readings": [
+        "Psalm 18:20-36"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Committee on Specialized Ministries / JY National Assembly",
+      "theme": "The LORD lives! ",
+      "readings": [
+        "Psalm 18:40-50"
+      ]
+    }
+  ],
+
+  "March" : [
+    {
+      "day": "FRI",
+      "occasion": "JY National Assembly",
+      "theme": "In the beginning was the Word.",
+      "readings": [
+        "John 1:1-13"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "JY National Assembly",
+      "theme": "The Word became flesh and made his dwelling among us.",
+      "readings": [
+        "Jn 1:14-28"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "TRANSFIGURATION SUNDAY",
+      "theme": "LET THE GLORY OF THE LORD SHINE.",
+      "readings": [
+        "Exodus 34:29-35",
+        "2 Corinthians 3:12-18",
+        "Luke 9:28-36"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "I have seen and testify that this is the Son of God.",
+      "readings": [
+        "John 1:29-42"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Follow me.",
+      "readings": [
+        "John 1:43-51"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Ash Wednesday ACCEPTABLE SACRIFICE Fill the jars with water; so they filled them to the brim. John 2:1-11",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Then they believed the Scripture and the words that Jesus had spoken.",
+      "readings": [
+        "John 2:12-25"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "You must be born again.",
+      "readings": [
+        "John 3:1-21"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "He must become greater; I must become less.",
+      "readings": [
+        "John 3:22-36"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday in Lent",
+      "theme": "TRUTHFULNESS IN WORSHIP.",
+      "readings": [
+        "Deuteronomy 26: 1- 11",
+        "Romans 10: 8-13",
+        "Luke 4: 1- 13"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "GENERAL ASSEMBLY COUNCIL Youth & Students Week begins",
+      "theme": "A spring of water welling up to eternal life.",
+      "readings": [
+        "John 4:1-14"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "God is Spirit and his worshippers must worship in spirit and in truth.",
+      "readings": [
+        "John 4:15-26."
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "My food is to do the will of him who sent me and to finish his work.",
+      "readings": [
+        "John 4:27-42"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "GENERAL ASSEMBLY COUNCIL/Committee on Global Mission",
+      "theme": "The man took Jesus at his word and he departed.",
+      "readings": [
+        "John 4:43-54"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "GEN. ASSEM. COUNCIL",
+      "theme": "Get up! Pick up your mat and walk.",
+      "readings": [
+        "John 5:1-15"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "My Father is always at his work to this very day, and I too, am working.",
+      "readings": [
+        " Jn. 5:16-30"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "YOUTH & STUDENTS' SUN. 2nd Sunday in Lent.",
+      "theme": "DISCIPLING THE YOUTH TO DISCIPLE OTHERS.",
+      "readings": [
+        "1 Sam.3: 1-10",
+        "1 Cor. 4: 15-17",
+        "2 Tim. 2: 1-10"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "1 do not accept praise from human beings.  ",
+      "readings": [
+        "John 5:31-47"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Gather the pieces that are left over. Let nothing be wasted.",
+      "readings": [
+        "John 6:1-15"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "It is I; don't be afraid.",
+      "readings": [
+        "John 6:16-24"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Presbyters' National Conference",
+      "theme": "Do not work for food that spoils, but for food that endures to eternal life.",
+      "readings": [
+        "John 6:25-33"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Presbyters' National Conference",
+      "theme": "Jesus is the bread that came down from heaven.",
+      "readings": [
+        "John 6:34-59"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "Presbyters' National Conference ",
+      "theme": "Jesus purposefully stayed away from Judea because the Jews wanted to take his life.",
+      "readings": [
+        "John 7:1-13"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "3rd Sunday in Lent",
+      "theme": "LISTEN TO THE LORD AND LIVE.",
+      "readings": [
+        "Isaiah 55: 1 - 9",
+        "1 Corinthians 10: 1- 13",
+        "Luke 13: 1- 9"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Stop judging by mere appearances, and make a right judgment. ",
+      "readings": [
+        "Jn. 7:14-24"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Have the authorities concluded that he is the Christ? ",
+      "readings": [
+        "John 7:25-36"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "If anyone is thirsty, let him come to me and drink . ",
+      "readings": [
+        "John. 7:37-52"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Neither do I condemn you. Go now and leave your life of sin.",
+      "readings": [
+        "John 8:1-11"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "The one who sent me is with me; he has not left me alone. ",
+      "readings": [
+        "Jn. 8:12-30"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "DISTRICT SESSION COUNCIL",
+      "theme": "If you hold to my teaching, you are really my disciple. ",
+      "readings": [
+        "John 8:31-47"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "4th Sunday in Lent",
+      "theme": "INDEPENDENCE WITHOUT GOD IS SLAVERY.",
+      "readings": [
+        "Psalm 32: 1-11",
+        "2 Corinthians 5: 16 - 21",
+        "Luke 15: 11 - 24"
+      ]
+    }
+
+  ],
+
+  "April" : [
+    {
+      "day": "MON",
+      "occasion": "YOUNG ADULTS' WEEK BEGINS",
+      "theme": "They also carried off Abraham's nephew Lot since he lived in Sodom.",
+      "readings": [
+        "Genesis 14:1-12"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Then Abram gave Melchizedek a tenth of everything.",
+      "readings": [
+        "Genesis 14:13-24"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Do not be afraid; I am your shield.",
+      "readings": [
+        "Genesis 15:1-21"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "You shall name him Ishmael for the LORD has heard of your misery.",
+      "readings": [
+        "Gen. 16:1-16"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "I am God Almighty; walk before me and be blameless. ",
+      "readings": [
+        "Genesis 17:1-14"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Abraham fell facedown; he laughed.",
+      "readings": [
+        "Genesis 17:15-27."
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "5th Sunday in Lent.",
+      "theme": "YOUNG ADULTS' SUNDAY BUILDING A NEW NATION IN CHRIST.",
+      "readings": [
+        "Isaiah 43; 16-21",
+        "Philippians 3: 2 - 14",
+        "John 12: 1 - 8"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Is anything too hard for the LORD? ",
+      "readings": [
+        "Genesis 18:1-15"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Then Abraham interceded for Sodom and Gomorrah.",
+      "readings": [
+        "Genesis 18:16-33"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "This fellow came here as an alien and now he wants to play the judge.",
+      "readings": [
+        "Gen. 19:1-11."
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Flee for your lives! Don't look back and don't stop anywhere in the plain. ",
+      "readings": [
+        "Genesis 19:12-29"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "So both of Lot's daughters became pregnant by their father.",
+      "readings": [
+        "Genesis 19:30-38"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Then Abraham prayed to God.",
+      "readings": [
+        "Genesis 20:1-17."
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "PALM SUNDAY.",
+      "theme": "SUFFERING FOR A PURPOSE.",
+      "readings": [
+        "Isaiah 50: 4-9",
+        "Philippians 2: 5 -11",
+        "Luke 22: 14- 23"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "PASSION WEEK ",
+      "theme": "Sarah became pregnant and bore a son to Abraham in his old age.",
+      "readings": [
+        "Gen.21:1-7"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "PASSION WEEK",
+      "theme": "God heard the boy crying.",
+      "readings": [
+        "Genesis 21:8-21."
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "PASSION WEEK",
+      "theme": "God is with you in everything you do_",
+      "readings": [
+        "Genesis 21:22-34."
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "MAUDY THURSDAY",
+      "theme": "God himself will provide lithe lamb for the burnt offering.",
+      "readings": [
+        "Genesis 22:1-12"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "GOOD FRIDAY. DYING WITH CHRIST. Because you have done this, I will surely bless you. Genesis 22:13-24.",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "HOLY SATURDAY So Ephron's field in Machpelah was deeded to Abraham. Genesis 23:1-20",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "EASTER DAY.",
+      "theme": "CHRIST'S VICTORY OVER DEATH.",
+      "readings": [
+        "Psalm 118: 1-2, 14 - 24",
+        "1 Corinthians 15: 19- 26",
+        "Luke 24: 1- 12"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "EMMAUS DAY",
+      "theme": "Make sure you do not take my son back there.",
+      "readings": [
+        "Gen. 24:1-9"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "O LORD, God of my master Abraham, give me success today. ",
+      "readings": [
+        "Gen 24:10-21"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "As for me, the LORD has led me on my journey. ",
+      "readings": [
+        "Genesis 24:22-33"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "The LORD before whom I have walked will send his angel with you.",
+      "readings": [
+        "Gen. 24:34-49"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "This is from the LORD; we can say nothing to you one way or another.",
+      "readings": [
+        "Genesis 24:50-67"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "His sons Isaac and Ishmael buried him.",
+      "readings": [
+        "Genesis 25:1-11"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday after Easter. PRESBYTERY SUNDAY",
+      "theme": "STAND UP FOR JESUS.",
+      "readings": [
+        "Acts 5: 27- 32",
+        "Revelations 1: 4-8",
+        "John 20: 19-31"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "PRESBYTERIES SESSION",
+      "theme": "What account will be given about your descendants? ",
+      "readings": [
+        "Genesis 25:12-18"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "PRESBYTERIES SESSION",
+      "theme": "Isaac prayed to the LORD on behalf of his wife, because she was barren.",
+      "readings": [
+        "Genesis 25:19-34"
+      ]
+    }
+  ],
+
+  "May" : [
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    }
+  ]
+}
+      "day": "SAT",
+      "occasion": "Abaasua Retreat/YAF Evangelism Week/Women Workers' L'ship Course",
+      "theme": "How majestic is your name in all the earth.",
+      "readings": [
+        "Psalm 8"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "BIBLE SUNDAY 5th Sunday after Epiphany.",
+      "theme": "BE A DISCIPLE OF CHRIST.",
+      "readings": [
+        "Isaiah 6:1-13",
+        "1 Corinthians 15:1-11",
+        "Luke 5:1-11"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "I will give thanks to the LORD with my whole heart.",
+      "readings": [
+        "Psalm 9:1-10"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "But the needy will not always be forgotten. ",
+      "readings": [
+        "Psalm 9:11-20"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "He says to himself, \"Nothing will shake me.\"  ",
+      "readings": [
+        "Psalm 10:1-10"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "But you, 0 God do see trouble and grief.  ",
+      "readings": [
+        "Psalm. 10:11-18"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "The LORD is on his heavenly throne. ",
+      "readings": [
+        "Psalm 11"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "And the words of the LORD are flawless.",
+      "readings": [
+        "Psalm 12"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "6th Sunday after Epiphany. BLESSINGS AND WOES OF DISCIPLESHIP. ",
+      "readings": [
+        "Jeremiah 17: 5-10",
+        "Psalm 1:1-6",
+        "Luke 6: 17- 26"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "CHILDREN'S WEEK BEGINS",
+      "theme": "How long, O LORD?",
+      "readings": [
+        "Psalm 13"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "The fool says in his heart, \"There is no God.\" ",
+      "readings": [
+        "Psalm 14"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Who may dwell in the LORD's sanctuary? ",
+      "readings": [
+        "Psalm 15"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Keep me safe, O God, for in you I take refuge. ",
+      "readings": [
+        "Psalm 16"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "I have resolved that my mouth will not sin.",
+      "readings": [
+        "Psalm 17:1-7"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Keep me as the apple of your eye.",
+      "readings": [
+        "Psalm. 17:8-15"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "CHILDREN'S SUNDAY",
+      "theme": "GO AND MAKE DISCIPLE OF ALL NATIONS: DISCIPLING THE CHILD.",
+      "readings": [
+        "Dan. 3: 8-18",
+        "2 Tim. 1:1-7",
+        "Matthew 28:18-20"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "The LORD is my rock, my fortress and my deliverer.",
+      "readings": [
+        "Psalm18:1-6"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "He rescued me from my powerful enemy.",
+      "readings": [
+        "Psalm 18:7-19"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "To the faithful, you show yourself faithful.",
+      "readings": [
+        "Psalm 18:20-36"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Committee on Specialized Ministries / JY National Assembly",
+      "theme": "The LORD lives! ",
+      "readings": [
+        "Psalm 18:40-50"
+      ]
+    }
+  ],
+
+  "March" : [
+    {
+      "day": "FRI",
+      "occasion": "JY National Assembly",
+      "theme": "In the beginning was the Word.",
+      "readings": [
+        "John 1:1-13"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "JY National Assembly",
+      "theme": "The Word became flesh and made his dwelling among us.",
+      "readings": [
+        "Jn 1:14-28"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "TRANSFIGURATION SUNDAY",
+      "theme": "LET THE GLORY OF THE LORD SHINE.",
+      "readings": [
+        "Exodus 34:29-35",
+        "2 Corinthians 3:12-18",
+        "Luke 9:28-36"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "I have seen and testify that this is the Son of God.",
+      "readings": [
+        "John 1:29-42"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Follow me.",
+      "readings": [
+        "John 1:43-51"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Ash Wednesday ACCEPTABLE SACRIFICE Fill the jars with water; so they filled them to the brim. John 2:1-11",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Then they believed the Scripture and the words that Jesus had spoken.",
+      "readings": [
+        "John 2:12-25"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "You must be born again.",
+      "readings": [
+        "John 3:1-21"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "He must become greater; I must become less.",
+      "readings": [
+        "John 3:22-36"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday in Lent",
+      "theme": "TRUTHFULNESS IN WORSHIP.",
+      "readings": [
+        "Deuteronomy 26: 1- 11",
+        "Romans 10: 8-13",
+        "Luke 4: 1- 13"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "GENERAL ASSEMBLY COUNCIL Youth & Students Week begins",
+      "theme": "A spring of water welling up to eternal life.",
+      "readings": [
+        "John 4:1-14"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "God is Spirit and his worshippers must worship in spirit and in truth.",
+      "readings": [
+        "John 4:15-26."
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "My food is to do the will of him who sent me and to finish his work.",
+      "readings": [
+        "John 4:27-42"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "GENERAL ASSEMBLY COUNCIL/Committee on Global Mission",
+      "theme": "The man took Jesus at his word and he departed.",
+      "readings": [
+        "John 4:43-54"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "GEN. ASSEM. COUNCIL",
+      "theme": "Get up! Pick up your mat and walk.",
+      "readings": [
+        "John 5:1-15"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "My Father is always at his work to this very day, and I too, am working.",
+      "readings": [
+        " Jn. 5:16-30"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "YOUTH & STUDENTS' SUN. 2nd Sunday in Lent.",
+      "theme": "DISCIPLING THE YOUTH TO DISCIPLE OTHERS.",
+      "readings": [
+        "1 Sam.3: 1-10",
+        "1 Cor. 4: 15-17",
+        "2 Tim. 2: 1-10"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "1 do not accept praise from human beings.  ",
+      "readings": [
+        "John 5:31-47"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Gather the pieces that are left over. Let nothing be wasted.",
+      "readings": [
+        "John 6:1-15"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "It is I; don't be afraid.",
+      "readings": [
+        "John 6:16-24"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Presbyters' National Conference",
+      "theme": "Do not work for food that spoils, but for food that endures to eternal life.",
+      "readings": [
+        "John 6:25-33"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "Presbyters' National Conference",
+      "theme": "Jesus is the bread that came down from heaven.",
+      "readings": [
+        "John 6:34-59"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "Presbyters' National Conference ",
+      "theme": "Jesus purposefully stayed away from Judea because the Jews wanted to take his life.",
+      "readings": [
+        "John 7:1-13"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "3rd Sunday in Lent",
+      "theme": "LISTEN TO THE LORD AND LIVE.",
+      "readings": [
+        "Isaiah 55: 1 - 9",
+        "1 Corinthians 10: 1- 13",
+        "Luke 13: 1- 9"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Stop judging by mere appearances, and make a right judgment. ",
+      "readings": [
+        "Jn. 7:14-24"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Have the authorities concluded that he is the Christ? ",
+      "readings": [
+        "John 7:25-36"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "If anyone is thirsty, let him come to me and drink . ",
+      "readings": [
+        "John. 7:37-52"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Neither do I condemn you. Go now and leave your life of sin.",
+      "readings": [
+        "John 8:1-11"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "The one who sent me is with me; he has not left me alone. ",
+      "readings": [
+        "Jn. 8:12-30"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "DISTRICT SESSION COUNCIL",
+      "theme": "If you hold to my teaching, you are really my disciple. ",
+      "readings": [
+        "John 8:31-47"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "4th Sunday in Lent",
+      "theme": "INDEPENDENCE WITHOUT GOD IS SLAVERY.",
+      "readings": [
+        "Psalm 32: 1-11",
+        "2 Corinthians 5: 16 - 21",
+        "Luke 15: 11 - 24"
+      ]
+    }
+
+  ],
+
+  "April" : [
+    {
+      "day": "MON",
+      "occasion": "YOUNG ADULTS' WEEK BEGINS",
+      "theme": "They also carried off Abraham's nephew Lot since he lived in Sodom.",
+      "readings": [
+        "Genesis 14:1-12"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Then Abram gave Melchizedek a tenth of everything.",
+      "readings": [
+        "Genesis 14:13-24"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Do not be afraid; I am your shield.",
+      "readings": [
+        "Genesis 15:1-21"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "You shall name him Ishmael for the LORD has heard of your misery.",
+      "readings": [
+        "Gen. 16:1-16"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "I am God Almighty; walk before me and be blameless. ",
+      "readings": [
+        "Genesis 17:1-14"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Abraham fell facedown; he laughed.",
+      "readings": [
+        "Genesis 17:15-27."
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "5th Sunday in Lent.",
+      "theme": "YOUNG ADULTS' SUNDAY BUILDING A NEW NATION IN CHRIST.",
+      "readings": [
+        "Isaiah 43; 16-21",
+        "Philippians 3: 2 - 14",
+        "John 12: 1 - 8"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Is anything too hard for the LORD? ",
+      "readings": [
+        "Genesis 18:1-15"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Then Abraham interceded for Sodom and Gomorrah.",
+      "readings": [
+        "Genesis 18:16-33"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "This fellow came here as an alien and now he wants to play the judge.",
+      "readings": [
+        "Gen. 19:1-11."
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Flee for your lives! Don't look back and don't stop anywhere in the plain. ",
+      "readings": [
+        "Genesis 19:12-29"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "So both of Lot's daughters became pregnant by their father.",
+      "readings": [
+        "Genesis 19:30-38"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Then Abraham prayed to God.",
+      "readings": [
+        "Genesis 20:1-17."
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "PALM SUNDAY.",
+      "theme": "SUFFERING FOR A PURPOSE.",
+      "readings": [
+        "Isaiah 50: 4-9",
+        "Philippians 2: 5 -11",
+        "Luke 22: 14- 23"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "PASSION WEEK ",
+      "theme": "Sarah became pregnant and bore a son to Abraham in his old age.",
+      "readings": [
+        "Gen.21:1-7"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "PASSION WEEK",
+      "theme": "God heard the boy crying.",
+      "readings": [
+        "Genesis 21:8-21."
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "PASSION WEEK",
+      "theme": "God is with you in everything you do_",
+      "readings": [
+        "Genesis 21:22-34."
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "MAUDY THURSDAY",
+      "theme": "God himself will provide lithe lamb for the burnt offering.",
+      "readings": [
+        "Genesis 22:1-12"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "GOOD FRIDAY. DYING WITH CHRIST. Because you have done this, I will surely bless you. Genesis 22:13-24.",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "HOLY SATURDAY So Ephron's field in Machpelah was deeded to Abraham. Genesis 23:1-20",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "EASTER DAY.",
+      "theme": "CHRIST'S VICTORY OVER DEATH.",
+      "readings": [
+        "Psalm 118: 1-2, 14 - 24",
+        "1 Corinthians 15: 19- 26",
+        "Luke 24: 1- 12"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "EMMAUS DAY",
+      "theme": "Make sure you do not take my son back there.",
+      "readings": [
+        "Gen. 24:1-9"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "O LORD, God of my master Abraham, give me success today. ",
+      "readings": [
+        "Gen 24:10-21"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "As for me, the LORD has led me on my journey. ",
+      "readings": [
+        "Genesis 24:22-33"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "The LORD before whom I have walked will send his angel with you.",
+      "readings": [
+        "Gen. 24:34-49"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "This is from the LORD; we can say nothing to you one way or another.",
+      "readings": [
+        "Genesis 24:50-67"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "His sons Isaac and Ishmael buried him.",
+      "readings": [
+        "Genesis 25:1-11"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday after Easter. PRESBYTERY SUNDAY",
+      "theme": "STAND UP FOR JESUS.",
+      "readings": [
+        "Acts 5: 27- 32",
+        "Revelations 1: 4-8",
+        "John 20: 19-31"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "PRESBYTERIES SESSION",
+      "theme": "What account will be given about your descendants? ",
+      "readings": [
+        "Genesis 25:12-18"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "PRESBYTERIES SESSION",
+      "theme": "Isaac prayed to the LORD on behalf of his wife, because she was barren.",
+      "readings": [
+        "Genesis 25:19-34"
+      ]
+    }
+  ],
+
+  "May" : [
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "",
+      "readings": [
+        ""
+      ]
+    }
+  ]
+}

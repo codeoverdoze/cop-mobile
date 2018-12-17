@@ -17,7 +17,7 @@ class ListItem extends Component{
     render(){
         return(
            <View style={{ flex: 1}}>
-               <TouchableOpacity onPress={() => this.props.moveToNextScreen(this.props.item)}>
+               <TouchableOpacity>
                    <View style={styles.root}>
                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
                            <View style={{ flexDirection: 'row'}}>
