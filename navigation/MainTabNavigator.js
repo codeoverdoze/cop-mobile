@@ -20,12 +20,20 @@ import BibleChapter from '../screens/Bible/BibleChapter';
 // Hymnary Screen stack
 import HymnaryIndex from '../screens/Hymnary/Index';
 import SettingsScreen from '../screens/SettingsScreen';
-import TitheScreen from '../screens/TitheScreen';
 
 
 // Almanac Screen Stack
 import Almanac from "../screens/Almanac/Index";
-import AlmanacCalendar from "../screens/Almanac/Calendar"
+import AlmanacCalendar from "../screens/Almanac/Calendar";
+
+
+// Payments Screen Stack
+import PaymentDashboard from "../screens/Payments/Index"
+import PaymentPackages from "../screens/Payments/Packages";
+
+
+import Colors from "../constants/Colors";
+
 
 const AlmanacStack = createStackNavigator({
     AlmanacDashboard: Almanac,
@@ -40,12 +48,12 @@ const HomeStack = createStackNavigator({
 }, { headerMode: "none"});
 
 HomeStack.navigationOptions = {
-    tabBarLabel: 'Home',
+    tabBarLabel: "Home",
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
             name='home'
-            type='octicon'
+            type='feather'
         />
     ),
 };
@@ -59,8 +67,8 @@ HymnaryStack.navigationOptions = {
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
-            type='octicon'
-            name='book'
+            type='feather'
+            name='book-open'
         />
     ),
 };
@@ -77,23 +85,23 @@ BibleStack.navigationOptions = {
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
-            type='material-community'
+            type='feather'
             name='book'
         />
     ),
 };
 
-const TitheStack = createStackNavigator({
-    Tithe: TitheScreen,
-});
+const PaymentStack = createStackNavigator({
+    PaymentDashboard, PaymentPackages
+}, { headerMode: "null" });
 
-TitheStack.navigationOptions = {
+PaymentStack.navigationOptions = {
     tabBarLabel: 'Payments',
     tabBarIcon: ({focused}) => (
         <TabBarIcon
             focused={focused}
-            type='material-community'
-            name='coins'
+            type='feather'
+            name='credit-card'
         />
     ),
 };
@@ -108,7 +116,7 @@ SettingsStack.navigationOptions = {
         <TabBarIcon
             focused={focused}
             name='settings'
-            type='octicon'
+            type='feather'
         />
     ),
 };
@@ -117,6 +125,6 @@ export default createBottomTabNavigator({
     HomeStack,
     BibleStack,
     HymnaryStack,
-    TitheStack,
+    PaymentStack,
     SettingsStack,
-}, { tabBarOptions: { activeTintColor: '#000000', style: { backgroundColor: '#f6f6f7', }, animationEnabled: true} });
+}, { tabBarOptions: { activeTintColor: Colors.tintColor, style: { backgroundColor: '#f6f6f7', }, animationEnabled: true} });

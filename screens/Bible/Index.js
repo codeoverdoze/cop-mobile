@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, SafeAreaView, FlatList } from "react-native";
-import GridLayout from "react-native-layout-grid";
-import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
+import {StyledText } from "../../components/Typography";
 
 import BibleBar from "./components/BibleBar";
 
@@ -29,7 +28,7 @@ export default class extends Component{
                     </View>
                     <View style={{ width: "90%"}}>
                         <StyledText bible style={{ fontSize: 18}}>{verse.item}</StyledText>
-                    </View>
+                    </View>StyledTextInverse
                 </View>
             )
         }

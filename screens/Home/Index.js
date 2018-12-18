@@ -29,6 +29,13 @@ const BodyItem = props => (
 
 const list = [
     {
+        image: almanacImage,
+        title: "Almanac",
+        content: "Easy access to the almanac of the Presbyterian Church of Ghana. Preacher and Scripture Reader integration",
+        key: "6",
+        link: "Almanac"
+    },
+    {
         image: announcementImage,
         title: "Announcements and Notifications",
         content: "Announcements from Presbytery, District and Local. Reminders on Bible reading and preaching.",
@@ -69,14 +76,7 @@ const list = [
         title: "Payment Platform",
         content: "Pay your tithes , redeem pledges, offertory, make donations to your community.",
         key: "5",
-        link: "Tithe"
-    },
-    {
-        image: almanacImage,
-        title: "Almanac",
-        content: "Easy access to the almanac of the Presbyterian Church of Ghana. Preacher and Scripture Reader integration",
-        key: "6",
-        link: "Almanac"
+        link: "PaymentDashboard"
     },
 ];
 

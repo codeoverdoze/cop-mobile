@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import {View, StyleSheet, TouchableOpacity, ScrollView} from "react-native";
-import {StyledSubtitle, StyledText, StyledTextInverse, StyledHeader} from "../../components/Typography";
+import {View, StyleSheet, TouchableOpacity, ScrollView, Image} from "react-native";
+import {
+    StyledSubtitle,
+    StyledText,
+    StyledTextInverse,
+    StyledHeader,
+    StyledHeaderInverse
+} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 
@@ -146,22 +152,26 @@ export default class extends Component {
                 </View>
 
                 <ScrollView contentContainerStyle={[styles.body]}>
-                    <View style={[styles.bodyItem]}>
-                        <StyledHeader style={{ fontSize: 20, color: "#37474f"}}>Occasion</StyledHeader>
-                        <StyledText>{this.resolveAlmanacData(this.state.selectedAlmanac.occasion, "occasion")}</StyledText>
+                    <View style={[styles.providerCard, { backgroundColor: "#e53935"}]}>
+                        <View style={{ marginBottom: 10 }}>
+                            <StyledTextInverse style={{ fontSize: 20}}>Occasion</StyledTextInverse>
+                        </View>
+                        <StyledHeaderInverse style={{ fontSize: 17}}>{this.resolveAlmanacData(this.state.selectedAlmanac.occasion, "occasion")}</StyledHeaderInverse>
                     </View>
-
-                    <View style={[styles.bodyItem]}>
-                        <StyledHeader style={{ fontSize: 20, color: "#37474f"}}>Theme</StyledHeader>
-                        <StyledText>{this.resolveAlmanacData(this.state.selectedAlmanac.theme, "theme")}</StyledText>
+                    <View style={[styles.providerCard, { backgroundColor: "#01579b"}]}>
+                        <View style={{ marginBottom: 10 }}>
+                            <StyledTextInverse style={{ fontSize: 20}}>Theme</StyledTextInverse>
+                        </View>
+                        <StyledHeaderInverse style={{ fontSize: 17}}>{this.resolveAlmanacData(this.state.selectedAlmanac.theme, "theme")}</StyledHeaderInverse>
                     </View>
-
-                    <View style={[styles.bodyItem]}>
-                        <StyledHeader style={{ fontSize: 20, color: "#37474f"}}>Scriptures</StyledHeader>
+                    <View style={[styles.providerCard, { backgroundColor: "#e0e0e0"}]}>
+                        <View style={{ marginBottom: 10 }}>
+                            <StyledTextInverse style={{ fontSize: 20, color: "#37474f"}}>Scriptures</StyledTextInverse>
+                        </View>
                         {
                             this.resolveAlmanacData(this.state.selectedAlmanac.readings, "readings").map(item => {
                                 return(
-                                    <StyledText>{item}</StyledText>
+                                    <StyledHeaderInverse style={{ fontSize: 17, color: "#37474f"}}>{item}</StyledHeaderInverse>
                                 )
                             })
                         }
@@ -186,13 +196,27 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        marginTop: 15,
-        padding: 20,
-        backgroundColor: "#fafafa",
         height: "100%"
     },
 
+    providerCard: {
+        margin: 10,
+        marginBottom: 0,
+        height: 100,
+        padding: 20,
+        paddingTop: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+
+        elevation: 4,
+    },
+
     bodyItem: {
-        marginBottom: 10
+        marginBottom: 20
     }
 });

@@ -1,14 +1,14 @@
-import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import React, { Component } from 'react';
+import { View } from "react-native";
+import {StyledText} from "../components/Typography";
 
-export default class SettingsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'app.json',
-  };
 
+export default class SettingsScreen extends Component {
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return (
+        <View>
+          <StyledText>Hello Settings</StyledText>
+        </View>
+    );
   }
 }

@@ -1,5 +1,3 @@
-import {lang} from "moment";
-
 class Hymnary{
     constructor(){
         // Employing the singleton pattern to ensure only one instance of Bible
