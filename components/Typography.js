@@ -8,14 +8,17 @@ const StyledText = (props) => {
     if(props.bibleItalic){
         return <Text {...props} style={[{ fontFamily: 'bible-italic', color: '#3E4E5B' }, props.style ]} />;
     }
+    if(props.menu){
+        return <Text {...props} style={[{ fontFamily: 'regular', color: '#3E4E5B', fontSize: 13 }, props.style ]} />;
+    }
     return <Text {...props} style={[{ fontFamily: 'regular', color: '#3E4E5B' }, props.style ]} />;
 };
 
 const StyledHeader = (props) => {
     if(props.light){
-        return <Text {...props} h3 style={[{ fontFamily: 'light', color: '#000000' }, props.style ]} />;
+        return <Text {...props} h3 style={[{ fontFamily: 'light', color: '#3E4E5B' }, props.style ]} />;
     }
-    return <Text {...props} h3 style={[{ fontFamily: 'bold', color: '#000000' }, props.style ]} />;
+    return <Text {...props} h3 style={[{ fontFamily: 'bold', color: '#3E4E5B' }, props.style ]} />;
 };
 
 const StyledSubtitle = (props) => {
