@@ -119,4 +119,4 @@ export default createBottomTabNavigator({
     HymnaryStack,
     TitheStack,
     SettingsStack,
-}, { tabBarOptions: { activeTintColor: '#000000', style: { backgroundColor: '#F6F6F7', }, animationEnabled: true} });
+}, { tabBarOptions: { activeTintColor: '#000000', style: { backgroundColor: '#f6f6f7', }, animationEnabled: true} });

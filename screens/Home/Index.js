@@ -6,6 +6,7 @@ const announcementImage = require("../../assets/images/announcement-bg.jpg");
 const membershipRegistrationImage = require("../../assets/images/news-bg.png");
 const bibleStudyGuideImage = require("../../assets/images/bible-study-guide.png");
 const paymentImage = require("../../assets/images/payment-bg.jpg");
+const almanacImage = require("../../assets/images/almanac.jpg");
 const hymnalImage = require("../../assets/images/hymnal-bg.gif");
 const liturgicalOrderImage = require("../../assets/images/liturgical-order.jpg");
 
@@ -71,10 +72,10 @@ const list = [
         link: "Tithe"
     },
     {
-        image: paymentImage,
+        image: almanacImage,
         title: "Almanac",
-        content: "Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor.",
-        key: "5",
+        content: "Easy access to the almanac of the Presbyterian Church of Ghana. Preacher and Scripture Reader integration",
+        key: "6",
         link: "Almanac"
     },
 ];

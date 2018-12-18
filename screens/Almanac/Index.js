@@ -58,11 +58,11 @@ export default class extends React.Component {
                 <View style={[styles.header]}>
                     <View style={{ paddingLeft: 20}}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
-                            <Ionicons name={"ios-arrow-round-back"} size={30} color="#FFFFFF" style={{ justifyContent: "center"}}/>
+                            <Ionicons name={"ios-arrow-back"} size={25} color="#FFFFFF" style={{ justifyContent: "center"}}/>
                         </TouchableOpacity>
                     </View>
 
-                    <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Almanac</StyledTextInverse>
+                    <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Almanac by month</StyledTextInverse>
 
                     <View style={{ paddingRight: 20}}/>
                 </View>
