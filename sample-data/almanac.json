@@ -908,8 +908,8 @@
     },
     {
       "day": "FRI",
-      "occasion": "",
-      "theme": "GOOD FRIDAY. DYING WITH CHRIST. Because you have done this, I will surely bless you. Genesis 22:13-24.",
+      "occasion": "GOOD FRIDAY. DYING WITH CHRIST.",
+      "theme": "Because you have done this, I will surely bless you. Genesis 22:13-24.",
       "readings": [
         ""
       ]
@@ -1786,7 +1786,7 @@
     {
       "day": "THU",
       "occasion": "'Encounter' Retreat at Chirapatre",
-      "theme": " Show me my me s end and the number of my days.  ",
+      "theme": " Show me my life's end and the number of my days.  ",
       "readings": [
         "Psalm 39"
       ]
@@ -2046,303 +2046,1040 @@
   "September" : [
     {
       "day": "SUN",
-      "occasion": "",
-      "theme": "",
+      "occasion": "11th Sunday after Trinity",
+      "theme": "YOU MUST BE READY",
       "readings": [
-        ""
+        "Genesis 15:1-6",
+        "Hebrews 11:8-16",
+        "Luke 12:35-40"
       ]
     },
     {
       "day": "MON",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NOM WEEK BEGINS NAT. CHAP. CONF",
+      "theme": "When he had finished praying, Jesus left with his disciples and crossed the Kidron valley. ",
       "readings": [
-        ""
+        "John 18:1-14"
       ]
     },
     {
       "day": "TUE",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NATIONAL CHAPLAINCY CONF",
+      "theme": "'You are not one of His disciples, are you?' Peter replied, 'I am not.'",
       "readings": [
-        ""
+        " John 18:15-27"
       ]
     },
     {
       "day": "WED",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NAT. CHAPLAINCY CONF",
+      "theme": "My kingdom is not of this world.",
       "readings": [
-        ""
+        "John 18:28-40"
       ]
     },
     {
       "day": "THU",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NAT. CHAPLAINCY CONF",
+      "theme": "Then Pilate took Jesus and had him flogged.",
       "readings": [
-        "",
-        "",
-        ""
+        "John. 19:1-16"
       ]
     },
     {
       "day": "FRI",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NATIONAL CHAPLAINCY CONF",
+      "theme": "So the soldiers took charge of Jesus. Carrying Ilis own cross, He went out to Golgotha.",
       "readings": [
-        ""
+        "John 19:17-27"
       ]
 
     },
     {
       "day": "SAT",
-      "occasion": "",
-      "theme": "",
+      "occasion": "DIS. SESS. C'CIL",
+      "theme": " When he had received the drink, Jesus said 'It is finished.'",
       "readings": [
-        ""
+        "John 19:28-42"
       ]
 
     },
     {
       "day": "SUN",
-      "occasion": "",
-      "theme": "",
+      "occasion": "NOM SUNDAY 12th Sunday after Trinity.",
+      "theme": " KNOWING THE TIMES.",
       "readings": [
-        ""
+        "Jeremiah 23: 23-29",
+        "Hebrews 11:32-40",
+        "Luke 12; 54-59"
       ]
     },
     {
       "day": "MON",
       "occasion": "",
-      "theme": "",
+      "theme": "Mary Magdalene went to the tomb and saw that the stone had been removed from the entrance.",
       "readings": [
-        ""
+        "John 20:1-18"
       ]
     },
     {
       "day": "TUE",
       "occasion": "",
-      "theme": "",
+      "theme": "Jesus came and stood among them and said, 'Peace be with you.'",
       "readings": [
-        ""
+        "John 20:19-31 "
       ]
     },
     {
       "day": "WED",
       "occasion": "",
-      "theme": "",
+      "theme": "Afterward Jesus appeared again to his disciples, by the Sea of Tiberias, ",
       "readings": [
-        ""
+        "John 21:1-14"
       ]
     },
     {
       "day": "THU",
       "occasion": "",
-      "theme": "",
+      "theme": "Do you love me more than thee?",
       "readings": [
-        "",
-        "",
-        ""
+        "John 21:15-25"
       ]
     },
     {
       "day": "FRI",
       "occasion": "",
-      "theme": "",
+      "theme": "And you also are among those who are called to belong to Jesus Christ.",
       "readings": [
-        ""
+        "Rom. 1:1-17"
       ]
 
     },
     {
       "day": "SAT",
       "occasion": "",
-      "theme": "",
+      "theme": "For since the creation of the world God's invisible qualities have been clearly seen.",
       "readings": [
-        ""
+        "Rom.1:18-32"
       ]
 
     },
     {
       "day": "SUN",
-      "occasion": "",
-      "theme": "",
+      "occasion": "FLOWER SERVICE 13TH Sunday after Trinity.",
+      "theme": "GOD'S LOVE AND CHURCH TRADITION. ",
       "readings": [
-        ""
+        "Isaiah 58:9-14",
+        "Hebrew 12:18-29",
+        "Luke 13:10-17"
       ]
     },
     {
       "day": "MON",
       "occasion": "",
-      "theme": "",
+      "theme": "You, therefore, have no excuse, you who pass judgment on someone else. ",
       "readings": [
-        ""
+        "Rom. 2:1-16"
       ]
     },
     {
       "day": "TUE",
       "occasion": "",
-      "theme": "",
+      "theme": "You who say that people should not commit adultery, do you commit adultery?",
       "readings": [
-        ""
+        "Romans 2:17-29"
       ]
     },
     {
       "day": "WED",
       "occasion": "",
-      "theme": "",
+      "theme": "We have already made the charge that Jews and Gentiles alike are all under sin. ",
       "readings": [
-        ""
+        "Romans 3:1-20"
       ]
     },
     {
       "day": "THU",
       "occasion": "",
-      "theme": "",
+      "theme": "Is God the God of the Jews only? Is He not the God of the Gentiles too? Yes, of Gentiles too. ",
       "readings": [
-        "",
-        "",
-        ""
+        "Romans 3:21-31"
       ]
     },
     {
       "day": "FRI",
       "occasion": "",
-      "theme": "",
+      "theme": "Against all hope, Abraham in hope believed and so became the father of many nations. ",
       "readings": [
-        ""
+        "Romans 4:1-25"
       ]
 
     },
     {
       "day": "SAT",
-      "occasion": "",
-      "theme": "",
+      "occasion": "DISTRICT SESSION COUNCIL",
+      "theme": "Therefore since we have been justified through faith, we have peace with God through our Lord. ",
       "readings": [
-        ""
+        "Romans 5:1-11"
       ]
 
     },
     {
       "day": "SUN",
-      "occasion": "",
-      "theme": "",
+      "occasion": "14th Sunday after Trinity.",
+      "theme": " HUMILITY BRINGS EXALTATION.",
       "readings": [
-        ""
+        "Proverbs 25:6-7",
+        "Hebrews 13: 1-8",
+        "Luke 14: 7-14"
       ]
     },
     {
       "day": "MON",
-      "occasion": "",
-      "theme": "",
+      "occasion": "BLUE CROSS WEEK BEGINS",
+      "theme": " The judgment followed one sin and brought condemnation, but the gift followed many trespasses and brought justification.",
       "readings": [
-        ""
+        "Romans 5:12-21"
       ]
     },
     {
       "day": "TUE",
       "occasion": "",
-      "theme": "",
+      "theme": "Shall we go on sinning so that grace may increase? By no means! ",
       "readings": [
-        ""
+        "Rom. 6:1-14"
       ]
     },
     {
       "day": "WED",
       "occasion": "",
-      "theme": "",
+      "theme": "Shall we sin because we are not under the law by grace? By no means!  ",
       "readings": [
-        ""
+        "Rom. 6:15-23"
       ]
     },
     {
       "day": "THU",
       "occasion": "",
-      "theme": "",
+      "theme": "What shall we say, then? Is the law sin? Certainly not! ",
       "readings": [
-        "",
-        "",
-        ""
+        " Romans 7:1-13"
       ]
     },
     {
       "day": "FRI",
       "occasion": "",
-      "theme": "",
+      "theme": "I do not understand what I do. For what I want to do I do not do, but what 1 hate do. ",
       "readings": [
-        ""
+        "Rom. 7:14-25"
       ]
 
     },
     {
       "day": "SAT",
       "occasion": "",
-      "theme": "",
+      "theme": "Therefore, there is no condemnation for those who are in Christ Jesus.",
       "readings": [
-        ""
+        "Rum. 8:1-17"
       ]
 
     },
     {
       "day": "SUN",
-      "occasion": "",
-      "theme": "",
+      "occasion": "BLUE CROSS SUNDAY. 15th' Sunday alter Trinity.",
+      "theme": " GO AND MAKE DISCIPLES OF ALL NATIONS; DISCIPLING ALCOHOL AND OTHER DRUG ADDICTS.",
       "readings": [
-        ""
+        "Jonah 3: 6-10",
+        "Jude 1: 17-23",
+        "Matt. 28: 19-20"
       ]
     },
     {
       "day": "MON",
       "occasion": "",
-      "theme": "",
+      "theme": "But if we hope for what we do not yet have, we wait for it patiently. ",
       "readings": [
-        ""
+        "Rom. 8:18-39"
       ]
-    },
+    }
+
+  ],
+
+  "October": [
     {
       "day": "TUE",
       "occasion": "",
-      "theme": "",
+      "theme": "Joseph had a dream. ",
       "readings": [
-        ""
+        "Genesis 37:1-11"
       ]
     },
     {
       "day": "WED",
       "occasion": "",
-      "theme": "",
+      "theme": "Joseph went after his brothers and found them.",
       "readings": [
-        ""
+        "Genesis 37:12-36 "
       ]
     },
     {
       "day": "THU",
       "occasion": "",
-      "theme": "",
+      "theme": "Judah recognized them and said 'She is more righteous than I.'",
       "readings": [
-        "",
-        "",
-        ""
+        "Genesis 38:1-30"
       ]
     },
     {
       "day": "FRI",
       "occasion": "",
-      "theme": "",
+      "theme": "The LORD was with Joseph and he prospered.",
       "readings": [
-        ""
+        "Genesis 39:1-10"
       ]
 
     },
     {
       "day": "SAT",
       "occasion": "",
-      "theme": "",
+      "theme": "But while Joseph was in the prison, the LORD was with him.",
       "readings": [
-        ""
+        "Gen. 39:11-23"
       ]
 
+    },
+    {
+      "day": "SUN",
+      "occasion": "WORLDWIDE COMMUNION SUNDAY. 16th Sunday after Trinity",
+      "theme": "REPENTANCE.",
+      "readings": [
+        "Psalm 51: 1-10",
+        "1 Timothy 1: 12-17",
+        "Luke 15: 1-10"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "EDUCATION WEEK BEGINS",
+      "theme": "Do not interpretations belong to God? ",
+      "readings": [
+        "Genesis 40:1-23"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Today I am reminded of my shortcomings.",
+      "readings": [
+        "Genesis 41:1-13"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "I cannot do it, but God will give Pharaoh the answer. ",
+      "readings": [
+        "Genesis 41:14-40"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Joseph was put in charge of the whole land of Egypt.",
+      "readings": [
+        "Genesis 41:41-57"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Joseph's brothers bowed down to him.",
+      "readings": [
+        "Genesis 42:1-24"
+      ]
+
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Joseph gave orders to fill their bags with grain. ",
+      "readings": [
+        "Genesis 42:25-38 "
+      ]
+
+    },
+    {
+      "day": "SUN",
+      "occasion": "EDUCATION SUNDAY. 17th Sunday after Trinity.",
+      "theme": " YOU CANNOT SERVE COD AND WEALTH.",
+      "readings": [
+        "Amos 8: 4-7",
+        "1Timothy 6: 6-10",
+        "Luke 16: 1-13"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "And may God Almighty grant you mercy before the man.",
+      "readings": [
+        "Genesis 43:1-16"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Your God, the God of your father, has given you treasure in your sacks.",
+      "readings": [
+        "Genesis 43:17-34"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Why have you repaid good with evil?",
+      "readings": [
+        "Genesis 44:1-13"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Bring him down to me so I can see him for myself.",
+      "readings": [
+        "Genesis 44:14-34"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Joseph said to his brothers, 'I am Joseph.' ",
+      "readings": [
+        "Genesis 45:1-24"
+      ]
+
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "They told Jacob, 'Joseph is still alive!' ",
+      "readings": [
+        "Genesis 45:25-46:7"
+      ]
+
+    },
+    {
+      "day": "SUN",
+      "occasion": "CHILDREN'S HARVEST. 18th Sunday after Trinity",
+      "theme": " A DISCIPLE GIVES.",
+      "readings": [
+        "1 Kings 17:8-16",
+        "Acts 16: 13-15, 40",
+        "Luke 9: 36-42"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "School of Evangelism/MUSIC WEEK BEGINS",
+      "theme": "The members of Jacob's family which went to Egypt were seventy in all.",
+      "readings": [
+        "Genesis 46:8-27"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "School of Evangelism",
+      "theme": " Pharaoh said to Joseph, ‘Settle your father in the best pad of the land.’",
+      "readings": [
+        "Genesis 46:28-47:12"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "School of Evangelism",
+      "theme": " All Egypt came to Joseph and said, 'Give us food.'",
+      "readings": [
+        "Genesis 47:13-31"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "School of Evangelism",
+      "theme": " I know, my son, I know. ",
+      "readings": [
+        "Genesis 48:1-22"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "School of Evangelism",
+      "theme": "Jacob called for his sons.",
+      "readings": [
+        "Genesis 49:1-12"
+      ]
+
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Jacob blessed them. ",
+      "readings": [
+        "Genesis 49:13-21"
+      ]
+
+    },
+    {
+      "day": "SUN",
+      "occasion": "REFORMATION SUNDAY/MUSIC SUNDAY 19th Sunday after Trinity.",
+      "theme": " HAVE FAITH IN THE LORD.",
+      "readings": [
+        "Hab. 2: 1-4",
+        "2 Tim. 1: 5-12",
+        "Luke 17: 5-10"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "He blessed them, giving the blessings appropriate to him. ",
+      "readings": [
+        "Genesis 49:22-28"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Jacob drew his feet up, breathed his last and was gathered to his people. ",
+      "readings": [
+        "Genesis 49:29-50:14"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "I ask you to forgive your brothers the sins and wrongs they committed in treating you badly.",
+      "readings": [
+        "Genesis 50:15-2"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "God will surely come to your aid.",
+      "readings": [
+        "Genesis 50:22-26"
+      ]
+    }
+
+  ],
+
+  "November": [
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "-All Saints Day/CWM Meeting My soul thirsts for you. ",
+      "readings": [
+        "Psalm 63"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Let the righteous rejoice in the LORD and take refuge in him. ",
+      "readings": [
+        "Psalm 64"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "20th Sunday after Trinity",
+      "theme": "GIVE THANKS TO GOD IN ALL THINGS.",
+      "readings": [
+        "Psalm 66: 1-12",
+        "1 Thessalonians 5: 16- 18",
+        "Luke 6: 20-23"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "O you who hear prayer, to you all flesh shall come.  ",
+      "readings": [
+        "Psalm 65"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": " Shout with joy to God.  ",
+      "readings": [
+        "Psalm 66"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": " May God be gracious to us and bless us.",
+      "readings": [
+        "Psalm 67"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "GENERAL ASSEMBLY COUNCIL",
+      "theme": "A father to the fatherless, a defender of widows. ",
+      "readings": [
+        "Psalm 68:1-19"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Our God is a God who saves.",
+      "readings": [
+        "Psalm 68:20-35"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Save me 0 God for the waters have come to my neck.",
+      "readings": [
+        "Psalm 69:1-15"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "21 Sunday after Trinity",
+      "theme": " THE LORD OUR GOD IS JUST.",
+      "readings": [
+        "Psalm 121: 1-8",
+        "2 Timothy 4: 1-5",
+        "Luke 18; 1-8"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Answer me, 0 LORD.",
+      "readings": [
+        "Psalm 69:16-29"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "You who seek God, may your hearts live!",
+      "readings": [
+        "Psalm 69:30-36"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "May those who seek my life be put to shame and confusion.",
+      "readings": [
+        "Psalm 70"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "In you, 0 LORD, I have taken refuge.",
+      "readings": [
+        "Psalm 71: 1-16"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Even when I am old and gray, do not forsake me.",
+      "readings": [
+        "Psalm 71:17-24"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "All nations will be blessed through him.",
+      "readings": [
+        "Psalm 72"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "22nd Sunday after Trinity",
+      "theme": "GOD IS MERCIFUL.",
+      "readings": [
+        "Joel 2:23-32",
+        "2 Timothy 4: 6-8",
+        "Luke 18: 9-14"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "Committee on Evangelism.",
+      "theme": " Everything is meaningless.",
+      "readings": [
+        "Ecclesiastes 1"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "Evangelism Consultation.",
+      "theme": " A chasing after the wind.",
+      "readings": [
+        "Ecclesiastes 2"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Evangelism Consultation.",
+      "theme": " There is a time for everything.",
+      "readings": [
+        "Ecclesiastes 3"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "Evangelism Consultation.",
+      "theme": " Two are better than one; if they fall down, one will lift the other. ",
+      "readings": [
+        "Ecclesiastes 4"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Whoever loves money never has money enough. ",
+      "readings": [
+        "Ecclesiastes 5"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "All human toil is for the mouth, yet the appetite is not satisfied.",
+      "readings": [
+        "Ecclesiastes 6"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "23rd Sunday after Trinity",
+      "theme": "HE CAME TO SEEK AND TO SAVE THE LOST.",
+      "readings": [
+        "Isaiah I: 10-18",
+        "Psalm 32: 1-7",
+        "Luke 19: 1-10"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "AGED WEEK BEGINS.",
+      "theme": "A good name is better than precious ointment.",
+      "readings": [
+        "Eccl 7"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "No one has power over the day of his death.",
+      "readings": [
+        "Ecclesiastes 8"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Whatever your hand finds to do, do it with all your might. ",
+      "readings": [
+        "Ecclesiastes 9"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Whoever quarries stones will be hurt by them.",
+      "readings": [
+        "Ecclesiastes 10"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Whoever observes the wind will not sow.",
+      "readings": [
+        "Ecclesiastes 11"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Remember your Creator while you have life.",
+      "readings": [
+        "Ecclesiastes 12"
+      ]
+    }
+  ],
+  "December": [
+    {
+      "day": "SUN",
+      "occasion": "AGED SUNDAY 1st Sunday of Advent",
+      "theme": " AWAKE AND KEEP WATCH FOR HIS COMING.",
+      "readings": [
+        "Psalm 122: 1-9",
+        "Romans 13: 11-14",
+        "Matthew 24: 36.44"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Jesus the son of David, the son of Abraham.",
+      "readings": [
+        "Matthew 1:1-17"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Mary was found to be with child through the Holy Spirit.",
+      "readings": [
+        "Matthew 1:18-24"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Jesus was born in Bethlehem.",
+      "readings": [
+        "Matthew 2:1-23"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "John came preaching repentance of sin.",
+      "readings": [
+        "Matthew 3:1-17"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "DIST. SESSION",
+      "theme": "Jesus was tempted after his baptism.  ",
+      "readings": [
+        "Matthew 4:1-17"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "DISTRICT SESSION",
+      "theme": " Jesus said, 'Come follow me'.",
+      "readings": [
+        "Matthew 4:18-2"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "DISTRICT SESSION SUNDAY. 2nd Sunday of Advent",
+      "theme": "HOPE FOR THE LOST WORLD.",
+      "readings": [
+        "Isaiah 11:1-10",
+        "Romans 15: 4-13",
+        "Matthew 3: 1-12"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Blessed are you. ",
+      "readings": [
+        "Matthew 5:1-16"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Do not think that I have come to abolish the Law or the Prophets.",
+      "readings": [
+        "Mt. 5:17-30"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "",
+      "theme": "Keep the oaths you have made before the Lord.",
+      "readings": [
+        "Matthew 5:31-47"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "When you give to the needy, do not let your left hand know what your right hand is doing.",
+      "readings": [
+        "Mt. 6:1-15"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "When you fast, do not look somber. ",
+      "readings": [
+        "Matthew 6:16-34"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you. ",
+      "readings": [
+        "Matthew 7:1-14"
+      ]
+    },{
+      "day": "SUN",
+      "occasion": "PRESBYTERIAN SUNDAY. NATIONAL AWARDS DAY. 3rd Sun. of Advent",
+      "theme": " BEHOLD YOUR PROMISED REDEEMER ",
+      "readings": [
+        "Is. 35: 1-10",
+        "Lk. 1; 46- 55",
+        "Mt. 1: 18-25"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "Watch out for false prophets.",
+      "readings": [
+        "Matthew 7:15-29"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Just say the word and my servant will be healed.",
+      "readings": [
+        "Matthew 8:1-17"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "Presbyterian Day.",
+      "theme": "The Son of Man has no place to lay his head.",
+      "readings": [
+        "Mt. 8:18-34"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "",
+      "theme": "Get up, take your mat and go home. ",
+      "readings": [
+        "Matthew 9:1-17"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Your faith has healed you.",
+      "readings": [
+        "Matthew 9:18-38"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "Freely you have received, freely give.",
+      "readings": [
+        "Matthew 10:1-20"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "4th Sunday of Advent",
+      "theme": "THE HOLY ONE OF GOD IN YOUR MIDST.",
+      "readings": [
+        "Isaiah 7: 10-16",
+        "Romans 1: 1-7",
+        "Matthew 1: 18-25"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "He who stands firm to the end will be saved.",
+      "readings": [
+        "Matthew 10:21-42"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "",
+      "theme": "Go back and report what you hear and see.",
+      "readings": [
+        "Matthew 11:1-19"
+      ]
+    },
+    {
+      "day": "WED",
+      "occasion": "CHRISTMAS DAY .",
+      "theme": "SHALOM: Come to me all who are weary and I will give you rest. ",
+      "readings": [
+        "Matthew 11:20-30"
+      ]
+    },
+    {
+      "day": "THU",
+      "occasion": "St. Stephens Day ",
+      "theme": "SUFFERING FOR THE SAKE OF GOD'S KINGDOM: The Son of Man is Lord of the Sabbath.",
+      "readings": [
+        "Matthew 12:1-21"
+      ]
+    },
+    {
+      "day": "FRI",
+      "occasion": "",
+      "theme": "Every kingdom divided against itself will be mined.",
+      "readings": [
+        "Matthew 12:22-37"
+      ]
+    },
+    {
+      "day": "SAT",
+      "occasion": "",
+      "theme": "A wicked and adulterous generation asks for a miraculous sign! ",
+      "readings": [
+        "Mt. 12:38-50"
+      ]
+    },
+    {
+      "day": "SUN",
+      "occasion": "1st Sunday after Christmas",
+      "theme": "IMMANUEL, GOD IS WITH US.",
+      "readings": [
+        "Psalm 148: 1-14",
+        "Hebrews 2: 10-18",
+        "Matthew 2: 13-23"
+      ]
+    },
+    {
+      "day": "MON",
+      "occasion": "",
+      "theme": "A farmer went out to sow his seed.",
+      "readings": [
+        "Matthew 13:1-23"
+      ]
+    },
+    {
+      "day": "TUE",
+      "occasion": "WATCHNIGHT SERVICE",
+      "theme": "PRESSING ON TO THE GOAL: What the kingdom of heaven is like.",
+      "readings": [
+        "Matthew 13:24-58"
+      ]
     }
   ]
 

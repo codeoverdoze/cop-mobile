@@ -72,7 +72,7 @@ export default class extends Component {
     }
 
     navigateToPackageSelectionScreen(provider){
-        this.selectPaymentProvider(provider.name);
+        this.selectPaymentProvider(provider.id);
         this.props.navigation.navigate("PaymentPackages", { provider })
     }
 

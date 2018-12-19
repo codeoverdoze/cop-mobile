@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import {View, StyleSheet, TouchableOpacity, ScrollView, Image} from "react-native";
-import {
-    StyledSubtitle,
-    StyledText,
-    StyledTextInverse,
-    StyledHeader,
-    StyledHeaderInverse
-} from "../../components/Typography";
+import {StyledTextInverse, StyledHeaderInverse} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 
@@ -196,7 +190,8 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        height: "100%"
+        height: "100%",
+        paddingBottom: 100
     },
 
     providerCard: {

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {TouchableOpacity, View, Image, FlatList} from "react-native";
 import {EvilIcons, Ionicons} from "@expo/vector-icons";
 import {StyledTextInverse, StyledHeader, StyledHeaderInverse} from "../../components/Typography";
+import Payment from "../../store/Payment";
 
 
 const packages = [
@@ -24,9 +25,19 @@ export default class extends Component {
     }
 
 
+    setPackage(packageName){
+        Payment.setPackage(packageName);
+        console.log(Payment.getPackage());
+    }
+
+    navigateToOrderScreen(packageDetails){
+        this.setPackage(packageDetails.id);
+        this.props.navigation.navigate("PaymentOrder", { package: packageDetails})
+    }
+
     renderPackages(item) {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.navigateToOrderScreen(item.item)}>
                 <View style={[styles.listItem]}>
                     <View style={[{flexDirection: "row"}]}>
                         <View style={[styles.circleShapeView, {backgroundColor: item.item.color}]}>

@@ -30,6 +30,13 @@ import AlmanacCalendar from "../screens/Almanac/Calendar";
 // Payments Screen Stack
 import PaymentDashboard from "../screens/Payments/Index"
 import PaymentPackages from "../screens/Payments/Packages";
+import PaymentOrder from "../screens/Payments/Order";
+import PaymentCheckout from "../screens/Payments/Checkout";
+
+
+
+// Settings Screen Stack
+import SettingsDashboard from "../screens/Settings/Index";
 
 
 import Colors from "../constants/Colors";
@@ -92,7 +99,7 @@ BibleStack.navigationOptions = {
 };
 
 const PaymentStack = createStackNavigator({
-    PaymentDashboard, PaymentPackages
+    PaymentDashboard, PaymentPackages, PaymentOrder, PaymentCheckout
 }, { headerMode: "null" });
 
 PaymentStack.navigationOptions = {
@@ -107,8 +114,8 @@ PaymentStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-    Settings: SettingsScreen,
-});
+    SettingsDashboard,
+}, { headerMode: "null" });
 
 SettingsStack.navigationOptions = {
     tabBarLabel: 'Settings',
