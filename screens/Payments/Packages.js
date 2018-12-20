@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, View, Image, FlatList} from "react-native";
+import {TouchableOpacity, View, Image, FlatList, StatusBar} from "react-native";
 import {EvilIcons, Ionicons} from "@expo/vector-icons";
 import {StyledTextInverse, StyledHeader, StyledHeaderInverse} from "../../components/Typography";
 import Payment from "../../store/Payment";
@@ -61,15 +61,19 @@ export default class extends Component {
     render() {
         return (
             <View style={[styles.container]}>
+                <StatusBar
+                    backgroundColor="#387ecb"
+                    barStyle="light-content"
+                />
                 <View style={[styles.header]}>
-                    <View style={{paddingLeft: 20}}>
+                    <View style={{paddingLeft: 20, paddingRight: 20}}>
                         <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                             <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF"
                                       style={{justifyContent: "center"}}/>
                         </TouchableOpacity>
                     </View>
 
-                    <StyledTextInverse style={{fontSize: 20, alignSelf: "center"}}>Select Package</StyledTextInverse>
+                    <StyledTextInverse style={{fontSize: 20, paddingTop: 5}}>Select Package</StyledTextInverse>
 
                     <View style={{paddingRight: 20}}/>
                 </View>
@@ -107,7 +111,8 @@ const styles = {
         height: 80,
         justifyContent: "space-between",
         flexDirection: "row",
-        paddingTop: 40
+        paddingTop: 40,
+        alignContent: "flex-start"
     },
 
     packageItem: {

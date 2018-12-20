@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, StyleSheet, TouchableOpacity, TextInput} from "react-native";
+import {View, StyleSheet, TouchableOpacity, TextInput, StatusBar} from "react-native";
 import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {Ionicons} from "@expo/vector-icons";
@@ -20,15 +20,19 @@ export default class extends Component {
         console.log(Payment.getPayment());
         return (
             <View style={[styles.container]}>
+                <StatusBar
+                    backgroundColor="#387ecb"
+                    barStyle="light-content"
+                />
                 <View style={[styles.header]}>
-                    <View style={{paddingLeft: 20}}>
+                    <View style={{paddingLeft: 20, paddingRight: 20}}>
                         <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                             <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF"
                                       style={{justifyContent: "center"}}/>
                         </TouchableOpacity>
                     </View>
 
-                    <StyledTextInverse style={{fontSize: 20, alignSelf: "center"}}>Make Payment For {this.package.name}</StyledTextInverse>
+                    <StyledTextInverse style={{fontSize: 20, paddingTop: 5}}>Make Payment For {this.package.name}</StyledTextInverse>
 
                     <View style={{paddingRight: 20}}/>
                 </View>
@@ -97,12 +101,14 @@ const styles = {
         flex: 1,
         backgroundColor: '#FAFAFA',
     },
+    
     header: {
         backgroundColor: "#387ecb",
         height: 80,
         justifyContent: "space-between",
         flexDirection: "row",
-        paddingTop: 40
+        paddingTop: 40,
+        alignContent: "flex-start"
     },
 
     body: {

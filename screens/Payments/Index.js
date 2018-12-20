@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ScrollView, TouchableOpacity, View, Image} from "react-native";
+import {ScrollView, TouchableOpacity, View, Image, StatusBar} from "react-native";
 import GridLayout from "react-native-layout-grid";
 import Header from "./components/Header";
 import {StyledText, StyledHeader, StyledTextInverse, StyledHeaderInverse} from "../../components/Typography";
@@ -96,8 +96,12 @@ export default class extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    backgroundColor="#387ecb"
+                    barStyle="light-content"
+                />
                 <View style={[styles.header]}>
-                    <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "center"}}>Payments</StyledHeaderInverse>
+                    <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>Payments</StyledHeaderInverse>
                 </View>
 
                 <View style={[styles.main]}>
