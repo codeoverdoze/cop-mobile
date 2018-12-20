@@ -5,7 +5,6 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import {Ionicons} from "@expo/vector-icons";
 
 import Payment from "../../store/Payment";
-import {Button} from "react-native-elements";
 
 
 
@@ -96,7 +95,7 @@ export default class extends Component {
     }
 }
 
-const styles = {
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FAFAFA',
@@ -147,4 +146,4 @@ const styles = {
         borderRadius: 5
     },
 
-};
+});
