@@ -32,7 +32,7 @@ import PaymentCheckout from "../screens/Payments/Checkout";
 
 // Settings Screen Stack
 import SettingsDashboard from "../screens/Settings/Index";
-
+import Credits from "../screens/Settings/Credits";
 
 import Colors from "../constants/Colors";
 
@@ -110,7 +110,7 @@ PaymentStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-    SettingsDashboard,
+    SettingsDashboard, Credits
 }, { headerMode: "null" });
 
 SettingsStack.navigationOptions = {

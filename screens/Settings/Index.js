@@ -118,7 +118,7 @@ export default class SettingsScreen extends Component {
                                </View>
                            </TouchableOpacity>
 
-                           <TouchableOpacity>
+                           <TouchableOpacity onPress={() => this.props.navigation.navigate("Credits")}>
                                <View style={[styles.mainItem]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
                                        <View style={{ flexDirection: "row"}}>

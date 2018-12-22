@@ -39,11 +39,14 @@ class AuthInformation {
     }
 
     nukeAuthInformation(){
-        try{
-           AsyncStorage.setItem("authInformation", null);
-        }catch (e) {
-            throw new Error("Failed to nuke auth information");
-        }
+        return new Promise(async (res, rej) => {
+            try{
+                AsyncStorage.removeItem("authInformation");
+                res()
+            }catch (e) {
+                rej("Failed to nuke auth information")
+            }
+        })
     }
 }
 
