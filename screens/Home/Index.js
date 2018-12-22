@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, TouchableOpacity, StyleSheet, SafeAreaView, Image, ScrollView} from 'react-native';
-import {StyledHeader, StyledText} from "../../components/Typography";
-import AuthInformation from "../../store/AuthInformation";
+import {View, TouchableOpacity, StyleSheet, SafeAreaView, Image, ScrollView, StatusBar} from 'react-native';
+import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
 
 const announcementImage = require("../../assets/images/announcement-bg.jpg");
 const membershipRegistrationImage = require("../../assets/images/news-bg.png");
@@ -12,19 +11,19 @@ const hymnalImage = require("../../assets/images/hymnal-bg.gif");
 const liturgicalOrderImage = require("../../assets/images/liturgical-order.jpg");
 
 const BodyItem = props => (
-        <View style={[styles.bodyItem]}>
-            <View style={[styles.bodyImage]}>
-                <Image
-                    source={props.image}
-                    style={{width: 60, height: 60, borderRadius: 30, padding: 0}}
-                />
-            </View>
-
-            <View style={styles.bodyContent}>
-                <StyledHeader style={{fontSize: 15}}>{props.title}</StyledHeader>
-                <StyledText>{props.content}</StyledText>
-            </View>
+    <View style={[styles.bodyItem]}>
+        <View style={[styles.bodyImage]}>
+            <Image
+                source={props.image}
+                style={{width: 60, height: 60, borderRadius: 30, padding: 0}}
+            />
         </View>
+
+        <View style={styles.bodyContent}>
+            <StyledHeader style={{fontSize: 15}}>{props.title}</StyledHeader>
+            <StyledText>{props.content}</StyledText>
+        </View>
+    </View>
 );
 
 
@@ -82,26 +81,25 @@ const list = [
 ];
 
 export default class Index extends React.Component {
-    static navigationOptions = {
-        header: null,
-    };
+    constructor(props) {
+        super(props);
+        StatusBar.setBarStyle("light-content")
+
+    }
 
     navigate(screen) {
         this.props.navigation.navigate(screen);
     }
 
 
-
     render() {
         return (
-            <SafeAreaView style={[styles.container]}>
-                <View style={[styles.headingContainer]}>
-                    <View style={[styles.heading]}>
-                        <StyledHeader style={{fontSize: 35, paddingBottom: 5, color: "blue"}} light>That They All May Be One</StyledHeader>
-                    </View>
+            <View>
+                <View style={[styles.headerBar]}>
+                    <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>That They All May Be One</StyledHeaderInverse>
                 </View>
 
-                <ScrollView style={[styles.body]}>
+                <ScrollView contentContainerStyle={[styles.body]}>
                     {
                         list.map(item => {
                             return (
@@ -117,8 +115,8 @@ export default class Index extends React.Component {
                         })
                     }
                 </ScrollView>
-            </SafeAreaView>
-        );
+            </View>
+    );
     }
 }
 
@@ -138,13 +136,21 @@ const styles = StyleSheet.create({
 
     },
 
-    heading: {
-
+    headerBar: {
+        backgroundColor: "#387ecb",
+        height: 80,
+        justifyContent: "center",
+        flexDirection: "row",
+        paddingTop: 40,
     },
 
+    heading: {},
+
     body: {
+        paddingTop: 30,
         paddingLeft: 20,
         paddingRight: 40,
+        paddingBottom: 100
     },
 
     bodyItem: {

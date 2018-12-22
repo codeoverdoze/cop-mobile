@@ -6,9 +6,6 @@ import TabBarIcon from '../components/TabBarIcon';
 
 // Home screen stack
 import HomeIndex from '../screens/Home/Index';
-import ChurchNews from '../screens/Home/ChurchNews';
-import DailyDevotional from '../screens/Home/DailyDevotional';
-import Hymnal from '../screens/Home/Hymnal';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
@@ -18,7 +15,6 @@ import BibleChapter from '../screens/Bible/BibleChapter';
 
 // Hymnary Screen stack
 import HymnaryIndex from '../screens/Hymnary/Index';
-import SettingsScreen from '../screens/SettingsScreen';
 
 
 // Almanac Screen Stack
@@ -51,8 +47,7 @@ const AlmanacStack = createStackNavigator({
 
 
 const HomeStack = createStackNavigator({
-    Home: HomeIndex, Announcements,
-    ChurchNews, DailyDevotional, Hymnal, Almanac: AlmanacStack
+    Home: HomeIndex, Announcements, Almanac: AlmanacStack
 }, { headerMode: "none"});
 
 HomeStack.navigationOptions = {

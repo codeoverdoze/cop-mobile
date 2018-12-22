@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, SafeAreaView, FlatList } from "react-native";
+import {View, StyleSheet, SafeAreaView, FlatList, StatusBar} from "react-native";
 import {StyledText } from "../../components/Typography";
 
 import BibleBar from "./components/BibleBar";
@@ -14,7 +14,9 @@ export default class extends Component{
         // Event listener to reload changes in bible
         const focusSubscription = this.props.navigation.addListener('willFocus', () => {
             this.forceUpdate();
-        })
+        });
+        StatusBar.setBarStyle("light-content")
+
     }
 
 

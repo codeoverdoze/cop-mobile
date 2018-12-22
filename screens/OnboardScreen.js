@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Image, View} from 'react-native';
 import {
     StyledTextInverse,
@@ -14,7 +14,7 @@ import AuthInformation from "../store/AuthInformation";
 import Margin from "../components/Margin";
 
 
-class OnboardScreen extends React.Component {
+class OnboardScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {};

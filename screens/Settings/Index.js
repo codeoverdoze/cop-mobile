@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {View, StyleSheet, StatusBar, TouchableOpacity, Image, ScrollView} from "react-native";
-import {StyledHeader, StyledText} from "../../components/Typography";
+import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 
 
@@ -9,24 +9,23 @@ const userProfileImage = require("../../assets/images/user-settings.png");
 export default class SettingsScreen extends Component {
     constructor(props) {
         super(props);
-        StatusBar.setBarStyle("dark-content")
+        StatusBar.setBarStyle("light-content")
     }
 
     render() {
         return (
             <View style={[styles.container]}>
-                <StatusBar
-                    backgroundColor="#387ecb"
-                    barStyle="dark-content"
-                />
+                <View style={[styles.headerBar]}>
+                    <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>Settings</StyledHeaderInverse>
+                </View>
 
-               <ScrollView contentContainerStyle={{ flex: 1, paddingBottom: 150}}>
-                   <View style={[styles.header]}>
+               <ScrollView style={{ flex: 1, paddingBottom: 300, marginTop: 20}}>
+                   <View style={[styles.header, {marginBottom: 60}]}>
                        <View>
 
                        </View>
 
-                       <View style={{ alignSelf: "center", marginBottom: 20}}>
+                       <View style={{ alignSelf: "center"}}>
                            <View style={{ alignItems: "center"}}>
                                <Image
                                    source={userProfileImage}
@@ -155,11 +154,19 @@ const styles = StyleSheet.create({
     },
 
     main: {
-        flex: 2
+        flex: 3
     },
 
     mainItem: {
         backgroundColor: "#FFFFFF",
         padding: 20
-    }
+    },
+
+    headerBar: {
+        backgroundColor: "#387ecb",
+        height: 80,
+        justifyContent: "center",
+        flexDirection: "row",
+        paddingTop: 40,
+    },
 });
