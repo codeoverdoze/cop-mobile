@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity, StyleSheet, SafeAreaView, Image, ScrollView} from 'react-native';
 import {StyledHeader, StyledText} from "../../components/Typography";
+import AuthInformation from "../../store/AuthInformation";
 
 const announcementImage = require("../../assets/images/announcement-bg.jpg");
 const membershipRegistrationImage = require("../../assets/images/news-bg.png");
@@ -88,6 +89,8 @@ export default class Index extends React.Component {
     navigate(screen) {
         this.props.navigation.navigate(screen);
     }
+
+
 
     render() {
         return (

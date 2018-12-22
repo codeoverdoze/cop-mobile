@@ -63,6 +63,7 @@ const paymentItems = [
 export default class extends Component {
     constructor(props){
         super(props);
+        StatusBar.setBarStyle("light-content", true);
         this.renderPaymentGrid = this.renderPaymentGrid.bind(this);
         this.navigateToPackageSelectionScreen = this.navigateToPackageSelectionScreen.bind(this);
     }
@@ -96,10 +97,6 @@ export default class extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar
-                    backgroundColor="#387ecb"
-                    barStyle="light-content"
-                />
                 <View style={[styles.header]}>
                     <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>Payments</StyledHeaderInverse>
                 </View>

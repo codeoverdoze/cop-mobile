@@ -2,18 +2,17 @@ import React from 'react';
 import {View, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
 import {Button, FormInput, FormLabel, Icon} from 'react-native-elements';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {StyledText, StyledHeader, StyledSubtitle} from "../components/Typography";
+import {StyledText, StyledHeader, StyledSubtitle} from "../../components/Typography";
 import TimerCountdown from 'react-native-timer-countdown';
-import Color from '../constants/Colors';
-import Margin from '../components/Margin';
+import {verifySMSCode} from "../../requests";
+import Color from '../../constants/Colors';
+import Margin from '../../components/Margin';
+import AuthInformation from "../../store/AuthInformation";
 
 class SMSVerifyScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Please sign in',
-    };
-
     constructor(props) {
         super(props);
+        this.telephone = this.props.navigation.getParam("telephone");
         this.state = {SMSCode: '', loading: false, showResendButton: false};
     }
 
@@ -24,7 +23,9 @@ class SMSVerifyScreen extends React.Component {
     _showResendButtonOrLoading() {
         if (!this.state.loading) {
             return (
-                <TouchableOpacity onPress={() => {this.setState({ loading: true })}}>
+                <TouchableOpacity onPress={() => {
+                    this.setState({loading: true})
+                }}>
                     <StyledText style={{color: Color.tintColor}}>Resend code</StyledText>
                 </TouchableOpacity>
             )
@@ -49,7 +50,7 @@ class SMSVerifyScreen extends React.Component {
 
         return (
             <TimerCountdown
-                initialSecondsRemaining={1000 * 3}
+                initialSecondsRemaining={1000 * 30}
                 onTimeElapsed={async function () {
                     await self._toggleResendButtonShow();
                 }}
@@ -60,17 +61,19 @@ class SMSVerifyScreen extends React.Component {
     }
 
     async _handleSMSCodeInput(value) {
-        const self = this;
-
-
         await this.setState({SMSCode: value});
-
-
         if (this.state.SMSCode.length >= 6) {
             await this.setState({loading: true});
-            setTimeout(function () {
-                self.props.navigation.navigate('Main')
-            }, 3000);
+            try {
+                const response = await verifySMSCode(this.telephone, this.state.SMSCode);
+                if (response.success) {
+                    console.log("Setting auth information");
+                    await AuthInformation.setAuthInformation({telephone: this.telephone});
+                    this.props.navigation.navigate("Main");
+                }
+            } catch (e) {
+                throw new Error(e);
+            }
         }
     }
 
@@ -80,7 +83,7 @@ class SMSVerifyScreen extends React.Component {
         return (
             <KeyboardAwareScrollView style={styles.root}>
                 <View style={styles.header}>
-                    <Image source={require('../assets/images/sms-verify.png')} style={{width: 150, height: 140}}/>
+                    <Image source={require('../../assets/images/sms-verify.png')} style={{width: 150, height: 140}}/>
                 </View>
 
                 <Margin/>
@@ -92,7 +95,8 @@ class SMSVerifyScreen extends React.Component {
 
                 <View style={[styles.header, {marginTop: 5, paddingLeft: 25, paddingRight: 25}]}>
                     <StyledText>
-                        Code has been sent to +233558691496 via SMS. Enter the provided code. If code has not been sent,
+                        Code has been sent to {this.telephone} via SMS. Enter the provided code. If code has not been
+                        sent,
                         wait for the timeout and retry
                     </StyledText>
                 </View>
@@ -102,7 +106,12 @@ class SMSVerifyScreen extends React.Component {
                 <Margin/>
 
                 <View style={{marginLeft: 70, marginRight: 70}}>
-                    <FormInput keyboardType={'numeric'} onChangeText={value => this._handleSMSCodeInput(value)} value={this.state.SMSCode}/>
+                    <FormInput
+                        keyboardType={'numeric'}
+                        onChangeText={value => this._handleSMSCodeInput(value)}
+                        value={this.state.SMSCode}
+                        maxLength={6}
+                    />
                 </View>
 
 
@@ -125,7 +134,7 @@ const styles = {
         backgroundColor: '#FFFFFF',
     },
     header: {
-        paddingTop: 30,
+        marginTop: 30,
         marginLeft: 17,
         marginRight: 17,
         justifyContent: 'center',

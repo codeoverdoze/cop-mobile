@@ -10,7 +10,7 @@ import {
 } from "../components/Typography";
 import {Icon, Button} from 'react-native-elements';
 import Onboarding from 'react-native-onboarding-swiper';
-import Colors from '../constants/Colors';
+import AuthInformation from "../store/AuthInformation";
 import Margin from "../components/Margin";
 
 
@@ -18,6 +18,19 @@ class OnboardScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+
+    async componentWillMount() {
+        // Checking to see if user is already logged in
+        try{
+            const authInformation = await AuthInformation.getAuthInformation();
+            console.log("Auth information", authInformation);
+            if(authInformation){
+                this.props.navigation.navigate("Main");
+            }
+        }catch (e) {
+            throw new Error(e);
+        }
     }
 
     render() {

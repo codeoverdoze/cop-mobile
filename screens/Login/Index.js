@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity, Image, TextInput, ActivityIndicator} from 'react-native';
 import { Button, FormInput, FormLabel, Icon } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { StyledText, StyledHeader, StyledSubtitle } from "../components/Typography";
-import Color from '../constants/Colors';
-import Margin from '../components/Margin';
+import { StyledText, StyledHeader, StyledSubtitle } from "../../components/Typography"
+import Color from '../../constants/Colors';
+import Margin from '../../components/Margin';
+import { login } from "../../requests";
+
 
 class LoginScreen extends React.Component{
     static navigationOptions = {
@@ -13,11 +15,40 @@ class LoginScreen extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { telephone: "", loading: false };
     }
+
 
     _navigateToSMSVerify(){
         this.props.navigation.navigate('SMSVerify');
+    }
+
+
+    async onPhoneNumberChange(value){
+        await this.setState({ telephone: value });
+        console.log(this.state.telephone);
+    }
+
+    async login(){
+        await this.setState({ loading: true });
+        try{
+            const response = await login(this.state.telephone);
+            await this.setState({ loading: false });
+            this.props.navigation.navigate("Verification", { telephone: response.payload.telephone})
+        }catch (e) {
+            await this.setState({ loading: false })
+        }
+    }
+
+    renderLoginButtonOrLoading(){
+        return this.state.loading ?
+            <ActivityIndicator size="small" color={Color.tintColor}/>
+            :
+            <Button
+                title="Login"
+                backgroundColor={Color.tintColor} borderRadius={5}
+                onPress={() => this.login()}
+            />
     }
 
     render(){
@@ -42,8 +73,14 @@ class LoginScreen extends React.Component{
                 <Margin/>
                 <Margin/>
 
-                <View style={{ marginLeft: 40, marginRight: 40}}>
-                    <FormInput value={'+233'} keyboardType={'numeric'}/>
+                <View style={{ marginLeft: 60, marginRight: 60, flexDirection: "row"}}>
+                    <StyledText style={{ fontSize: 40}}>+233</StyledText>
+                    <TextInput
+                        style={{ fontSize: 40, fontFamily: "regular", color: '#3E4E5B', width: "100%" }}
+                        keyboardType={"numeric"}
+                        onChangeText={value => this.onPhoneNumberChange(value)}
+                        maxLength={10}
+                    />
                 </View>
 
 
@@ -52,11 +89,7 @@ class LoginScreen extends React.Component{
                 <Margin/>
 
                 <View style={{ marginLeft: 40, marginRight: 40}}>
-                    <Button
-                        title="Login"
-                        backgroundColor={Color.tintColor} borderRadius={5}
-                        onPress={() => this._navigateToSMSVerify()}
-                    />
+                    {this.renderLoginButtonOrLoading()}
                 </View>
             </KeyboardAwareScrollView>
         )

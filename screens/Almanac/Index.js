@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     },
 
     list: {
-        marginBottom: 70
+        marginBottom: 70,
     },
 
     listItem: {
         padding: 15,
         borderBottomWidth: 0.3,
-        borderBottomColor: "#9e9e9e",
+        borderBottomColor: "#cecece",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between"

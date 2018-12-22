@@ -1,16 +1,19 @@
 import React from 'react';
-import {createSwitchNavigator} from 'react-navigation';
+import {createSwitchNavigator, createStackNavigator} from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 import OnboardScreen from '../screens/OnboardScreen';
-import LoginScreen from '../screens/LoginScreen';
-import SMSVerify from '../screens/SMSVerifyScreen';
 
+// Login Screen Stack.....
+import LoginDashboard from "../screens/Login/Index";
+import Verification from "../screens/Login/Verification";
 
+const Login = createStackNavigator({
+    LoginDashboard, Verification
+}, { headerMode: "none"} );
 
 export default createSwitchNavigator({
     Onboard: OnboardScreen,
+    Login: Login,
     Main: MainTabNavigator,
-    Login: LoginScreen,
-    SMSVerify: SMSVerify,
-}, { initialRouteName: 'Main' });
+}, { initialRouteName: 'Onboard' });
