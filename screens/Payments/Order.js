@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import {View, StyleSheet, TouchableOpacity, TextInput, StatusBar} from "react-native";
+import {View, StyleSheet, TouchableOpacity, TextInput, StatusBar, ActivityIndicator} from "react-native";
 import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { showMessage } from "react-native-flash-message";
 import {Ionicons} from "@expo/vector-icons";
+import { payTithe } from "../../requests";
 
 import Payment from "../../store/Payment";
 
@@ -12,8 +14,47 @@ export default class extends Component {
     constructor(props){
         super(props);
         this.package = this.props.navigation.getParam("package");
-        this.state = { amount: "" };
+        this.state = { amount: "", telephone: "", loading: false };
     }
+
+
+    renderLoadingOrPayButton(){
+       if(this.state.loading){
+           return (
+               <View style={{ marginTop: 20 }}>
+                   <ActivityIndicator color="#387ecb"/>
+               </View>
+           )
+       }else{
+           return (
+               <TouchableOpacity onPress={() => this.makePayment()}>
+                   <View style={[styles.buttonBar]}>
+                       <StyledText style={{ color: "#FFFFFF", fontSize: 20}}>Make Payment</StyledText>
+                   </View>
+               </TouchableOpacity>
+           )
+       }
+    }
+
+    async makePayment(){
+        await this.setState({loading: true });
+
+        try{
+            const response = await payTithe(this.state.telephone, this.state.amount, this.package.name);
+
+            showMessage({
+                message: "Great",
+                description: "Payment has been made",
+                type: "success",
+                duration: 5000
+            });
+            await this.setState({loading: false });
+            this.props.navigation.goBack();
+        }catch (e) {
+            throw new Error(e);
+        }
+    }
+
 
     render(){
         console.log(Payment.getPayment());
@@ -46,7 +87,7 @@ export default class extends Component {
                                 placeholder={"0.00"}
                                 keyboardType={"numeric"}
                                 value={this.state.amount}
-                                onChangeText={value => console.log(value)}
+                                onChangeText={amount => this.setState({ amount })}
                             />
                         </View>
 
@@ -64,7 +105,6 @@ export default class extends Component {
                                 style={{ fontSize: 20, fontFamily: "regular", color: '#3E4E5B' }}
                                 placeholder={"Enter a description"}
                                 multiline={true}
-                                value={this.state.amount}
                                 onChangeText={value => console.log(value)}
                             />
 
@@ -77,17 +117,13 @@ export default class extends Component {
                                 style={{ fontSize: 20, fontFamily: "regular", color: '#3E4E5B' }}
                                 placeholder={"Enter your telephone number"}
                                 keyboardType={"numeric"}
-                                value={this.state.amount}
-                                onChangeText={value => console.log(value)}
+                                value={this.state.telephone}
+                                onChangeText={telephone => this.setState({ telephone })}
                             />
 
                         </View>
 
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate("PaymentCheckout")}>
-                            <View style={[styles.buttonBar]}>
-                                <StyledText style={{ color: "#FFFFFF", fontSize: 20}}>Make Payment</StyledText>
-                            </View>
-                        </TouchableOpacity>
+                        {this.renderLoadingOrPayButton()}
                     </View>
                 </KeyboardAwareScrollView>
             </View>

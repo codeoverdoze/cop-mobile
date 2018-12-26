@@ -45,7 +45,7 @@ export default class SettingsScreen extends Component {
 
                    <View style={[styles.main]}>
                        <View style={{ marginBottom: 20}}>
-                           <TouchableOpacity>
+                           <TouchableOpacity onPress={() => this.props.navigation.navigate("PersonalInformation")}>
                                <View style={[styles.mainItem]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
                                        <View style={{ flexDirection: "row"}}>
@@ -61,7 +61,7 @@ export default class SettingsScreen extends Component {
 
 
                        <View style={{ marginBottom: 20 }}>
-                           <TouchableOpacity>
+                           <TouchableOpacity onPress={() => this.props.navigation.navigate("ChurchSelection")}>
                                <View style={[styles.mainItem, { borderBottomWidth: 0.3, borderBottomColor: "#cecece"}]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
                                        <View style={{ flexDirection: "row"}}>

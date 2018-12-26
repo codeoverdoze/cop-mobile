@@ -9,6 +9,7 @@ const paymentImage = require("../../assets/images/payment-bg.jpg");
 const almanacImage = require("../../assets/images/almanac.jpg");
 const hymnalImage = require("../../assets/images/hymnal-bg.gif");
 const liturgicalOrderImage = require("../../assets/images/liturgical-order.jpg");
+const previousSermonsImage = require("../../assets/images/sermon.png");
 
 const BodyItem = props => (
     <View style={[styles.bodyItem]}>
@@ -77,6 +78,13 @@ const list = [
         content: "Pay your tithes , redeem pledges, offertory, make donations to your community.",
         key: "5",
         link: "PaymentDashboard"
+    },
+    {
+        image: previousSermonsImage,
+        title: "Previous Sermons",
+        content: "Refer to previous sermons.",
+        key: "7",
+        link: "Almanac"
     },
 ];
 

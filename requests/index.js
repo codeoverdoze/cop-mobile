@@ -3,6 +3,7 @@ import { showMessage } from "react-native-flash-message";
 
 const loginRoute = "https://pcg-api-mobile.herokuapp.com/api/v1/user/login";
 const verifySMSRoute = "https://pcg-api-mobile.herokuapp.com/api/v1/user/login/verify";
+const payTitheRoute = "https://pcg-api-mobile.herokuapp.com/api/v1/user/pay";
 
 
 const login = (telephone) => {
@@ -45,4 +46,24 @@ const verifySMSCode = (telephone, code) => {
 };
 
 
-export { login, verifySMSCode }
+const payTithe = (telephone, amount, packageName) => {
+    return new Promise(async (res, rej) => {
+        try{
+            const response = await axios.post(payTitheRoute, { telephone, amount, packageName });
+            res(response.data);
+        }catch (e) {
+            if(e.response.status === 404){
+                showMessage({
+                    message: "Ooops",
+                    description: "Failed to make payment",
+                    type: "error",
+                    duration: 5000
+                });
+            }
+
+            rej();
+        }
+    })
+};
+
+export { login, verifySMSCode, payTithe }

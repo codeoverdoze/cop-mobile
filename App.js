@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StatusBar, StyleSheet, View, SafeAreaView} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {AppLoading, Asset, Font, Icon} from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import FlashMessage from "react-native-flash-message";
@@ -38,11 +38,11 @@ export default class App extends React.Component {
             Font.loadAsync({
                 // This is the font that we are using for our tab bar
                 ...Icon.Ionicons.font,
-                'regular': require('./assets/fonts/OpenSans-Light.ttf'),
+                'regular': require('./assets/fonts/lato.ttf'),
                 'bold': require('./assets/fonts/lato-bold.ttf'),
                 'light': require('./assets/fonts/lato-light.ttf'),
                 'bible': require('./assets/fonts/zila-slab.ttf'),
-                'bible-italic': require('./assets/fonts/zila-slab-italic.ttf')
+                'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
             }),
         ]);
     };

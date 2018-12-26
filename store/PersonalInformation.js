@@ -2,50 +2,65 @@ import React from "react";
 import { AsyncStorage } from "react-native";
 
 class PersonalInformation {
-    constructor() {
-        // Loading personal information details from AsyncStorage
-        let personalInformation = null;
+    constructor(){
 
-        (async function () {
+    }
+    
+    async setPersonalInformation(item){
+        console.log("item", item);
+        return new Promise(async (res, rej) => {
+            // Loading personal information from DB if any
             try{
-                personalInformation = await AsyncStorage.getItem("personalInformation");
-            }catch(e){
-                throw new Error("Error while loading personal information : " + e)
-            }
-        })();
+                let personalInformation = await AsyncStorage.getItem("personalInformation");
 
+                // Checking string too cos of some weird inconsistency with the key-value store
+                if(!personalInformation || personalInformation === "null"){
+                    // When personal info is null, turning into object and adding key
+                    console.log("Personal info is null");
+                    personalInformation = {};
+                    personalInformation[item.name] = item.value;
+                    console.log("Before leaving branch checking personal information", personalInformation);
+                }else{
+                    personalInformation = JSON.parse(personalInformation);
+                    personalInformation[item.name] = item.value;
+                }
 
-        if(!personalInformation){
-            this.personalInformation = {
-                surname: "",
-                otherNames: "",
-                gender: "",
-                phone: "",
-                email: ""
+                console.log("personal Information", personalInformation);
+                await AsyncStorage.setItem("personalInformation", JSON.stringify(personalInformation));
+
+                const personalInfo = await this.getPersonalInformation();
+                console.log(personalInfo);
+                res();
+            }catch (e) {
+                rej("Error occurred while saving item to db" + e)
             }
-        }else{
-            this.personalInformation = personalInformation;
-        }
+        })
+    }
+    
+    
+    async getPersonalInformation(){
+        return new Promise(async (res, rej) => {
+            try{
+                const value = await AsyncStorage.getItem("personalInformation");
+                res(JSON.parse(value));
+            }catch (e) {
+                rej("Error occurred while getting " + item + "in storage  " + e);
+            }
+        })
     }
 
-
-    setPersonalInformation(personalInformation){
-        const { surname, otherNames, gender, phone, email } = personalInformation;
-        this.personalInformation.surname = surname;
-        this.personalInformation.otherNames = otherNames;
-        this.personalInformation.gender = gender;
-        this.personalInformation.phone = phone;
-        this.personalInformation.email = email;
-    }
-
-
-    async savePersonalInformation(){
-        try{
-            await AsyncStorage.setItem("personalInformation");
-        }catch(e){
-            throw new Error("Error while saving personal information  :" + e)
-        }
+    async removePersonalInformation(){
+        return new Promise(async (res, rej) => {
+            try{
+                await AsyncStorage.removeItem("personalInformation");
+                console.log("Personal info flushed");
+                res();
+            }catch (e) {
+                rej("Error while deleting app keys" + e);
+            }
+        })
     }
 }
 
-export default PersonalInformation;
+const personalInformationInstance = new PersonalInformation();
+export default personalInformationInstance;
