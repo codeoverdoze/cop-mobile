@@ -26,13 +26,15 @@ export default class extends Component {
 
         const object = {};
 
-        object["name"] = key;
-        object["value"] = this.state.value;
+        object[key] = this.state.value;
 
         console.log(object);
 
         try{
-            await PersonalInformation.setPersonalInformation(object);
+            await PersonalInformation.savePersonalInfo(object);
+            const personalInfo = await PersonalInformation.getPersonalInfo();
+
+            console.log(personalInfo);
             console.log("Saved successfully");
             this.props.navigation.goBack();
         }catch (e) {

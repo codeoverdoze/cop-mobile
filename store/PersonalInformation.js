@@ -23,9 +23,35 @@ class PersonalInformation extends Database{
         })
     }
 
-    async saveInfo(info){
+    async savePersonalInfo(newPersonalInfo){
         return new Promise((res, rej) => {
+            const self = this;
+            self.db.get("personal_information").catch(function (err) {
+                if (err.name === 'not_found') {
+                    return {
+                        _id: 'personal_information',
+                        surname: "",
+                        otherNames: "",
+                        phone: "",
+                        gender: "",
+                        email: ""
+                    };
+                } else { // hm, some other error
+                    throw err;
+                }
+            }).then(function (personalInfo) {
+                Object.assign(personalInfo, newPersonalInfo);
 
+                self.db.put(personalInfo)
+                    .then(() => {
+                        res();
+                    })
+                    .catch(e => {
+                        rej(e);
+                    })
+            }).catch(function (err) {
+                rej(err);
+            });
         })
     }
 
@@ -47,7 +73,7 @@ class PersonalInformation extends Database{
             }).then(function (personalInfo) {
                 res(personalInfo);
             }).catch(function (err) {
-                rej(e);
+                rej(err);
             });
         })
     }

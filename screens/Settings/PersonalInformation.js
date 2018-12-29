@@ -32,7 +32,7 @@ export default class extends Component {
     async componentWillMount() {
         try{
             await this.setState({ loading: true });
-            this.personalInformation = await PersonalInformation.getPersonalInformation();
+            this.personalInformation = await PersonalInformation.getPersonalInfo();
             await this.setState({ loading: false });
         }catch (e) {
             throw new Error(e);
@@ -172,5 +172,4 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between"
     },
-
 });
