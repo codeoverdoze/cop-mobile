@@ -9,7 +9,8 @@ export default class extends Component {
     constructor(props) {
         super(props);
         this.setting = this.props.navigation.getParam('setting');
-        this.state = { value: "" };
+        this.currentValue = this.props.navigation.getParam('currentValue');
+        this.state = { value: this.currentValue };
         StatusBar.setBarStyle("light-content");
     }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {View, StyleSheet, StatusBar, TouchableOpacity, Image, ScrollView, FlatList, ActivityIndicator} from "react-native";
-import {StyledText, StyledTextInverse} from "../../components/Typography";
+import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {EvilIcons, Ionicons} from "@expo/vector-icons";
 import PersonalInformation from "../../store/PersonalInformation";
@@ -41,7 +41,12 @@ export default class extends Component {
 
     renderSettingsItem(setting){
         return(
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("PersonalInformationForm", { setting })}>
+            <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("PersonalInformationForm", {
+                    setting,
+                    currentValue: this.personalInformation[setting.item.dbKey] })
+                }
+            >
                 <View style={[styles.listItem]}>
                     <View style={[{ flexDirection: "row" }]}>
                         <View style={{ justifyContent: "center"}}>
@@ -63,10 +68,44 @@ export default class extends Component {
     }
 
     render() {
+        // It may look weird that we are passing the same view to loading, but its because we
+        // want to avoid a flash when state changes
         if(this.state.loading){
             return (
-                <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
-                    <ActivityIndicator/>
+                <View style={[styles.container]}>
+                    <View style={[styles.headerBar]}>
+                        <View style={{ paddingLeft: 20}}>
+                            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF" style={{ justifyContent: "center"}}/>
+                            </TouchableOpacity>
+                        </View>
+
+                        <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Personal Information</StyledTextInverse>
+
+                        <View style={{ paddingRight: 20}}/>
+                    </View>
+
+                    <KeyboardAwareScrollView>
+                        <View style={{ flex: 1, paddingTop: 20}}>
+                            <View style={[styles.header, { alignSelf: "center", flexDirection: "column", marginBottom: 60}]}>
+                                <View style={{ alignItems: "center"}}>
+                                    <Image
+                                        source={userProfileImage}
+                                        style={{ height: 90, width: 90}}
+                                    />
+                                </View>
+                                <View style={{ alignItems: "center"}}>
+                                    <TouchableOpacity>
+                                        <StyledHeader style={{ fontSize: 16}}>Change Image</StyledHeader>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                            <View style={[styles.main, styles.list]}>
+                                <ActivityIndicator/>
+                            </View>
+                        </View>
+                    </KeyboardAwareScrollView>
                 </View>
             )
         }
@@ -87,26 +126,17 @@ export default class extends Component {
 
                 <KeyboardAwareScrollView>
                     <View style={{ flex: 1, paddingTop: 20}}>
-                        <View style={[styles.header, {marginBottom: 60}]}>
-                            <View>
-
+                        <View style={[styles.header, { alignSelf: "center", flexDirection: "column", marginBottom: 60}]}>
+                            <View style={{ alignItems: "center"}}>
+                                <Image
+                                    source={userProfileImage}
+                                    style={{ height: 90, width: 90}}
+                                />
                             </View>
-
-                            <View style={{ alignSelf: "center"}}>
-                                <View style={{ alignItems: "center"}}>
-                                    <Image
-                                        source={userProfileImage}
-                                        style={{ height: 100, width: 100}}
-                                    />
-                                </View>
-                                <View style={{ alignItems: "center"}}>
-                                    <StyledText style={{ fontSize: 20}}>Change Photo</StyledText>
-                                </View>
-                            </View>
-
-
-                            <View>
-
+                            <View style={{ alignItems: "center"}}>
+                                <TouchableOpacity>
+                                    <StyledHeader style={{ fontSize: 16}}>Change Image</StyledHeader>
+                                </TouchableOpacity>
                             </View>
                         </View>
 
@@ -170,6 +200,7 @@ const styles = StyleSheet.create({
         borderBottomColor: "#cecece",
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        backgroundColor: "#FFFFFF"
     },
 });
