@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {View, StyleSheet, StatusBar, TouchableOpacity, TextInput} from "react-native";
-import {StyledTextInverse} from "../../components/Typography";
+import {StyledText, StyledTextInverse} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 import PersonalInformation from "../../store/PersonalInformation";
+import Colors from "../../constants/Colors";
 
 
 export default class extends Component {
@@ -15,12 +16,7 @@ export default class extends Component {
     }
 
 
-
-
     async onSubmit(){
-        // await PersonalInformation.removePersonalInformation();
-        // Saving value
-        // Extracting key for value
         const key = this.setting.item.dbKey;
 
         console.log("key", key);
@@ -43,7 +39,67 @@ export default class extends Component {
         }
     }
 
+
+    renderCheckMark(checkValue, checkBox){
+        if(checkBox === checkValue){
+            return <Ionicons name="ios-checkmark" size={25} color={Colors.tintColor}/>
+        }
+    }
+
+
+    async onGenderSelect(value){
+          await this.setState({ value });
+          await this.onSubmit();
+    }
+
     render() {
+        if(this.setting.item.dbKey === "gender"){
+            return(
+                <View style={[styles.container]}>
+                    <View style={[styles.headerBar]}>
+                        <View style={{ paddingLeft: 20}}>
+                            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                                <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF" style={{ justifyContent: "center"}}/>
+                            </TouchableOpacity>
+                        </View>
+
+                        <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Set {this.setting.item.title}</StyledTextInverse>
+
+                        <View style={{ paddingRight: 20}}/>
+                    </View>
+
+                    <View style={{ justifyContent: "center", width: "100%"}}>
+                        <TouchableOpacity onPress={() => this.onGenderSelect("Male")}>
+                            <View style={[styles.listItem]}>
+                                <View style={[{ flexDirection: "row" }]}>
+                                    <View style={{ justifyContent: "center"}}>
+                                        <StyledText style={{ fontSize: 16}}>Male</StyledText>
+                                    </View>
+                                </View>
+
+                                <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                    {this.renderCheckMark(this.state.value, "Male")}
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => this.onGenderSelect("Female")}>
+                            <View style={[styles.listItem]}>
+                                <View style={[{ flexDirection: "row" }]}>
+                                    <View style={{ justifyContent: "center"}}>
+                                        <StyledText style={{ fontSize: 16}}>Female</StyledText>
+                                    </View>
+                                </View>
+
+                                <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                    {this.renderCheckMark(this.state.value, "Female")}
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            )
+        }
         return (
             <View style={[styles.container]}>
                 <View style={[styles.headerBar]}>
@@ -58,7 +114,7 @@ export default class extends Component {
                     <View style={{ paddingRight: 20}}/>
                 </View>
 
-                <View style={{ height: "60%", justifyContent: "center", alignItems: "center"}}>
+                <View style={{ height: "30%", justifyContent: "center", alignItems: "center"}}>
                     <TextInput
                         placeholder={`Enter your ${this.setting.item.title}`}
                         style={{ fontSize: 40}}
@@ -116,12 +172,14 @@ const styles = StyleSheet.create({
     },
 
     listItem: {
-        padding: 15,
+        paddingLeft: 15,
+        paddingRight: 15,
         borderBottomWidth: 0.3,
         borderBottomColor: "#cecece",
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        backgroundColor: "#FFFFFF"
     },
 
 });

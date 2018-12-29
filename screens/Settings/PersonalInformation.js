@@ -51,9 +51,9 @@ export default class extends Component {
                     <View style={[{ flexDirection: "row" }]}>
                         <View style={{ justifyContent: "center"}}>
                             <StyledText style={{ fontSize: 16}}>{setting.item.title}</StyledText>
-                            <StyledText style={{ fontSize: 20}}>
+                            <StyledHeader style={{ fontSize: 16}}>
                                 {this.personalInformation[setting.item.dbKey] ? this.personalInformation[setting.item.dbKey]: "Not set"}
-                            </StyledText>
+                            </StyledHeader>
                         </View>
                     </View>
 
@@ -195,7 +195,10 @@ const styles = StyleSheet.create({
     },
 
     listItem: {
-        padding: 15,
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingTop: 5,
+        paddingBottom: 5,
         borderBottomWidth: 0.3,
         borderBottomColor: "#cecece",
         flexDirection: "row",

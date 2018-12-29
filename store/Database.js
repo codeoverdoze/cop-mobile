@@ -10,7 +10,11 @@ PouchDB.plugin(SQLiteAdapter);
 class Database {
     constructor(){
         // We can do auto compaction cos we will never make use of syncing
-        this.db = new PouchDB({ name: "pcg", adapter: "react-native-sqlite", auto_compaction: true });
+        this.db = new PouchDB({
+            name: "pcg",
+            adapter: "react-native-sqlite",
+            auto_compaction: true
+        });
     }
 
     ping(){
