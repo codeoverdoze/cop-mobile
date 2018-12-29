@@ -2,7 +2,10 @@ import React from 'react';
 import {createSwitchNavigator, createStackNavigator} from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
-import OnboardScreen from '../screens/OnboardScreen';
+
+// Onboard Screen Stack....
+import OnboardScreen from '../screens/Onboard/Index';
+
 
 // Login Screen Stack.....
 import LoginDashboard from "../screens/Login/Index";

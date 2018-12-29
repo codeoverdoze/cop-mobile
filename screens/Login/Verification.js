@@ -68,7 +68,9 @@ class SMSVerifyScreen extends React.Component {
                 const response = await verifySMSCode(this.telephone, this.state.SMSCode);
                 if (response.success) {
                     console.log("Setting auth information");
-                    await AuthInformation.setAuthInformation({telephone: this.telephone});
+                    const authInfo = await AuthInformation.saveAuthInfo({telephone: this.telephone, token: "1234"});
+
+                    console.log("authInfo", authInfo);
                     this.props.navigation.navigate("Main");
                 }
             } catch (e) {
@@ -130,7 +132,7 @@ class SMSVerifyScreen extends React.Component {
 const styles = {
     root: {
         flex: 1,
-        marginTop: 40,
+        paddingTop: 40,
         backgroundColor: '#FFFFFF',
     },
     header: {

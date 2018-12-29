@@ -15,7 +15,7 @@ export default class extends Component {
     }
 
     async nukeApp(){
-        await AuthInformation.nukeAuthInformation();
+        await AuthInformation.removeAuthInfo();
         showMessage({
             message: "Great",
             description: "Nuked app, please restart",

@@ -19,7 +19,7 @@ export default class SettingsScreen extends Component {
                     <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>Settings</StyledHeaderInverse>
                 </View>
 
-               <ScrollView style={{ flex: 1, paddingBottom: 300, marginTop: 20}}>
+               <ScrollView style={{ flex: 1, paddingBottom: 300, paddingTop: 20}}>
                    <View style={[styles.header, {marginBottom: 60}]}>
                        <View>
 
@@ -29,11 +29,12 @@ export default class SettingsScreen extends Component {
                            <View style={{ alignItems: "center"}}>
                                <Image
                                    source={userProfileImage}
-                                   style={{ height: 100, width: 100}}
+                                   style={{ height: 90, width: 90}}
                                />
                            </View>
                            <View style={{ alignItems: "center"}}>
-                               <StyledText style={{ fontSize: 30}}>Michael Soli</StyledText>
+                               <StyledHeader style={{ fontSize: 16}}>Michael Agbo Tettey Soli</StyledHeader>
+                               <StyledText>(0558691496)</StyledText>
                            </View>
                        </View>
 
@@ -44,45 +45,39 @@ export default class SettingsScreen extends Component {
                    </View>
 
                    <View style={[styles.main]}>
-                       <View style={{ marginBottom: 20}}>
+                       <View style={{ marginBottom: 20 }}>
                            <TouchableOpacity onPress={() => this.props.navigation.navigate("PersonalInformation")}>
                                <View style={[styles.mainItem]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-contact" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Personal Information</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Personal Information</StyledText>
                                        </View>
 
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
-                       </View>
 
-
-                       <View style={{ marginBottom: 20 }}>
                            <TouchableOpacity onPress={() => this.props.navigation.navigate("ChurchSelection")}>
-                               <View style={[styles.mainItem, { borderBottomWidth: 0.3, borderBottomColor: "#cecece"}]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                               <View style={[styles.mainItem]}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-home" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Church Selection</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Congregation Selection</StyledText>
                                        </View>
 
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
 
                            <TouchableOpacity>
                                <View style={[styles.mainItem]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-person" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Membership Details</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Membership Details</StyledText>
                                        </View>
 
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
@@ -92,40 +87,36 @@ export default class SettingsScreen extends Component {
                        <View style={{ marginBottom: 20 }}>
                            <TouchableOpacity>
                                <View style={[styles.mainItem]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-card" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Payment Preferences</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Payment Preferences</StyledText>
                                        </View>
 
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
-                       </View>
 
-                       <View style={{ marginBottom: 20 }}>
+
                            <TouchableOpacity>
-                               <View style={[styles.mainItem, { borderBottomWidth: 0.3, borderBottomColor: "#cecece"}]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                               <View style={[styles.mainItem]}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-help-circle-outline" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Help & Support</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Help & Support</StyledText>
                                        </View>
 
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
 
                            <TouchableOpacity onPress={() => this.props.navigation.navigate("Credits")}>
                                <View style={[styles.mainItem]}>
-                                   <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>
-                                           <Ionicons name="ios-information-circle-outline" size={20} style={{ paddingRight: 10}} color="#3E4E5B"/>
-                                           <StyledText style={{ fontSize: 20 }}>Credits</StyledText>
+                                           <StyledText style={{ fontSize: 16 }}>Credits</StyledText>
                                        </View>
-                                       <Ionicons name={"ios-arrow-forward"} size={20} color="#3E4E5B"/>
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
                                    </View>
                                </View>
                            </TouchableOpacity>
@@ -159,7 +150,6 @@ const styles = StyleSheet.create({
 
     mainItem: {
         backgroundColor: "#FFFFFF",
-        padding: 20
     },
 
     headerBar: {

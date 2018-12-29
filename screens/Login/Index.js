@@ -6,7 +6,10 @@ import { StyledText, StyledHeader, StyledSubtitle } from "../../components/Typog
 import Color from '../../constants/Colors';
 import Margin from '../../components/Margin';
 import { login } from "../../requests";
+import PersonalInformation from "../../store/PersonalInformation";
+import AuthInformation from "../../store/AuthInformation";
 
+import loginIcon from "../../assets/images/sms-verify.png";
 
 class LoginScreen extends React.Component{
     static navigationOptions = {
@@ -16,8 +19,22 @@ class LoginScreen extends React.Component{
     constructor(props) {
         super(props);
         this.state = { telephone: "", loading: false };
+        PersonalInformation.ping()
     }
 
+
+    componentWillMount() {
+        (async function() {
+            try{
+                const personalInformation = await PersonalInformation.getPersonalInfo();
+                console.log(personalInformation);
+                const authInfo = await AuthInformation.getAuthInfo();
+                console.log(authInfo)
+            }catch (e) {
+                throw e;
+            }
+        })()
+    }
 
     _navigateToSMSVerify(){
         this.props.navigation.navigate('SMSVerify');
@@ -55,13 +72,13 @@ class LoginScreen extends React.Component{
         return(
             <KeyboardAwareScrollView style={styles.root}>
                 <View style={styles.header}>
-                    <Icon name={'sms'} type='material' color={Color.tintColor} size={60}/>
+                    <Image source={loginIcon} style={{ width: 120, height: 120}}/>
                 </View>
 
                 <Margin/>
 
                 <View style={[styles.header, { marginTop: 5}]}>
-                    <StyledHeader>SMS Verification</StyledHeader>
+                    <StyledHeader style={{ color: Color.tintColor}}>SMS Verification</StyledHeader>
                 </View>
 
 
@@ -74,9 +91,9 @@ class LoginScreen extends React.Component{
                 <Margin/>
 
                 <View style={{ marginLeft: 60, marginRight: 60, flexDirection: "row"}}>
-                    <StyledText style={{ fontSize: 40}}>+233</StyledText>
+                    <StyledText style={{ fontSize: 30}}>+233</StyledText>
                     <TextInput
-                        style={{ fontSize: 40, fontFamily: "regular", color: '#3E4E5B', width: "100%" }}
+                        style={{ fontSize: 30, fontFamily: "regular", color: '#3E4E5B', width: "100%" }}
                         keyboardType={"numeric"}
                         onChangeText={value => this.onPhoneNumberChange(value)}
                         maxLength={10}
@@ -88,7 +105,7 @@ class LoginScreen extends React.Component{
                 <Margin/>
                 <Margin/>
 
-                <View style={{ marginLeft: 40, marginRight: 40}}>
+                <View style={{ marginLeft: 30, marginRight: 30}}>
                     {this.renderLoginButtonOrLoading()}
                 </View>
             </KeyboardAwareScrollView>
@@ -100,7 +117,7 @@ const styles = {
     root: {
         flex: 1,
         paddingTop: 40,
-        backgroundColor: '#D3D3D3',
+        backgroundColor: "#FFFFFF"
     },
     header: {
         marginTop: 30,

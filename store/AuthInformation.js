@@ -1,51 +1,93 @@
 import React from "react";
-import { AsyncStorage } from "react-native";
+import Database from "./Database";
 
-class AuthInformation {
+
+class AuthInformation extends Database{
     constructor(){
-        this.authInformation = null;
+        super();
     }
 
-
-    async getAuthInformation(){
-        return new Promise(async (res, rej) => {
-            try{
-                this.authInformation = await AsyncStorage.getItem("authInformation");
-                if(this.authInformation){
-                    // Parsing to JSON object
-                    this.authInformation = JSON.parse(this.authInformation);
-                    res(this.authInformation);
-                }else{
-                    res(null);
+    async getAuthInfo(){
+        return new Promise((res, rej) => {
+            this.db.get("auth_information").catch(function (err) {
+                if (err.name === 'not_found') {
+                    return {
+                        _id: "auth_information",
+                        telephone: "",
+                        token: ""
+                    };
+                } else { // hm, some other error
+                    throw err;
                 }
-            }catch(e){
-                rej("Error while loading personal information : " + e)
+            }).then(function (authInfo) {
+                res(authInfo);
+            }).catch(function (err) {
+                rej(err);
+            });
+        })
+    }
+
+
+    saveAuthInfo(newAuthInfo){
+        return new Promise((res, rej) => {
+            const self = this;
+            self.db.get("auth_information").catch(function (err) {
+                if (err.name === 'not_found') {
+                    return {
+                        _id: "auth_information",
+                        telephone: "",
+                        token: ""
+                    };
+                } else { // hm, some other error
+                    throw err;
+                }
+            }).then(function (authInfo) {
+                authInfo.telephone = newAuthInfo.telephone;
+                authInfo.token = newAuthInfo.token;
+
+                self.db.put(authInfo)
+                    .then(() => {
+                        res();
+                    })
+                    .catch(e => {
+                        rej(e);
+                    })
+            }).catch(function (err) {
+                rej(err);
+            });
+        })
+    }
+
+     checkAuthInfoValidity(){
+        return new Promise(async (res, rej) => {
+            try{
+                const authInfo = await this.getAuthInfo();
+
+                if(authInfo.telephone){
+                    res(true)
+                }else{
+                    res(false)
+                }
+            }catch (e) {
+                rej(e)
             }
         })
     }
 
-    setAuthInformation(object){
-        return new Promise(async (res, rej) => {
-            const { telephone } = object;
-            if(!telephone) throw new Error("Please provide a telephone key in object");
 
-            try{
-                AsyncStorage.setItem("authInformation", JSON.stringify({telephone}));
-                res();
-            }catch (e) {
-                rej("Failed to save new auth information  " + e)
-            }
-        })
-    }
-
-    nukeAuthInformation(){
+     removeAuthInfo(){
         return new Promise(async (res, rej) => {
-            try{
-                AsyncStorage.removeItem("authInformation");
-                res()
-            }catch (e) {
-                rej("Failed to nuke auth information")
-            }
+            const self = this;
+            self.db.get("auth_information")
+                .then(authInfo => {
+                    self.db.remove(authInfo)
+                        .then(() => {
+                            res();
+                        })
+                })
+                .catch(e => {
+                    rej(e);
+                })
         })
     }
 }

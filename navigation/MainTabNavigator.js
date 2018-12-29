@@ -4,6 +4,7 @@ import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import TabBarIcon from '../components/TabBarIcon';
 
 
+
 // Home screen stack
 import HomeIndex from '../screens/Home/Index';
 

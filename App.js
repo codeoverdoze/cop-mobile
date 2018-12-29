@@ -10,6 +10,8 @@ export default class App extends React.Component {
         isLoadingComplete: false,
     };
 
+
+
     render() {
         if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
             return (
@@ -26,8 +28,10 @@ export default class App extends React.Component {
                     <FlashMessage position="top"/>
                 </View>
             );
+
         }
     }
+
 
     _loadResourcesAsync = async () => {
         return Promise.all([
