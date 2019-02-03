@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import {View, StyleSheet, FlatList, StatusBar} from "react-native";
 import {StyledText } from "../../components/Typography";
-
+import XDate from "xdate";
 import BibleBar from "./components/BibleBar";
 
 
 import bible from "../../sample-data/bible-kjv.json";
 import Bible from "../../store/Bible";
+import almanac from "../../sample-data/almanac";
+
+
+const monthNames = [
+    'January','February','March',
+    'April','May','June','July',
+    'August','September','October',
+    'November','December'
+];
+
 
 export default class extends Component{
     constructor(props){
@@ -15,13 +25,22 @@ export default class extends Component{
         const focusSubscription = this.props.navigation.addListener('willFocus', () => {
             this.forceUpdate();
         });
-        StatusBar.setBarStyle("light-content")
+        StatusBar.setBarStyle("light-content");
+        this.currentDate = new XDate();
 
+        this.currentMonth = monthNames[this.currentDate.getMonth()];
+        this.currentDay = this.currentDate.getDate();
+        this.almanac = almanac[this.currentMonth][this.currentDay - 1];
+
+        console.log(this.almanac);
+    }
+
+    findAlmanacVerses(){
+        console.log(this.currentDate.getMonth())
     }
 
 
     renderVerses = (verse) => {
-        console.log(verse);
         if (verse) {
             return(
                 <View style={[styles.gridItem]}>
@@ -41,6 +60,7 @@ export default class extends Component{
         this.props.navigation.navigate("BibleBook");
     }
 
+
     navigateToBibleChapterScreen(){
         this.props.navigation.navigate("BibleChapter");
     }
@@ -59,6 +79,7 @@ export default class extends Component{
 
         return (
             <View style={[styles.container]}>
+
                 <BibleBar
                     navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
                     navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
