@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, StyleSheet, SafeAreaView, FlatList, StatusBar} from "react-native";
+import {View, StyleSheet, FlatList, StatusBar} from "react-native";
 import {StyledText } from "../../components/Typography";
 
 import BibleBar from "./components/BibleBar";
@@ -30,7 +30,7 @@ export default class extends Component{
                     </View>
                     <View style={{ width: "90%"}}>
                         <StyledText bible style={{ fontSize: 18}}>{verse.item}</StyledText>
-                    </View>StyledTextInverse
+                    </View>
                 </View>
             )
         }
