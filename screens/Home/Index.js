@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TouchableOpacity, StyleSheet, SafeAreaView, Image, ScrollView, StatusBar} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Image, ScrollView, StatusBar} from 'react-native';
 import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
 
 const announcementImage = require("../../assets/images/announcement-bg.jpg");

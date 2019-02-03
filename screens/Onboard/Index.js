@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ActivityIndicator, View, StatusBar, SafeAreaView } from "react-native";
+import { ActivityIndicator, View, StatusBar } from "react-native";
 import SwipeableViews from "react-native-swiper";
 import AuthInfo from "../../store/AuthInformation";
 
