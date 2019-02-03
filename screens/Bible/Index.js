@@ -32,12 +32,8 @@ export default class extends Component{
         this.currentDay = this.currentDate.getDate();
         this.almanac = almanac[this.currentMonth][this.currentDay - 1];
 
-        console.log(this.almanac);
     }
 
-    findAlmanacVerses(){
-        console.log(this.currentDate.getMonth())
-    }
 
 
     renderVerses = (verse) => {
