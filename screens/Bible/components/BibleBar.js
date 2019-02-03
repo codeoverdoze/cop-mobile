@@ -23,26 +23,34 @@ export default class extends Component{
     render() {
         return (
             <View style={[styles.container]}>
-                <TouchableOpacity onPress={() => this.props.navigateToBibleBookScreen()}>
-                    <View style={[styles.barItem]}>
-                        <StyledTextInverse style={[styles.barItemText]}>{this.getCurrentBook()}</StyledTextInverse>
-                        <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
-                    </View>
-                </TouchableOpacity>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%" }}>
+                    <TouchableOpacity onPress={() => this.props.navigateToBibleBookScreen()}>
+                        <View style={[styles.barItem]}>
+                            <StyledTextInverse style={[styles.barItemText]}>{this.getCurrentBook()}</StyledTextInverse>
+                            <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
+                        </View>
+                    </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => this.props.navigateToBibleChapterScreen()}>
-                    <View style={[styles.barItem]}>
-                        <StyledTextInverse style={[styles.barItemText]}>{this.getCurrentChapter()}</StyledTextInverse>
-                        <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
-                    </View>
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigateToBibleChapterScreen()}>
+                        <View style={[styles.barItem]}>
+                            <StyledTextInverse style={[styles.barItemText]}>{this.getCurrentChapter()}</StyledTextInverse>
+                            <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
+                        </View>
+                    </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <View style={[styles.barItem]}>
-                        <StyledTextInverse style={[styles.barItemText]}>KJV</StyledTextInverse>
-                        <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
-                    </View>
-                </TouchableOpacity>
+                    <TouchableOpacity>
+                        <View style={[styles.barItem]}>
+                            <StyledTextInverse style={[styles.barItemText]}>KJV</StyledTextInverse>
+                            <EvilIcons name="chevron-down" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.barItem]}>
+                            <EvilIcons name="eye" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
     }
@@ -53,15 +61,14 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#387ecb",
         height: 80,
+        paddingHorizontal: 30,
+        paddingVertical: 10,
         justifyContent: "center",
         alignItems: "flex-end",
         flexDirection: "row"
     },
 
     barItem: {
-        margin: 10,
-        marginLeft: 20,
-        marginRight: 20,
         flexDirection: "row"
     },
 

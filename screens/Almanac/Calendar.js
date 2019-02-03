@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View, StyleSheet, TouchableOpacity, ScrollView, Image} from "react-native";
+import {View, StyleSheet, TouchableOpacity, ScrollView} from "react-native";
 import {StyledTextInverse, StyledHeaderInverse} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
