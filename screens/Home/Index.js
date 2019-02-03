@@ -111,7 +111,7 @@ export default class Index extends React.Component {
                     {
                         list.map(item => {
                             return (
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate(item.link)}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate(item.link)} key={item.title}>
                                     <BodyItem
                                         image={item.image}
                                         title={item.title}
