@@ -45,7 +45,7 @@ export default class extends Component{
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.openAlmanacModal()}>
                         <View style={[styles.barItem]}>
                             <EvilIcons name="eye" style={{ alignSelf: "center"}} size={25} color="#FFFFFF"/>
                         </View>

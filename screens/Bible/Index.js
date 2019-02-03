@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {View, StyleSheet, FlatList, StatusBar} from "react-native";
-import {StyledText } from "../../components/Typography";
+import {StyledText, StyledTextInverse} from "../../components/Typography";
+import ActionSheet from "react-native-actionsheet";
 import XDate from "xdate";
 import BibleBar from "./components/BibleBar";
 
@@ -32,6 +33,10 @@ export default class extends Component{
         this.currentDay = this.currentDate.getDate();
         this.almanac = almanac[this.currentMonth][this.currentDay - 1];
 
+        this.state = {
+            almanacModalOpen: false
+        }
+
     }
 
 
@@ -62,6 +67,11 @@ export default class extends Component{
     }
 
 
+    openAlmanacModal(){
+        this.ActionSheet.show();
+    };
+
+
     render() {
         // Finding bible book from data structure
         let selectedBook = Bible.getBook();
@@ -75,10 +85,16 @@ export default class extends Component{
 
         return (
             <View style={[styles.container]}>
-
                 <BibleBar
                     navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
                     navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
+                    openAlmanacModal={this.openAlmanacModal.bind(this)}
+                />
+                <ActionSheet
+                    ref={o => this.ActionSheet = o}
+                    title={"Today's reading"}
+                    options={this.almanac.readings}
+                    onPress={(index) => { /* do something */ }}
                 />
                 <View style={[styles.gridContainer]}>
                     <FlatList
