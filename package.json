@@ -14,14 +14,18 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
-    "@expo/vector-icons": "^8.0.0",
+    "@expo/vector-icons": "^9.0.0",
     "axios": "^0.18.0",
     "debounce": "^1.2.0",
-    "expo": "^30.0.1",
+    "expo": "33.0.0",
+    "expo-asset": "^5.0.1",
+    "expo-constants": "~5.0.0",
+    "expo-font": "~5.0.0",
+    "expo-sqlite": "~5.0.0",
     "pouchdb-adapter-react-native-sqlite": "^1.0.3",
     "pouchdb-react-native": "^6.4.1",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-actionsheet": "^2.4.2",
     "react-native-calendars": "^1.21.0",
     "react-native-card-view": "^0.0.3",
@@ -37,11 +41,11 @@
     "react-native-swiper": "^1.5.14",
     "react-native-timeago": "^0.4.0",
     "react-native-timer-countdown": "^2.0.3",
-    "react-navigation": "^2.16.0",
+    "react-navigation": "^3.11.0",
     "tiny-emitter": "^2.0.2",
     "xdate": "^0.8.2"
   },
   "devDependencies": {
-    "jest-expo": "30.0.0"
+    "jest-expo": "^33.0.0"
   }
 }

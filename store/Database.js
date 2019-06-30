@@ -1,5 +1,5 @@
 import React from "react";
-import { SQLite } from "expo";
+import { SQLite } from 'expo-sqlite'
 import PouchDB from "pouchdb-react-native";
 import SQLiteAdapterFactory from "pouchdb-adapter-react-native-sqlite";
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {AppLoading, Asset, Font, Icon} from 'expo';
+import {AppLoading, Icon} from 'expo';
+import { Asset } from "expo-asset";
+import * as Font from 'expo-font'
 import AppNavigator from './navigation/AppNavigator';
 import FlashMessage from "react-native-flash-message";
+import { AppContainer } from "react-navigation"
 
 
 export default class App extends React.Component {

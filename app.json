@@ -4,7 +4,7 @@
     "description": "Presbyterian Church of Ghana mobile app",
     "slug": "pcg-mobile-app",
     "privacy": "public",
-    "sdkVersion": "30.0.0",
+    "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"

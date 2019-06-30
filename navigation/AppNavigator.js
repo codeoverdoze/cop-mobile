@@ -1,5 +1,5 @@
 import React from 'react';
-import {createSwitchNavigator, createStackNavigator} from 'react-navigation';
+import {createSwitchNavigator, createStackNavigator, createAppContainer} from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 
@@ -15,8 +15,8 @@ const Login = createStackNavigator({
     LoginDashboard, Verification
 }, { headerMode: "none"} );
 
-export default createSwitchNavigator({
+export default createAppContainer(createSwitchNavigator({
     Onboard: OnboardScreen,
     Login: Login,
     Main: MainTabNavigator,
-}, { initialRouteName: 'Onboard' });
+}, { initialRouteName: 'Onboard' }));
