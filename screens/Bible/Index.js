@@ -100,6 +100,7 @@ export default class extends Component{
                     <FlatList
                         data={book.chapters[selectedChapter - 1]}
                         renderItem={this.renderVerses}
+                        keyExtractor={verse => verse}
                     />
                 </View>
             </View>

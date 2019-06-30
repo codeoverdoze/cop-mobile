@@ -13,14 +13,10 @@ class Bible{
         this.bible.book = book;
         // Resetting current chapter to 1 after book change
         this.bible.chapter = 1;
-
-        console.log(this.bible);
     }
 
     setChapter(chapter){
         this.bible.chapter = chapter;
-        console.log(this.bible);
-
     }
 
     getBook(){
