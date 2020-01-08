@@ -3,7 +3,6 @@ import {View, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
 import {Button, FormInput, FormLabel, Icon} from 'react-native-elements';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {StyledText, StyledHeader, StyledSubtitle} from "../../components/Typography";
-import TimerCountdown from 'react-native-timer-countdown';
 import {verifySMSCode} from "../../requests";
 import Color from '../../constants/Colors';
 import Margin from '../../components/Margin';
@@ -49,14 +48,15 @@ class SMSVerifyScreen extends React.Component {
         const self = this;
 
         return (
-            <TimerCountdown
+            <View/>
+            /*<TimerCountdown
                 initialSecondsRemaining={1000 * 30}
                 onTimeElapsed={async function () {
                     await self._toggleResendButtonShow();
                 }}
                 allowFontScaling={true}
                 style={{fontSize: 20}}
-            />
+            />*/
         )
     }
 

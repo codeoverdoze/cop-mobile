@@ -60,7 +60,6 @@ const payTithe = (telephone, amount, packageName) => {
                     duration: 5000
                 });
             }
-
             rej();
         }
     })

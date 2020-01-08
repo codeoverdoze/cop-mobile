@@ -19,8 +19,12 @@ import HymnaryIndex from '../screens/Hymnary/Index';
 
 
 // Almanac Screen Stack
-import Almanac from "../screens/Almanac/Index";
+import YearSelection from "../screens/Almanac/Index";
+import MonthSelection from "../screens/Almanac/MonthSelection";
 import AlmanacCalendar from "../screens/Almanac/Calendar";
+import ThemeLiturgyPreaching from "../screens/Almanac/ThemeLiturgyPreaching";
+import CalendarAnnouncements from "../screens/Almanac/CalendarAnnouncements";
+import ScriptureReadings from "../screens/Almanac/ScriptureReadings";
 
 
 // Payments Screen Stack
@@ -37,16 +41,34 @@ import Credits from "../screens/Settings/Credits";
 import PersonalInformation from "../screens/Settings/PersonalInformation";
 import PersonalInformationForm from "../screens/Settings/PersonalInformationForm";
 import ChurchSelection from "../screens/Settings/ChurchSelection";
+import DistrictSelection from "../screens/Settings/DistrictSelection";
+import CongregationSelection from "../screens/Settings/CongregationSelection";
 
 import Colors from "../constants/Colors";
 
 // Announcements Screen Stack
 import Announcements from "../screens/Announcements/Index"
 
+const ChurchServiceStack = createStackNavigator({
+    ThemeLiturgyPreaching,
+    CalendarAnnouncements,
+    ScriptureReadings,
+}, {
+    mode: 'modal',
+    headerMode: 'none',
+    defaultNavigationOptions: {
+        gestureEnabled: true,
+        cardOverlayEnabled: true,
+    },
+
+});
+
 
 const AlmanacStack = createStackNavigator({
-    AlmanacDashboard: Almanac,
-    AlmanacCalendar
+    AlmanacDashboard: YearSelection,
+    MonthSelection,
+    AlmanacCalendar,
+    ChurchServiceStack
 }, { headerMode: "none" });
 
 
@@ -114,8 +136,16 @@ PaymentStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-    SettingsDashboard, Credits, PersonalInformation, ChurchSelection, PersonalInformationForm
-}, { headerMode: "null" });
+    SettingsDashboard, Credits,
+    PersonalInformation,
+    ChurchSelection,
+    PersonalInformationForm,
+    DistrictSelection,
+    CongregationSelection
+
+}, {
+    headerMode: "null"
+});
 
 SettingsStack.navigationOptions = {
     tabBarLabel: 'Settings',

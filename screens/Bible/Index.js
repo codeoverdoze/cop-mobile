@@ -8,7 +8,7 @@ import BibleBar from "./components/BibleBar";
 
 import bible from "../../sample-data/bible-kjv.json";
 import Bible from "../../store/Bible";
-import almanac from "../../sample-data/almanac";
+import almanac from "../../sample-data/almanac-2019";
 
 
 const monthNames = [

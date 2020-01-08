@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import SvgUri from 'expo-svg-uri';
 import {View, StyleSheet, TouchableOpacity, ScrollView, Image} from "react-native";
-import {StyledTextInverse, StyledHeaderInverse} from "../../components/Typography";
+import {StyledText, StyledHeader, StyledSubtitle} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
+import Layout from '../../constants/NewLayout';
 
 // Almanac data
-import almanac from "../../sample-data/almanac.json";
+//import almanac from "../../sample-data/almanac-2019.json";
 
 
 export default class extends Component {
@@ -13,16 +15,20 @@ export default class extends Component {
         super(props);
         this.monthName = this.props.navigation.getParam("monthName");
         this.monthIndex = this.props.navigation.getParam("monthIndex");
+        this.yearName = this.props.navigation.getParam("yearName");
+        this.yearIndex = this.props.navigation.getParam("yearIndex");
+        this.almanac = require(`../../sample-data/almanac-2019.json`);
+        console.log(this.yearName);
 
         // Padding month index
         this.monthIndex = (this.monthIndex + 1).toString().padStart(2, "0");
 
         // Screen state
         this.state = {
-            selectedDate: `2019-${this.monthIndex}-01`,
+            selectedDate: `${this.yearName}-${this.monthIndex}-01`,
             selectedDay: 1,
             selectedMonth: this.monthName,
-            selectedAlmanac: almanac[this.monthName][0]
+            selectedAlmanac: this.almanac[this.monthName][0]
         };
 
         // Setting LocaleConfig
@@ -52,7 +58,7 @@ export default class extends Component {
             selectedDate: day.dateString,
             selectedDay: day.day,
             selectedMonth: day.month,
-            selectedAlmanac: almanac[resolvedMonth][Number(day.day) - 1]
+            selectedAlmanac: this.almanac[resolvedMonth][Number(day.day) - 1]
         });
     }
 
@@ -87,7 +93,7 @@ export default class extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>PCG Almanac</StyledTextInverse>
+                    <StyledText style={{ fontSize: 20, alignSelf: "center"}}>PCG Almanac</StyledText>
 
                     <View style={{ paddingRight: 20}}/>
                 </View>
@@ -98,9 +104,9 @@ export default class extends Component {
                         // Initially visible month. Default = Date()
                         current={this.state.selectedDate}
                         // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-                        minDate={'2019-01-01'}
+                        minDate={`${this.yearName}-01-01`}
                         // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-                        maxDate={'2019-12-31'}
+                        maxDate={`${this.yearName}-12-31`}
                         // Handler which gets executed on day press. Default = undefined
                         onDayPress={day => this.onDayPress(day)}
                         // Handler which gets executed on day long press. Default = undefined
@@ -140,37 +146,107 @@ export default class extends Component {
                             textMonthFontWeight: 'bold',
                             textDayFontSize: 16,
                             textMonthFontSize: 16,
-                            textDayHeaderFontSize: 16
+                            textDayHeaderFontSize: 14
                         }}
                     />
                 </View>
+                <View style={{ paddingVertical: 20, paddingHorizontal: Layout.paddingHorizontal, marginBottom: 0, backgroundColor: '#e9e9e9' }}>
+                    <StyledHeader style={{fontSize: 15}}>Occasion</StyledHeader>
+                    <StyledSubtitle style={{fontSize: 13}}>{this.resolveAlmanacData(this.state.selectedAlmanac.occasion, "occasion")}</StyledSubtitle>
+                </View>
+                <ScrollView style={{ marginTop: 10 }}>
 
-                <ScrollView contentContainerStyle={[styles.body]}>
-                    <View style={[styles.providerCard, { backgroundColor: "#e53935"}]}>
-                        <View style={{ marginBottom: 10 }}>
-                            <StyledTextInverse style={{ fontSize: 20}}>Occasion</StyledTextInverse>
+                    <View style={{ paddingTop: 5 }}>
+                        <View style={{ backgroundColor: "#fff" }}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ScriptureReadings')}>
+                                <View style={{
+                                    paddingHorizontal: Layout.paddingHorizontal,
+                                    paddingTop: 10,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    marginTop: 5,
+                                    marginHorizontal: 20,
+                                }}
+                                >
+                                    <View style={{ paddingRight: 30 }}>
+                                        <SvgUri
+                                            width="30"
+                                            height="30"
+                                            source={require('../../assets/images/holy-bible.svg')}
+                                            fill="#000000"
+                                        />
+                                        <View style={{ height: 6 }} />
+                                    </View>
+                                    <View style={{
+                                        width: '80%', borderBottomWidth: 0.5, borderBottomColor: "#e3e3e3", paddingBottom: 10,
+                                    }}
+                                    >
+                                        <StyledHeader style={{fontSize: 13}}>Scripture Readings</StyledHeader>
+                                        <StyledText style={{fontSize: 12}}>The text/passage for the day as captured by the Almanac</StyledText>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('CalendarAnnouncements')}>
+                                <View style={{
+                                    paddingHorizontal: Layout.paddingHorizontal,
+                                    paddingTop: 10,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    marginTop: 5,
+                                    marginHorizontal: 20,
+                                }}
+                                >
+                                    <View style={{ paddingRight: 30 }}>
+                                        <SvgUri
+                                            width="30"
+                                            height="30"
+                                            source={require('../../assets/images/profile.svg')}
+                                            fill="#000000"
+                                        />
+                                        <View style={{ height: 6 }} />
+                                    </View>
+                                    <View style={{
+                                        width: '80%', borderBottomWidth: 0.5, borderBottomColor: "#e3e3e3", paddingBottom: 10,
+                                    }}
+                                    >
+                                        <StyledHeader style={{fontSize: 13}}>Announcements</StyledHeader>
+                                        <StyledText style={{fontSize: 12}}>Daily announcements and information dissemination hub</StyledText>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ThemeLiturgyPreaching')}>
+                                <View style={{
+                                    paddingHorizontal: Layout.paddingHorizontal,
+                                    paddingTop: 10,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    marginTop: 5,
+                                    marginHorizontal: 20,
+                                }}
+                                >
+                                    <View style={{ paddingRight: 30 }}>
+                                        <SvgUri
+                                            width="30"
+                                            height="30"
+                                            source={require('../../assets/images/thinking-bubble.svg')}
+                                            fill="#000000"
+                                        />
+                                        <View style={{ height: 6 }} />
+                                    </View>
+                                    <View style={{
+                                        width: '80%', borderBottomWidth: 0.5, borderBottomColor: "#e3e3e3", paddingBottom: 10,
+                                    }}
+                                    >
+                                        <StyledHeader style={{fontSize: 13}}>Theme, Liturgy &amp; Preaching</StyledHeader>
+                                        <StyledText style={{fontSize: 12}}>Liturgical order/ Order of Service lead</StyledText>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
                         </View>
-                        <StyledHeaderInverse style={{ fontSize: 17}}>{this.resolveAlmanacData(this.state.selectedAlmanac.occasion, "occasion")}</StyledHeaderInverse>
-                    </View>
-                    <View style={[styles.providerCard, { backgroundColor: "#01579b"}]}>
-                        <View style={{ marginBottom: 10 }}>
-                            <StyledTextInverse style={{ fontSize: 20}}>Theme</StyledTextInverse>
-                        </View>
-                        <StyledHeaderInverse style={{ fontSize: 17}}>{this.resolveAlmanacData(this.state.selectedAlmanac.theme, "theme")}</StyledHeaderInverse>
-                    </View>
-                    <View style={[styles.providerCard, { backgroundColor: "#e0e0e0"}]}>
-                        <View style={{ marginBottom: 10 }}>
-                            <StyledTextInverse style={{ fontSize: 20, color: "#37474f"}}>Scriptures</StyledTextInverse>
-                        </View>
-                        {
-                            this.resolveAlmanacData(this.state.selectedAlmanac.readings, "readings").map(item => {
-                                return(
-                                    <StyledHeaderInverse style={{ fontSize: 17, color: "#37474f"}}>{item}</StyledHeaderInverse>
-                                )
-                            })
-                        }
                     </View>
                 </ScrollView>
+
             </View>
         )
     }
@@ -197,8 +273,7 @@ const styles = StyleSheet.create({
     providerCard: {
         margin: 10,
         marginBottom: 0,
-        height: 100,
-        padding: 20,
+        padding: 10,
         paddingTop: 5,
         shadowColor: "#000",
         shadowOffset: {

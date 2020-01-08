@@ -10,7 +10,6 @@ const Margin = ({ margin }) => {
             </View>
         )
     }
-
     return(
         <View style={{ marginTop: margin, marginBottom: margin}}>
 

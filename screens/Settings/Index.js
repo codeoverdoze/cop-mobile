@@ -4,7 +4,7 @@ import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Ty
 import {Ionicons} from "@expo/vector-icons";
 
 
-const userProfileImage = require("../../assets/images/user-settings.png");
+const userProfileImage = require("../../assets/images/placeholder-image.png");
 
 export default class SettingsScreen extends Component {
     constructor(props) {
@@ -19,8 +19,8 @@ export default class SettingsScreen extends Component {
                     <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>Settings</StyledHeaderInverse>
                 </View>
 
-               <ScrollView style={{ flex: 1, paddingBottom: 300, paddingTop: 20}}>
-                   <View style={[styles.header, {marginBottom: 60}]}>
+               <ScrollView style={{ flex: 1, paddingBottom: 30}}>
+                   <View style={[styles.header, {marginBottom: 20}]}>
                        <View>
 
                        </View>
@@ -34,7 +34,7 @@ export default class SettingsScreen extends Component {
                            </View>
                            <View style={{ alignItems: "center"}}>
                                <StyledHeader style={{ fontSize: 16}}>Michael Agbo Tettey Soli</StyledHeader>
-                               <StyledText>(0558691496)</StyledText>
+                               <StyledText>(PCG/NLA/PXT/027384924)</StyledText>
                            </View>
                        </View>
 
@@ -45,7 +45,10 @@ export default class SettingsScreen extends Component {
                    </View>
 
                    <View style={[styles.main]}>
-                       <View style={{ marginBottom: 20 }}>
+                       <View style={{ marginLeft: 20, marginBottom: 5}}>
+                           <StyledHeader style={{fontSize: 13}}>Membership Settings</StyledHeader>
+                       </View>
+                       <View style={{ marginBottom: 40 }}>
                            <TouchableOpacity onPress={() => this.props.navigation.navigate("PersonalInformation")}>
                                <View style={[styles.mainItem]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
@@ -85,6 +88,9 @@ export default class SettingsScreen extends Component {
 
 
                        <View style={{ marginBottom: 20 }}>
+                           <View style={{ marginLeft: 20, marginBottom: 5}}>
+                               <StyledHeader style={{fontSize: 13}}>Other Settings</StyledHeader>
+                           </View>
                            <TouchableOpacity>
                                <View style={[styles.mainItem]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>

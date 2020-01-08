@@ -22,6 +22,7 @@
     "expo-constants": "~5.0.0",
     "expo-font": "~5.0.0",
     "expo-sqlite": "~5.0.0",
+    "expo-svg-uri": "^1.1.0",
     "pouchdb-adapter-react-native-sqlite": "^1.0.3",
     "pouchdb-react-native": "^6.4.1",
     "react": "16.8.3",
@@ -38,9 +39,9 @@
     "react-native-modal-activityindicator": "^0.0.1",
     "react-native-onboarding-swiper": "^0.7.1",
     "react-native-picker-select": "^5.0.0",
+    "react-native-responsive-fontsize": "^0.4.2",
     "react-native-swiper": "^1.5.14",
     "react-native-timeago": "^0.4.0",
-    "react-native-timer-countdown": "^2.0.3",
     "react-navigation": "^3.11.0",
     "tiny-emitter": "^2.0.2",
     "xdate": "^0.8.2"
