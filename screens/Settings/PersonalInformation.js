@@ -21,7 +21,6 @@ export default class extends Component {
         this.state = { loading: true };
         this.personalInformation = {};
         this.renderSettingsItem = this.renderSettingsItem.bind(this);
-        StatusBar.setBarStyle("light-content");
 
         // Listener to reload changes from personal information store
         const focusSubscription = this.props.navigation.addListener('willFocus', async () => {

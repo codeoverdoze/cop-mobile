@@ -5,14 +5,23 @@ import { Asset } from "expo-asset";
 import * as Font from 'expo-font'
 import AppNavigator from './navigation/AppNavigator';
 import FlashMessage from "react-native-flash-message";
-import { AppContainer } from "react-navigation"
+import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
 
 
 export default class App extends React.Component {
-    state = {
-        isLoadingComplete: false,
-    };
+    constructor(props) {
+        super(props);
+        this.client = new ApolloClient({
+            cache: new InMemoryCache(),
+            link: new HttpLink({
+                uri: 'http//192.168.100.17:5000/graphql',
+            })
+        });
 
+        this.state = {
+            isLoadingComplete: false,
+        };
+    }
 
 
     render() {
@@ -26,10 +35,12 @@ export default class App extends React.Component {
             );
         } else {
             return (
+                <ApolloProvider client={this.client}>
                 <View style={styles.container}>
                     <AppNavigator/>
                     <FlashMessage position="top"/>
                 </View>
+                </ApolloProvider>
             );
 
         }

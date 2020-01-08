@@ -13,6 +13,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.0-beta.19",
     "@expo/samples": "2.1.1",
     "@expo/vector-icons": "^9.0.0",
     "axios": "^0.18.0",
@@ -23,6 +24,7 @@
     "expo-font": "~5.0.0",
     "expo-sqlite": "~5.0.0",
     "expo-svg-uri": "^1.1.0",
+    "graphql": "^14.5.8",
     "pouchdb-adapter-react-native-sqlite": "^1.0.3",
     "pouchdb-react-native": "^6.4.1",
     "react": "16.8.3",

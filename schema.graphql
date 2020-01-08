@@ -1,0 +1,207 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Congregation {
+    _id: ID!
+    catechist: String!
+    district: District!
+    location: String!
+    name: String!
+    phone: String!
+    residentPastor: String!
+}
+
+type Contact {
+    email: String
+    nextOfKin: NextOfKin
+    primaryTelephone: String
+    secondaryTelephone: String
+}
+
+type District {
+    _id: ID!
+    name: String!
+    presbytery: Presbytery!
+}
+
+type Member {
+    _id: ID!
+    address: String
+    communicant: Boolean
+    contact: Contact
+    firstName: String
+    folio: String
+    gender: Gender
+    group: String
+    hometown: String
+    maritalStatus: MaritalStatus
+    middleName: String
+    surname: String
+}
+
+type Mutation {
+    addCongregation(input: addCongregationInput): Congregation
+    addDistrict(input: addDistrictInput): District
+    addMember(input: addMemberInput): Member!
+    addPresbytery(input: addPresbyteryInput): Presbytery
+    editMember(input: addMemberInput): Member!
+    root: String
+}
+
+type NextOfKin {
+    name: String!
+    telephone: String!
+}
+
+type Presbytery {
+    _id: ID!
+    id: ID!
+    name: String!
+}
+
+type Query {
+    congregations(filter: congregationFilter): [Congregation]!
+    districts(filter: districtFilter): [District]!
+    members(filter: getMemberFilter): [Member]!
+    presbyteries(filter: presbyteryFilter): [Presbytery]!
+    root: String
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+enum Gender {
+    female
+    male
+}
+
+enum MaritalStatus {
+    divorced
+    married
+    single
+}
+
+input addCongregationInput {
+    catechist: String!
+    district: ID!
+    location: String!
+    name: String!
+    phone: String!
+    residentPastor: String!
+}
+
+input addDistrictInput {
+    name: String!
+    presbytery: ID!
+}
+
+"Fields for adding a new member"
+input addMemberInput {
+    address: String!
+    communicant: Boolean!
+    contact: memberContactInput
+    firstName: String!
+    folio: String!
+    gender: Gender!
+    group: String!
+    hometown: String!
+    maritalStatus: MaritalStatus!
+    middleName: String!
+    surname: String!
+}
+
+input addPresbyteryInput {
+    id: ID!
+    name: String!
+}
+
+input congregationFilter {
+    catechist: String
+    district: ID
+    location: String
+    name: String
+    phone: String
+    residentPastor: String
+}
+
+input districtFilter {
+    name: String
+    presbytery: ID
+}
+
+input editMemberInput {
+    address: String
+    communicant: Boolean
+    contact: memberContactInput
+    firstName: String
+    folio: String
+    gender: Gender
+    group: String
+    hometown: String
+    maritalStatus: MaritalStatus
+    middleName: String
+    surname: String
+}
+
+input getMemberFilter {
+    _id: ID!
+    address: String!
+    communicant: Boolean!
+    contact: memberContactFilter
+    firstName: String!
+    folio: String!
+    gender: Gender!
+    group: String!
+    hometown: String!
+    maritalStatus: MaritalStatus!
+    middleName: String!
+    surname: String!
+}
+
+input memberContactFilter {
+    email: String
+    primaryTelephone: String
+    secondaryTelephone: String
+}
+
+input memberContactInput {
+    email: String
+    nextOfKin: nextOfKinInput
+    primaryTelephone: String
+    secondaryTelephone: String
+}
+
+input nextOfKinFilter {
+    name: String
+    telephone: String
+}
+
+input nextOfKinInput {
+    name: String
+    telephone: String
+}
+
+input presbyteryFilter {
+    id: ID
+    name: String
+}
+
+
+scalar DateTime
+
+scalar Date
+
+scalar EmailAddress
+
+scalar PhoneNumber
+
+scalar JSONObject
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
