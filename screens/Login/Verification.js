@@ -20,7 +20,7 @@ function VerifyScreen({ navigation }) {
         },
         onCompleted: async ({ validateLoginMember }) => {
             await saveAuthToken(validateLoginMember.mobileToken);
-            navigation.navigate('Main')
+            navigation.navigate('LoadData')
         }
     });
     return (
