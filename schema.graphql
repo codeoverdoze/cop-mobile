@@ -28,10 +28,16 @@ type District {
     presbytery: Presbytery!
 }
 
+type LoginMemberOutput {
+    message: String!
+    success: Boolean!
+}
+
 type Member {
     _id: ID!
     address: String
     communicant: Boolean
+    congregation: Congregation
     contact: Contact
     firstName: String
     folio: String
@@ -43,13 +49,23 @@ type Member {
     surname: String
 }
 
+type MobileToken {
+    createdAt: DateTime!
+    member: Member
+    mobileToken: String!
+    updatedAt: DateTime!
+}
+
 type Mutation {
     addCongregation(input: addCongregationInput): Congregation
     addDistrict(input: addDistrictInput): District
     addMember(input: addMemberInput): Member!
     addPresbytery(input: addPresbyteryInput): Presbytery
     editMember(input: addMemberInput): Member!
+    loginMember(input: loginMemberInput): LoginMemberOutput!
     root: String
+    setCongregation(input: setCongregationInput): Member!
+    validateLoginMember(input: validateLoginMemberInput): MobileToken!
 }
 
 type NextOfKin {
@@ -61,6 +77,7 @@ type Presbytery {
     _id: ID!
     id: ID!
     name: String!
+    zone: String!
 }
 
 type Query {
@@ -119,6 +136,7 @@ input addMemberInput {
 input addPresbyteryInput {
     id: ID!
     name: String!
+    zone: String!
 }
 
 input congregationFilter {
@@ -150,18 +168,22 @@ input editMemberInput {
 }
 
 input getMemberFilter {
-    _id: ID!
-    address: String!
-    communicant: Boolean!
+    _id: ID
+    address: String
+    communicant: Boolean
     contact: memberContactFilter
-    firstName: String!
-    folio: String!
-    gender: Gender!
-    group: String!
-    hometown: String!
-    maritalStatus: MaritalStatus!
-    middleName: String!
-    surname: String!
+    firstName: String
+    folio: String
+    gender: Gender
+    group: String
+    hometown: String
+    maritalStatus: MaritalStatus
+    middleName: String
+    surname: String
+}
+
+input loginMemberInput {
+    phone: String!
 }
 
 input memberContactFilter {
@@ -190,6 +212,16 @@ input nextOfKinInput {
 input presbyteryFilter {
     id: ID
     name: String
+    zone: String
+}
+
+input setCongregationInput {
+    congregation: ID!
+}
+
+input validateLoginMemberInput {
+    otp: String!
+    phone: String!
 }
 
 

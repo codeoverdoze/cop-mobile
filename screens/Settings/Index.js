@@ -115,6 +115,17 @@ export default class SettingsScreen extends Component {
                                    </View>
                                </View>
                            </TouchableOpacity>
+                           <TouchableOpacity>
+                               <View style={[styles.mainItem]}>
+                                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, borderBottomWidth: 0.3, borderBottomColor: "#cecece", paddingTop: 15, paddingBottom: 15}}>
+                                       <View style={{ flexDirection: "row"}}>
+                                           <StyledText style={{ fontSize: 16 }}>Prayer Requests</StyledText>
+                                       </View>
+
+                                       <Ionicons name={"ios-arrow-forward"} size={16} color="#3E4E5B"/>
+                                   </View>
+                               </View>
+                           </TouchableOpacity>
 
                            <TouchableOpacity onPress={() => this.props.navigation.navigate("Credits")}>
                                <View style={[styles.mainItem]}>

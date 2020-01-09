@@ -1,5 +1,6 @@
 import React from 'react';
-import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack'
 
 import TabBarIcon from '../components/TabBarIcon';
 
@@ -16,6 +17,7 @@ import BibleChapter from '../screens/Bible/BibleChapter';
 
 // Hymnary Screen stack
 import HymnaryIndex from '../screens/Hymnary/Index';
+import HymnSelection from "../screens/Hymnary/HymnSelection";
 
 
 // Almanac Screen Stack
@@ -73,7 +75,7 @@ const AlmanacStack = createStackNavigator({
 
 
 const HomeStack = createStackNavigator({
-    Home: HomeIndex, Announcements, Almanac: AlmanacStack
+    Home: HomeIndex, Announcements, Almanac: AlmanacStack,
 }, { headerMode: "none"});
 
 HomeStack.navigationOptions = {
@@ -88,6 +90,7 @@ HomeStack.navigationOptions = {
 };
 
 const HymnaryStack = createStackNavigator({
+    HymnSelection,
     Hymnary: HymnaryIndex,
 }, { headerMode: "none"});
 

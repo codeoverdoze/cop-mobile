@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
-import GridLayout from "react-native-layout-grid";
-import {StyledHeader, StyledText} from "../../components/Typography";
+import {StyledText} from "../../components/Typography";
 
 import Bible from "../../store/Bible";
 import BibleBar from "./components/BibleBar";
@@ -14,18 +13,6 @@ export default class extends Component{
         Bible.setChapter(chapter);
         this.props.navigation.navigate("BibleDashboard")
     }
-
-    renderGridItem = (item) => {
-        if (item) {
-            return(
-                <TouchableOpacity onPress={() => this.setBibleChapter(item)}>
-                    <View style={[styles.gridItem, { alignItems: "center"}]}>
-                        <StyledText style={{ fontSize: 20}}>{item}</StyledText>
-                    </View>
-                </TouchableOpacity>
-            )
-        }
-    };
 
 
     navigateToBibleBookScreen(){
@@ -53,13 +40,21 @@ export default class extends Component{
                     navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
                 />
                 <View style={[styles.gridContainer]}>
-                    <View style={[styles.grid]}>
-                        <GridLayout
-                            items={book.chapters}
-                            itemsPerRow={5}
-                            renderItem={this.renderGridItem}
-                            removeClippedSubviews={false}
-                        />
+                    <View style={[styles.grid, { flexDirection: 'row', flexWrap: 'wrap'}]}>
+                        {
+                            book.chapters.map(chapter => {
+                                return (
+                                    <View style={{ margin: 5}} key={chapter}>
+                                        <TouchableOpacity onPress={() => this.setBibleChapter(chapter)}>
+                                            <View style={[styles.gridItem, { alignItems: "center", width: 50}]}>
+                                                <StyledText style={{ fontSize: 20}}>{chapter}</StyledText>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+                                )
+                            })
+                        }
+
                     </View>
                 </View>
             </View>

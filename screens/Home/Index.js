@@ -104,7 +104,7 @@ export default class Index extends React.Component {
         return (
             <View>
                 <View style={[styles.headerBar]}>
-                    <StyledHeaderInverse style={{ fontSize: 20, alignSelf: "flex-start"}}>That They All May Be One</StyledHeaderInverse>
+                    <StyledHeaderInverse style={{ fontSize: 13, alignSelf: "flex-start"}}>That They All May Be One</StyledHeaderInverse>
                 </View>
 
                 <ScrollView contentContainerStyle={[styles.body]}>

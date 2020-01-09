@@ -1,11 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {AppLoading, Icon} from 'expo';
+import {Platform, StyleSheet, View} from 'react-native';
+import {AppLoading} from 'expo';
 import { Asset } from "expo-asset";
 import * as Font from 'expo-font'
-import AppNavigator from './navigation/AppNavigator';
+import loadAppNavigation from './navigation/AppNavigator';
 import FlashMessage from "react-native-flash-message";
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+import { retrieveAuthToken } from "./utils";
 
 
 export default class App extends React.Component {
@@ -14,12 +15,13 @@ export default class App extends React.Component {
         this.client = new ApolloClient({
             cache: new InMemoryCache(),
             link: new HttpLink({
-                uri: 'http//192.168.100.17:5000/graphql',
+                uri: 'http://192.168.100.17:5000/graphql',
             })
         });
 
         this.state = {
             isLoadingComplete: false,
+            mobiletoken: null
         };
     }
 
@@ -34,11 +36,12 @@ export default class App extends React.Component {
                 />
             );
         } else {
+            const AppNavigator = loadAppNavigation(this.state.mobiletoken);
             return (
                 <ApolloProvider client={this.client}>
                 <View style={styles.container}>
                     <AppNavigator/>
-                    <FlashMessage position="top"/>
+                    <FlashMessage position="bottom"/>
                 </View>
                 </ApolloProvider>
             );
@@ -55,13 +58,13 @@ export default class App extends React.Component {
             ]),
             Font.loadAsync({
                 // This is the font that we are using for our tab bar
-                ...Icon.Ionicons.font,
-                'regular': require('./assets/fonts/Cereal-Book.ttf'),
+                'regular': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
                 'bold': require('./assets/fonts/Cereal-Bold.ttf'),
-                'light': require('./assets/fonts/lato-light.ttf'),
-                'bible': require('./assets/fonts/Cereal-Book.ttf'),
+                'light': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
+                'bible': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
                 'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
             }),
+            retrieveAuthToken().then(token => this.setState({ mobiletoken: token }))
         ]);
     };
 

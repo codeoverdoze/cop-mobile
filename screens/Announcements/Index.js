@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, FlatList, SafeAreaView, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, FlatList, View, TouchableOpacity} from 'react-native';
 import {StyledText, StyledTextInverse} from "../../components/Typography";
 import { Ionicons, EvilIcons } from "@expo/vector-icons";
 

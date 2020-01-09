@@ -12,25 +12,15 @@ export default class extends Component{
     constructor(props){
         super(props);
         this.state = { invalidHymnNumber: false };
-        // Event listener to reload changes in bible
-        const focusSubscription = this.props.navigation.addListener('willFocus', () => {
-            this.forceUpdate();
-        });
-
-        emitter.on("hymn-change", async () => {
-            console.log('Change in screen', Hymnary.getHymnNumber());
-            if(Hymnary.getHymnNumber() > hymnBook.length || Hymnary.getHymnNumber() == 0){
-                await this.setState({ invalidHymnNumber: true })
-            }else{
-                await this.setState({ invalidHymnNumber: false })
-            }
-        });
+        this.HymnNumber = Number(this.props.navigation.getParam('HymnNumber'));
+        this.renderVerses = this.renderVerses.bind(this);
+        console.log(this.HymnNumber);
     }
 
 
     renderVerses = (verse) => {
+        console.log('render verse', verse);
         if (verse) {
-            const hymn = hymnBook[Hymnary.getHymnNumber() - 1];
             return(
                 <View style={[styles.gridItem]} key={verse.item}>
                     <View style={{ alignSelf: "flex-start", paddingRight: 10}}>
@@ -38,23 +28,6 @@ export default class extends Component{
                     </View>
                     <View style={{ width: "90%", flexDirection: "column"}}>
                         <StyledText bible style={{ fontSize: 18}}>{verse.item}</StyledText>
-
-                        {
-                            verse.index + 1 === hymnBook[Hymnary.getHymnNumber() - 1].verses.length
-                                ?
-                                <View style={{ marginTop: 10}}>
-                                    <StyledText bibleItalic>Scripture - {hymn.scripture}</StyledText>
-                                    <StyledText bibleItalic>Authored by {hymn.author}</StyledText>
-                                    {
-                                        hymn.translator.length > 0 ?
-                                            <StyledText bibleItalic>Transalated by {hymn.translator}</StyledText>
-                                            :
-                                            null
-                                    }
-                                </View>
-                                :
-                                null
-                        }
                     </View>
                 </View>
             )
@@ -62,34 +35,34 @@ export default class extends Component{
     };
 
 
-    navigateToBibleBookScreen(){
-        this.props.navigation.navigate("BibleBook");
-    }
-
-    navigateToBibleChapterScreen(){
-        this.props.navigation.navigate("BibleChapter");
-    }
-
-
     render() {
-        console.log(Hymnary.getHymnNumber(), 'Current hymn number');
+        console.log(this.HymnNumber, 'Current hymn number');
+        const hymn = hymnBook[this.HymnNumber - 1];
         return (
             <View style={[styles.container]}>
-                <HymnaryBar
-                    navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
-                    navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
-                />
                 {
-                    this.state.invalidHymnNumber ?
+                    (hymn === undefined) ?
                         <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
-                            <StyledText style={{ fontSize: 20, fontStyle: "italic"}}>Ooops, Invalid Hymn Number</StyledText>
+                            <StyledText style={{ fontSize: 18, fontStyle: "italic"}}>Ooops, Invalid Hymn Number</StyledText>
                         </View>
                         :
                         <View style={[styles.gridContainer]}>
-                            <FlatList
-                                data={hymnBook[Hymnary.getHymnNumber() - 1].verses}
-                                renderItem={this.renderVerses}
-                            />
+                            <View style={{marginBottom: 73}}>
+                                <FlatList
+                                    data={hymn.verses}
+                                    renderItem={this.renderVerses}
+                                />
+                            </View>
+                            <View style={{ paddingTop: 10, position: 'absolute', bottom: 0, borderTopColor:'#949494', borderTopWidth: 0.3, paddingHorizontal: 15}}>
+                                <StyledText bibleItalic style={{textAlign: 'center'}}>Scripture - {hymn.scripture}</StyledText>
+                                <StyledText bibleItalic style={{textAlign: 'center'}}>Authored by {hymn.author}</StyledText>
+                                {
+                                    hymn.translator.length > 0 ?
+                                        <StyledText bibleItalic style={{textAlign: 'center'}}>Translated by {hymn.translator}</StyledText>
+                                        :
+                                        null
+                                }
+                            </View>
                         </View>
                 }
             </View>
@@ -102,7 +75,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#F8FAF9",
-        paddingBottom: 100
+        paddingTop: 40
     },
 
     gridContainer: {

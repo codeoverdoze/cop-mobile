@@ -1,141 +1,158 @@
-import React from 'react';
-import {ActivityIndicator, Image, TextInput, View} from 'react-native';
-import {Button} from 'react-native-elements';
+import React, {useState} from "react";
+import Carousel, {Pagination} from 'react-native-snap-carousel';
+import {Image, ScrollView, View, TouchableOpacity, StatusBar, ActivityIndicator} from "react-native";
+import Layout from '../../constants/NewLayout';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {StyledHeader, StyledText} from "../../components/Typography"
-import Color from '../../constants/Colors';
-import Margin from '../../components/Margin';
-import {login} from "../../requests";
-import PersonalInformation from "../../store/PersonalInformation";
-import AuthInformation from "../../store/AuthInformation";
+import {StyledHeader, StyledText} from "../../components/Typography";
+import Slider1 from "../../assets/images/slider_image_1.png"
+import Slider2 from "../../assets/images/slider_image_2.png"
+import Slider3 from "../../assets/images/slider_image_3.png"
+import Slider5 from "../../assets/images/slider_image_1.png"
+import Button from "../../components/FormInput/Button";
+import Input from "../../components/FormInput/Input";
+import {RFValue} from "react-native-responsive-fontsize";
+import {useMutation} from "@apollo/client";
+import {loginMember as loginMemberMutation} from "../../graphql/mutations";
+import { showMessage, hideMessage } from 'react-native-flash-message';
 
-import loginIcon from "../../assets/images/sms-verify.png";
 
-class LoginScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Please sign in',
-    };
-
-    constructor(props) {
-        super(props);
-        this.state = {telephone: "", loading: false};
-        PersonalInformation.ping()
+const sliders = [
+    {
+        imageURI: Slider1,
+        caption: 'Pay your tithe with just one click',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },
+    {
+        imageURI: Slider2,
+        caption: 'Pay your tithe with just one click',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },
+    {
+        imageURI: Slider3,
+        caption: 'Pay your tithe with just one click',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },
+    {
+        imageURI: Slider2,
+        caption: 'Pay your tithe with just one click',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    },
+    {
+        imageURI: Slider5,
+        caption: 'Pay your tithe with just one click',
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     }
+];
 
 
-    componentWillMount() {
-        (async function () {
-            try {
-                const personalInformation = await PersonalInformation.getPersonalInfo();
-                console.log(personalInformation);
-                const authInfo = await AuthInformation.getAuthInfo();
-                console.log(authInfo)
-            } catch (e) {
-                throw e;
-            }
-        })()
-    }
-
-    _navigateToSMSVerify() {
-        this.props.navigation.navigate('SMSVerify');
-    }
-
-
-    async onPhoneNumberChange(value) {
-        await this.setState({telephone: value});
-        console.log(this.state.telephone);
-    }
-
-    async login() {
-        await this.setState({loading: true});
-        try {
-            const response = await login(this.state.telephone);
-            await this.setState({loading: false});
-            this.props.navigation.navigate("Verification", {telephone: response.payload.telephone})
-        } catch (e) {
-            await this.setState({loading: false})
-        }
-    }
-
-    renderLoginButtonOrLoading() {
-        return this.state.loading ?
-            <ActivityIndicator size="small" color={Color.tintColor}/>
-            :
-            <Button
-                title="Login"
-                backgroundColor={Color.tintColor} borderRadius={5}
-                onPress={() => this.login()}
-            />
-    }
-
-    render() {
-        return (
-            <KeyboardAwareScrollView style={styles.root}>
-                <View style={styles.header}>
-                    <Image source={loginIcon} style={{width: 120, height: 120}}/>
-                </View>
-
-                <Margin/>
-
-                <View style={[styles.header, {marginTop: 5}]}>
-                    <StyledHeader style={{color: Color.tintColor}}>SMS Verification</StyledHeader>
-                </View>
-
-
-                <View style={[styles.header, {marginTop: 5, paddingLeft: 25, paddingRight: 25}]}>
-                    <StyledText>Enter your telephone number. A code will be sent to your phone to verify that this
-                        number is yours.</StyledText>
-                </View>
-
-                <Margin/>
-                <Margin/>
-                <Margin/>
-
-                <View style={{marginLeft: 60, marginRight: 60, flexDirection: "row"}}>
-                    <StyledText style={{fontSize: 30}}>+233</StyledText>
-                    <TextInput
-                        style={{fontSize: 30, fontFamily: "regular", color: '#3E4E5B', width: "100%"}}
-                        keyboardType={"numeric"}
-                        onChangeText={value => this.onPhoneNumberChange(value)}
-                        maxLength={10}
-                    />
-                </View>
-
-
-                <Margin/>
-                <Margin/>
-                <Margin/>
-
-                <View style={{marginLeft: 30, marginRight: 30}}>
-                    {this.renderLoginButtonOrLoading()}
-                </View>
-            </KeyboardAwareScrollView>
-        )
-    }
+function pagination(activeSlide) {
+    return (
+        <Pagination
+            dotsLength={5}
+            activeDotIndex={activeSlide}
+            containerStyle={{}}
+            dotStyle={{
+                width: 10,
+                height: 10,
+                borderRadius: 5,
+                marginHorizontal: 8,
+            }}
+            inactiveDotStyle={{
+                // Define styles for inactive dots here
+            }}
+            inactiveDotOpacity={0.4}
+            inactiveDotScale={0.6}
+        />
+    );
 }
 
-const styles = {
-    root: {
-        flex: 1,
-        paddingTop: 40,
-        backgroundColor: "#FFFFFF"
-    },
-    header: {
-        marginTop: 30,
-        marginLeft: 17,
-        marginRight: 17,
-        justifyContent: 'center',
-        alignSelf: 'center'
-    },
-    forgotPassword: {
-        justifyContent: 'center',
-        alignSelf: 'flex-end',
-        marginRight: 17
-    },
-    newUser: {
-        justifyContent: 'center',
-        alignSelf: 'center'
-    }
+
+const renderSlider = ({item, index}) => (
+    <View style={{justifyContent: 'center'}}>
+        <View style={{justifyContent: 'center', alignItems: 'center',}}>
+            <Image source={item.imageURI} style={{height: 260, width: 260, resizeMode: 'contain'}}/>
+        </View>
+        <View style={{justifyContent: 'center', marginTop: 20}}>
+            <StyledHeader
+                style={{fontSize: 32, textAlign: 'center', paddingHorizontal: 15}}>{item.caption}</StyledHeader>
+            <StyledText style={{textAlign: 'center', paddingHorizontal: 30}}>{item.description}</StyledText>
+        </View>
+    </View>
+);
+
+const Index = ({navigation}) => {
+    StatusBar.setBarStyle('dark-content');
+    const [activeSlide, setActiveSlide] = useState(0);
+    const [phone, setPhone] = useState('');
+    const [loginMember, {loading}] = useMutation(loginMemberMutation, {
+        variables: {
+            phone
+        },
+        onCompleted: data => {
+            navigation.navigate('Verification', { phone });
+        },
+        onError: ({ graphQLErrors }) => {
+            if(graphQLErrors[0].message === 'MemberNotExist'){
+                showMessage({
+                    type: "warning",
+                    message: 'You have not been registered',
+                    description: 'Please register as a member at your local Presby church and login with the phone provided'
+                })
+            }
+        }
+    });
+
+
+    return (
+        <KeyboardAwareScrollView contentContainerStyle={{flex: 1}} enableOnAndroid>
+            <View style={{alignItems: 'center', justifyContent: 'center', marginTop: 40}}>
+                <ScrollView>
+                    <Carousel
+                        data={sliders}
+                        renderItem={renderSlider}
+                        sliderWidth={Layout.window.width}
+                        itemWidth={Layout.window.width}
+                        layout="default"
+                        layoutCardOffset={0}
+                        keyExtractor={(item, index) => item + index}
+                        enableMomentum
+                        removeClippedSubviews={false}
+                        onSnapToItem={(index) => setActiveSlide(index)}
+                    />
+                    {pagination(activeSlide)}
+
+                    <View style={{marginHorizontal: 20, marginVertical: 0}}>
+                        <View>
+                            <Input
+                                placeholderLabel="Phone Number"
+                                value={phone}
+                                onChangeText={setPhone}
+                            />
+                        </View>
+                        <View>
+                            <TouchableOpacity
+                                onPress={loginMember}>
+                                <Button>
+                                    {
+                                        !loading
+                                            ?
+                                            <StyledHeader style={{color: '#fff'}}>Create Account</StyledHeader>
+                                            :
+                                            <ActivityIndicator/>
+                                    }
+                                </Button>
+                            </TouchableOpacity>
+                        </View>
+                        <StyledText style={{fontSize: RFValue(11), textAlign: 'center', color: 'red'}}>By creating an
+                            account, you accept the Terms & Conditions</StyledText>
+                        <StyledText style={{textAlign: 'center', fontSize: RFValue(11)}}>Contrary to popular belief,
+                            Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+                            from 45 BC, making it over 2000 years old.</StyledText>
+                    </View>
+                </ScrollView>
+            </View>
+        </KeyboardAwareScrollView>
+    )
 };
 
-export default LoginScreen;
+export default Index;

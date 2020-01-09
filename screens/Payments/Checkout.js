@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import {View, StyleSheet, TouchableOpacity, TextInput, StatusBar} from "react-native";
-import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import {View, TouchableOpacity, StatusBar} from "react-native";
+import { StyledText, StyledTextInverse} from "../../components/Typography";
 import {Ionicons} from "@expo/vector-icons";
-
-import Payment from "../../store/Payment";
 
 
 export default class Checkout extends Component {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {ScrollView, TouchableOpacity, View, Image, StatusBar} from "react-native";
-import GridLayout from "react-native-layout-grid";
-import Header from "./components/Header";
-import {StyledText, StyledHeader, StyledTextInverse, StyledHeaderInverse} from "../../components/Typography";
+import { TouchableOpacity, View, Image, StatusBar, FlatList} from "react-native";
+import Grid from 'react-native-grid-component';
+
+import {StyledText, StyledHeader, StyledHeaderInverse, StyledTextInverse} from "../../components/Typography";
 
 // Payment class for payment transactions
 import Payment from "../../store/Payment";
@@ -64,7 +64,6 @@ export default class extends Component {
     constructor(props){
         super(props);
         StatusBar.setBarStyle("light-content", true);
-        this.renderPaymentGrid = this.renderPaymentGrid.bind(this);
         this.navigateToPackageSelectionScreen = this.navigateToPackageSelectionScreen.bind(this);
     }
 
@@ -77,21 +76,6 @@ export default class extends Component {
         this.props.navigation.navigate("PaymentPackages", { provider })
     }
 
-    renderPaymentGrid(provider){
-        if(provider){
-            return (
-                <TouchableOpacity onPress={() => this.navigateToPackageSelectionScreen(provider)}>
-                    <View style={{ alignSelf: "center"}}>
-                        <Image
-                            source={provider.image}
-                            style={{ height: 80, width: 80, borderRadius: 40, marginBottom: 5 }}
-                        />
-                        <StyledText style={{ alignSelf: "center"}}>{provider.name}</StyledText>
-                    </View>
-                </TouchableOpacity>
-            )
-        }
-    }
 
 
     render() {
@@ -107,11 +91,24 @@ export default class extends Component {
                     </View>
                 </View>
 
-                <View>
-                    <GridLayout
-                        itemsPerRow={3}
-                        renderItem={this.renderPaymentGrid}
-                        items={paymentItems}/>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
+                    {
+                        paymentItems.map(provider => {
+                            return (
+                                <View style={{ marginRight: 20}}>
+                                    <TouchableOpacity onPress={() => this.navigateToPackageSelectionScreen(provider)}>
+                                        <View style={{ alignSelf: "center"}}>
+                                            <Image
+                                                source={provider.image}
+                                                style={{ height: 80, width: 80, borderRadius: 40, marginBottom: 5 }}
+                                            />
+                                            <StyledTextInverse style={{ alignSelf: "center"}}>{provider.name}</StyledTextInverse>
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+                            )
+                        })
+                    }
                 </View>
             </View>
 
