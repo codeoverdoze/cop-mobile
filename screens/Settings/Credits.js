@@ -4,6 +4,7 @@ import {StyledHeader, StyledHeaderInverse, StyledText, StyledTextInverse} from "
 import {Ionicons} from "@expo/vector-icons";
 import AuthInformation from "../../store/AuthInformation";
 import { showMessage } from "react-native-flash-message";
+import { deleteAuthToken } from "../../utils";
 
 
 const userProfileImage = require("../../assets/images/user-settings.png");
@@ -65,7 +66,7 @@ export default class extends Component {
 
                     <View style={[styles.main]}>
                         <View style={{ marginBottom: 20}}>
-                            <TouchableOpacity onPress={() => this.nukeApp()}>
+                            <TouchableOpacity onPress={() => deleteAuthToken()}>
                                 <View style={[styles.mainItem]}>
                                     <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
                                         <View style={{ flexDirection: "row"}}>

@@ -4,6 +4,12 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import TabBarIcon from '../components/TabBarIcon';
 
+import homeIcon from '../assets/icons/home.svg';
+import bibleIcon from '../assets/icons/bible.svg';
+import hymnaryIcon from '../assets/icons/hymnary.svg';
+import paymentIcon from '../assets/icons/payment.svg';
+import settingsIcon from '../assets/icons/settings.svg';
+
 
 
 // Home screen stack
@@ -85,6 +91,7 @@ HomeStack.navigationOptions = {
             focused={focused}
             name='home'
             type='feather'
+            icon={homeIcon}
         />
     ),
 };
@@ -101,6 +108,7 @@ HymnaryStack.navigationOptions = {
             focused={focused}
             type='feather'
             name='book-open'
+            icon={hymnaryIcon}
         />
     ),
 };
@@ -119,6 +127,7 @@ BibleStack.navigationOptions = {
             focused={focused}
             type='feather'
             name='book'
+            icon={bibleIcon}
         />
     ),
 };
@@ -134,6 +143,7 @@ PaymentStack.navigationOptions = {
             focused={focused}
             type='feather'
             name='credit-card'
+            icon={paymentIcon}
         />
     ),
 };
@@ -157,6 +167,7 @@ SettingsStack.navigationOptions = {
             focused={focused}
             name='settings'
             type='feather'
+            icon={settingsIcon}
         />
     ),
 };

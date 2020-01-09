@@ -64,7 +64,7 @@ type Mutation {
     editMember(input: addMemberInput): Member!
     loginMember(input: loginMemberInput): LoginMemberOutput!
     root: String
-    setCongregation(input: setCongregationInput): Member!
+    setMemberCongregation(input: setCongregationInput): Member!
     validateLoginMember(input: validateLoginMemberInput): MobileToken!
 }
 
@@ -83,6 +83,7 @@ type Presbytery {
 type Query {
     congregations(filter: congregationFilter): [Congregation]!
     districts(filter: districtFilter): [District]!
+    memberProfile: Member!
     members(filter: getMemberFilter): [Member]!
     presbyteries(filter: presbyteryFilter): [Presbytery]!
     root: String

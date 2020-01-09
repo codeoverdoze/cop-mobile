@@ -5,29 +5,27 @@ import { Asset } from "expo-asset";
 import * as Font from 'expo-font'
 import loadAppNavigation from './navigation/AppNavigator';
 import FlashMessage from "react-native-flash-message";
-import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+import apolloClient from "./graphql/client"
 import { retrieveAuthToken } from "./utils";
+import { ApolloProvider } from '@apollo/client';
+
 
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.client = new ApolloClient({
-            cache: new InMemoryCache(),
-            link: new HttpLink({
-                uri: 'http://192.168.100.17:5000/graphql',
-            })
-        });
 
         this.state = {
             isLoadingComplete: false,
-            mobiletoken: null
+            mobiletoken: null,
+            client: null
         };
+
     }
 
 
     render() {
-        if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+        if ((!this.state.isLoadingComplete || !this.state.client) && !this.props.skipLoadingScreen) {
             return (
                 <AppLoading
                     startAsync={this._loadResourcesAsync}
@@ -38,7 +36,7 @@ export default class App extends React.Component {
         } else {
             const AppNavigator = loadAppNavigation(this.state.mobiletoken);
             return (
-                <ApolloProvider client={this.client}>
+                <ApolloProvider client={this.state.client}>
                 <View style={styles.container}>
                     <AppNavigator/>
                     <FlashMessage position="bottom"/>
@@ -64,7 +62,10 @@ export default class App extends React.Component {
                 'bible': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
                 'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
             }),
-            retrieveAuthToken().then(token => this.setState({ mobiletoken: token }))
+            retrieveAuthToken().then(token => this.setState({ mobiletoken: token })),
+            apolloClient().then(client => {
+                this.setState({ client })
+            })
         ]);
     };
 
