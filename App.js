@@ -10,7 +10,6 @@ import { retrieveAuthToken } from "./utils";
 import { ApolloProvider } from '@apollo/client';
 
 
-
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -70,8 +69,6 @@ export default class App extends React.Component {
     };
 
     _handleLoadingError = error => {
-        // In this case, you might want to report the error to your error
-        // reporting service, for example Sentry
         console.warn(error);
     };
 
