@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity, StyleSheet, Image, ScrollView, StatusBar} from 'react-native';
 import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
+import { deleteAuthToken } from "../../utils";
 
 const announcementImage = require("../../assets/images/announcement-bg.jpg");
 const membershipRegistrationImage = require("../../assets/images/news-bg.png");
@@ -104,7 +105,9 @@ export default class Index extends React.Component {
         return (
             <View>
                 <View style={[styles.headerBar]}>
-                    <StyledHeaderInverse style={{ fontSize: 13, alignSelf: "flex-start"}}>That They All May Be One</StyledHeaderInverse>
+                    <TouchableOpacity onPress={() => deleteAuthToken()}>
+                        <StyledHeaderInverse style={{ fontSize: 13, alignSelf: "flex-start"}}>That They All May Be One</StyledHeaderInverse>
+                    </TouchableOpacity>
                 </View>
 
                 <ScrollView contentContainerStyle={[styles.body]}>
