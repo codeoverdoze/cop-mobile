@@ -24,6 +24,7 @@
     "debounce": "^1.2.0",
     "expo": "^36.0.0",
     "expo-asset": "~8.0.0",
+    "expo-av": "~8.0.0",
     "expo-constants": "~8.0.0",
     "expo-font": "~8.0.0",
     "expo-location": "~8.0.0",

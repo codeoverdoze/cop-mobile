@@ -4,9 +4,9 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import TabBarIcon from '../components/TabBarIcon';
 
-import homeIcon from '../assets/icons/home.svg';
+import homeIcon from '../assets/icons/circled-menu.svg';
 import bibleIcon from '../assets/icons/bible.svg';
-import hymnaryIcon from '../assets/icons/hymnary.svg';
+import hymnaryIcon from '../assets/icons/music-playlist.svg';
 import paymentIcon from '../assets/icons/payment.svg';
 import settingsIcon from '../assets/icons/settings.svg';
 
@@ -51,6 +51,8 @@ import PersonalInformationForm from "../screens/Settings/PersonalInformationForm
 import ChurchSelection from "../screens/Settings/ChurchSelection";
 import DistrictSelection from "../screens/Settings/DistrictSelection";
 import CongregationSelection from "../screens/Settings/CongregationSelection";
+import MembershipDetails from "../screens/Settings/MembershipDetails";
+
 
 import Colors from "../constants/Colors";
 
@@ -154,7 +156,8 @@ const SettingsStack = createStackNavigator({
     ChurchSelection,
     PersonalInformationForm,
     DistrictSelection,
-    CongregationSelection
+    CongregationSelection,
+    MembershipDetails,
 
 }, {
     headerMode: "null"

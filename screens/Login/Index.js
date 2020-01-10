@@ -7,6 +7,7 @@ import {StyledHeader, StyledText} from "../../components/Typography";
 import Slider1 from "../../assets/images/slider_image_1.png"
 import Slider2 from "../../assets/images/slider_image_2.png"
 import Slider3 from "../../assets/images/slider_image_3.png"
+import Slider4 from "../../assets/images/slider_image_4.png"
 import Slider5 from "../../assets/images/slider_image_1.png"
 import Button from "../../components/FormInput/Button";
 import Input from "../../components/FormInput/Input";
@@ -33,7 +34,7 @@ const sliders = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
-        imageURI: Slider2,
+        imageURI: Slider4,
         caption: 'Pay your tithe with just one click',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
