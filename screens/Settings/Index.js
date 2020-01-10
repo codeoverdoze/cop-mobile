@@ -34,7 +34,7 @@ export default class SettingsScreen extends Component {
                            </View>
                            <View style={{ alignItems: "center"}}>
                                <StyledHeader style={{ fontSize: 16}}>Michael Agbo Tettey Soli</StyledHeader>
-                               <StyledText>(PCG/NLA/PXT/027384924)</StyledText>
+                               <StyledText>(PCG/NLA/PXT/027)</StyledText>
                            </View>
                        </View>
 
@@ -73,7 +73,7 @@ export default class SettingsScreen extends Component {
                                </View>
                            </TouchableOpacity>
 
-                           <TouchableOpacity>
+                           <TouchableOpacity onPress={() => this.props.navigation.navigate('MembershipDetails')}>
                                <View style={[styles.mainItem]}>
                                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 20, marginRight: 20, paddingTop: 15, paddingBottom: 15}}>
                                        <View style={{ flexDirection: "row"}}>

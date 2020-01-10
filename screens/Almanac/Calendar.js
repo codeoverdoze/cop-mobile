@@ -158,6 +158,34 @@ export default class extends Component {
 
                     <View style={{ paddingTop: 5 }}>
                         <View style={{ backgroundColor: "#fff" }}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ThemeLiturgyPreaching')}>
+                                <View style={{
+                                    paddingHorizontal: Layout.paddingHorizontal,
+                                    paddingTop: 10,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    marginTop: 5,
+                                    marginHorizontal: 20,
+                                }}
+                                >
+                                    <View style={{ paddingRight: 30 }}>
+                                        <SvgUri
+                                            width="30"
+                                            height="30"
+                                            source={require('../../assets/images/thinking-bubble.svg')}
+                                            fill="#000000"
+                                        />
+                                        <View style={{ height: 6 }} />
+                                    </View>
+                                    <View style={{
+                                        width: '80%', borderBottomWidth: 0.5, borderBottomColor: "#e3e3e3", paddingBottom: 10,
+                                    }}
+                                    >
+                                        <StyledHeader style={{fontSize: 13}}>Theme, Liturgy &amp; Preaching</StyledHeader>
+                                        <StyledText style={{fontSize: 12}}>Liturgical order/ Order of Service lead</StyledText>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('ScriptureReadings')}>
                                 <View style={{
                                     paddingHorizontal: Layout.paddingHorizontal,
@@ -214,35 +242,6 @@ export default class extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ThemeLiturgyPreaching')}>
-                                <View style={{
-                                    paddingHorizontal: Layout.paddingHorizontal,
-                                    paddingTop: 10,
-                                    flexDirection: 'row',
-                                    alignItems: 'center',
-                                    marginTop: 5,
-                                    marginHorizontal: 20,
-                                }}
-                                >
-                                    <View style={{ paddingRight: 30 }}>
-                                        <SvgUri
-                                            width="30"
-                                            height="30"
-                                            source={require('../../assets/images/thinking-bubble.svg')}
-                                            fill="#000000"
-                                        />
-                                        <View style={{ height: 6 }} />
-                                    </View>
-                                    <View style={{
-                                        width: '80%', borderBottomWidth: 0.5, borderBottomColor: "#e3e3e3", paddingBottom: 10,
-                                    }}
-                                    >
-                                        <StyledHeader style={{fontSize: 13}}>Theme, Liturgy &amp; Preaching</StyledHeader>
-                                        <StyledText style={{fontSize: 12}}>Liturgical order/ Order of Service lead</StyledText>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-
                         </View>
                     </View>
                 </ScrollView>
