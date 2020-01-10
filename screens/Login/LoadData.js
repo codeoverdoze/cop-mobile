@@ -8,10 +8,13 @@ import {gql, useQuery} from "@apollo/client";
 const queries = gql`
     query {
         memberProfile{
+            _id
             firstName
             middleName
             surname
             communicant
+            gender
+            folio
             contact {
                 primaryTelephone
                 secondaryTelephone
@@ -35,8 +38,24 @@ const queries = gql`
                 }
             }
         }
+        presbyteries {
+            _id
+            name
+            zone
+        }
+        districts {
+            _id
+            name
+        }
+        congregations {
+            _id
+            name
+            catechist
+            location
+            residentPastor
+        }
     }
-`
+`;
 
 function LoadData({ navigation }) {
     const { loading, data, error } = useQuery(queries);
