@@ -29,14 +29,14 @@ module.exports = async () => {
     });
 
     const cache = new InMemoryCache();
-    try {
+   /* try {
       await persistCache({
         cache,
         storage: AsyncStorage,
       });
     } catch (e) {
       throw new Error(e);
-    }
+    }*/
 
     return new ApolloClient({
         link: authLink.concat(httpLink),

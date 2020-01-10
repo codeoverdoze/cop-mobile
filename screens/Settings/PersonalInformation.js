@@ -3,7 +3,7 @@ import {View, StyleSheet, StatusBar, TouchableOpacity, Image, ScrollView, FlatLi
 import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {EvilIcons, Ionicons} from "@expo/vector-icons";
-import PersonalInformation from "../../store/PersonalInformation";
+import {gql, useQuery} from "@apollo/client";
 
 const userProfileImage = require("../../assets/images/user-settings.png");
 
@@ -15,66 +15,56 @@ const settings = [
     {title: "Email", value: "raaj.polymorph@gmail.com", link: "OtherNames", key: "4", dbKey: "email"},
 ];
 
-export default class extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { loading: true };
-        this.personalInformation = {};
-        this.renderSettingsItem = this.renderSettingsItem.bind(this);
+/*// Listener to reload changes from personal information store
+       const focusSubscription = this.props.navigation.addListener('willFocus', async () => {
+           await this.componentWillMount();
+       })*/
 
-        // Listener to reload changes from personal information store
-        const focusSubscription = this.props.navigation.addListener('willFocus', async () => {
-            await this.componentWillMount();
-        })
-    }
-
-    async componentWillMount() {
-        try{
-            await this.setState({ loading: true });
-            this.personalInformation = await PersonalInformation.getPersonalInfo();
-            await this.setState({ loading: false });
-        }catch (e) {
-            throw new Error(e);
+const query = gql`
+    query {
+        memberProfile @client {
+            _id
+            firstName
+            middleName
+            surname
+            communicant
+            contact {
+                primaryTelephone
+                secondaryTelephone
+                email
+                nextOfKin {
+                    name
+                    telephone
+                }
+            }
+            congregation {
+                name
+                location
+                catechist
+                phone
+                residentPastor
+                district {
+                    name
+                    presbytery {
+                        name
+                    }
+                }
+            }
         }
     }
+`;
 
-    renderSettingsItem(setting){
-        return(
-            <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("PersonalInformationForm", {
-                    setting,
-                    currentValue: this.personalInformation[setting.item.dbKey] })
-                }
-            >
-                <View style={[styles.listItem]}>
-                    <View style={[{ flexDirection: "row" }]}>
-                        <View style={{ justifyContent: "center"}}>
-                            <StyledText style={{ fontSize: 16}}>{setting.item.title}</StyledText>
-                            <StyledHeader style={{ fontSize: 16}}>
-                                {this.personalInformation[setting.item.dbKey] ? this.personalInformation[setting.item.dbKey]: "Not set"}
-                            </StyledHeader>
-                        </View>
-                    </View>
 
-                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
-                        <TouchableOpacity>
-                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </TouchableOpacity>
-        )
-    }
+export default function PersonalInformation({ navigation }) {
+    const { data, loading, error } = useQuery(query);
 
-    render() {
-        // It may look weird that we are passing the same view to loading, but its because we
-        // want to avoid a flash when state changes
-        if(this.state.loading){
+
+        if(loading){
             return (
                 <View style={[styles.container]}>
                     <View style={[styles.headerBar]}>
                         <View style={{ paddingLeft: 20}}>
-                            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                            <TouchableOpacity onPress={() => navigation.goBack()}>
                                 <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF" style={{ justifyContent: "center"}}/>
                             </TouchableOpacity>
                         </View>
@@ -109,11 +99,13 @@ export default class extends Component {
             )
         }
 
-        return (
+    const { memberProfile } = data;
+
+    return (
             <View style={[styles.container]}>
                 <View style={[styles.headerBar]}>
                     <View style={{ paddingLeft: 20}}>
-                        <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
                             <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF" style={{ justifyContent: "center"}}/>
                         </TouchableOpacity>
                     </View>
@@ -140,16 +132,126 @@ export default class extends Component {
                         </View>
 
                         <View style={[styles.main, styles.list]}>
-                            <FlatList
-                                data={settings}
-                                renderItem={this.renderSettingsItem}
-                            />
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("PersonalInformationForm", {
+                                    currentValue: 'surname' })
+                                }
+                            >
+                                <View style={[styles.listItem]}>
+                                    <View style={[{ flexDirection: "row" }]}>
+                                        <View style={{ justifyContent: "center"}}>
+                                            <StyledText style={{ fontSize: 16}}>Surname</StyledText>
+                                            <StyledHeader style={{ fontSize: 16}}>
+                                                {memberProfile.surname}
+                                            </StyledHeader>
+                                        </View>
+                                    </View>
+
+                                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                        <TouchableOpacity>
+                                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("PersonalInformationForm", {
+                                    currentValue: 'surname' })
+                                }
+                            >
+                                <View style={[styles.listItem]}>
+                                    <View style={[{ flexDirection: "row" }]}>
+                                        <View style={{ justifyContent: "center"}}>
+                                            <StyledText style={{ fontSize: 16}}>Other Names</StyledText>
+                                            <StyledHeader style={{ fontSize: 16}}>
+                                                {memberProfile.firstName}
+                                            </StyledHeader>
+                                        </View>
+                                    </View>
+
+                                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                        <TouchableOpacity>
+                                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("PersonalInformationForm", {
+                                    currentValue: 'surname' })
+                                }
+                            >
+                                <View style={[styles.listItem]}>
+                                    <View style={[{ flexDirection: "row" }]}>
+                                        <View style={{ justifyContent: "center"}}>
+                                            <StyledText style={{ fontSize: 16}}>Gender</StyledText>
+                                            <StyledHeader style={{ fontSize: 16}}>
+                                                {memberProfile.gender}
+                                            </StyledHeader>
+                                        </View>
+                                    </View>
+
+                                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                        <TouchableOpacity>
+                                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("PersonalInformationForm", {
+                                    currentValue: 'surname' })
+                                }
+                            >
+                                <View style={[styles.listItem]}>
+                                    <View style={[{ flexDirection: "row" }]}>
+                                        <View style={{ justifyContent: "center"}}>
+                                            <StyledText style={{ fontSize: 16}}>Phone</StyledText>
+                                            <StyledHeader style={{ fontSize: 16}}>
+                                                {memberProfile.contact.primaryTelephone}
+                                            </StyledHeader>
+                                        </View>
+                                    </View>
+
+                                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                        <TouchableOpacity>
+                                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("PersonalInformationForm", {
+                                    currentValue: 'surname' })
+                                }
+                            >
+                                <View style={[styles.listItem]}>
+                                    <View style={[{ flexDirection: "row" }]}>
+                                        <View style={{ justifyContent: "center"}}>
+                                            <StyledText style={{ fontSize: 16}}>Email</StyledText>
+                                            <StyledHeader style={{ fontSize: 16}}>
+                                                {memberProfile.contact.email}
+                                            </StyledHeader>
+                                        </View>
+                                    </View>
+
+                                    <View style={{ height: 50, alignSelf: "center", justifyContent: "center"}}>
+                                        <TouchableOpacity>
+                                            <EvilIcons name={"chevron-right"} size={30} color="#757575"/>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </KeyboardAwareScrollView>
             </View>
         );
-    }
 }
 
 
