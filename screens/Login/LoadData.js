@@ -35,6 +35,7 @@ const queries = gql`
         }
       }
       congregation {
+        _id
         name
         location
         catechist
