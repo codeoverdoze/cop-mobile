@@ -9,7 +9,7 @@ class AnimatedItem extends Component {
     }
 
     render() {
-        const { animation, style, loop } = this.props;
+        const { animation, style, loop, speed = 1 } = this.props;
         return (
             <Lottie
                 ref={(animationInstance) => {
@@ -18,6 +18,7 @@ class AnimatedItem extends Component {
                 source={animation}
                 style={{ ...style }}
                 loop={loop}
+                speed={speed}
             />
         );
     }

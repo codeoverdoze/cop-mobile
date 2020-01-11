@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-    StyleSheet, TextInput, TouchableOpacity, View, Keyboard,
+    StyleSheet, TextInput, TouchableOpacity, View, Keyboard, ScrollView
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -10,6 +10,8 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import {StyledText, StyledSubtitle, StyledHeader} from '../../components/Typography';
 import Colors from '../../constants/Colors';
 import PinView from "react-native-pin-view";
+import Color from '../../constants/Colors';
+
 
 import AnimatedItem from '../../components/AnimatedItem';
 import Layout from '../../constants/NewLayout';
@@ -27,13 +29,14 @@ const HymnSelection = ({ navigation }) => {
     };
 
     return (
-        <KeyboardAwareScrollView enableOnAndroid>
+        <ScrollView>
             <View style={styles.container}>
                         <View style={{ alignItems: 'center' }}>
                             <AnimatedItem
-                                animation={require('../../assets/animations/verification')}
-                                style={{ width: widthPercentageToDP('30%') }}
-                                loop={false}
+                                animation={require('../../assets/animations/hymnary.json')}
+                                loop={true}
+                                style={{ width: 400, height: 200}}
+                                speed={2}
                             />
                             <StyledHeader>English Hymnary</StyledHeader>
                         </View>
@@ -47,14 +50,16 @@ const HymnSelection = ({ navigation }) => {
                         <PinView
                             pinLength={3}
                             showInputs
-                            inputActiveBgColor='#23D17A'
+                            inputActiveBgColor={Color.buttonColor}
+                            inputViewStyle={{backgroundColor: Color.tintColor}}
+                            buttonTextColor={Color.tintColor}
+                            inputTextStyle={{ color: "#fff" }}
+                            buttonBgColor="#fff"
                             deleteText={<Ionicons name='ios-backspace' size={25} />}
-                            buttonTextColor="#ffffff"
                             onComplete={(value) => navigation.navigate('Hymnary', {HymnNumber: value})}
-                            buttonBgColor={Colors.tintColor}
-                        />
+                            keyboardViewStyle={{ height: 60, width: 60, marginHorizontal: 10, marginVertical: 10}}                        />
                     </View>
-        </KeyboardAwareScrollView>
+        </ScrollView>
     );
 };
 

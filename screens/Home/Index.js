@@ -56,7 +56,7 @@ const list = [
         title: "Eng | Ga | Twi Hymnary",
         content: "English, Twi and Ga hymnaries all in one place. Join us in singing a hymn of praise unto the Lord.",
         key: "2",
-        link: "Hymnary"
+        link: "HymnSelection"
     },
     {
         image: liturgicalOrderImage,
