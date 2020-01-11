@@ -9,12 +9,14 @@ import Layout from '../../constants/NewLayout';
 
 
 function ThemeLiturgyPreaching({ navigation }) {
+  const serviceTheme = navigation.getParam('theme');
+  const serviceDate = navigation.getParam('date');
   const theme = {
     tintColor: '#1565c0',
     tintColorlight: '#ffffff',
     supportingColor: '#e3e3e3',
     borderColor: '#e3e3e3'
-  }
+  };
 
   return (
 
@@ -34,10 +36,10 @@ function ThemeLiturgyPreaching({ navigation }) {
                 fill={theme.tintColor}
               />
             </View>
-            <StyledHeader style={{ fontSize: RFValue(14) }}>Service Details</StyledHeader>
+            <StyledHeader style={{ fontSize: RFValue(14) }}>Service Details for {new Date(serviceDate).toDateString()}</StyledHeader>
           </View>
 
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+          <TouchableOpacity onPress={navigation.goBack}>
             <View style={{ justifyContent: 'center' }}>
               <SvgUri
                 width={23}
@@ -55,7 +57,7 @@ function ThemeLiturgyPreaching({ navigation }) {
           </View>
           <View style={{ marginTop: 15 }}>
             <StyledText>
-              Go ye therefore and make disciples of all nations
+              {serviceTheme}
             </StyledText>
           </View>
 

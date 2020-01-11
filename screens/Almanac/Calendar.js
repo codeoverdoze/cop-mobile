@@ -7,7 +7,8 @@ import { Calendar, LocaleConfig } from "react-native-calendars";
 import Layout from '../../constants/NewLayout';
 
 // Almanac data
-//import almanac from "../../sample-data/almanac-2019.json";
+import almanac_2019 from "../../sample-data/almanac-2019.json";
+import almanac_2020 from "../../sample-data/almanac-2020.json";
 
 
 export default class extends Component {
@@ -17,7 +18,9 @@ export default class extends Component {
         this.monthIndex = this.props.navigation.getParam("monthIndex");
         this.yearName = this.props.navigation.getParam("yearName");
         this.yearIndex = this.props.navigation.getParam("yearIndex");
-        this.almanac = require(`../../sample-data/almanac-2019.json`);
+        this.selectAppropriateAlmanac = this.selectAppropriateAlmanac.bind(this);
+        this.almanac = this.selectAppropriateAlmanac(this.yearName);
+
         console.log(this.yearName);
 
         // Padding month index
@@ -43,6 +46,17 @@ export default class extends Component {
 
         // Binding private methods
         this.onDayPress = this.onDayPress.bind(this);
+    }
+
+    selectAppropriateAlmanac(year){
+        switch (year) {
+            case 2019:
+                return almanac_2019;
+            case 2020:
+                return almanac_2020;
+            default:
+                return almanac_2020;
+        }
     }
 
     resolveMonthNameWithIndex(index){
@@ -93,7 +107,7 @@ export default class extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <StyledText style={{ fontSize: 20, alignSelf: "center"}}>PCG Almanac</StyledText>
+                    <StyledText style={{ fontSize: 20, alignSelf: "center", color: "#ffffff"}}>{this.yearName} PCG Almanac</StyledText>
 
                     <View style={{ paddingRight: 20}}/>
                 </View>
@@ -154,11 +168,11 @@ export default class extends Component {
                     <StyledHeader style={{fontSize: 15}}>Occasion</StyledHeader>
                     <StyledSubtitle style={{fontSize: 13}}>{this.resolveAlmanacData(this.state.selectedAlmanac.occasion, "occasion")}</StyledSubtitle>
                 </View>
-                <ScrollView style={{ marginTop: 10 }}>
+                <ScrollView style={{ marginTop: 0 }}>
 
-                    <View style={{ paddingTop: 5 }}>
+                    <View style={{ paddingTop: 0 }}>
                         <View style={{ backgroundColor: "#fff" }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ThemeLiturgyPreaching')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ThemeLiturgyPreaching', { date: this.state.selectedDate, theme: this.resolveAlmanacData(this.state.selectedAlmanac.theme, "theme") })}>
                                 <View style={{
                                     paddingHorizontal: Layout.paddingHorizontal,
                                     paddingTop: 10,
@@ -186,7 +200,7 @@ export default class extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ScriptureReadings')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ScriptureReadings', { date: this.state.selectedDate, readings: this.resolveAlmanacData(this.state.selectedAlmanac.readings, "readings")})}>
                                 <View style={{
                                     paddingHorizontal: Layout.paddingHorizontal,
                                     paddingTop: 10,
@@ -214,7 +228,7 @@ export default class extends Component {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('CalendarAnnouncements')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('CalendarAnnouncements', { date: this.state.selectedDate })}>
                                 <View style={{
                                     paddingHorizontal: Layout.paddingHorizontal,
                                     paddingTop: 10,

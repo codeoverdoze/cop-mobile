@@ -10,6 +10,9 @@ import Layout from '../../constants/NewLayout';
 
 
 function ScriptureReadings({ navigation }) {
+
+  const scriptureReadings = navigation.getParam('readings');
+  const serviceDate = navigation.getParam('date');
   const theme = {
     tintColor: '#1565c0',
     tintColorlight: '#ffffff',
@@ -42,15 +45,18 @@ function ScriptureReadings({ navigation }) {
                 fill="#000000"
               />
             </View>
-            <StyledHeader style={{ fontSize: RFValue(14) }}>Scripture Readings</StyledHeader>
+            <StyledHeader style={{ fontSize: RFValue(14) }}>Scripture Readings for {new Date(serviceDate).toDateString()}</StyledHeader>
           </View>
           <View style={{ borderBottomWidth: 0.5, borderBottomColor: theme.borderColor, paddingBottom: 10, marginTop: 20 }}>
             <StyledText style={{ fontWeight: 'bold', color: '#333333' }}>Text:</StyledText>
           </View>
           <View style={{ marginTop: 15, flexDirection: 'row', justifyContent: 'space-between' }}>
-            <StyledHeader style={{fontSize: 13}}>Gen 1: 1-4</StyledHeader>
-            <StyledHeader style={{fontSize: 13}}>Psalm 119: 3 - 8</StyledHeader>
-            <StyledHeader style={{fontSize: 13}}>Matthew 3: 6 - 18</StyledHeader>
+            {
+              scriptureReadings.map((reading) => {
+                return <StyledHeader style={{fontSize: 13}}>{reading}</StyledHeader>
+            })
+            }
+
           </View>
 
           <View style={{ marginTop: 0 }}>
