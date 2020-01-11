@@ -16,9 +16,9 @@ const StyledText = (props) => {
 
 const StyledHeader = (props) => {
     if(props.light){
-        return <Text h6 style={[{ fontFamily: 'light', color: '#3E4E5B' }, props.style ]} {...props}/>;
+        return <Text h6 {...props} style={[{ fontFamily: 'light', color: '#3E4E5B' }, props.style ]}/>;
     }
-    return <Text h6 style={[{ fontFamily: 'bold', color: '#3E4E5B' }, props.style ]} {...props}/>;
+    return <Text h6 {...props} style={[{ fontFamily: 'bold', color: '#3E4E5B' }, props.style ]} />;
 };
 
 const StyledSubtitle = (props) => {

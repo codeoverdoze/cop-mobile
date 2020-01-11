@@ -14,6 +14,7 @@ const queries = gql`
             surname
             communicant
             gender
+            group
             folio
             contact {
                 primaryTelephone
