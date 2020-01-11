@@ -5,6 +5,7 @@ import {
 import { RFValue } from 'react-native-responsive-fontsize';
 import SvgUri from 'expo-svg-uri';
 import {StyledHeader, StyledSubtitle, StyledText, SubtitleText} from '../../components/Typography';
+import { NavigationActions } from 'react-navigation';
 import Layout from '../../constants/NewLayout';
 
 
@@ -18,11 +19,16 @@ function ThemeLiturgyPreaching({ navigation }) {
     borderColor: '#e3e3e3'
   };
 
+  function goBack(){
+    navigation.dispatch(NavigationActions.back());
+  }
+
   return (
 
     <SafeAreaView style={{
       flex: 1,
       backgroundColor: theme.tintColorlight,
+      paddingTop: 30
     }}
     >
       <View style={{ padding: Layout.paddingHorizontal }}>
@@ -39,7 +45,7 @@ function ThemeLiturgyPreaching({ navigation }) {
             <StyledHeader style={{ fontSize: RFValue(14) }}>Service Details for {new Date(serviceDate).toDateString()}</StyledHeader>
           </View>
 
-          <TouchableOpacity onPress={navigation.goBack}>
+          <TouchableOpacity onPress={goBack}>
             <View style={{ justifyContent: 'center' }}>
               <SvgUri
                 width={23}
