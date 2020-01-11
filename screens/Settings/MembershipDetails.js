@@ -1,9 +1,25 @@
 import React from 'react';
-import {FlatList, Image, SafeAreaView, ScrollView, StyleSheet, View} from "react-native";
+import {ActivityIndicator, FlatList, Image, SafeAreaView, ScrollView, StyleSheet, View} from "react-native";
 import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
 import { Ionicons } from '@expo/vector-icons';
 import FamilyCardAvatar from "../../components/FamilyCardAvatar";
 import MembershipIcon from "../../components/MembershipIcons";
+
+import { useQuery, gql } from "@apollo/client";
+
+const query = gql`
+    query {
+        memberProfile @client {
+            congregation {
+                name
+            }
+            firstName
+            middleName
+            surname
+            group
+        }
+    }
+`
 
 const userProfileImage = require("../../assets/images/placeholder-image.png");
 const storiesData = [
@@ -39,6 +55,17 @@ const storiesData = [
     },
 ];
 const MembershipDetails = () => {
+    const { loading, dtata, error } = useQuery(query);
+
+    if(loading){
+        return (
+            <View>
+                <ActivityIndicator/>
+            </View>
+        )
+    }
+
+    const { memberProfile } = data;
     return(
         <View style={[styles.container]}>
             <View style={[styles.headerBar]}>

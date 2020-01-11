@@ -172,6 +172,37 @@ export default function SettingsScreen({ navigation }) {
                 </View>
               </View>
             </TouchableOpacity>
+
+              <TouchableOpacity
+                  onPress={() => navigation.navigate("MembershipDetails")}
+              >
+                  <View style={[styles.mainItem]}>
+                      <View
+                          style={{
+                              flexDirection: "row",
+                              justifyContent: "space-between",
+                              marginLeft: 20,
+                              marginRight: 20,
+                              borderBottomWidth: 0.3,
+                              borderBottomColor: "#cecece",
+                              paddingTop: 15,
+                              paddingBottom: 15
+                          }}
+                      >
+                          <View style={{ flexDirection: "row" }}>
+                              <StyledText style={{ fontSize: 16 }}>
+                                  Membership Details
+                              </StyledText>
+                          </View>
+
+                          <Ionicons
+                              name={"ios-arrow-forward"}
+                              size={16}
+                              color="#3E4E5B"
+                          />
+                      </View>
+                  </View>
+              </TouchableOpacity>
             </View>
             <TouchableOpacity>
               <View style={[styles.mainItem]}>
