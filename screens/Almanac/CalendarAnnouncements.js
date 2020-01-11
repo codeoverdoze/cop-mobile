@@ -9,6 +9,8 @@ import Layout from '../../constants/NewLayout';
 
 
 function CalendarAnnouncements({ navigation }) {
+  const serviceDate = navigation.getParam('date');
+
   const theme = {
     tintColor: '#1565c0',
     tintColorlight: '#ffffff',
@@ -34,7 +36,7 @@ function CalendarAnnouncements({ navigation }) {
                 fill={theme.tintColor}
               />
             </View>
-            <StyledHeader style={{ fontSize: RFValue(14) }}>Announcements</StyledHeader>
+            <StyledHeader style={{ fontSize: RFValue(14) }}>Announcements for {new Date(serviceDate).toDateString()}</StyledHeader>
           </View>
 
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
