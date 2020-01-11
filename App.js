@@ -56,7 +56,7 @@ export default class App extends React.Component {
             Font.loadAsync({
                 // This is the font that we are using for our tab bar
                 'regular': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
-                'bold': require('./assets/fonts/Cereal-Bold.ttf'),
+                'bold': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Bold.ttf') : require('./assets/fonts/Cereal-Bold.ttf'),
                 'light': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
                 'bible': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
                 'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
