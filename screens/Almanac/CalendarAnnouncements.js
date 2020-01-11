@@ -6,9 +6,14 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import SvgUri from 'expo-svg-uri';
 import {StyledHeader, StyledSubtitle, StyledText, SubtitleText} from '../../components/Typography';
 import Layout from '../../constants/NewLayout';
+import {NavigationActions} from "react-navigation";
 
 
 function CalendarAnnouncements({ navigation }) {
+  function goBack(){
+    navigation.dispatch(NavigationActions.back());
+  }
+
   const serviceDate = navigation.getParam('date');
 
   const theme = {
@@ -39,7 +44,7 @@ function CalendarAnnouncements({ navigation }) {
             <StyledHeader style={{ fontSize: RFValue(14) }}>Announcements for {new Date(serviceDate).toDateString()}</StyledHeader>
           </View>
 
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+          <TouchableOpacity onPress={goBack}>
             <View style={{ justifyContent: 'center' }}>
               <SvgUri
                 width={23}

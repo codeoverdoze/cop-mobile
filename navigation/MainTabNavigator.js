@@ -1,30 +1,26 @@
-import React from 'react';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
-import { createStackNavigator } from 'react-navigation-stack'
+import React from "react";
+import { createBottomTabNavigator } from "react-navigation-tabs";
+import { createStackNavigator } from "react-navigation-stack";
 
-import TabBarIcon from '../components/TabBarIcon';
+import TabBarIcon from "../components/TabBarIcon";
 
-import homeIcon from '../assets/icons/circled-menu.svg';
-import bibleIcon from '../assets/icons/bible.svg';
-import hymnaryIcon from '../assets/icons/music-playlist.svg';
-import paymentIcon from '../assets/icons/payment.svg';
-import settingsIcon from '../assets/icons/settings.svg';
-
-
+import homeIcon from "../assets/icons/circled-menu.svg";
+import bibleIcon from "../assets/icons/bible.svg";
+import hymnaryIcon from "../assets/icons/music-playlist.svg";
+import paymentIcon from "../assets/icons/payment.svg";
+import settingsIcon from "../assets/icons/settings.svg";
 
 // Home screen stack
-import HomeIndex from '../screens/Home/Index';
+import HomeIndex from "../screens/Home/Index";
 
 // Bible screen stack
-import BibleIndex from '../screens/Bible/Index';
-import BibleBook from '../screens/Bible/BibleBook';
-import BibleChapter from '../screens/Bible/BibleChapter';
-
+import BibleIndex from "../screens/Bible/Index";
+import BibleBook from "../screens/Bible/BibleBook";
+import BibleChapter from "../screens/Bible/BibleChapter";
 
 // Hymnary Screen stack
-import HymnaryIndex from '../screens/Hymnary/Index';
+import HymnaryIndex from "../screens/Hymnary/Index";
 import HymnSelection from "../screens/Hymnary/HymnSelection";
-
 
 // Almanac Screen Stack
 import YearSelection from "../screens/Almanac/Index";
@@ -34,14 +30,11 @@ import ThemeLiturgyPreaching from "../screens/Almanac/ThemeLiturgyPreaching";
 import CalendarAnnouncements from "../screens/Almanac/CalendarAnnouncements";
 import ScriptureReadings from "../screens/Almanac/ScriptureReadings";
 
-
 // Payments Screen Stack
-import PaymentDashboard from "../screens/Payments/Index"
+import PaymentDashboard from "../screens/Payments/Index";
 import PaymentPackages from "../screens/Payments/Packages";
 import PaymentOrder from "../screens/Payments/Order";
 import PaymentCheckout from "../screens/Payments/Checkout";
-
-
 
 // Settings Screen Stack
 import SettingsDashboard from "../screens/Settings/Index";
@@ -53,132 +46,146 @@ import DistrictSelection from "../screens/Settings/DistrictSelection";
 import CongregationSelection from "../screens/Settings/CongregationSelection";
 import MembershipDetails from "../screens/Settings/MembershipDetails";
 
-
 import Colors from "../constants/Colors";
 
 // Announcements Screen Stack
-import Announcements from "../screens/Announcements/Index"
-
-const ChurchServiceStack = createStackNavigator({
-    ThemeLiturgyPreaching,
-    CalendarAnnouncements,
-    ScriptureReadings,
-}, {
-    mode: 'modal',
-    headerMode: 'none',
-    defaultNavigationOptions: {
-        gestureEnabled: true,
-        cardOverlayEnabled: true,
-    },
-
-});
+import Announcements from "../screens/Announcements/Index";
 
 
-const AlmanacStack = createStackNavigator({
+const AlmanacStack = createStackNavigator(
+  {
     AlmanacDashboard: YearSelection,
     MonthSelection,
     AlmanacCalendar,
-    ChurchServiceStack
-}, { headerMode: "none" });
+    ThemeLiturgyPreaching,
+    CalendarAnnouncements,
+    ScriptureReadings
+  },
+  {
+    mode: "modal",
+    headerMode: "none",
+    defaultNavigationOptions: {
+      gestureEnabled: true,
+      cardOverlayEnabled: true
+    }
+  }
+);
 
-
-const HomeStack = createStackNavigator({
-    Home: HomeIndex, Announcements, Almanac: AlmanacStack,
-}, { headerMode: "none"});
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeIndex,
+    Announcements,
+    Almanac: AlmanacStack
+  },
+  { headerMode: "none" }
+);
 
 HomeStack.navigationOptions = {
-    tabBarLabel: "Home",
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            name='home'
-            type='feather'
-            icon={homeIcon}
-        />
-    ),
+  tabBarLabel: "Home",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name="home" type="feather" icon={homeIcon} />
+  )
 };
 
-const HymnaryStack = createStackNavigator({
+const HymnaryStack = createStackNavigator(
+  {
     HymnSelection,
-    Hymnary: HymnaryIndex,
-}, { headerMode: "none"});
+    Hymnary: HymnaryIndex
+  },
+  { headerMode: "none" }
+);
 
 HymnaryStack.navigationOptions = {
-    tabBarLabel: 'Hymnary',
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            type='feather'
-            name='book-open'
-            icon={hymnaryIcon}
-        />
-    ),
+  tabBarLabel: "Hymnary",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      type="feather"
+      name="book-open"
+      icon={hymnaryIcon}
+    />
+  )
 };
 
-
-const BibleStack = createStackNavigator({
+const BibleStack = createStackNavigator(
+  {
     BibleDashboard: BibleIndex,
-    BibleBook, BibleChapter
-}, { headerMode: "none"});
-
+    BibleBook,
+    BibleChapter
+  },
+  { headerMode: "none" }
+);
 
 BibleStack.navigationOptions = {
-    tabBarLabel: 'Bible',
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            type='feather'
-            name='book'
-            icon={bibleIcon}
-        />
-    ),
+  tabBarLabel: "Bible",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} type="feather" name="book" icon={bibleIcon} />
+  )
 };
 
-const PaymentStack = createStackNavigator({
-    PaymentDashboard, PaymentPackages, PaymentOrder, PaymentCheckout
-}, { headerMode: "null" });
+const PaymentStack = createStackNavigator(
+  {
+    PaymentDashboard,
+    PaymentPackages,
+    PaymentOrder,
+    PaymentCheckout
+  },
+  { headerMode: "null" }
+);
 
 PaymentStack.navigationOptions = {
-    tabBarLabel: 'Payments',
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            type='feather'
-            name='credit-card'
-            icon={paymentIcon}
-        />
-    ),
+  tabBarLabel: "Payments",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      type="feather"
+      name="credit-card"
+      icon={paymentIcon}
+    />
+  )
 };
 
-const SettingsStack = createStackNavigator({
-    SettingsDashboard, Credits,
+const SettingsStack = createStackNavigator(
+  {
+    SettingsDashboard,
+    Credits,
     PersonalInformation,
     ChurchSelection,
     PersonalInformationForm,
     DistrictSelection,
     CongregationSelection,
-    MembershipDetails,
-
-}, {
+    MembershipDetails
+  },
+  {
     headerMode: "null"
-});
+  }
+);
 
 SettingsStack.navigationOptions = {
-    tabBarLabel: 'Settings',
-    tabBarIcon: ({focused}) => (
-        <TabBarIcon
-            focused={focused}
-            name='settings'
-            type='feather'
-            icon={settingsIcon}
-        />
-    ),
+  tabBarLabel: "Settings",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name="settings"
+      type="feather"
+      icon={settingsIcon}
+    />
+  )
 };
 
-export default createBottomTabNavigator({
+export default createBottomTabNavigator(
+  {
     HomeStack,
     BibleStack,
     HymnaryStack,
     PaymentStack,
-    SettingsStack,
-}, { tabBarOptions: { activeTintColor: Colors.tintColor, style: { backgroundColor: '#f6f6f7', }, animationEnabled: true} });
+    SettingsStack
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: Colors.tintColor,
+      style: { backgroundColor: "#f6f6f7" },
+      animationEnabled: true
+    }
+  }
+);
