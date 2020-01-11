@@ -54,11 +54,10 @@ export default class App extends React.Component {
                 require('./assets/images/robot-prod.png'),
             ]),
             Font.loadAsync({
-                // This is the font that we are using for our tab bar
-                'regular': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
+                'regular': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Cereal-Book.ttf'),
                 'bold': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Bold.ttf') : require('./assets/fonts/Cereal-Bold.ttf'),
-                'light': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
-                'bible': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Graphik-Regular.ttf'),
+                'light': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Cereal-Book.ttf'),
+                'bible': Platform.OS === 'ios' ? require('./assets/fonts/Cereal-Book.ttf') : require('./assets/fonts/Cereal-Book.ttf'),
                 'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
             }),
             retrieveAuthToken().then(token => this.setState({ mobiletoken: token })),

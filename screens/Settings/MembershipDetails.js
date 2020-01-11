@@ -1,7 +1,6 @@
 import React from 'react';
-import {ActivityIndicator, FlatList, Image, SafeAreaView, ScrollView, StyleSheet, View} from "react-native";
+import {ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, View} from "react-native";
 import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
-import { Ionicons } from '@expo/vector-icons';
 import FamilyCardAvatar from "../../components/FamilyCardAvatar";
 import MembershipIcon from "../../components/MembershipIcons";
 
@@ -9,14 +8,40 @@ import { useQuery, gql } from "@apollo/client";
 
 const query = gql`
     query {
-        memberProfile @client {
-            congregation {
-                name
-            }
+        memberProfile @client{
+            _id
             firstName
             middleName
             surname
+            communicant
+            gender
             group
+            folio
+            address
+            hometown
+            maritalStatus
+            contact {
+                primaryTelephone
+                secondaryTelephone
+                email
+                nextOfKin {
+                    name
+                    telephone
+                }
+            }
+            congregation {
+                name
+                location
+                catechist
+                phone
+                residentPastor
+                district {
+                    name
+                    presbytery {
+                        name
+                    }
+                }
+            }
         }
     }
 `
@@ -55,7 +80,7 @@ const storiesData = [
     },
 ];
 const MembershipDetails = () => {
-    const { loading, dtata, error } = useQuery(query);
+    const { loading, data, error } = useQuery(query);
 
     if(loading){
         return (
@@ -63,6 +88,10 @@ const MembershipDetails = () => {
                 <ActivityIndicator/>
             </View>
         )
+    }
+
+    if(error){
+        console.error(error)
     }
 
     const { memberProfile } = data;
@@ -82,19 +111,19 @@ const MembershipDetails = () => {
                                 />
                             </View>
                             <View style={{flex: 7, justifyContent: 'center'}}>
-                                <StyledHeader>Michael Agbo Tettey Soli</StyledHeader>
-                                <StyledText>Young Adult Fellowship</StyledText>
+                                <StyledHeader style={{ textTransform: 'capitalize' }}>{memberProfile.surname} {memberProfile.middleName} {memberProfile.firstName}</StyledHeader>
+                                <StyledText>{memberProfile.group}</StyledText>
                                 <StyledText>PCG/NLA/PXT/0273</StyledText>
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 10}}>
                             <View style={{flexDirection: 'row'}}>
                                 <MembershipIcon source={require('../../assets/icons/ringing-phone.svg')} height={20} width={20}/>
-                                <StyledText style={{marginLeft: 5}}>+233(0)540-710-554</StyledText>
+                                <StyledText style={{marginLeft: 5}}>{memberProfile.contact.primaryTelephone}</StyledText>
                             </View>
                             <View style={{flexDirection: 'row'}}>
                                 <MembershipIcon source={require('../../assets/icons/phone.svg')} height={20} width={20}/>
-                                <StyledText style={{marginLeft: 5}}>+233(0)540-710-554</StyledText>
+                                <StyledText style={{marginLeft: 5}}>{memberProfile.contact.secondaryTelephone || 'N/A'}</StyledText>
                             </View>
                         </View>
                         <View style={{
@@ -105,7 +134,7 @@ const MembershipDetails = () => {
                         >
                             <View style={{flexDirection: 'row'}}>
                                 <MembershipIcon source={require('../../assets/icons/gmail.svg')} height={20} width={20}/>
-                                <StyledText style={{marginLeft: 5}}>agbotettey@gmail.com</StyledText>
+                                <StyledText style={{marginLeft: 5}}>{memberProfile.contact.email}</StyledText>
                             </View>
                         </View>
                     </View>
@@ -132,7 +161,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Marital Status</StyledText>
-                                    <StyledHeader>Single</StyledHeader>
+                                    <StyledHeader style={{ textTransform: 'capitalize'}}>{memberProfile.maritalStatus}</StyledHeader>
                                 </View>
                             </View>
                             <View style={{flexDirection: 'row', flex: 1}}>
@@ -141,7 +170,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Communicant Status</StyledText>
-                                    <StyledHeader>Communicant</StyledHeader>
+                                    <StyledHeader>{memberProfile.communicant ? 'Communicant' : 'Not Communicant'}</StyledHeader>
                                 </View>
                             </View>
                         </View>
@@ -183,7 +212,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Residential Address</StyledText>
-                                    <StyledHeader>No. 22, Down Town - Old Ashongman</StyledHeader>
+                                    <StyledHeader>{memberProfile.address}</StyledHeader>
                                 </View>
                             </View>
                         </View>
@@ -194,7 +223,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{ marginLeft: 10, justifyContent: 'center' }}>
                                     <StyledText>Home Town</StyledText>
-                                    <StyledHeader>Ada Foah, Greater Accra</StyledHeader>
+                                    <StyledHeader>{memberProfile.hometown}</StyledHeader>
                                 </View>
                             </View>
                         </View>
@@ -205,7 +234,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Next of Kin</StyledText>
-                                    <StyledHeader>Cynthia Owusu-Antwi | 0244923099</StyledHeader>
+                                    <StyledHeader>{memberProfile.contact.nextOfKin.name} | {memberProfile.contact.nextOfKin.telephone}</StyledHeader>
                                 </View>
                             </View>
                         </View>

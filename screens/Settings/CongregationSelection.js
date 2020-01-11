@@ -62,7 +62,7 @@ const CongregationSelection = ({ navigation }) => {
     <View style={[styles.container]}>
       <View style={[styles.headerBar]}>
         <View style={{ paddingLeft: 20 }}>
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons
               name={"ios-arrow-back"}
               size={30}

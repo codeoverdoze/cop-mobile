@@ -1,83 +1,133 @@
-import React from 'react';
-import {ActivityIndicator, View} from 'react-native';
-import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
+import React from "react";
+import {ActivityIndicator, Image, TouchableOpacity, View} from "react-native";
+import {
+  StyledHeader,
+  StyledHeaderInverse,
+  StyledText
+} from "../../components/Typography";
 import Colors from "../../constants/Colors";
-import {gql, useQuery} from "@apollo/client";
-
+import { gql, useQuery } from "@apollo/client";
+import { SimpleAnimation } from "react-native-simple-animations";
+import Layout from "../../constants/Layout";
+import {RFValue} from "react-native-responsive-fontsize";
 
 const queries = gql`
-    query {
-        memberProfile{
-            _id
-            firstName
-            middleName
-            surname
-            communicant
-            gender
-            group
-            folio
-            contact {
-                primaryTelephone
-                secondaryTelephone
-                email
-                nextOfKin {
-                    name
-                    telephone
-                }
-            }
-            congregation {
-                name
-                location
-                catechist
-                phone
-                residentPastor
-                district {
-                    name
-                    presbytery {
-                        name
-                    }
-                }
-            }
+  query {
+    memberProfile {
+      _id
+      firstName
+      middleName
+      surname
+      communicant
+      gender
+      group
+      folio
+      address
+      hometown
+      maritalStatus
+      contact {
+        primaryTelephone
+        secondaryTelephone
+        email
+        nextOfKin {
+          name
+          telephone
         }
-        presbyteries {
-            _id
+      }
+      congregation {
+        name
+        location
+        catechist
+        phone
+        residentPastor
+        district {
+          name
+          presbytery {
             name
-            zone
+          }
         }
-        districts {
-            _id
-            name
-        }
-        congregations {
-            _id
-            name
-            catechist
-            location
-            residentPastor
-        }
+      }
     }
+    presbyteries {
+      _id
+      name
+      zone
+    }
+    districts {
+      _id
+      name
+    }
+    congregations {
+      _id
+      name
+      catechist
+      location
+      residentPastor
+    }
+  }
 `;
 
 function LoadData({ navigation }) {
-    const { loading, data, error } = useQuery(queries);
-
-    if(data){
-        setTimeout(() => {
-            navigation.navigate('Main')
-        }, 3000)
+  const [doneLoading, setDoneLoading] = React.useState(false);
+  const { loading, data, error } = useQuery(queries, {
+    onCompleted: () => {
+      setTimeout(() => {
+        setDoneLoading(true);
+      }, 3000);
     }
+  });
 
-    if(error){
-        console.log('error', error)
-    }
 
+  if (error) {
+    console.log("error", error);
+  }
+
+  if (doneLoading) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <ActivityIndicator color={Colors.tintColor}/>
-            <StyledHeader>Please wait</StyledHeader>
-            <StyledText>We are loading your church details</StyledText>
+      <View style={{ flex: 1, marginTop: Layout.window.height / 4, alignItems: "center" }}>
+        <SimpleAnimation delay={500} duration={1000} slide direction="up" staticType="zoom">
+        <Image source={require('../../assets/images/presby.png')} style={{ width: 115, height: 150, marginBottom: 50, opacity: 0.6 }}/>
+        </SimpleAnimation>
+
+        <View style={{ alignItems: "center" }}>
+          <SimpleAnimation delay={1000} duration={3000} slide direction="up" staticType="zoom">
+            <StyledHeader style={{ fontSize: RFValue(25), textTransform: 'capitalize'}}>{`Hi, ${data.memberProfile.firstName}!`}</StyledHeader>
+          </SimpleAnimation>
+
+          <SimpleAnimation delay={1500} duration={3000} fade staticType="zoom">
+            <StyledHeader style={{ fontSize: RFValue(25)}}>{`${data.memberProfile.group} Member`}</StyledHeader>
+          </SimpleAnimation>
+
+          <SimpleAnimation delay={2000} duration={3000} fade staticType="zoom">
+            <StyledHeader style={{ fontSize: RFValue(25)}}>{`${data.memberProfile.congregation.name} Congregation`}</StyledHeader>
+          </SimpleAnimation>
+
+
+          <SimpleAnimation delay={2500} duration={3000} fade staticType="zoom">
+            <View style={{ marginTop: 20 }}>
+              <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+                <View style={{ borderColor: '#c3c3c3', borderWidth: 1, borderRadius: 5, width: Layout.window.width - 50, paddingVertical: 10, alignItems: 'center'}}>
+                  <StyledText>Let's Begin . . .</StyledText>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </SimpleAnimation>
+
+          <SimpleAnimation delay={3000} duration={2000} fade staticType="zoom">
+            <StyledText style={{ fontSize: RFValue(12), textAlign: 'center', marginTop: 10}}>Presby Companion &copy; 2020. Polymorph Labs</StyledText>
+          </SimpleAnimation>
         </View>
-    )
+      </View>
+    );
+  }
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <ActivityIndicator color={Colors.tintColor} />
+      <StyledHeader>Please wait</StyledHeader>
+      <StyledText>We are setting up your companion...</StyledText>
+    </View>
+  );
 }
 
-export default LoadData
+export default LoadData;

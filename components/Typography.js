@@ -30,7 +30,7 @@ const StyledTextInverse = (props) => {
 };
 
 const StyledHeaderInverse = (props) => {
-    return <Text {...props} h4 style={[{ fontFamily: 'bold', color: '#FFFFFF' }, props.style ]} />;
+    return <Text h4 {...props} style={[{ fontFamily: 'bold', color: '#FFFFFF' }, props.style ]} />;
 };
 
 const StyledSubtitleInverse = (props) => {

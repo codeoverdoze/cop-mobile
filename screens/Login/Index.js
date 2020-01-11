@@ -20,17 +20,17 @@ import { showMessage, hideMessage } from 'react-native-flash-message';
 const sliders = [
     {
         imageURI: Slider1,
-        caption: 'Your Companion, your spiritual growth',
-        description: 'Presby Companion is a free to download tool to streamline your worship as a presbyterian.'
+        caption: 'Your companion, your spiritual growth',
+        description: 'Presby companion is a free to download tool to streamline your worship as a presbyterian.'
     },
     {
         imageURI: Slider2,
         caption: 'Go ye therefore and make disciples of all nations',
-        description: 'The Almanac, Previous Sermons, Hymnal, Bible Study Guide and a myriad of useful resources at your fingertips.'
+        description: 'The almanac, previous sermons, hymnal, bible study guide and a myriad of useful resources at your fingertips.'
     },
     {
         imageURI: Slider3,
-        caption: 'Information Dissemination just got better',
+        caption: 'Information dissemination just got better',
         description: 'A hustle-free way to reach the congregation with important information. Messages, notifications, news, updates, you name it'
     },
     {
@@ -75,7 +75,7 @@ const renderSlider = ({item, index}) => (
         </View>
         <View style={{justifyContent: 'center', marginTop: 10}}>
             <StyledHeaderInverse
-                style={{ fontSize: 32, textAlign: 'center', paddingHorizontal: 15, color: '#3E4E5B'}}>{item.caption}</StyledHeaderInverse>
+                style={{ fontSize: RFValue(32), textAlign: 'center', paddingHorizontal: 15, color: '#3E4E5B'}}>{item.caption}</StyledHeaderInverse>
             <StyledText style={{textAlign: 'center', paddingHorizontal: 30}}>{item.description}</StyledText>
         </View>
     </View>
@@ -146,9 +146,10 @@ const Index = ({navigation}) => {
                         </View>
                         <StyledText style={{fontSize: RFValue(11), textAlign: 'center', color: 'red'}}>By creating an
                             account, you accept the Terms & Conditions</StyledText>
-                        <StyledText style={{textAlign: 'center', fontSize: RFValue(11)}}>Contrary to popular belief,
-                            Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-                            from 45 BC, making it over 2000 years old.</StyledText>
+                        <StyledText style={{textAlign: 'center', fontSize: RFValue(11)}}>
+                            Join our community of dedicated presbyterians using this app to improve their spiritual life.
+                            Presby Companion brings together all the resources you need for worship & more.
+                        </StyledText>
                     </View>
                 </ScrollView>
             </View>

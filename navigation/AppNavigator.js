@@ -11,15 +11,15 @@ import LoadData from "../screens/Login/LoadData";
 const Login = createStackNavigator({
     OnBoard: Index,
     Verification,
-    LoadData
 }, { headerMode: "none"} );
 
 const loadAppNavigation = (isLoggedIn) => (
     createAppContainer(
         createSwitchNavigator({
             Login,
+            LoadData,
             Main: MainTabNavigator,
-        }, { initialRouteName: isLoggedIn ? 'Main' : 'Login'}),
+        }, { initialRouteName: isLoggedIn ? 'LoadData' : 'Login'}),
     )
 );
 
