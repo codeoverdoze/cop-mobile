@@ -19,7 +19,7 @@ const loadAppNavigation = (isLoggedIn) => (
             Login,
             LoadData,
             Main: MainTabNavigator,
-        }, { initialRouteName: isLoggedIn ? 'LoadData' : 'Login'}),
+        }, { initialRouteName: isLoggedIn ? 'Main' : 'Login'}),
     )
 );
 
