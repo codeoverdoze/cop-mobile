@@ -7,7 +7,7 @@ import { retrieveAuthToken } from '../utils';
 
 module.exports = async () => {
     const httpLink = createHttpLink({
-        uri: 'http://192.168.100.17:5000/graphql',
+        uri: 'https://api.presbycompanion.com/graphql',
     });
 
     const authLink = setContext(async (_, { headers }) => {
