@@ -57,7 +57,8 @@ const HymnSelection = ({ navigation }) => {
                             buttonBgColor="#fff"
                             deleteText={<Ionicons name='ios-backspace' size={25} />}
                             onComplete={(value) => navigation.navigate('Hymnary', {HymnNumber: value})}
-                            keyboardViewStyle={{ height: 60, width: 60, marginHorizontal: 10, marginVertical: 10}}                        />
+                            keyboardViewStyle={{ height: 60, width: 60, marginHorizontal: 10, marginVertical: 10}}
+                        />
                     </View>
         </ScrollView>
     );

@@ -37,7 +37,10 @@ export default function PresbyterySelection({ navigation }) {
             <View
               style={[
                 styles.circleShapeView,
-                { backgroundColor: presbytery.item.color }
+                {
+                  backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+                  borderRadius: 50
+                }
               ]}
             >
               <StyledTextInverse style={{ fontSize: 16 }}>
@@ -146,7 +149,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 150 / 2,
-    backgroundColor: "#00BCD4",
     marginRight: 20,
     justifyContent: "center",
     alignItems: "center"

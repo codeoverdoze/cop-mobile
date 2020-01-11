@@ -128,6 +128,7 @@ const Index = ({navigation}) => {
                                 placeholderLabel="Phone Number"
                                 value={phone}
                                 onChangeText={setPhone}
+                                keyboardType="numeric"
                             />
                         </View>
                         <View>

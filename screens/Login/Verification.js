@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View,} from 'react-native';
+import {Image, ScrollView, View,} from 'react-native';
 import {StyledHeader, StyledText} from "../../components/Typography";
 import Color from '../../constants/Colors';
 import PinView from "react-native-pin-view";
@@ -8,6 +8,7 @@ import {validateLoginMember as validateLoginMemberMutation} from "../../graphql/
 import { showMessage } from 'react-native-flash-message';
 import MessageImage from '../../assets/images/message.png'
 import { saveAuthToken } from '../../utils'
+import {Ionicons} from "@expo/vector-icons";
 
 function VerifyScreen({ navigation }) {
     const phone = navigation.getParam('phone');
@@ -24,7 +25,7 @@ function VerifyScreen({ navigation }) {
         }
     });
     return (
-        <View style={{flex: 1}}>
+        <ScrollView style={{flex: 1}}>
 
             <View style={{alignItems: "center", marginTop: 40}}>
                 <View>
@@ -50,17 +51,20 @@ function VerifyScreen({ navigation }) {
                     inputActiveBgColor={Color.buttonColor}
                     inputViewStyle={{backgroundColor: Color.tintColor}}
                     buttonTextColor={Color.tintColor}
+                    inputTextStyle={{ color: "#fff" }}
                     buttonBgColor="#fff"
+                    deleteText={<Ionicons name='ios-backspace' size={25} />}
                     onComplete={otp => {
                         validateLoginMember({
                             variables: {
-                              phone, otp
+                                phone, otp
                             }
                         })
                     }}
+                    keyboardViewStyle={{ height: 60, width: 60, marginHorizontal: 10, marginVertical: 10}}
                 />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

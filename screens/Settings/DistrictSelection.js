@@ -41,7 +41,7 @@ function DistrictSelection({ navigation }) {
             <View
               style={[
                 styles.circleShapeView,
-                { backgroundColor: district.item.color }
+                { backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})` }
               ]}
             >
               <StyledTextInverse style={{ fontSize: 16 }}>
