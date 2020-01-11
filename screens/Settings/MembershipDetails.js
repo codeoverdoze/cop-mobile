@@ -5,6 +5,7 @@ import FamilyCardAvatar from "../../components/FamilyCardAvatar";
 import MembershipIcon from "../../components/MembershipIcons";
 
 import { useQuery, gql } from "@apollo/client";
+import profileImage from '../../assets/images/profile.jpg';
 
 const query = gql`
     query {
@@ -106,8 +107,8 @@ const MembershipDetails = () => {
                         <View style={{ flexDirection: 'row', paddingHorizontal: 20,  }}>
                             <View style={{flex: 3}}>
                                 <Image
-                                    source={userProfileImage}
-                                    style={{ height: 90, width: 90}}
+                                    source={profileImage}
+                                    style={{ height: 90, width: 90, borderRadius: 45 }}
                                 />
                             </View>
                             <View style={{flex: 7, justifyContent: 'center'}}>
@@ -212,7 +213,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Residential Address</StyledText>
-                                    <StyledHeader>{memberProfile.address}</StyledHeader>
+                                    <StyledHeader style={{ textTransform: 'capitalize'}}>{memberProfile.address}</StyledHeader>
                                 </View>
                             </View>
                         </View>
@@ -223,7 +224,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{ marginLeft: 10, justifyContent: 'center' }}>
                                     <StyledText>Home Town</StyledText>
-                                    <StyledHeader>{memberProfile.hometown}</StyledHeader>
+                                    <StyledHeader style={{ textTransform: 'capitalize'}}>{memberProfile.hometown}</StyledHeader>
                                 </View>
                             </View>
                         </View>
@@ -234,7 +235,7 @@ const MembershipDetails = () => {
                                 </View>
                                 <View style={{marginLeft: 10, justifyContent: 'center'}}>
                                     <StyledText>Next of Kin</StyledText>
-                                    <StyledHeader>{memberProfile.contact.nextOfKin.name} | {memberProfile.contact.nextOfKin.telephone}</StyledHeader>
+                                    <StyledHeader style={{ textTransform: 'capitalize'}}>{memberProfile.contact.nextOfKin.name} | {memberProfile.contact.nextOfKin.telephone}</StyledHeader>
                                 </View>
                             </View>
                         </View>
