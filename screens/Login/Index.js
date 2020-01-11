@@ -3,12 +3,12 @@ import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {Image, ScrollView, View, TouchableOpacity, StatusBar, ActivityIndicator} from "react-native";
 import Layout from '../../constants/NewLayout';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {StyledHeader, StyledText} from "../../components/Typography";
+import {StyledHeader, StyledHeaderInverse, StyledText} from "../../components/Typography";
 import Slider1 from "../../assets/images/slider_image_1.png"
 import Slider2 from "../../assets/images/slider_image_2.png"
 import Slider3 from "../../assets/images/slider_image_3.png"
-import Slider4 from "../../assets/images/slider_image_4.png"
-import Slider5 from "../../assets/images/slider_image_1.png"
+import Slider4 from "../../assets/images/breeze-pricing.png"
+import Slider5 from "../../assets/images/unlimited-people.png"
 import Button from "../../components/FormInput/Button";
 import Input from "../../components/FormInput/Input";
 import {RFValue} from "react-native-responsive-fontsize";
@@ -20,28 +20,28 @@ import { showMessage, hideMessage } from 'react-native-flash-message';
 const sliders = [
     {
         imageURI: Slider1,
-        caption: 'Pay your tithe with just one click',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        caption: 'Your Companion, your spiritual growth',
+        description: 'Presby Companion is a free to download tool to streamline your worship as a presbyterian.'
     },
     {
         imageURI: Slider2,
-        caption: 'Pay your tithe with just one click',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        caption: 'Go ye therefore and make disciples of all nations',
+        description: 'The Almanac, Previous Sermons, Hymnal, Bible Study Guide and a myriad of useful resources at your fingertips.'
     },
     {
         imageURI: Slider3,
-        caption: 'Pay your tithe with just one click',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        caption: 'Information Dissemination just got better',
+        description: 'A hustle-free way to reach the congregation with important information. Messages, notifications, news, updates, you name it'
     },
     {
         imageURI: Slider4,
-        caption: 'Pay your tithe with just one click',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        caption: 'Pay tithe, redeem pledges with one click',
+        description: "Do not be hindered by time and space. Pay tithe, redeem pledges, contribute financially the work in His vineyard."
     },
     {
         imageURI: Slider5,
-        caption: 'Pay your tithe with just one click',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+        caption: 'Join us sing a hymn of praise unto our Lord',
+        description: 'Enjoy your favourite hymns, anytime, anywhere with accompanying tunes with a pure worship experience.'
     }
 ];
 
@@ -73,9 +73,9 @@ const renderSlider = ({item, index}) => (
         <View style={{justifyContent: 'center', alignItems: 'center',}}>
             <Image source={item.imageURI} style={{height: 260, width: 260, resizeMode: 'contain'}}/>
         </View>
-        <View style={{justifyContent: 'center', marginTop: 20}}>
-            <StyledHeader
-                style={{fontSize: 32, textAlign: 'center', paddingHorizontal: 15}}>{item.caption}</StyledHeader>
+        <View style={{justifyContent: 'center', marginTop: 10}}>
+            <StyledHeaderInverse
+                style={{ fontSize: 32, textAlign: 'center', paddingHorizontal: 15, color: '#3E4E5B'}}>{item.caption}</StyledHeaderInverse>
             <StyledText style={{textAlign: 'center', paddingHorizontal: 30}}>{item.description}</StyledText>
         </View>
     </View>
