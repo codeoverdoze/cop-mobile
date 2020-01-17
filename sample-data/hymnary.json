@@ -1,58 +1,264 @@
 [
-{
-  "verses": [
-    "Now, thank we all our God,\nWith hearts and hands and voices!\nWho wonderous things have done,\nIn whom this world rejoices.\nWho from our mother's arms,\nHas blessed us on our way,\nWith countless gifts of love,\nAnd still is ours today.",
-    "Before our life on earth,\nThe Lord God knew and loved us.\n He freely gave all things,\nAnd more than we knew, gave us.\nTherefore we all must join\nTo sing in unison\nThe praises of our God;\nHe is the God of praise.",
-    "Oh may this bounteous God,\nThrough all our lives be near us.\nWith ever joyful hearts,\nAnd blessed peace to cheer us!\nAnd keep us in His grace,\nAnd guide us when perplexed,\nAnd free us from all ills,\nIn this world and the next!",
-    "All praise and thanks to God,\nWho reigns in highest Heaven.\nThe Father and the Son,\nAnd Spirit now be given.\nThe one eternal God,\nWhom earth and heaven adore,\nFor thus it was is now,\nAnd shall be evermore! "
-  ],
-  "name": "PHB 1",
-  "scripture": "Psalm 107 vs 8-15; Psalm 95 vs 2; Eph. 1 vs 3-10; Eph. 5 vs 20",
-  "author": "Martin Rinkart (1586-1649)",
-  "translator": "Catherine Winkworth (1827-1878)"
-},
-{
-"verses": [
-"Praise to the Lord, the Almighty, the King of creation!\n O my soul, praise Him, for He is thy health ans salvation!\n All ye who hear, \n Now to His temple draw near;\n Praise Him in glad adoration.",
-"Praise to the Lord, who o'er all things so wondrously reigneth,\n Shelters thee under His wings, yea, so gently sustaineth!\n Hast thou not seen\n How thy desires ever been\n Granted in what He ordaineth?",
-"Praise to the Lord, who doth prosper thy work and defend thee;\n Surely His goodness and mercy here daily attend thee.\n Ponder anew\n What the Almighty can do,\n What the Almighty can do,\n If with His love he befriend thee.",
-"Praise to the Lord, who when tempests their warfare are waging,\n Who, when the elements madly around thee are raging,\n Biddeth the cease,\n Turneth their fury to peace,\n Whirlwinds and waters assuaging.",
-"Praise to the Lord, who, when darkness of sin is abounding,\n Who, when the godless do triumph, all virtue confounding,\n Sheddeth His light,\n Chaseth the horrors of night,\n Saints with His mercy surrounding.",
-"Praise to the Lord, O let all that is in me adore Him!\n All that hath life and breadth, come now with praises before Him.\n Let the amen\n Sound from His people again,\n Gladly for aye we aadore Him."
-],
-"name": "PHB 2",
-"scripture": "Psalm 57 vs 8-9; 103 vs 1-5; Deuteronomy 32 vs. 10-12.",
-"author": "Joachin Neander (1650-1680)",
-"translator": "Catherine Winkworth (1827-1878)"
-},
-{
-"verses": [
-"Sing ye saints, sing to the Savior,\n Jehovah is He.\n Give Him thanks, and praise Him always,\n Praise Him everywhere.\n Christians come, your Lord extol,\n Magnify His Blessed Name.\n Give Him thanks, and praise your\n [Savior, \n Glorify His Name.",
-"You redeemed ones, blessed children, \nPeace you have in Christ.\n Joy and peace you have in Jesus,\n This God wants for you.\n For He loves all the children,\n And He cares for them always.\n For He guides them, and protects them,\n Glorify His Name.",
-"Hosts of evil men may scare you,\n Satan's wicked foes.\n Saints of Christ, they fear no evil,\n In this battle fierce.\n For they have the Word of God,\n And with faith and prayer they fight.\n All equipped with God's own armor,\n Victorious they are.",
-"People of God, Israel's children,\n Come rejoicing, now.\n For the Lord who made and saved you,\n Favor He bestows.\n Zion's children come with joy,\n Be assured that all is well.\n For the Lord, the God Almighty,\n Sovereign Lord is He."
-],
-"name": "PHB 3",
-"scripture": "Psalm 149; Ephesians 6 vs. 11.",
-"author": "Johannes Gottlieb Christaller",
-"translator": "Catherine Winkworth (1827-1878)"
-},
-{
-"verses": [
-"If God would give me thousand tongues now, And thousand, thousands more than that; I shall use all to praise Him always, To glorify His Holy Name, And shall extol Him with my heart And glorify His Holy Name.",
-"I shall proclaim His glorious splendors, And share with all, His wondrous works. His fame shall spread in earth and heaven, His righteousness to manifest; My heart and soul shall sing His praise. To magnify His Name abroad.",
-"The forest trees with plants of all kinds, Come forth and praise the Lord your God. You grass and flowers of the fields here, So beautiful the Lord made you; Come forth display His glorious power, Come join the joyful praise of God.",
-"Let all His works join in this worship, Revealing all His glorious works, And tell His splendor and His beauty, The splendor of His Majesty, Lift up your voice His creatures all, Speak of the Glory of the Lord.",
-"We must give praise and thanks to our God, To God the Father of us all; From whom we have our bodies and minds, From whom we have the soul and all. The Lord who made and placed us here. That we may bear much fruit for Him!",
-"Lift high and praise the Name of Jesus, For mercy great we have from Him. He has become our Lord and Savior, lie suffered much and died for us. From death He has delivered us, The Son of God saved us from sin.",
-"All praise and thanks are due the Spirit, God Holy Spirit from on high. He gives to us new life in Jesus, He works to sanctify us all. The fruit of God is from His work, From Him we have a righteous life.",
-"In all my life, you Lord have blessed me, I testify of your great love. In all my troubles and distresses, You Lord my God have been with me. In storms so fearful and so great, I have received your comfort, Lord. ",
-"All living creatures praise your Makes, For He provides sustaining grace, For He is just and kind in nature, And hears the cries and prayers of all, To satisfy and save His own,All those who fear His Holy Name. ",
-"The Lord preserves all those that love Him, But will destroy the wicked foes. My mouth shall speak His praises always, All saints shall praise Him ever more, For He is Everlasting God, And we shall glorify His Name. "
-],
-"name": "PHB 4",
-"scripture": "Psalm 107 vs 8-15; Psalm 95 vs 2; Eph. 1 vs 3-10; Eph. 5 vs 20",
-"author": "J. Mentzer, (1658-1734)",
-"translator": ""
-}
+  {
+    "verses": [
+      "Now, thank we all our God,\nWith hearts and hands and voices!\nWho wonderous things have done,\nIn whom this world rejoices.\nWho from our mother's arms,\nHas blessed us on our way,\nWith countless gifts of love,\nAnd still is ours today.",
+      "Before our life on earth,\nThe Lord God knew and loved us.\n He freely gave all things,\nAnd more than we knew, gave us.\nTherefore we all must join\nTo sing in unison\nThe praises of our God;\nHe is the God of praise.",
+      "Oh may this bounteous God,\nThrough all our lives be near us.\nWith ever joyful hearts,\nAnd blessed peace to cheer us!\nAnd keep us in His grace,\nAnd guide us when perplexed,\nAnd free us from all ills,\nIn this world and the next!",
+      "All praise and thanks to God,\nWho reigns in highest Heaven.\nThe Father and the Son,\nAnd Spirit now be given.\nThe one eternal God,\nWhom earth and heaven adore,\nFor thus it was is now,\nAnd shall be evermore! "
+    ],
+    "name": "PHB 1",
+    "scripture": "Psalm 107 vs 8-15; Psalm 95 vs 2; Eph. 1 vs 3-10; Eph. 5 vs 20",
+    "author": "Martin Rinkart (1586-1649)",
+    "translator": "Catherine Winkworth (1827-1878)"
+  },
+  {
+    "verses": [
+      "Praise to the Lord, the Almighty, the King of creation!\n O my soul, praise Him, for He is thy health ans salvation!\n All ye who hear, \n Now to His temple draw near;\n Praise Him in glad adoration.",
+      "Praise to the Lord, who o'er all things so wondrously reigneth,\n Shelters thee under His wings, yea, so gently sustaineth!\n Hast thou not seen\n How thy desires ever been\n Granted in what He ordaineth?",
+      "Praise to the Lord, who doth prosper thy work and defend thee;\n Surely His goodness and mercy here daily attend thee.\n Ponder anew\n What the Almighty can do,\n What the Almighty can do,\n If with His love he befriend thee.",
+      "Praise to the Lord, who when tempests their warfare are waging,\n Who, when the elements madly around thee are raging,\n Biddeth the cease,\n Turneth their fury to peace,\n Whirlwinds and waters assuaging.",
+      "Praise to the Lord, who, when darkness of sin is abounding,\n Who, when the godless do triumph, all virtue confounding,\n Sheddeth His light,\n Chaseth the horrors of night,\n Saints with His mercy surrounding.",
+      "Praise to the Lord, O let all that is in me adore Him!\n All that hath life and breadth, come now with praises before Him.\n Let the amen\n Sound from His people again,\n Gladly for aye we aadore Him."
+    ],
+    "name": "PHB 2",
+    "scripture": "Psalm 57 vs 8-9; 103 vs 1-5; Deuteronomy 32 vs. 10-12.",
+    "author": "Joachin Neander (1650-1680)",
+    "translator": "Catherine Winkworth (1827-1878)"
+  },
+  {
+    "verses": [
+      "Sing ye saints, sing to the Savior,\n Jehovah is He.\n Give Him thanks, and praise Him always,\n Praise Him everywhere.\n Christians come, your Lord extol,\n Magnify His Blessed Name.\n Give Him thanks, and praise your\n [Savior, \n Glorify His Name.",
+      "You redeemed ones, blessed children, \nPeace you have in Christ.\n Joy and peace you have in Jesus,\n This God wants for you.\n For He loves all the children,\n And He cares for them always.\n For He guides them, and protects them,\n Glorify His Name.",
+      "Hosts of evil men may scare you,\n Satan's wicked foes.\n Saints of Christ, they fear no evil,\n In this battle fierce.\n For they have the Word of God,\n And with faith and prayer they fight.\n All equipped with God's own armor,\n Victorious they are.",
+      "People of God, Israel's children,\n Come rejoicing, now.\n For the Lord who made and saved you,\n Favor He bestows.\n Zion's children come with joy,\n Be assured that all is well.\n For the Lord, the God Almighty,\n Sovereign Lord is He."
+    ],
+    "name": "PHB 3",
+    "scripture": "Psalm 149; Ephesians 6 vs. 11.",
+    "author": "Johannes Gottlieb Christaller",
+    "translator": "Catherine Winkworth (1827-1878)"
+  },
+  {
+    "verses": [
+      "If God would give me thousand tongues now, And thousand, thousands more than that; I shall use all to praise Him always, To glorify His Holy Name, And shall extol Him with my heart And glorify His Holy Name.",
+      "I shall proclaim His glorious splendors, And share with all, His wondrous works. His fame shall spread in earth and heaven, His righteousness to manifest; My heart and soul shall sing His praise. To magnify His Name abroad.",
+      "The forest trees with plants of all kinds, Come forth and praise the Lord your God. You grass and flowers of the fields here, So beautiful the Lord made you; Come forth display His glorious power, Come join the joyful praise of God.",
+      "Let all His works join in this worship, Revealing all His glorious works, And tell His splendor and His beauty, The splendor of His Majesty, Lift up your voice His creatures all, Speak of the Glory of the Lord.",
+      "We must give praise and thanks to our God, To God the Father of us all; From whom we have our bodies and minds, From whom we have the soul and all. The Lord who made and placed us here. That we may bear much fruit for Him!",
+      "Lift high and praise the Name of Jesus, For mercy great we have from Him. He has become our Lord and Savior, lie suffered much and died for us. From death He has delivered us, The Son of God saved us from sin.",
+      "All praise and thanks are due the Spirit, God Holy Spirit from on high. He gives to us new life in Jesus, He works to sanctify us all. The fruit of God is from His work, From Him we have a righteous life.",
+      "In all my life, you Lord have blessed me, I testify of your great love. In all my troubles and distresses, You Lord my God have been with me. In storms so fearful and so great, I have received your comfort, Lord. ",
+      "All living creatures praise your Makes, For He provides sustaining grace, For He is just and kind in nature, And hears the cries and prayers of all, To satisfy and save His own,All those who fear His Holy Name. ",
+      "The Lord preserves all those that love Him, But will destroy the wicked foes. My mouth shall speak His praises always, All saints shall praise Him ever more, For He is Everlasting God, And we shall glorify His Name. "
+    ],
+    "name": "PHB 4",
+    "scripture": "Psalm 107 vs 8-15; Psalm 95 vs 2; Eph. 1 vs 3-10; Eph. 5 vs 20",
+    "author": "J. Mentzer, (1658-1734)",
+    "translator": ""
+  },
+  {
+    "name": "PHB 5",
+    "verses": [
+      "To the Father, I’ll bring\npraises,\nVast Your glorious nature is.\nYou are God of earth and\nheaven, Lord who cares for all in\nlife.\nThy greatness, Thy might,\nOh Father,\nEvident in all we see.",
+      "God of heaven, Lord\nAlmighty,\nYou are God, above all\nthings.\nYou created, all things living, By Your Word You made the\nworld.\nAnd You are the world’s\nsustainer,\nWondrous are Your works\nOh Lord.",
+      "Omniscient God, You know\nall things,\nSeasons and all times You\nknow.\nThousand years of life,\nbefore You, Are like nothing in Your\nsight.\nYou are everlasting\nFather,\nYou remain forever God.",
+      "All creation, all living things,\nAre from You, and life You\ngave.\nWhat can separate us, from\nYou Lord? \n You our God so ever\nnear.\nFor Your Spirit dwells with\nus Lord,\nLife eternal, You have\ngiven.",
+      "Lord of earth, and Lord of\nheaven,\nIn You Lord, alone we trust.\nMay we see You glorious\nFather, Worship You with all our\nhearts.\nGrant that we may love and\nserve You.\nGrant that we may see Thy\nface."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 6",
+    "verses": [
+      "My soul shall bless the Lord today,\nAnd all my being praise His Name.\nHis kindness leads me all the way,\nMy heart and mouth, tell of His Love.\nFor He forgives me all my sin,\nHe heals diseases of mine,\nHe saves my life from danger,\nMy soul He frees from death,\nHe pours His grace upon me,\nAs eagle, my strength He renews,\nJehovah shall protect His own,\nHis suffering ones He’ll defend.\n",
+      "The Lord reveals His righteousness,\nAnd takes the side of those oppressed.\nAnd even in the wilderness,\nHe proved His power to the distressed.\nHis mercy is forever sure,\nHis anger is slow and controlled,\nHe keeps us in His kindness,\nHis patience is untold,\nHis grace is high as heaven,\nFor all those who honor His Name,\nOur sin, Jesus has forgiven,\nOur sin, He has washed away.\n",
+      "As fathers show compassion here,\nFor little children they all have,\nSo God our Lord is merciful,\nTowards the people that fear Him.\nAs fathers show compassion here,\nFor little children they all have,\nSo God our Lord is merciful,\nTowards the people that fear Him.\nHe knows our nature and our ways,\nHe knows that we are dust only.\nWe are like grass that withers,\nLike flowers of the fields;\nWhen scorching winds come over,\nThey dry up and perish quickly.\nSo we dry up and perish here, \nBoth small and the great perish.\n",
+      "God’s love and goodness never fails,\nFor those that fear His Holy Name.\nFor those that follow His command,\nAnd walk before Him without blame.\nGod’s Throne is firm in highest Heav’n,\nHe rules as a King over all.\nYou strong and mighty angels,\nWho always do God’s Will,\nYou heav’nly powers come praise Him,\nAlmighty God servants you are,\nAnd you my soul join in this praise,\nAnd worship the Lord your God.\n",
+      "We all must come and give much thanks,\nTo God the Father, Son, Spirit.\nGod’s promises have come to pass,\nHis blessings we all have received.\nOur hope is now in God the Lord,\nIn Him only we do now trust.\nWe have become His children,\nWe must cling to our God,\nOur safety is in Jesus,\nSecure we are even to death,\nIn this, we all unite to say,\n‘Hallelujah and  Amen’!\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 7",
+    "verses": [
+       "Sing with the tongue and\nheart and soul,\nSing to our gracious Lord.\nSing of His love and\nwondrous works,\nAnd testify of Him.",
+      "Lord, you are source of all my\nlife,\nEternal God, you are.\nFrom you, we have all things\nwe need,\nGood things we need in life.",
+      "Lord, we are nothing in this\nlife,\nNothing we have on earth.\nAll that we have come from\nyou Lord,\nYou made them all for us.",
+      "Who made the heav’ns and\nmade the clouds?\nSo majestic we see.\nWho sends the rain we need\nfor life?\nThat waters earth for food?",
+      "Security is from the Lord,\nIn Him we sleep in peace.\nThe peace too we have in\nthis land,\nIs from you Lord our God.",
+      "When In distress, you are so\nnear,\nYou gently guide us through.\nYour gracious light shines in\nour hearts,\nYou flood our hearts, with\npeace.",
+      "Foul, all we are so full of sin,\nYou bear with us in love.\nYou gently deal with sinful\nmen,\nOur sin you cast away.",
+      "To you Oh Lord, I yield my\nlife,\nI trust my life to you.\nYou’ll take care of all needs I\nhave,\nGracious and loving God."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 8",
+    "verses": [
+       "Sing joyful songs,\nO, sing unto God.\nThe Lord Jehovah,\nThe Lord who created\nand saved all mankind!",
+      "The heavn’ly choir,\nOf angels of God;\nSing to Jehovah,\nSing to Christ Son of God\nwho saved all mankind.",
+      "God you are kind,\nYes, God you are kind;\nYou loved us such that,\nYou gave up your only\nSon to save the world.",
+      "Give thanks to God,\nOh give Him all thanks.\nFor He has blessed us,\nWith Jesus the Savior\nwho is Christ the Lord.",
+      "Praise ye the Lord,\nO, praise Christ the King;\nFor He has saved us,\nHe paid wages, due for\nsin for all mankind",
+      "Sing joyful songs,\nLet all join to sing;\nTo Praise the Father,\nPraise Son and the Holy\nSpirit evermore"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 9",
+    "verses": [
+      "Let all the world in every\ncorner sing,\nMy God and King,\nThe heavens are not too\nhigh,\nHis praise may thither fly,The earth is not too low,\nHis praises there may grow,\nLet all the world, in every\ncorner sing,\n‘My God and King’",
+      "Let all the world in every\ncorner sing,\nMy God and King,\nThe Church with psalms\nmust shout\nNo door can keep them out\nBut, above all, the heart\nMust bear the longest part\nLet all the world in every\ncorner sing\nMy God and King!"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 10",
+    "verses": [
+      "My soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nMy soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nBless the Father and bless the\nSon of the Lord\nBless the Father and bless the\nSon of the Lord, Bless the Father and\nbless the Son of the\nLord,\nRise, my soul and\npraise the Lord your\nGod.",
+      "My soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nMy soul rise and praise the\nLord your God, My soul rise and praise the\nLord.\nThanks to God the King,\nthanks be to God the Son,\nThanks to God the King,\nthanks be to God the Son\nThanks to God the\nKing, thanks be to God\nthe Son\nRise, my soul and\npraise the Lord your\nGod.",
+      "My soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nMy soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nAdoration be to the Father and\nSon,\nAdoration be to the Father and\nSon, Adoration be to the\nFather and Son,\nRise, my soul and\npraise the Lord your\nGod.",
+      "My soul rise and praise the\nLord your God,\nMy soul rise and praise the\nLord.\nMy soul rise and praise the\nLord your God, My soul rise and praise the\nLord.\nGlorify the Father, glorify\nSon,\nGlorify the Father, glorify\nSon, Glorify the Father,\nglorify Son,\nRise, my soul and\nglorify your Lord."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 11",
+    "verses": [
+      "What shall best please you my\nSavior.\nYou the Lord of Hosts and\nMight?\nFill me with your Holy Spirit,\nGive me this life from you Lord.\n For I cannot live as pleasing\nGive to you Lord what is\nprecious.\nThousand times ten thousand\ntimes\nI shall ren-der thanks to you.",
+      "Lord I know I have denied you\nIn a life of sin and woe\nThis has caused me shame\nand grief Lord\nIn your patience, suffering-long\nBearing with me wretched\nsinner\nGiving freely tender mercies\nThousand times ten thousand\ntimes\nI shall render thanks to You",
+      "Lord you sought me in my lost\nstate\nAnd have saved me from such hell\nWhen I was in love with this world,\nWith desire for evil bread\nYou came after me to teach me\nWhat is true and worth pursuing\nThousand times ten thousand\ntimes\nI shall ren-der thanks to You.",
+      "Wondrous ways you act\ntowards us\nTo reveal your gracious will\nAnd with agonizing heart pain\nYou, Oh Lord, search out for us\nThat we might seek after your\nlife\nSeeking for the gracious Word\nThousand times ten thousand\ntimes\nI shall ren-der thanks to You.",
+      "Lord your heart is full of love\nLove consuming all my life\nLove that came through\nChrist my Savior\nWho my Lord now has\nbecome Gracious Spirit, draw me nearer\nAnd redeem those all around\nme\nThousand times ten thousand\ntimes\nI shall ren-der thanks to Go\nYou."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 12",
+    "verses": [
+      "Children of Jehovah,\nproclaim the Lord’s\nName,\nCome worship and\nmagnify Jesus the Lord.\nCome Glorify, honour\nand praise the Savior,\nThe Lord deserves\npraise from all He has\nsaved.",
+      "The Lord reigns in\nHeaven, eternally\nreigns,\nBut He came to seek\nus, He was with us\nThe Father’s Son Jesus, the vict’ry has won,\nHe saved us from sin and the chains of the foe.\n",
+      "Therefore we must gather to sing of His praise,\nFor in Him we all have salvation from sin.\nThe angels of heaven sing, praising Jesus,\nLet Saints here on earth join in praising His name.\n",
+      "We all must now join in the worship of Christ,\nJoin with the angels above to praise our God.\nCome praise Him, adore Him and Honor His Name,\nWe must all now sing, Hallelujah! Amen\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 13",
+    "verses": [
+      "Hallelujah, sing to the Lord,\nSing to the Lord with thankful\nhearts,\nSing for His wondrous workings.\nForever and forevermore,\nWe’ll praise our God alone\nal-way,Praise, glorify and honor.\nSing all, sing now\nHoly, Holy, Holy, Holy,\nTo the Lord God,\nGod of hosts, we bless\nyou ever.",
+      "Hallelujah, with joyful hearts,\nWe give you thanks, the Son of\nGod,\nThe Lamb of God, we praise you.\nThe One in whom we have our\nbeing,\nWhose Blood has washed away\nour sin,Our Bridegroom, Christ Jesus, Lord.\nHoly, blessings,\nFrom Christ Jesus, given to us,\nWe must give thanks,\nWith hearts joyful, we praise you\nLord.",
+      "Hallelujah, with joyful thanks,\nWe praise thee, Holy Spirit God.\nFrom whom we all have new\nbirth.\nFrom whom we have a blessed\nfaith,\nIn Jesus our love and\nBridegroom,He comes to make us\nready.\nTruly, Heaven,\nIs a blissful place to live in,\nManna, have there,\nAlways sing there,\nHallelujah.",
+      "Hallelujah, with joy and thanks,\nSing to the Lord God, ever praise,\nAnd glorify His great Name.\nJoin with the heavn’ly host above,\nWith voices loud, come praise His\nName,Come praise Father, Son,\nSpirit.\nAmen, Amen,\nHoly, Holy, Holy, Holy,\nGod is Holy,\nLord of Hosts is God Jehovah."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 14",
+    "verses": [
+      "Jesus savior, Jesus savior\nOur Redeemer friend\nThou art Lord our God\nforever\nYou are all our being\nThrough the Cross you have\nblessed us\nBlessings, joy now and ever\nPraise and honor, praise and\nhonor\nGlory be to Thee",
+      "Come revive us, come revive\nus\nGod Almighty come\nFrom our slumber, from our\nslumber\nIn this world of sin \nFor our hearts are restless,\nLord,\nSeeking to worship you now.\nTo adore you, to adore you\nNow and evermore."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 15",
+    "verses": [
+      "Praise the Lord, you\nheavens, adore Him;\nPraise him, angels in\nthe height;Sun and moon,\nrejoice before Him,\nPraise him, all your\nstars of light.",
+      "Praise the Lord! for\nHe has spoken;\nWorlds His mighty\nvoice obeyed;Laws which never\nshall be broken\nFor their guidance\nhas He made.",
+      "Praise the Lord!\nfor He is glorious;\nNever shall His\npromise fail;God has made\nHis saints\nvictorious;\nSin and death\nshall not prevail.",
+      "Praise the God of\nour salvation!\nHosts on high, His\npower proclaim;Heaven and earth,\nand all creation,\nLaud and magnify\nHis name."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 16",
+    "verses": [
+      "Jehovah Father, Mighty God,\n\nIn you we have our lives,\n\nWith all our soul and flesh\nand mind,\n\nYour gracious call we hear,\n\nOur hearts rejoice in you.",
+      "A loving Father, is our God,\n\nSo heed His gracious call,\n\nAnd let us praise His Holy\nName,\n\nBefore His presence dwell,\n\nHave everlasting peace.",
+      "A true savior is Christ the Lord,\n\nJesus, who came from heav’n,\n\nHe came to save us all\nmankind,\n\nChrist suffered for our sin,\n\nHe died to save us all.",
+      "And, therefore come now to the\nLord,\n\nGive Him thanks, worship Him,\n\nProclaim Him as the Lord of all,\nLove Him with all your heart,\n\nSalvation He has brought."
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 17",
+    "verses": [
+      "Sing joyful songs, with praise and thanks,\nTo God, the loving Father.\nFor all His wondrous works in us,\n\nIn Him we have all blessings.\nAnd joy eternal now we have,\nIn Him, we have such peace in death,\nOh magnify the Father.\n\n",
+      "The hosts of heaven give thanks to you,\nKing of all kings, Almighty.\nAnd we on earth join in this praise,\nJoin to extol the Father.\nTo praise and glorify the Lord,\nThe One who made all things so well,\nOh magnify the Father.\n",
+      "All creatures that the Lord has made,\nGod loves, and He provides for.\nHis eyes are upon all things He made,\nAnd He sustains all creatures.\n\nGod’s Kingdom and His subjects too,\nAnd all things in the universe,\nOh Magnify the Father.\n\n",
+      "In my distress to you I called,\nHear all my supplications.\nDeliver me from death Oh Lord,\nSave me from death by grace Lord.\nSo shall I praise the Lord my God,\nAll join me in this song of praise,\nOh Magnify the Father.\n",
+      "In all my life I’ll praise you Lord,\n I’ll glorify you Father.\nI’ll spread abroad your Honors too,\nLet all creation hear me.\nMy heart and soul awaken now,\nAnd with my whole being now proclaim,\nOh Magnify the Father.\n",
+      "Come all before the Lord our God,\nCome now with joyful worship.\n Fulfill your vows before the Lord\nAnd give Him praise eternal.\nFor God has done all things so well,\nAnd He deserves our praise and thanks,\nOh Magnify the Father.\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 18",
+    "verses": [
+      "Bless the Lord God Oh my soul,\nPraise the Lord and magnify Him.\nEarth and heav’n are yours O Lord,\nNone can comprehend your glory.\nYou are glorious you change not,\nYou are everlasting God.\n",
+      "Cherubim and Seraphim,\nSing your praises without ceasing.\nHost of angels too in Heav’n,\nGlorify and honor your Name.\nThey unite to sing always,\nHoly, Holy, Holy Lord. \n\n",
+      "Prophets too of old you sent,\nAnd the Saints already with you; \nAll together magnify,\n\nGlorify your Name and honor.\nAll the Saints here join the throng,\nGive you thanks and worship you.\n\n",
+      "We here on earth join this song,\nStrong, weak, young and old we come now.\nPraise the Lord and worship Him,\nGive to Him the glory due Him.\nLord, your holy Church on earth,\nGive you praise and worship you.\n",
+      "Gracious Father in your love,\nYou did give to us Christ Jesus. \nYou have saved us by His life,\nYou have made Him King forever.\nBy your Holy Spirit, Lord\nWe are now made Saints in you.\n",
+      "Gracious Father, keep us still,\nJesus Christ, have mercy on us.\nGracious Spirit cleanse us now,\nGuide us in the heav’nly way Lord.\nWhen we see you Lord in Heav’n,\nWe shall praise you ever more.\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 19",
+    "verses": [
+      "We glorify you Lord,\nWe thank you O our God,\nAlmighty God, Creator,\nCreation You adore,\nAngels and hosts of Heav’n,\nLaud You and praise Your Name, \nCherubim, Seraphim,\nAre singing joyfully,\n“O Holy, Holy  Lord\nO Holy, Holy Lord,\nJehovah, Mighty God\nWe worship. You O Lord”.\n",
+      "Elders before the Throne,\nYou Mighty ones of God,\nAngels on guard duties,\nFlaming fires and all,\nThe glorious saints in Heav’n,\nAnd all to follow on,\nShall praise the Father, Son,\nGod Holy Spirit, praise,\nGlory to God on High\nGlory to God in full,\nIn unison we sing,\nAll sing God’s glory now.\n",
+      "Christ Jesus Son of God,\nThe Savior of mankind!\nYou are the Lord Great King,\nWe all praise You, O Christ.\nWith Father, You are One,\nHis glory You reflect, You were so meek, humble,\nYou came in human flesh.\nDeath suffered, You arose.\nTo Heaven ascended\nGlorified and honored,\nOn Father’s Throne you sit.\n",
+      "For us You came to earth,\nYou came to save us all,\nBought us with precious Blood;\nReconciled us to God! \nThe curse You took away,\nYou shall bring us to Heav’n, \nWe plead with You and pray,\nSave us from worldly sin,\nLord, take away our sin,\nDefeat the foe for us.\nBe with your Saints, O Lord,\nGrant us eternal peace.\n",
+      "To Jehovah our God,\nTo You we bring our praise,\nOur Father God we praise.\nWe glorify Your Name.\nHoly Spirit we praise,\nSpirit Holy You are.\nOur hope is in You, Spirit,\nHave mercy on all Saints.\nGrace, give us to live here,\nTo overcome all sin,\nBe with us Spirit, Lord,\nComplete Your work, Amen.\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  },
+  {
+    "name": "PHB 20",
+    "verses": [
+      "Come now my soul and praise the Lord Jehovah,\nPraise God always, till my life shall end.\nCome praise the Lord Jehovah, God Almighty,\nLet all your being praise Him always.\nFrom whom we have such wonderful life,\nCome worship Him, come sing with me always,\nHallelujah, Hallelujah.\n",
+      "Trust not in kings, for flesh they are such only,\nThey shall return to dust as all men.\nWisdom of man and plans of all men mighty,\nAll such shall perish soon in the grave. \nPut not ever your trust in any man,\nTrust in the Lord, who is Almighty God,\nHallelujah, Hallelujah.\n",
+      "Happy the man, whose help is God of Jacob,\nWho hopes in God who is Lord of all.\nFaithful is He, the Lord of grace and justice,\nBlessed is he who trusts in this God.\nIn Him you have all wisdom and all strength,\nIn Him alone you have all that you need,\nHallelujah, Hallelujah.\n",
+      "Creator of the earth and of all heaven,\nWho made the seas and who made all things.\nHis word shall stand forever and forever,\nHis promises shall stand so secure.\nThis God Almighty the all sovereign Lord,\nThe Faithful Jehovah, the Holy God,\nHallelujah, Hallelujah.\n",
+      "Injustice, Lord you hate and you stand for right,\nOppressed ones you defend and protect.\nIn times of famine, God shall still provide food,\nAll that you need, the Lord shall provide.\nIn God, the prisoner shall be free indeed,\nBowels of mercy we have in Jesus,\nHallelujah, Hallelujah.\n",
+      "Eyes of the blind the Lord God shall soon open,\nHumble and meek, the Lord shall raise up.\nAll those that trust the Lord and have faith in Him,\nThe Lord shall always show them His love. \nAll strangers, widows and orphans, listen,\nAlmighty God shall provide all your needs; \nHallelujah, Hallelujah.\n",
+      "All who forget the Lord and forsake Jesus,\nThe Lord shall leave them to their own ways.\nThat they may suffer for their sin and actions,\nThe folly of their life all shall see.\nThe Lord God is the King for evermore,\nZion the Lord shall bless now and always,\nHallelujah, Hallelujah.\n",
+      "Come all you Saints and praise the Lord Jehovah,\nWondrous His works we shall always see.\nAll those that have the Spirit shall say, “Amen”!\nCome let us sing praise and thank the Lord.\nAll children of the Lord come now and sing,\nPraise God the Father, Son and Holy Ghost,\nHallelujah, Hallelujah.\n"
+    ],
+    "scripture": "",
+    "author": "",
+    "translator": ""
+  }
 ]
