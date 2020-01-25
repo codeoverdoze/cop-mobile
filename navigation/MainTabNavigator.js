@@ -51,6 +51,8 @@ import Colors from "../constants/Colors";
 // Announcements Screen Stack
 import Announcements from "../screens/Announcements/Index";
 
+// Events Screen Stack
+import Events from "../screens/Events/Index";
 
 const AlmanacStack = createStackNavigator(
   {
@@ -75,16 +77,27 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeIndex,
     Announcements,
-    Almanac: AlmanacStack
+    Almanac: AlmanacStack,
+    Events
   },
   { headerMode: "none" }
 );
 
-HomeStack.navigationOptions = {
-  tabBarLabel: "Home",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name="home" type="feather" icon={homeIcon} />
-  )
+HomeStack.navigationOptions = ({ navigation }) => {
+    const routeName = navigation.state.routes[navigation.state.index].routeName
+  console.log("Current route", navigation.state.routes[navigation.state.index].routeName);
+  return {
+    tabBarLabel: "Home",
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        name="home"
+        type="feather"
+        icon={homeIcon}
+      />
+    ),
+    tabBarVisible: routeName !== "Events"
+  };
 };
 
 const HymnaryStack = createStackNavigator(

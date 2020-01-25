@@ -67,10 +67,10 @@ const list = [
     },
     {
         image: membershipRegistrationImage,
-        title: "Membership Registration",
-        content: "Complete a registration process and join the community instantly.",
+        title: "Special Events",
+        content: "View upcoming church events and be ready for them.",
         key: "4",
-        link: "Payments"
+        link: "Events"
 
     },
     {
