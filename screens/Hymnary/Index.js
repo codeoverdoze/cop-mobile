@@ -1,15 +1,15 @@
 import React, {Component} from "react";
 import {View, StyleSheet, SafeAreaView, FlatList, TouchableOpacity} from "react-native";
 import {StyledHeader, StyledHeaderInverse, StyledText, StyledTextInverse} from "../../components/Typography";
-import emitter from "tiny-emitter/instance";
-import HymnaryBar from "./components/HymnaryBar";
-import debounce from "debounce";
-import Hymnary from "../../store/Hymnary";
 import hymnBook from "../../sample-data/hymnary";
 import {Ionicons} from "@expo/vector-icons";
 import MembershipIcon from "../../components/MembershipIcons";
 import {Audio} from 'expo-av';
 import {showMessage} from "react-native-flash-message";
+import Layout from "../../constants/NewLayout";
+const { heightPercentageToDP, widthPercentageToDP } = Layout;
+
+
 
 export default class extends Component {
     constructor(props) {
@@ -90,7 +90,7 @@ export default class extends Component {
                         <Ionicons name={"ios-arrow-back"} size={30} color="#FFFFFF"
                                   style={{justifyContent: "center"}}/>
                     </TouchableOpacity>
-                    <StyledHeader h4 style={{alignSelf: "flex-start", color: '#fff'}}>Hymnary</StyledHeader>
+                    <StyledHeader h4 style={{alignSelf: "flex-start", color: '#fff'}}>PHB {this.HymnNumber}</StyledHeader>
                     {
                         this.state.isPlaying ?
                             <TouchableOpacity onPress={this.toggleHymn}>
@@ -122,7 +122,7 @@ export default class extends Component {
                         </View>
                         :
                         <View style={[styles.gridContainer]}>
-                            <View style={{marginBottom: 160}}>
+                            <View style={{marginBottom: 160, minHeight: heightPercentageToDP('70%')}}>
                                 <FlatList
                                     data={hymn.verses}
                                     renderItem={this.renderVerses}
@@ -134,9 +134,10 @@ export default class extends Component {
                                 bottom: 80,
                                 borderTopColor: '#949494',
                                 borderTopWidth: 0.3,
-                                paddingHorizontal: 15
+                                paddingHorizontal: 15,
+                                width: '100%'
                             }}>
-                                <StyledText bibleItalic style={{textAlign: 'center'}}>Scripture
+                                {/*<StyledText bibleItalic style={{textAlign: 'center'}}>Scripture
                                     - {hymn.scripture}</StyledText>
                                 <StyledText bibleItalic style={{textAlign: 'center'}}>Authored
                                     by {hymn.author}</StyledText>
@@ -146,7 +147,8 @@ export default class extends Component {
                                             by {hymn.translator}</StyledText>
                                         :
                                         null
-                                }
+                                }*/}
+
                             </View>
                         </View>
                 }
