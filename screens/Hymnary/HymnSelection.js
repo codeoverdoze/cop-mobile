@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        paddingTop: heightPercentageToDP('10%'),
+        paddingTop: heightPercentageToDP('2%'),
     },
 
     main: {
