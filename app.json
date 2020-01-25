@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "pcg-mobile-app",
+    "name": "Presby Companion",
     "description": "Presbyterian Church of Ghana mobile app",
-    "slug": "pcg-mobile-app",
+    "slug": "presby-companion",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -11,9 +11,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icons/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/icons/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,10 +24,11 @@
       "assets/images/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.polymorphlabs.presbycompanion"
     },
     "android": {
-      "package": "com.polymorph.pcg"
+      "package": "io.polymorphlabs.presbycompanion"
     }
   }
 }
