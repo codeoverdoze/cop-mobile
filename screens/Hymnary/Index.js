@@ -19,7 +19,6 @@ export default class extends Component {
         this.renderVerses = this.renderVerses.bind(this);
         this.toggleHymn = this.toggleHymn.bind(this);
         this.soundObject = new Audio.Sound();
-        console.log(this.HymnNumber);
     }
 
     async toggleHymn() {
@@ -34,18 +33,15 @@ export default class extends Component {
             try {
 
                 if(this.state.isPlaying){
-                    console.log("I am stopping");
                     await this.soundObject.stopAsync();
                     await this.soundObject.unloadAsync();
                     this.setState({ isPlaying: false })
                 }else{
-                    console.log("I am playing");
                     await this.soundObject.loadAsync(require('../../assets/hymns/001.mp3'));
                     await this.soundObject.playAsync();
                     this.setState({ isPlaying: true })
                 }
             } catch (error) {
-                console.error(error);
                 showMessage({
                     type: 'error',
                     message: 'Failed to play hymn tune',
@@ -63,7 +59,6 @@ export default class extends Component {
     }
 
     renderVerses = (verse) => {
-        console.log('render verse', verse);
         if (verse) {
             return (
                 <View style={[styles.gridItem]} key={verse.item}>
@@ -80,7 +75,6 @@ export default class extends Component {
 
 
     render() {
-        console.log(this.HymnNumber, 'Current hymn number');
         const hymn = hymnBook[this.HymnNumber - 1];
         return (
             <View style={[styles.container]}>

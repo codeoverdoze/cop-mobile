@@ -1,29 +1,29 @@
-import React from 'react';
-import { View } from 'react-native';
-import PropTypes from 'prop-types';
-import Colors from '../../constants/Colors';
+import React from "react";
+import { View, ActivityIndicator } from "react-native";
+import PropTypes from "prop-types";
+import Colors from "../../constants/Colors";
 
-
-function Button({ children }) {
+function Button({ children, loading }) {
   return (
     <View>
-      <View style={{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginVertical: 10,
-        backgroundColor: '#387ecb',
-        paddingVertical: 15,
-        borderRadius: 5,
-      }}
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginVertical: 10,
+          backgroundColor: Colors.tintColor,
+          paddingVertical: 15,
+          borderRadius: 5
+        }}
       >
-        {children}
+        {loading ? <ActivityIndicator /> : children}
       </View>
     </View>
   );
 }
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Button;

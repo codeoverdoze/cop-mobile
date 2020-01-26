@@ -5,6 +5,14 @@ schema {
     mutation: Mutation
 }
 
+type Announcement {
+    _id: ID!
+    congregation: Congregation!
+    createdAt: DateTime!
+    markdown: String!
+    updatedAt: DateTime!
+}
+
 type Congregation {
     _id: ID!
     catechist: String!
@@ -39,13 +47,16 @@ type Member {
     communicant: Boolean
     congregation: Congregation
     contact: Contact
+    dateJoined: DateTime
     firstName: String
     folio: String
     gender: Gender
     group: String
     hometown: String
+    imageURL: String
     maritalStatus: MaritalStatus
     middleName: String
+    reasonForJoining: String
     surname: String
 }
 
@@ -61,16 +72,29 @@ type Mutation {
     addDistrict(input: addDistrictInput): District
     addMember(input: addMemberInput): Member!
     addPresbytery(input: addPresbyteryInput): Presbytery
+    completePrayerRequest(prayerRequest: ID!): PrayerRequest!
     editMember(input: addMemberInput): Member!
     loginMember(input: loginMemberInput): LoginMemberOutput!
+    makeAnnouncement(pagination: pagination): Announcement!
+    makePrayerRequest(input: makePrayerRequestInput): PrayerRequest!
     root: String
     setMemberCongregation(input: setCongregationInput): Member!
     validateLoginMember(input: validateLoginMemberInput): MobileToken!
 }
 
 type NextOfKin {
-    name: String!
-    telephone: String!
+    name: String
+    telephone: String
+}
+
+type PrayerRequest {
+    _id: ID!
+    anonymous: Boolean!
+    createdAt: DateTime!
+    member: Member
+    request: String!
+    status: prayerRequestStatus!
+    updatedAt: DateTime!
 }
 
 type Presbytery {
@@ -81,10 +105,13 @@ type Presbytery {
 }
 
 type Query {
+    announcements: [Announcement]!
     congregations(filter: congregationFilter): [Congregation]!
     districts(filter: districtFilter): [District]!
+    memberPrayerRequests: [PrayerRequest]!
     memberProfile: Member!
-    members(filter: getMemberFilter): [Member]!
+    members(filter: getMemberFilter, pagination: pagination): [Member]!
+    prayerRequests(filter: prayerRequestFilter, pagination: pagination): [PrayerRequest]!
     presbyteries(filter: presbyteryFilter): [Presbytery]!
     root: String
 }
@@ -103,6 +130,11 @@ enum MaritalStatus {
     divorced
     married
     single
+}
+
+enum prayerRequestStatus {
+    completed
+    pending
 }
 
 input addCongregationInput {
@@ -124,13 +156,17 @@ input addMemberInput {
     address: String!
     communicant: Boolean!
     contact: memberContactInput
+    dateJoined: DateTime
+    email: EmailAddress
     firstName: String!
-    folio: String!
+    folio: String
     gender: Gender!
     group: String!
     hometown: String!
+    image: Upload
     maritalStatus: MaritalStatus!
-    middleName: String!
+    middleName: String
+    reasonForJoining: String
     surname: String!
 }
 
@@ -158,6 +194,7 @@ input editMemberInput {
     address: String
     communicant: Boolean
     contact: memberContactInput
+    email: EmailAddress
     firstName: String
     folio: String
     gender: Gender
@@ -166,6 +203,12 @@ input editMemberInput {
     maritalStatus: MaritalStatus
     middleName: String
     surname: String
+}
+
+input emergencyContactInput {
+    email: EmailAddress
+    name: String
+    telephone: String
 }
 
 input getMemberFilter {
@@ -187,6 +230,15 @@ input loginMemberInput {
     phone: String!
 }
 
+input makeAnnouncementInput {
+    markdown: String!
+}
+
+input makePrayerRequestInput {
+    anonymous: Boolean!
+    request: String!
+}
+
 input memberContactFilter {
     email: String
     primaryTelephone: String
@@ -195,6 +247,7 @@ input memberContactFilter {
 
 input memberContactInput {
     email: String
+    emergencyContact: emergencyContactInput
     nextOfKin: nextOfKinInput
     primaryTelephone: String
     secondaryTelephone: String
@@ -206,8 +259,29 @@ input nextOfKinFilter {
 }
 
 input nextOfKinInput {
+    email: EmailAddress
     name: String
     telephone: String
+}
+
+"""
+Pagination takes first which takes number of data to return
+and after which takes ID of data to return after it. Default value pagination returns is
+10
+"""
+input pagination {
+    after: ID
+    first: Int
+}
+
+input prayerRequestFilter {
+    _id: ID
+    anonymous: Boolean
+    createdAt: DateTime
+    member: String
+    request: String
+    status: prayerRequestStatus
+    updatedAt: DateTime
 }
 
 input presbyteryFilter {
@@ -228,13 +302,13 @@ input validateLoginMemberInput {
 
 scalar DateTime
 
-scalar Date
+"The `Upload` scalar type represents a file upload."
+scalar Upload
 
 scalar EmailAddress
+
+scalar Date
 
 scalar PhoneNumber
 
 scalar JSONObject
-
-"The `Upload` scalar type represents a file upload."
-scalar Upload

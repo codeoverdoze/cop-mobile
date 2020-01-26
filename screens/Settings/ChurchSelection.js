@@ -38,7 +38,11 @@ export default function PresbyterySelection({ navigation }) {
               style={[
                 styles.circleShapeView,
                 {
-                  backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+                  backgroundColor: `rgb(${Math.floor(
+                    Math.random() * 255
+                  )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(
+                    Math.random() * 255
+                  )})`,
                   borderRadius: 50
                 }
               ]}

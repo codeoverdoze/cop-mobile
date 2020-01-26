@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import {exp} from "react-native-reanimated";
 
 const loginMember = gql`
   mutation($phone: String!) {
