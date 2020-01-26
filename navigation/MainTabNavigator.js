@@ -45,6 +45,8 @@ import ChurchSelection from "../screens/Settings/ChurchSelection";
 import DistrictSelection from "../screens/Settings/DistrictSelection";
 import CongregationSelection from "../screens/Settings/CongregationSelection";
 import MembershipDetails from "../screens/Settings/MembershipDetails";
+import PrayerRequests from "../screens/Settings/PrayerRequests";
+import MakePrayerRequest from "../screens/Settings/MakePrayerRequest";
 
 import Colors from "../constants/Colors";
 
@@ -84,8 +86,6 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = ({ navigation }) => {
-    const routeName = navigation.state.routes[navigation.state.index].routeName
-  console.log("Current route", navigation.state.routes[navigation.state.index].routeName);
   return {
     tabBarLabel: "Home",
     tabBarIcon: ({ focused }) => (
@@ -96,7 +96,7 @@ HomeStack.navigationOptions = ({ navigation }) => {
         icon={homeIcon}
       />
     ),
-    tabBarVisible: routeName !== "Events"
+    tabBarVisible: navigation.state.index <= 0
   };
 };
 
@@ -143,7 +143,9 @@ const PaymentStack = createStackNavigator(
     PaymentOrder,
     PaymentCheckout
   },
-  { headerMode: "null" }
+  {
+    headerMode: "null"
+  }
 );
 
 PaymentStack.navigationOptions = {
@@ -158,6 +160,17 @@ PaymentStack.navigationOptions = {
   )
 };
 
+const MakePrayerRequestStack = createStackNavigator(
+  {
+    MakePrayerRequest
+  },
+  {
+    headerMode: "none",
+    mode: "modal",
+    gestureEnabled: true
+  }
+);
+
 const SettingsStack = createStackNavigator(
   {
     SettingsDashboard,
@@ -167,23 +180,28 @@ const SettingsStack = createStackNavigator(
     PersonalInformationForm,
     DistrictSelection,
     CongregationSelection,
-    MembershipDetails
+    MembershipDetails,
+    PrayerRequests,
+    MakePrayerRequest: MakePrayerRequestStack
   },
   {
     headerMode: "null"
   }
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: "Settings",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name="settings"
-      type="feather"
-      icon={settingsIcon}
-    />
-  )
+SettingsStack.navigationOptions = ({ navigation }) => {
+  return {
+    tabBarLabel: "Settings",
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        name="settings"
+        type="feather"
+        icon={settingsIcon}
+      />
+    ),
+    tabBarVisible: navigation.state.index <= 0
+  };
 };
 
 export default createBottomTabNavigator(

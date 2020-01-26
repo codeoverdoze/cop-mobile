@@ -18,7 +18,7 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 30
     },
     "assetBundlePatterns": [
       "assets/images/*"
@@ -28,7 +28,7 @@
       "bundleIdentifier": "com.polymorphlabs.presbycompanion"
     },
     "android": {
-      "package": "io.polymorphlabs.presbycompanion"
+      "package": "com.polymorphlabs.presbycompanion"
     }
   }
 }

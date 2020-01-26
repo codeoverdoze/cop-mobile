@@ -18,7 +18,7 @@ import { useQuery, gql } from "@apollo/client";
 const userProfileImage = require("../../assets/images/placeholder-image.png");
 const query = gql`
   query {
-    memberProfile @client{
+    memberProfile @client {
       _id
       firstName
       middleName
@@ -53,9 +53,6 @@ const query = gql`
 export default function SettingsScreen({ navigation }) {
   const { data, loading, error } = useQuery(query);
 
-  if (data) {
-    console.log(data);
-  }
 
   if (loading) {
     console.log("Loading", loading);
@@ -80,10 +77,6 @@ export default function SettingsScreen({ navigation }) {
 
       <ScrollView style={{ flex: 1, paddingBottom: 30 }}>
         <View style={[styles.header, { marginBottom: 20 }]}>
-            <View>
-
-            </View>
-
           <View style={{ alignSelf: "center" }}>
             <View style={{ alignItems: "center" }}>
               <Image
@@ -93,13 +86,11 @@ export default function SettingsScreen({ navigation }) {
             </View>
             <View style={{ alignItems: "center" }}>
               <StyledHeader style={{ fontSize: 16 }}>
-                  {`${memberProfile.firstName} ${memberProfile.surname}`}
+                {`${memberProfile.firstName} ${memberProfile.surname}`}
               </StyledHeader>
-              <StyledText>{`(${memberProfile.folio}/${memberProfile.contact.primaryTelephone})`}</StyledText>
+              <StyledText>{memberProfile.contact.primaryTelephone}</StyledText>
             </View>
           </View>
-
-          <View></View>
         </View>
 
         <View style={[styles.main]}>
@@ -110,9 +101,7 @@ export default function SettingsScreen({ navigation }) {
           </View>
           <View style={{ marginBottom: 40 }}>
             <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("PersonalInformation")
-              }
+              onPress={() => navigation.navigate("MembershipDetails")}
             >
               <View style={[styles.mainItem]}>
                 <View
@@ -129,7 +118,7 @@ export default function SettingsScreen({ navigation }) {
                 >
                   <View style={{ flexDirection: "row" }}>
                     <StyledText style={{ fontSize: 16 }}>
-                      Personal Information
+                      Membership Details
                     </StyledText>
                   </View>
 
@@ -152,8 +141,6 @@ export default function SettingsScreen({ navigation }) {
                     justifyContent: "space-between",
                     marginLeft: 20,
                     marginRight: 20,
-                    borderBottomWidth: 0.3,
-                    borderBottomColor: "#cecece",
                     paddingTop: 15,
                     paddingBottom: 15
                   }}
@@ -172,150 +159,117 @@ export default function SettingsScreen({ navigation }) {
                 </View>
               </View>
             </TouchableOpacity>
-
-              <TouchableOpacity
-                  onPress={() => navigation.navigate("MembershipDetails")}
-              >
-                  <View style={[styles.mainItem]}>
-                      <View
-                          style={{
-                              flexDirection: "row",
-                              justifyContent: "space-between",
-                              marginLeft: 20,
-                              marginRight: 20,
-                              borderBottomWidth: 0.3,
-                              borderBottomColor: "#cecece",
-                              paddingTop: 15,
-                              paddingBottom: 15
-                          }}
-                      >
-                          <View style={{ flexDirection: "row" }}>
-                              <StyledText style={{ fontSize: 16 }}>
-                                  Membership Details
-                              </StyledText>
-                          </View>
-
-                          <Ionicons
-                              name={"ios-arrow-forward"}
-                              size={16}
-                              color="#3E4E5B"
-                          />
-                      </View>
-                  </View>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity>
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    borderBottomWidth: 0.3,
-                    borderBottomColor: "#cecece",
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>
-                      Payment Preferences
-                    </StyledText>
-                  </View>
-
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    borderBottomWidth: 0.3,
-                    borderBottomColor: "#cecece",
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>
-                      Help & Support
-                    </StyledText>
-                  </View>
-
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    borderBottomWidth: 0.3,
-                    borderBottomColor: "#cecece",
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>
-                      Prayer Requests
-                    </StyledText>
-                  </View>
-
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Credits")}
-            >
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>Credits</StyledText>
-                  </View>
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
           </View>
+          <TouchableOpacity>
+            <View style={[styles.mainItem]}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginLeft: 20,
+                  marginRight: 20,
+                  borderBottomWidth: 0.3,
+                  borderBottomColor: "#cecece",
+                  paddingTop: 15,
+                  paddingBottom: 15
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <StyledText style={{ fontSize: 16 }}>
+                    Payment Preferences
+                  </StyledText>
+                </View>
+
+                <Ionicons
+                  name={"ios-arrow-forward"}
+                  size={16}
+                  color="#3E4E5B"
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <View style={[styles.mainItem]}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginLeft: 20,
+                  marginRight: 20,
+                  borderBottomWidth: 0.3,
+                  borderBottomColor: "#cecece",
+                  paddingTop: 15,
+                  paddingBottom: 15
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <StyledText style={{ fontSize: 16 }}>
+                    Help & Support
+                  </StyledText>
+                </View>
+
+                <Ionicons
+                  name={"ios-arrow-forward"}
+                  size={16}
+                  color="#3E4E5B"
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('PrayerRequests')}>
+            <View style={[styles.mainItem]}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginLeft: 20,
+                  marginRight: 20,
+                  borderBottomWidth: 0.3,
+                  borderBottomColor: "#cecece",
+                  paddingTop: 15,
+                  paddingBottom: 15
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <StyledText style={{ fontSize: 16 }}>
+                    Prayer Requests
+                  </StyledText>
+                </View>
+
+                <Ionicons
+                  name={"ios-arrow-forward"}
+                  size={16}
+                  color="#3E4E5B"
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate("Credits")}>
+            <View style={[styles.mainItem]}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginLeft: 20,
+                  marginRight: 20,
+                  paddingTop: 15,
+                  paddingBottom: 15
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <StyledText style={{ fontSize: 16 }}>Credits</StyledText>
+                </View>
+                <Ionicons
+                  name={"ios-arrow-forward"}
+                  size={16}
+                  color="#3E4E5B"
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </View>
   );
@@ -329,11 +283,10 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1,
-    flexDirection: "row",
     paddingTop: 30,
     paddingLeft: 10,
     paddingRight: 10,
-    justifyContent: "space-between"
+    alignItems: "center"
   },
 
   main: {
