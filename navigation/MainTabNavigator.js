@@ -30,6 +30,13 @@ import ThemeLiturgyPreaching from "../screens/Almanac/ThemeLiturgyPreaching";
 import CalendarAnnouncements from "../screens/Almanac/CalendarAnnouncements";
 import ScriptureReadings from "../screens/Almanac/ScriptureReadings";
 
+
+// Bible Study Guide Stack
+import BibleStudyYearSelection from "../screens/BibleStudy/Index";
+import ViewBibleStudyGuide from "../screens/BibleStudy/ViewBibleStudyGuide";
+
+
+
 // Payments Screen Stack
 import PaymentDashboard from "../screens/Payments/Index";
 import PaymentPackages from "../screens/Payments/Packages";
@@ -75,11 +82,17 @@ const AlmanacStack = createStackNavigator(
   }
 );
 
+const BibleStudyStack = createStackNavigator({
+    BibleStudyYearSelection,
+    StudyGuideHome: ViewBibleStudyGuide,
+},{ headerMode: "none" });
+
 const HomeStack = createStackNavigator(
   {
     Home: HomeIndex,
     Announcements,
     Almanac: AlmanacStack,
+    BibleStudyStack,
     Events
   },
   { headerMode: "none" }

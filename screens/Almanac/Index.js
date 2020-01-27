@@ -51,7 +51,7 @@ class YearSelection extends React.Component {
                         </TouchableOpacity>
                     </View>
 
-                    <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Almanac by Year</StyledTextInverse>
+                    <StyledTextInverse style={{ fontSize: 20, alignSelf: "center"}}>Study Guide by Year</StyledTextInverse>
 
                     <View style={{ paddingRight: 20}}/>
                 </View>
