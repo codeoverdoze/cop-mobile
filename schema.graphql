@@ -13,6 +13,45 @@ type Announcement {
     updatedAt: DateTime!
 }
 
+type AnnouncementOuput {
+    data: [Announcement]!
+    hasNextPage: Boolean
+    hasPrevPage: Boolean
+    nextPage: Int
+    page: Int
+    prevPage: Int
+    totalData: Int
+    totalPages: Int
+}
+
+type BibleStudyGuide {
+    acknowledgement: String
+    introduction: String
+    scripture: String
+    sections: [BibleStudyGuideSections]
+    theme: String
+    wordFromModerator: String
+    year: Int!
+}
+
+type BibleStudyGuideSections {
+    lessons: [BibleStudyGuideSectionsLessons]
+    title: String
+}
+
+type BibleStudyGuideSectionsLessons {
+    application: [String]
+    assignment: String
+    conclusion: String
+    content: String
+    exploration: [String]
+    introduction: String
+    objectives: [String]
+    remember: String
+    scriptures: String
+    title: String
+}
+
 type Congregation {
     _id: ID!
     catechist: String!
@@ -60,6 +99,17 @@ type Member {
     surname: String
 }
 
+type MembersOutput {
+    data: [Member]!
+    hasNextPage: Boolean
+    hasPrevPage: Boolean
+    nextPage: Int
+    page: Int
+    prevPage: Int
+    totalData: Int
+    totalPages: Int
+}
+
 type MobileToken {
     createdAt: DateTime!
     member: Member
@@ -75,10 +125,11 @@ type Mutation {
     completePrayerRequest(prayerRequest: ID!): PrayerRequest!
     editMember(input: addMemberInput): Member!
     loginMember(input: loginMemberInput): LoginMemberOutput!
-    makeAnnouncement(pagination: pagination): Announcement!
+    makeAnnouncement(input: makeAnnouncementInput): Announcement!
     makePrayerRequest(input: makePrayerRequestInput): PrayerRequest!
     root: String
     setMemberCongregation(input: setCongregationInput): Member!
+    setMemberNotificatonToken(input: setMemberNotificationTokenInput): SetMemberNotificationTokenOutput!
     validateLoginMember(input: validateLoginMemberInput): MobileToken!
 }
 
@@ -97,6 +148,17 @@ type PrayerRequest {
     updatedAt: DateTime!
 }
 
+type PrayerRequestsOutput {
+    data: [PrayerRequest]!
+    hasNextPage: Boolean
+    hasPrevPage: Boolean
+    nextPage: Int
+    page: Int
+    prevPage: Int
+    totalData: Int
+    totalPages: Int
+}
+
 type Presbytery {
     _id: ID!
     id: ID!
@@ -105,15 +167,22 @@ type Presbytery {
 }
 
 type Query {
-    announcements: [Announcement]!
+    announcements(pagination: pagination): AnnouncementOuput!
+    bibleStudyGuides: [BibleStudyGuide]
     congregations(filter: congregationFilter): [Congregation]!
     districts(filter: districtFilter): [District]!
     memberPrayerRequests: [PrayerRequest]!
     memberProfile: Member!
-    members(filter: getMemberFilter, pagination: pagination): [Member]!
-    prayerRequests(filter: prayerRequestFilter, pagination: pagination): [PrayerRequest]!
+    members(filter: getMemberFilter, pagination: pagination): MembersOutput!
+    numberOfMembers(filter: getMemberFilter): Int!
+    prayerRequests(filter: prayerRequestFilter, pagination: pagination): PrayerRequestsOutput!
     presbyteries(filter: presbyteryFilter): [Presbytery]!
     root: String
+}
+
+type SetMemberNotificationTokenOutput {
+    member: Member!
+    success: Boolean!
 }
 
 enum CacheControlScope {
@@ -265,13 +334,13 @@ input nextOfKinInput {
 }
 
 """
-Pagination takes first which takes number of data to return
-and after which takes ID of data to return after it. Default value pagination returns is
+Pagination takes \"limit\" which takes number of data to return
+and \"page\" which takes page number of data to return. Default value pagination returns is
 10
 """
 input pagination {
-    after: ID
-    first: Int
+    limit: Int
+    page: Int
 }
 
 input prayerRequestFilter {
@@ -292,6 +361,10 @@ input presbyteryFilter {
 
 input setCongregationInput {
     congregation: ID!
+}
+
+input setMemberNotificationTokenInput {
+    notificationToken: String!
 }
 
 input validateLoginMemberInput {

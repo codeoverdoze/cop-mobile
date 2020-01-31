@@ -3,7 +3,7 @@ import { View, ActivityIndicator } from "react-native";
 import PropTypes from "prop-types";
 import Colors from "../../constants/Colors";
 
-function Button({ children, loading }) {
+function Button({ children, loading, style }) {
   return (
     <View>
       <View
@@ -13,10 +13,11 @@ function Button({ children, loading }) {
           marginVertical: 10,
           backgroundColor: Colors.tintColor,
           paddingVertical: 15,
-          borderRadius: 5
+          borderRadius: 5,
+          ...style
         }}
       >
-        {loading ? <ActivityIndicator /> : children}
+        {loading ? <ActivityIndicator color="#fff"/> : children}
       </View>
     </View>
   );
