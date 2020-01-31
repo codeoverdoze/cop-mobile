@@ -87,7 +87,7 @@ function LoadData({ navigation }) {
     return (
       <View style={{ flex: 1, marginTop: Layout.window.height / 4, alignItems: "center" }}>
         <SimpleAnimation delay={500} duration={1000} slide direction="up" staticType="zoom">
-        <Image source={require('../../assets/images/presby.png')} style={{ width: 115, height: 150, marginBottom: 50, opacity: 0.6 }}/>
+        <Image source={require('../../assets/images/logo.png')} style={{ width: 115, height: 150, marginBottom: 50, opacity: 0.6 }}/>
         </SimpleAnimation>
 
         <View style={{ alignItems: "center" }}>

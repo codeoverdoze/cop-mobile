@@ -49,7 +49,7 @@ const list = [
         title: "Bible Study Guide",
         content: "The Presbyterian Church of Ghana daily devotional and bible study guide for everyday use.",
         key: "1",
-        link: "BibleDashboard"
+        link: "BibleStudyStack"
     },
     {
         image: hymnalImage,
