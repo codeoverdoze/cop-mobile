@@ -11,9 +11,9 @@
     ],
     "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icons/icon.png",
+    "icon": "./assets/icons/android_icon.png",
     "splash": {
-      "image": "./assets/icons/icon.png",
+      "image": "./assets/icons/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,8 +24,9 @@
       "assets/images/*"
     ],
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.polymorphlabs.presbycompanion"
+      "supportsTablet": true,
+      "bundleIdentifier": "com.polymorphlabs.presbycompanion",
+      "icon": ""
     },
     "android": {
       "package": "com.polymorphlabs.presbycompanion"

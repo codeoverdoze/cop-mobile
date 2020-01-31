@@ -129,6 +129,7 @@ type Mutation {
     makePrayerRequest(input: makePrayerRequestInput): PrayerRequest!
     root: String
     setMemberCongregation(input: setCongregationInput): Member!
+    setMemberNotificatonToken(input: setMemberNotificationTokenInput): SetMemberNotificationTokenOutput!
     validateLoginMember(input: validateLoginMemberInput): MobileToken!
 }
 
@@ -177,6 +178,11 @@ type Query {
     prayerRequests(filter: prayerRequestFilter, pagination: pagination): PrayerRequestsOutput!
     presbyteries(filter: presbyteryFilter): [Presbytery]!
     root: String
+}
+
+type SetMemberNotificationTokenOutput {
+    member: Member!
+    success: Boolean!
 }
 
 enum CacheControlScope {
@@ -355,6 +361,10 @@ input presbyteryFilter {
 
 input setCongregationInput {
     congregation: ID!
+}
+
+input setMemberNotificationTokenInput {
+    notificationToken: String!
 }
 
 input validateLoginMemberInput {
