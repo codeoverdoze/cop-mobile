@@ -48,8 +48,14 @@ export default class App extends React.Component {
   _loadResourcesAsync = async () => {
     return Promise.all([
       Asset.loadAsync([
-        require("./assets/images/robot-dev.png"),
-        require("./assets/images/robot-prod.png")
+        require("./assets/images/announcement-bg.jpg"),
+        require("./assets/images/news-bg.png"),
+        require("./assets/images/bible-study-guide.png"),
+        require("./assets/images/payment-bg.jpg"),
+        require("./assets/images/almanac.jpg"),
+        require("./assets/images/hymnal-bg.gif"),
+        require("./assets/images/liturgical-order.jpg"),
+        require("./assets/images/sermon.png")
       ]),
       Font.loadAsync({
         regular:
