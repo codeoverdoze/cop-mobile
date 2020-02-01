@@ -1,7 +1,6 @@
 import { AsyncStorage } from 'react-native';
 import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
-import * as Location from 'expo-location';
 
 const saveAuthToken = async (authToken) => {
     try {
@@ -12,14 +11,6 @@ const saveAuthToken = async (authToken) => {
 };
 
 
-const getLocation = async () => {
-    const location = await Location.getCurrentPositionAsync({});
-    return {
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-    };
-};
-
 const retrieveAuthToken = async () => {
     try {
         return await AsyncStorage.getItem('authToken');
@@ -28,32 +19,13 @@ const retrieveAuthToken = async () => {
     }
 };
 
-const saveRFID = async (rfid) => {
-    try {
-        await AsyncStorage.setItem('rfid', rfid);
-    } catch (e) {
-        throw new Error(e);
-    }
-};
-
-const retrieveRFID = async () => {
-    try {
-        return await AsyncStorage.getItem('rfid');
-    } catch (e) {
-        throw new Error(e);
-    }
-};
-
-
 const deleteAuthToken = async () => {
     try {
         await AsyncStorage.removeItem('authToken');
-        await AsyncStorage.removeItem('rfid');
     } catch (e) {
         throw new Error(e);
     }
 };
-
 
 const retrievePushNotificationToken = async () => {
     const { status: existingStatus } = await Permissions.getAsync(
@@ -85,7 +57,4 @@ export {
     retrieveAuthToken,
     deleteAuthToken,
     retrievePushNotificationToken,
-    saveRFID,
-    retrieveRFID,
-    getLocation,
 };
