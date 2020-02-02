@@ -1,14 +1,15 @@
 import React from "react";
-import { View, ScrollView, SafeAreaView, TouchableOpacity } from "react-native";
+import { View, ScrollView } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import SvgUri from "expo-svg-uri";
+import SVGIcon from "../../components/SVGIcon";
 import { StyledHeader, StyledText } from "../../components/Typography";
 import Layout from "../../constants/NewLayout";
-import { NavigationActions } from "react-navigation";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
+
+import { communicateIcon, forwardIcon } from '../../assets/icons';
 
 function ScriptureReadings({ navigation }) {
   const scriptureReadings = navigation.getParam("readings");
-  const serviceDate = navigation.getParam("date");
   const theme = {
     tintColor: "#1565c0",
     tintColorlight: "#ffffff",
@@ -16,47 +17,17 @@ function ScriptureReadings({ navigation }) {
     borderColor: "#e3e3e3"
   };
 
-  function goBack() {
-    navigation.dispatch(NavigationActions.back());
-  }
-
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
-        backgroundColor: theme.tintColorlight,
-        paddingTop: 30
+        backgroundColor: theme.tintColorlight
       }}
     >
+      <ChildScreenHeader title="Scripture Readings" />
+
       <View style={{ padding: Layout.paddingHorizontal }}>
         <ScrollView>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <View style={{ flexDirection: "row" }}>
-              <View style={{ justifyContent: "center", marginRight: 5 }}>
-                <SvgUri
-                  width={RFValue(14)}
-                  height={RFValue(14)}
-                  source={require("../../assets/icons/labs.svg")}
-                  fill="#000000"
-                />
-              </View>
-              <StyledHeader style={{ fontSize: RFValue(14) }}>
-                Scripture Readings for {new Date(serviceDate).toDateString()}
-              </StyledHeader>
-            </View>
-            <TouchableOpacity onPress={goBack}>
-              <View style={{ justifyContent: "center" }}>
-                <SvgUri
-                  width={23}
-                  height={23}
-                  source={require("../../assets/icons/close.svg")}
-                  fill="#000000"
-                />
-              </View>
-            </TouchableOpacity>
-          </View>
           <View
             style={{
               borderBottomWidth: 0.5,
@@ -102,11 +73,10 @@ function ScriptureReadings({ navigation }) {
             >
               <View style={{ flexDirection: "row", flex: 12 }}>
                 <View>
-                  <SvgUri
+                  <SVGIcon
                     width={RFValue(30)}
                     height={RFValue(30)}
-                    source={require("../../assets/icons/communicate.svg")}
-                    fill="#000000"
+                    source={communicateIcon}
                   />
                 </View>
 
@@ -123,11 +93,10 @@ function ScriptureReadings({ navigation }) {
               </View>
 
               <View style={{ flex: 1, justifyContent: "center" }}>
-                <SvgUri
+                <SVGIcon
                   width={20}
                   height={20}
-                  source={require("../../assets/icons/forward.svg")}
-                  fill="#000000"
+                  source={forwardIcon}
                 />
               </View>
             </View>
@@ -146,11 +115,10 @@ function ScriptureReadings({ navigation }) {
             >
               <View style={{ flexDirection: "row", flex: 12 }}>
                 <View>
-                  <SvgUri
+                  <SVGIcon
                     width={RFValue(30)}
                     height={RFValue(30)}
-                    source={require("../../assets/icons/communicate.svg")}
-                    fill="#000000"
+                    source={communicateIcon}
                   />
                 </View>
 
@@ -167,11 +135,10 @@ function ScriptureReadings({ navigation }) {
               </View>
 
               <View style={{ flex: 1, justifyContent: "center" }}>
-                <SvgUri
+                <SVGIcon
                   width={20}
                   height={20}
-                  source={require("../../assets/icons/forward.svg")}
-                  fill="#000000"
+                  source={forwardIcon}
                 />
               </View>
             </View>
@@ -190,11 +157,10 @@ function ScriptureReadings({ navigation }) {
             >
               <View style={{ flexDirection: "row", flex: 12 }}>
                 <View>
-                  <SvgUri
+                  <SVGIcon
                     width={RFValue(30)}
                     height={RFValue(30)}
-                    source={require("../../assets/icons/communicate.svg")}
-                    fill="#000000"
+                    source={communicateIcon}
                   />
                 </View>
 
@@ -209,18 +175,17 @@ function ScriptureReadings({ navigation }) {
               </View>
 
               <View style={{ flex: 1, justifyContent: "center" }}>
-                <SvgUri
+                <SVGIcon
                   width={20}
                   height={20}
-                  source={require("../../assets/icons/forward.svg")}
-                  fill="#000000"
+                  source={forwardIcon}
                 />
               </View>
             </View>
           </View>
         </ScrollView>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

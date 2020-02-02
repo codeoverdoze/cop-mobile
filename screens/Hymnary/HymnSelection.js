@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  ScrollView
-} from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
-import {
-  StyledSubtitle,
-  StyledHeader
-} from "../../components/Typography";
+import { StyledSubtitle, StyledHeader } from "../../components/Typography";
 import Colors from "../../constants/Colors";
 import PinView from "react-native-pin-view";
 import Color from "../../constants/Colors";
@@ -21,50 +14,48 @@ const { heightPercentageToDP } = Layout;
 
 const HymnSelection = ({ navigation }) => {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={{ alignItems: "center" }}>
-          <AnimatedItem
-            animation={require("../../assets/animations/hymnary.json")}
-            loop={true}
-            style={{ width: 400, height: 200 }}
-            speed={2}
-          />
-          <StyledHeader>English Hymnary</StyledHeader>
-        </View>
-        <View
-          style={{
-            justifyContent: "center",
-            marginBottom: 10,
-            paddingHorizontal: 50
-          }}
-        >
-          <StyledSubtitle style={[styles.StyledSubtitle, { marginBottom: 5 }]}>
-            Enter Hymn Number
-          </StyledSubtitle>
-        </View>
-
-        <PinView
-          pinLength={3}
-          showInputs
-          inputActiveBgColor={Color.buttonColor}
-          inputViewStyle={{ backgroundColor: Color.tintColor }}
-          buttonTextColor={Color.tintColor}
-          inputTextStyle={{ color: "#fff" }}
-          buttonBgColor="#fff"
-          deleteText={<Ionicons name="ios-backspace" size={25} />}
-          onComplete={value =>
-            navigation.navigate("Hymnary", { HymnNumber: value })
-          }
-          keyboardViewStyle={{
-            height: 60,
-            width: 60,
-            marginHorizontal: 10,
-            marginVertical: 10
-          }}
+    <View style={styles.container}>
+      <View style={{ alignItems: "center" }}>
+        <AnimatedItem
+          animation={require("../../assets/animations/hymnary.json")}
+          loop={true}
+          style={{ width: 400, height: 200 }}
+          speed={2}
         />
+        <StyledHeader>English Hymnary</StyledHeader>
       </View>
-    </ScrollView>
+      <View
+        style={{
+          justifyContent: "center",
+          marginBottom: 10,
+          paddingHorizontal: 50
+        }}
+      >
+        <StyledSubtitle style={[styles.StyledSubtitle, { marginBottom: 5 }]}>
+          Enter Hymn Number
+        </StyledSubtitle>
+      </View>
+
+      <PinView
+        pinLength={3}
+        showInputs
+        inputActiveBgColor={Color.buttonColor}
+        inputViewStyle={{ backgroundColor: Color.tintColor }}
+        buttonTextColor={Color.tintColor}
+        inputTextStyle={{ color: "#fff" }}
+        buttonBgColor="#fff"
+        deleteText={<Ionicons name="ios-backspace" size={25} />}
+        onComplete={value =>
+          navigation.navigate("Hymnary", { HymnNumber: value })
+        }
+        keyboardViewStyle={{
+          height: 60,
+          width: 60,
+          marginHorizontal: 10,
+          marginVertical: 10
+        }}
+      />
+    </View>
   );
 };
 

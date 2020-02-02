@@ -8,14 +8,17 @@ import TabBarIcon from "../components/TabBarIcon";
 import Colors from "../constants/Colors";
 
 // Icons
-import homeIcon from "../assets/icons/circled-menu.svg";
-import bibleIcon from "../assets/icons/bible.svg";
-import hymnaryIcon from "../assets/icons/music-playlist.svg";
-import paymentIcon from "../assets/icons/payment.svg";
-import settingsIcon from "../assets/icons/settings.svg";
+import {
+  homeIcon,
+  bibleIcon,
+  hymnaryIcon,
+  paymentIcon,
+  settingsIcon
+} from "../assets/icons";
+
 
 // Home screen stack
-import HomeIndex from "../screens/Home/Index";
+import HomeIndex from "../screens/Home/HomeScreen";
 import PrayerRequests from "../screens/PrayerRequest/PrayerRequests";
 import MakePrayerRequest from "../screens/PrayerRequest/MakePrayerRequest";
 
@@ -54,7 +57,7 @@ import PaymentOrder from "../screens/Payments/Order";
 import PaymentCheckout from "../screens/Payments/Checkout";
 
 // Settings Screen Stack
-import SettingsDashboard from "../screens/Settings/Index";
+import SettingsDashboard from "../screens/Settings/SettingsScreen";
 import Credits from "../screens/Settings/Credits";
 import ChurchSelection from "../screens/Settings/ChurchSelection";
 import DistrictSelection from "../screens/Settings/DistrictSelection";

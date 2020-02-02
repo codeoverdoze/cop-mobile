@@ -7,7 +7,7 @@ export default function TabBarIcon(props) {
       <SvgUri
           width="28"
           height="28"
-          source={props.icon}
+          svgXmlData={props.icon}
           fill={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
   );

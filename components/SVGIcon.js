@@ -3,20 +3,20 @@ import SvgUri from "expo-svg-uri";
 import propTypes from "prop-types";
 import Colors from "../constants/Colors";
 
-function SVGIcon(props) {
+function SVGIcon({ source, color, ...otherProps }) {
   return (
     <SvgUri
       width="33"
       height="33"
-      source={props.source}
-      fill={props.color ? props.color : Colors.tintColor}
-      {...props}
+      svgXmlData={source}
+      fill={color ? color : Colors.tintColor}
+      {...otherProps}
     />
   );
 }
 
 SVGIcon.propTypes = {
-    source: propTypes.object.isRequired
+    source: propTypes.string.isRequired
 };
 
 export default SVGIcon;
