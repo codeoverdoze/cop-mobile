@@ -1,7 +1,5 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
-import { persistCache } from 'apollo-cache-persist';
-import { AsyncStorage } from 'react-native';
 import { retrieveAuthToken } from '../utils';
 
 
@@ -29,16 +27,6 @@ module.exports = async () => {
     });
 
     const cache = new InMemoryCache();
-    /*
-    try {
-      await persistCache({
-        cache,
-        storage: AsyncStorage,
-      });
-    } catch (e) {
-      throw new Error(e);
-    }
-    */
     return new ApolloClient({
         link: authLink.concat(httpLink),
         cache,

@@ -186,7 +186,7 @@ export default class extends Component {
                                         <SvgUri
                                             width="30"
                                             height="30"
-                                            source={require('../../assets/images/thinking-bubble.svg')}
+                                            source={require('../../assets/icons/thinking-bubble.svg')}
                                             fill="#000000"
                                         />
                                         <View style={{ height: 6 }} />
@@ -242,7 +242,7 @@ export default class extends Component {
                                         <SvgUri
                                             width="30"
                                             height="30"
-                                            source={require('../../assets/images/profile.svg')}
+                                            source={require('../../assets/icons/profile.svg')}
                                             fill="#000000"
                                         />
                                         <View style={{ height: 6 }} />

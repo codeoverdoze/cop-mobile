@@ -4,8 +4,8 @@ import { View } from "react-native";
 
 function Loader() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <AnimatedItem animation={require("../assets/animations/spinner")} style={{ width: 200 }}/>
+    <View>
+      <AnimatedItem animation={require("../assets/animations/spinner")} style={{ width: 100, height: 100 }}/>
     </View>
   );
 }
