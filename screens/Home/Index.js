@@ -63,7 +63,7 @@ const list = [
         title: "Liturgical Order Book",
         content: "Easy access to order of service.",
         key: "3",
-        link: "Payments"
+        link: "LiturgyStack"
     },
     {
         image: membershipRegistrationImage,

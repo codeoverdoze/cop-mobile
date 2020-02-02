@@ -1,33 +1,18 @@
 import React from "react";
-import {
-    View,
-    StyleSheet,
-    TouchableOpacity,
-    FlatList,
-    ActivityIndicator
-} from "react-native";
+import {FlatList, StyleSheet, TouchableOpacity, View, ScrollView} from "react-native";
 import {StyledHeader, StyledText, StyledTextInverse} from "../../components/Typography";
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+import {EvilIcons, Ionicons} from "@expo/vector-icons";
 import TableContent from "./components/TableContent";
 
+const SectionDetail = ({ navigation }) => {
+    const sectionContent = navigation.getParam("bsgSection");
 
-export default function ViewBibleStudyGuide({ navigation }) {
-
-    const bibleStudyGuide = navigation.getParam("bibleStudyGuide");
-
-    function navigateToSectionDetails(bsgSection) {
-        navigation.navigate("SectionDetail", {bsgSection});
-    }
-
-    function navigateToContentDetails(bsgContent){
-        navigation.navigate("ContentDetail", {bsgContent});
-    }
-
-    function renderTableOfContent({item: bsgSection}) {
+    console.log(sectionContent);
+    function renderLessonContent({item: bsgLesson}) {
 
         return (
             <TouchableOpacity
-                onPress={() => navigateToSectionDetails(bsgSection)}
+                onPress={() => navigateToLessonDetails(bsgLesson)}
             >
                 <View style={[styles.listItem]}>
                     <View style={[{flexDirection: "row"}]}>
@@ -50,10 +35,10 @@ export default function ViewBibleStudyGuide({ navigation }) {
                         </View>
                         <View style={{justifyContent: "center"}}>
                             <StyledText style={{fontSize: 16}}>
-                                Section { ' 1 ' }
+                                Lesson { ' 1 ' }
                             </StyledText>
                             <StyledText style={{fontSize: 16}}>
-                                {bsgSection.title}
+                                {bsgLesson.title}
                             </StyledText>
                         </View>
                     </View>
@@ -64,11 +49,9 @@ export default function ViewBibleStudyGuide({ navigation }) {
                 </View>
             </TouchableOpacity>
         );
-    }
+    };
 
-
-    return (
-
+    return(
         <View style={[styles.container]}>
             <View style={[styles.headerBar]}>
                 <View style={{paddingLeft: 20}}>
@@ -82,44 +65,37 @@ export default function ViewBibleStudyGuide({ navigation }) {
                     </TouchableOpacity>
                 </View>
                 <StyledTextInverse style={{fontSize: 20, alignSelf: "center"}}>
-                    { bibleStudyGuide.year } Bible Study Guide
+                     Bible Study Guide
                 </StyledTextInverse>
                 <View style={{paddingRight: 20}}/>
             </View>
             <View style={{paddingBottom: 70}}>
                 <View style={{paddingHorizontal: 20, paddingVertical: 10}}>
-                    <StyledHeader>Theme</StyledHeader>
-                    <StyledText>{bibleStudyGuide.theme}</StyledText>
+                    <StyledHeader>Section Title</StyledHeader>
+                    <StyledText>{sectionContent.title}</StyledText>
                 </View>
                 <View style={{paddingHorizontal: 20, paddingVertical: 10 }}>
-                    <StyledHeader>Scripture</StyledHeader>
-                    <StyledText>{bibleStudyGuide.scripture}</StyledText>
+                    <StyledHeader>Section Introduction</StyledHeader>
+                    <StyledText>{sectionContent.introduction}</StyledText>
                 </View>
                 <View style={{paddingHorizontal: 20, paddingVertical: 10, borderBottomColor: '#c3c3c3', borderBottomWidth: 0.3, marginTop: 20}}>
-                    <StyledHeader>Table of Content</StyledHeader>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={() => navigateToContentDetails(bibleStudyGuide.introduction)}>
-                        <TableContent contentLabel="Introduction" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigateToContentDetails(bibleStudyGuide.acknowledgement)}>
-                        <TableContent contentLabel="Acknowledgement" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigateToContentDetails(bibleStudyGuide.wordFromModerator)}>
-                        <TableContent contentLabel="Word From Moderator" />
-                    </TouchableOpacity>
+                    <StyledHeader>Section Lessons</StyledHeader>
                 </View>
 
+
                 <FlatList
-                    data={bibleStudyGuide.sections}
-                    renderItem={renderTableOfContent}
+                    data={sectionContent.lessons}
+                    renderItem={renderLessonContent}
                     keyExtractor={item => item.year}
                 />
+
 
             </View>
         </View>
     );
-}
+};
+export default SectionDetail;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
