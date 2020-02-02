@@ -1,24 +1,14 @@
-import React, { useRef, useState } from "react";
-import { gql, useMutation, useQuery } from "@apollo/client";
-import {
-  FlatList,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-  View,
-  Switch
-} from "react-native";
+import React from "react";
+import { gql, useQuery } from "@apollo/client";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import {
   StyledHeader,
   StyledText,
   StyledTextInverse
 } from "../../components/Typography";
 import { Ionicons } from "@expo/vector-icons";
-import Loader from "../../components/Loader";
 import Colors from "../../constants/Colors";
-import BottomSheet from "reanimated-bottom-sheet";
-import Layout from "../../constants/Layout";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import LoadingState from "../../components/LoadingState";
 
 const prayerRequests = gql`
   query {
@@ -90,7 +80,11 @@ export default function PrayerRequests({ navigation }) {
   const { loading, data, error } = useQuery(prayerRequests);
 
   if (loading) {
-    return <Loader />;
+    return (
+      <LoadingState>
+        <StyledText>Please wait while we load your prayer requests</StyledText>
+      </LoadingState>
+    );
   }
 
   const { memberPrayerRequests } = data;
@@ -154,58 +148,57 @@ export default function PrayerRequests({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <View>
+      <View
+        style={{
+          paddingHorizontal: 20,
+          paddingVertical: 10
+        }}
+      >
+        <StyledHeader style={{ fontSize: 20 }}>
+          Prayer Request History
+        </StyledHeader>
+      </View>
+      {memberPrayerRequests.length ? (
+        <FlatList
+          data={memberPrayerRequests}
+          renderItem={({ item }) => {
+            return (
+              <PrayerRequest
+                request={item.request}
+                status={item.status}
+                date={item.createdAt}
+              />
+            );
+          }}
+          keyExtractor={item => item._id}
+        />
+      ) : (
         <View
           style={{
-            paddingHorizontal: 20,
-            paddingVertical: 10
+            marginHorizontal: 20,
+            padding: 10,
+            backgroundColor: "#fff",
+            flexDirection: "row",
+            borderRadius: 5,
+            borderWidth: 0.3,
+            borderColor: "#e3e3e3"
           }}
         >
-          <StyledHeader style={{ fontSize: 20 }}>
-            Prayer Request History
-          </StyledHeader>
-        </View>
-        {memberPrayerRequests.length ? (
-          <FlatList
-            data={memberPrayerRequests}
-            renderItem={({ item }) => {
-              return (
-                <PrayerRequest
-                  request={item.request}
-                  status={item.status}
-                  date={item.createdAt}
-                />
-              );
-            }}
-            keyExtractor={item => item._id}
+          <Ionicons
+            name="ios-information-circle-outline"
+            size={15}
+            style={{ marginRight: 5, color: "orange" }}
           />
-        ) : (
-          <View
-            style={{
-              marginHorizontal: 20,
-              padding: 10,
-              backgroundColor: "#fff",
-              flexDirection: "row",
-              borderRadius: 5,
-              borderWidth: 0.3,
-              borderColor: "#e3e3e3"
-            }}
-          >
-            <Ionicons
-              name="ios-information-circle-outline"
-              size={15}
-              style={{ marginRight: 5, color: "orange" }}
-            />
-            <StyledText>You have not made any prayer requests yet</StyledText>
-          </View>
-        )}
-      </View>
+          <StyledText>You have not made any prayer requests yet</StyledText>
+        </View>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "#F4F6F8"
   },
 
@@ -216,7 +209,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingTop: 40
   },
-
 
   list: {
     marginBottom: 70
@@ -229,5 +221,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between"
-  },
+  }
 });

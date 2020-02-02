@@ -11,7 +11,7 @@ import {
 } from "../../components/Typography";
 import hymnBook from "../../sample-data/hymnary";
 import { Ionicons } from "@expo/vector-icons";
-import MembershipIcon from "../../components/MembershipIcons";
+import MembershipIcon from "../../components/SVGIcon";
 import { Audio } from "expo-av";
 import { showMessage } from "react-native-flash-message";
 import Layout from "../../constants/NewLayout";

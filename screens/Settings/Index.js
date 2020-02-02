@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   View,
   StyleSheet,
-  StatusBar,
   TouchableOpacity,
   Image,
   ScrollView
@@ -14,11 +13,12 @@ import {
 } from "../../components/Typography";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery, gql } from "@apollo/client";
+import LoadingState from "../../components/LoadingState";
 
 const userProfileImage = require("../../assets/images/placeholder-image.png");
 const query = gql`
   query {
-    memberProfile @client {
+    memberProfile {
       _id
       firstName
       middleName
@@ -53,17 +53,12 @@ const query = gql`
 export default function SettingsScreen({ navigation }) {
   const { data, loading, error } = useQuery(query);
 
-
   if (loading) {
-    console.log("Loading", loading);
+    return <LoadingState />;
   }
 
   if (error) {
     console.log("Error", error);
-  }
-
-  if (loading) {
-    return <View />;
   }
 
   const { memberProfile } = data;
@@ -217,7 +212,9 @@ export default function SettingsScreen({ navigation }) {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('PrayerRequests')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("PrayerRequests")}
+          >
             <View style={[styles.mainItem]}>
               <View
                 style={{

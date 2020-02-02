@@ -13,7 +13,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const query = gql`
   query($district: ID!) {
-    congregations(filter: {district: $district}) {
+    congregations(filter: { district: $district }) {
       _id
       name
     }

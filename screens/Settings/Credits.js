@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import { StyledText, StyledTextInverse } from "../../components/Typography";
 import { Ionicons } from "@expo/vector-icons";
-import AuthInformation from "../../store/AuthInformation";
-import { showMessage } from "react-native-flash-message";
 import { deleteAuthToken } from "../../utils";
 
 const userProfileImage = require("../../assets/images/user-settings.png");
@@ -19,16 +17,6 @@ export default class extends Component {
   constructor(props) {
     super(props);
     StatusBar.setBarStyle("light-content");
-  }
-
-  async nukeApp() {
-    await AuthInformation.removeAuthInfo();
-    showMessage({
-      message: "Great",
-      description: "Nuked app, please restart",
-      type: "success",
-      duration: 5000
-    });
   }
 
   render() {

@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-  ActivityIndicator
-} from "react-native";
+import { View, StyleSheet, TouchableOpacity, FlatList } from "react-native";
 import { StyledText, StyledTextInverse } from "../../components/Typography";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
 import { useQuery, gql } from "@apollo/client";
+import LoadingState from "../../components/LoadingState";
 
 const query = gql`
   query {
@@ -70,11 +65,7 @@ export default function PresbyterySelection({ navigation }) {
   }
 
   if (loading) {
-    return (
-      <View>
-        <ActivityIndicator />
-      </View>
-    );
+    return <LoadingState />;
   }
 
   if (data) {

@@ -38,7 +38,7 @@ function ThemeLiturgyPreaching({ navigation }) {
               <SvgUri
                 width={RFValue(14)}
                 height={RFValue(14)}
-                source={require('../../assets/images/chief-complaint.svg')}
+                source={require('../../assets/icons/chief-complaint.svg')}
                 fill={theme.tintColor}
               />
             </View>
@@ -50,7 +50,7 @@ function ThemeLiturgyPreaching({ navigation }) {
               <SvgUri
                 width={23}
                 height={23}
-                source={require('../../assets/images/close.svg')}
+                source={require('../../assets/icons/close.svg')}
                 fill="#000000"
               />
             </View>

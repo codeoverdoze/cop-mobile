@@ -1,9 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-import { createStackNavigator } from "react-navigation-stack";
-
+import {
+  createStackNavigator,
+  TransitionPresets
+} from "react-navigation-stack";
 import TabBarIcon from "../components/TabBarIcon";
+import Colors from "../constants/Colors";
 
+// Icons
 import homeIcon from "../assets/icons/circled-menu.svg";
 import bibleIcon from "../assets/icons/bible.svg";
 import hymnaryIcon from "../assets/icons/music-playlist.svg";
@@ -12,6 +16,8 @@ import settingsIcon from "../assets/icons/settings.svg";
 
 // Home screen stack
 import HomeIndex from "../screens/Home/Index";
+import PrayerRequests from "../screens/PrayerRequest/PrayerRequests";
+import MakePrayerRequest from "../screens/PrayerRequest/MakePrayerRequest";
 
 // Bible screen stack
 import BibleIndex from "../screens/Bible/Index";
@@ -30,7 +36,6 @@ import ThemeLiturgyPreaching from "../screens/Almanac/ThemeLiturgyPreaching";
 import CalendarAnnouncements from "../screens/Almanac/CalendarAnnouncements";
 import ScriptureReadings from "../screens/Almanac/ScriptureReadings";
 
-
 // Bible Study Guide Stack
 import BibleStudyYearSelection from "../screens/BibleStudy/Index";
 import ViewBibleStudyGuide from "../screens/BibleStudy/ViewBibleStudyGuide";
@@ -42,7 +47,6 @@ import LiturgyTypeSelection from "../screens/Liturgy/Index";
 import LiturgyType from "../screens/Liturgy/LiturgyType";
 import LiturgyContent from "../screens/Liturgy/LiturgyContent";
 
-
 // Payments Screen Stack
 import PaymentDashboard from "../screens/Payments/Index";
 import PaymentPackages from "../screens/Payments/Packages";
@@ -52,22 +56,24 @@ import PaymentCheckout from "../screens/Payments/Checkout";
 // Settings Screen Stack
 import SettingsDashboard from "../screens/Settings/Index";
 import Credits from "../screens/Settings/Credits";
-import PersonalInformation from "../screens/Settings/PersonalInformation";
-import PersonalInformationForm from "../screens/Settings/PersonalInformationForm";
 import ChurchSelection from "../screens/Settings/ChurchSelection";
 import DistrictSelection from "../screens/Settings/DistrictSelection";
 import CongregationSelection from "../screens/Settings/CongregationSelection";
 import MembershipDetails from "../screens/Settings/MembershipDetails";
-import PrayerRequests from "../screens/Settings/PrayerRequests";
-import MakePrayerRequest from "../screens/Settings/MakePrayerRequest";
-
-import Colors from "../constants/Colors";
 
 // Announcements Screen Stack
 import Announcements from "../screens/Announcements/Index";
 
 // Events Screen Stack
 import Events from "../screens/Events/Index";
+
+const config = {
+  headerMode: "none",
+  defaultNavigationOptions: {
+    ...TransitionPresets.SlideFromRightIOS,
+    cardOverlayEnabled: true
+  }
+};
 
 const AlmanacStack = createStackNavigator(
   {
@@ -78,41 +84,39 @@ const AlmanacStack = createStackNavigator(
     CalendarAnnouncements,
     ScriptureReadings
   },
-  {
-    mode: "modal",
-    headerMode: "none",
-    defaultNavigationOptions: {
-      gestureEnabled: true,
-      cardOverlayEnabled: true
-    }
-  }
+  config
 );
 
-const BibleStudyStack = createStackNavigator({
+const BibleStudyStack = createStackNavigator(
+  {
     BibleStudyYearSelection,
     StudyGuideHome: ViewBibleStudyGuide,
     ContentDetail,
-    SectionDetail,
-},{ headerMode: "none" });
+    SectionDetail
+  },
+  config
+);
 
-const LiturgyStack = createStackNavigator({
+const LiturgyStack = createStackNavigator(
+  {
     LiturgyTypeSelection,
     LiturgyType,
     LiturgyContent
-},{ headerMode: "none" });
-
-
+  },
+  config
+);
 
 const HomeStack = createStackNavigator(
   {
     Home: HomeIndex,
     Announcements,
     Almanac: AlmanacStack,
-    BibleStudyStack,
     LiturgyStack,
-    Events
+    Events,
+    BibleStudy: BibleStudyStack,
+    PrayerRequests
   },
-  { headerMode: "none" }
+  config
 );
 
 HomeStack.navigationOptions = ({ navigation }) => {
@@ -135,7 +139,7 @@ const HymnaryStack = createStackNavigator(
     HymnSelection,
     Hymnary: HymnaryIndex
   },
-  { headerMode: "none" }
+  config
 );
 
 HymnaryStack.navigationOptions = {
@@ -156,7 +160,7 @@ const BibleStack = createStackNavigator(
     BibleBook,
     BibleChapter
   },
-  { headerMode: "none" }
+  config
 );
 
 BibleStack.navigationOptions = {
@@ -173,9 +177,7 @@ const PaymentStack = createStackNavigator(
     PaymentOrder,
     PaymentCheckout
   },
-  {
-    headerMode: "null"
-  }
+  config
 );
 
 PaymentStack.navigationOptions = {
@@ -205,18 +207,13 @@ const SettingsStack = createStackNavigator(
   {
     SettingsDashboard,
     Credits,
-    PersonalInformation,
     ChurchSelection,
-    PersonalInformationForm,
     DistrictSelection,
     CongregationSelection,
     MembershipDetails,
-    PrayerRequests,
     MakePrayerRequest: MakePrayerRequestStack
   },
-  {
-    headerMode: "null"
-  }
+  config
 );
 
 SettingsStack.navigationOptions = ({ navigation }) => {
@@ -245,8 +242,7 @@ export default createBottomTabNavigator(
   {
     tabBarOptions: {
       activeTintColor: Colors.tintColor,
-      style: { backgroundColor: "#f6f6f7" },
-      animationEnabled: true
+      style: { backgroundColor: "#f6f6f7" }
     }
   }
 );

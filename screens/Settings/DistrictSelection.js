@@ -41,7 +41,13 @@ function DistrictSelection({ navigation }) {
             <View
               style={[
                 styles.circleShapeView,
-                { backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})` }
+                {
+                  backgroundColor: `rgb(${Math.floor(
+                    Math.random() * 255
+                  )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(
+                    Math.random() * 255
+                  )})`
+                }
               ]}
             >
               <StyledTextInverse style={{ fontSize: 16 }}>
@@ -77,9 +83,7 @@ function DistrictSelection({ navigation }) {
       <View style={[styles.container]}>
         <View style={[styles.header]}>
           <View style={{ paddingLeft: 20 }}>
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-            >
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Ionicons
                 name={"ios-arrow-back"}
                 size={25}
