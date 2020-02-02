@@ -1,15 +1,13 @@
 import React from "react";
 import { Image, ScrollView, StyleSheet, View } from "react-native";
-import {
-  StyledHeader,
-  StyledHeaderInverse,
-  StyledText
-} from "../../components/Typography";
-import MembershipIcon from "../../components/SVGIcon";
+import { StyledHeader, StyledText } from "../../components/Typography";
 
 import { useQuery, gql } from "@apollo/client";
 import profileImage from "../../assets/images/profile.jpg";
 import LoadingState from "../../components/LoadingState";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
+import SVGIcon from "../../components/SVGIcon";
+import * as icons from "../../assets/icons";
 
 const query = gql`
   query {
@@ -65,11 +63,7 @@ const MembershipDetails = () => {
   const { memberProfile } = data;
   return (
     <View style={[styles.container]}>
-      <View style={[styles.headerBar]}>
-        <StyledHeaderInverse style={{ alignSelf: "flex-start" }}>
-          Membership Details{" "}
-        </StyledHeaderInverse>
-      </View>
+      <ChildScreenHeader title="Membership Details" />
       <View>
         <ScrollView>
           <View
@@ -105,8 +99,8 @@ const MembershipDetails = () => {
               }}
             >
               <View style={{ flexDirection: "row" }}>
-                <MembershipIcon
-                  source={require("../../assets/icons/ringing-phone.svg")}
+                <SVGIcon
+                  source={icons.ringingPhoneIcon}
                   height={20}
                   width={20}
                 />
@@ -115,11 +109,7 @@ const MembershipDetails = () => {
                 </StyledText>
               </View>
               <View style={{ flexDirection: "row" }}>
-                <MembershipIcon
-                  source={require("../../assets/icons/phone.svg")}
-                  height={20}
-                  width={20}
-                />
+                <SVGIcon source={icons.phoneIcon} height={20} width={20} />
                 <StyledText style={{ marginLeft: 5 }}>
                   {memberProfile.contact.secondaryTelephone || "N/A"}
                 </StyledText>
@@ -133,11 +123,7 @@ const MembershipDetails = () => {
               }}
             >
               <View style={{ flexDirection: "row" }}>
-                <MembershipIcon
-                  source={require("../../assets/icons/gmail.svg")}
-                  height={20}
-                  width={20}
-                />
+                <SVGIcon source={icons.gmailIcon} height={20} width={20} />
                 <StyledText style={{ marginLeft: 5 }}>
                   {memberProfile.contact.email}
                 </StyledText>
@@ -169,9 +155,7 @@ const MembershipDetails = () => {
                     paddingLeft: 20
                   }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/couple.svg")}
-                  />
+                  <SVGIcon source={icons.coupleIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Marital Status</StyledText>
@@ -184,9 +168,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/purposeful-man.svg")}
-                  />
+                  <SVGIcon source={icons.purposefulManIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Communicant Status</StyledText>
@@ -211,9 +193,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/user-account.svg")}
-                  />
+                  <SVGIcon source={icons.userAccountIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Non Generational Group</StyledText>
@@ -237,9 +217,7 @@ const MembershipDetails = () => {
                     paddingLeft: 20
                   }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/admin-settings-male.svg")}
-                  />
+                  <SVGIcon source={icons.adminSettingsMaleIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Session Member</StyledText>
@@ -250,9 +228,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/thinking-male.svg")}
-                  />
+                  <SVGIcon source={icons.thinkingMaleIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Baptism Status</StyledText>
@@ -273,9 +249,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/address.svg")}
-                  />
+                  <SVGIcon source={icons.addressIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Residential Address</StyledText>
@@ -298,9 +272,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/real-estate.svg")}
-                  />
+                  <SVGIcon source={icons.realEstateIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Home Town</StyledText>
@@ -323,9 +295,7 @@ const MembershipDetails = () => {
                 <View
                   style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  <MembershipIcon
-                    source={require("../../assets/icons/landlord.svg")}
-                  />
+                  <SVGIcon source={icons.landlordIcon} />
                 </View>
                 <View style={{ marginLeft: 10, justifyContent: "center" }}>
                   <StyledText>Next of Kin</StyledText>

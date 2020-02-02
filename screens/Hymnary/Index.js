@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-import {
-  View,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity
-} from "react-native";
-import {
-  StyledHeader,
-  StyledText,
-} from "../../components/Typography";
+import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
+import { StyledHeader, StyledText } from "../../components/Typography";
 import hymnBook from "../../sample-data/hymnary";
 import { Ionicons } from "@expo/vector-icons";
 import MembershipIcon from "../../components/SVGIcon";
 import { Audio } from "expo-av";
 import { showMessage } from "react-native-flash-message";
 import Layout from "../../constants/NewLayout";
+import { noAudioIcon, voiceIcon } from "../../assets/icons";
+
 const { heightPercentageToDP } = Layout;
 
 export default class extends Component {
@@ -70,7 +64,7 @@ export default class extends Component {
     }
   };
 
-  render() {
+  render(source = voiceIcon) {
     const hymn = hymnBook[this.HymnNumber - 1];
     return (
       <View style={[styles.container]}>
@@ -93,7 +87,7 @@ export default class extends Component {
                 height="25"
                 width="25"
                 style={{ justifyContent: "center", alignItems: "center" }}
-                source={require("../../assets/icons/no-audio.svg")}
+                source={noAudioIcon}
               />
             </TouchableOpacity>
           ) : (
@@ -103,7 +97,7 @@ export default class extends Component {
                 height="25"
                 width="25"
                 style={{ justifyContent: "center", alignItems: "center" }}
-                source={require("../../assets/icons/voice.svg")}
+                source={source}
               />
             </TouchableOpacity>
           )}
@@ -124,7 +118,7 @@ export default class extends Component {
                 minHeight: heightPercentageToDP("70%")
               }}
             >
-              <FlatList data={hymn.verses} renderItem={this.renderVerses} />
+              <FlatList data={hymn.verses} renderItem={this.renderVerses} keyExtractor={item => item}/>
             </View>
           </View>
         )}

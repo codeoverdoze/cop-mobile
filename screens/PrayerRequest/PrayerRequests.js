@@ -9,6 +9,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 import LoadingState from "../../components/LoadingState";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
 
 const prayerRequests = gql`
   query {
@@ -90,22 +91,7 @@ export default function PrayerRequests({ navigation }) {
   const { memberPrayerRequests } = data;
   return (
     <View style={[styles.container]}>
-      <View style={[styles.headerBar]}>
-        <View style={{ paddingLeft: 20 }}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons
-              name={"ios-arrow-back"}
-              size={30}
-              color="#FFFFFF"
-              style={{ justifyContent: "center" }}
-            />
-          </TouchableOpacity>
-        </View>
-        <StyledTextInverse style={{ fontSize: 20, alignSelf: "center" }}>
-          Prayer Requests
-        </StyledTextInverse>
-        <View style={{ paddingRight: 20 }} />
-      </View>
+      <ChildScreenHeader title="Prayer Requests" />
 
       <View
         style={{
