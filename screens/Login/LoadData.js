@@ -21,7 +21,6 @@ const queries = gql`
       communicant
       gender
       group
-      folio
       address
       hometown
       maritalStatus

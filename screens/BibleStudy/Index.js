@@ -16,6 +16,9 @@ const query = gql`
             year
             theme
             scripture
+            introduction
+            wordFromModerator
+            acknowledgement
             sections {
                 title
                 lessons {
@@ -38,14 +41,14 @@ export default function StudyGuideIndex({ navigation }) {
 
 
 
-    function navigateToDistrictSelection(presbytery) {
-        navigation.navigate("DistrictSelection", { presbytery });
+    function navigateToStudyGuideHome( bibleStudyGuide ) {
+        navigation.navigate("StudyGuideHome", { bibleStudyGuide });
     }
 
     function renderTableOfContent({ item: bsg }) {
         return (
             <TouchableOpacity
-                onPress={() => navigateToDistrictSelection(bsg)}
+                onPress={() => navigateToStudyGuideHome(bsg)}
             >
                 <View style={[styles.listItem]}>
                     <View style={[{ flexDirection: "row" }]}>
@@ -109,7 +112,7 @@ export default function StudyGuideIndex({ navigation }) {
                         </TouchableOpacity>
                     </View>
                     <StyledTextInverse style={{ fontSize: 20, alignSelf: "center" }}>
-                        {' '} Bible Study Guide Home
+                        {' '} Bible Study Year Selection
                     </StyledTextInverse>
                     <View style={{ paddingRight: 20 }} />
                 </View>
