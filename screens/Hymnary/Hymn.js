@@ -1,54 +1,40 @@
-import React, { Component } from "react";
-import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
-import { StyledHeader, StyledText } from "../../components/Typography";
+import React from "react";
+import styled from "styled-components";
+
+// components
+import ChildScreenHeader from "../../components/ChildScreenHeader";
+
+//data
 import hymnBook from "../../sample-data/hymnary";
-import { Ionicons } from "@expo/vector-icons";
-import MembershipIcon from "../../components/SVGIcon";
-import { Audio } from "expo-av";
-import { showMessage } from "react-native-flash-message";
-import Layout from "../../constants/NewLayout";
-import { noAudioIcon, voiceIcon } from "../../assets/icons";
+import { StyledText } from "../../components/Typography";
+import { FlatList, View } from "react-native";
 
-const { heightPercentageToDP } = Layout;
+function Hymn({ navigation }) {
+  const hymnNumber = navigation.getParam("HymnNumber");
+  const hymn = hymnBook[hymnNumber - 1];
 
-export default class extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { invalidHymnNumber: false, isPlaying: false };
-    this.HymnNumber = Number(this.props.navigation.getParam("HymnNumber"));
-    this.renderVerses = this.renderVerses.bind(this);
-    this.toggleHymn = this.toggleHymn.bind(this);
-    this.soundObject = new Audio.Sound();
-  }
+  return (
+    <Container>
+      <ChildScreenHeader title={`PHB ${hymnNumber}`} />
 
-  async toggleHymn() {
-    await Audio.setAudioModeAsync({
-      playsInSilentModeIOS: true,
-      playThroughEarpieceAndroid: false
-    });
+      {hymn === undefined ? (
+        <EmptyHymn>
+          <StyledText>Empty</StyledText>
+        </EmptyHymn>
+      ) : (
+        <FlatList
+          data={hymn.verses}
+          renderItem={renderVerses}
+          keyExtractor={item => item}
+        />
+      )}
+    </Container>
+  );
 
-    try {
-      if (this.state.isPlaying) {
-        await this.soundObject.stopAsync();
-        await this.soundObject.unloadAsync();
-        this.setState({ isPlaying: false });
-      } else {
-        await this.soundObject.loadAsync(require("../../assets/hymns/001.mp3"));
-        await this.soundObject.playAsync();
-        this.setState({ isPlaying: true });
-      }
-    } catch (error) {
-      showMessage({
-        type: "error",
-        message: "Failed to play hymn tune"
-      });
-    }
-  }
-
-  renderVerses = verse => {
+  function renderVerses(verse) {
     if (verse) {
       return (
-        <View style={[styles.gridItem]} key={verse.item}>
+        <Verse>
           <View style={{ alignSelf: "flex-start", paddingRight: 10 }}>
             <StyledText style={{ color: "#ef5350" }}>
               {verse.index + 1}
@@ -59,105 +45,25 @@ export default class extends Component {
               {verse.item}
             </StyledText>
           </View>
-        </View>
+        </Verse>
       );
     }
-  };
-
-  render(source = voiceIcon) {
-    const hymn = hymnBook[this.HymnNumber - 1];
-    return (
-      <View style={[styles.container]}>
-        <View style={[styles.headerBar, { paddingHorizontal: 20 }]}>
-          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-            <Ionicons
-              name={"ios-arrow-back"}
-              size={30}
-              color="#FFFFFF"
-              style={{ justifyContent: "center" }}
-            />
-          </TouchableOpacity>
-          <StyledHeader h4 style={{ alignSelf: "flex-start", color: "#fff" }}>
-            PHB {this.HymnNumber}
-          </StyledHeader>
-          {this.state.isPlaying ? (
-            <TouchableOpacity onPress={this.toggleHymn}>
-              <MembershipIcon
-                color="#FFFFFF"
-                height="25"
-                width="25"
-                style={{ justifyContent: "center", alignItems: "center" }}
-                source={noAudioIcon}
-              />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity onPress={this.toggleHymn}>
-              <MembershipIcon
-                color="#FFFFFF"
-                height="25"
-                width="25"
-                style={{ justifyContent: "center", alignItems: "center" }}
-                source={source}
-              />
-            </TouchableOpacity>
-          )}
-        </View>
-        {hymn === undefined ? (
-          <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-          >
-            <StyledText style={{ fontSize: 18, fontStyle: "italic" }}>
-              Ooops, Invalid Hymn Number
-            </StyledText>
-          </View>
-        ) : (
-          <View style={[styles.gridContainer]}>
-            <View
-              style={{
-                marginBottom: 160,
-                minHeight: heightPercentageToDP("70%")
-              }}
-            >
-              <FlatList
-                data={hymn.verses}
-                renderItem={this.renderVerses}
-                keyExtractor={item => item}
-              />
-            </View>
-          </View>
-        )}
-      </View>
-    );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F8FAF9"
-  },
+const Container = styled.View`
+  flex: 1;
+`;
 
-  gridContainer: {
-    shadowColor: "#000",
-    paddingHorizontal: 20
-  },
+const Verse = styled.View`
+  flex-direction: row;
+  margin: 10px;
+`;
 
-  grid: {
-    backgroundColor: "#FFFFFF",
-    margin: 0,
-    marginBottom: 0,
-    padding: 0
-  },
+const EmptyHymn = styled.View`
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+`;
 
-  gridItem: {
-    flexDirection: "row",
-    margin: 10
-  },
-  headerBar: {
-    backgroundColor: "#387ecb",
-    height: 80,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingTop: 40
-  }
-});
+export default Hymn;
