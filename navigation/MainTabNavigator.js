@@ -5,7 +5,6 @@ import {
   TransitionPresets
 } from "react-navigation-stack";
 import TabBarIcon from "../components/TabBarIcon";
-import TabBarLabel from "../components/TabBarLabel";
 import Colors from "../constants/Colors";
 
 // Icons
@@ -28,7 +27,7 @@ import BibleBook from "../screens/Bible/BibleBook";
 import BibleChapter from "../screens/Bible/BibleChapter";
 
 // Hymnary Screen stack
-import HymnaryIndex from "../screens/Hymnary/Hymn";
+import Hymn from "../screens/Hymnary/Hymn";
 import HymnSelection from "../screens/Hymnary/HymnSelectionScreen";
 
 // Almanac Screen Stack
@@ -140,21 +139,24 @@ HomeStack.navigationOptions = ({ navigation }) => {
 const HymnaryStack = createStackNavigator(
   {
     HymnSelection,
-    HymnaryContent: HymnaryIndex
+    Hymn: Hymn
   },
   config
 );
 
-HymnaryStack.navigationOptions = {
-  tabBarLabel: "Hymnary",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      type="feather"
-      name="book-open"
-      icon={hymnaryIcon}
-    />
-  )
+HymnaryStack.navigationOptions = ({ navigation }) => {
+  return {
+    tabBarLabel: "Hymnary",
+    tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused={focused}
+        type="feather"
+        name="book-open"
+        icon={hymnaryIcon}
+      />
+    ),
+    tabBarVisible: navigation.state.index <= 0
+  };
 };
 
 const BibleStack = createStackNavigator(
