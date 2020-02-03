@@ -7,8 +7,10 @@ import {
   ActivityIndicator
 } from "react-native";
 import { StyledText, StyledTextInverse } from "../../components/Typography";
-import { Ionicons, EvilIcons } from "@expo/vector-icons";
 import { useQuery, gql } from "@apollo/client";
+import SVGIcon from "../../components/SVGIcon";
+import { forwardIcon } from "../../assets/icons";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
 
 const query = gql`
   query($presbytery: ID!) {
@@ -62,7 +64,7 @@ function DistrictSelection({ navigation }) {
           </View>
 
           <View>
-            <EvilIcons name={"chevron-right"} size={20} />
+            <SVGIcon source={forwardIcon} width={15} />
           </View>
         </View>
       </TouchableOpacity>
@@ -81,24 +83,7 @@ function DistrictSelection({ navigation }) {
     const { districts } = data;
     return (
       <View style={[styles.container]}>
-        <View style={[styles.header]}>
-          <View style={{ paddingLeft: 20 }}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Ionicons
-                name={"ios-arrow-back"}
-                size={25}
-                color="#FFFFFF"
-                style={{ justifyContent: "center" }}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <StyledTextInverse style={{ fontSize: 20, alignSelf: "center" }}>
-            {presbytery.name} Districts
-          </StyledTextInverse>
-
-          <View style={{ paddingRight: 20 }} />
-        </View>
+        <ChildScreenHeader title={`${presbytery.name} Districts`} />
 
         <View style={[styles.list]}>
           <FlatList

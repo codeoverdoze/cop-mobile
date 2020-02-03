@@ -3,21 +3,25 @@ import {
   View,
   TouchableOpacity,
   StyleSheet,
-  Image,
   ScrollView,
-  StatusBar
+  StatusBar,
+  Image
 } from "react-native";
-import { StyledHeader, StyledText } from "../../components/Typography";
+import {
+  StyledHeader,
+  StyledHeaderInverse,
+  StyledText,
+  StyledTextInverse
+} from "../../components/Typography";
 import { homeItemsList } from "./data";
 import ParentScreenHeader from "../../components/ParentScreenHeader";
+import SVGIcon from "../../components/SVGIcon";
+import styled from "styled-components";
 
 const BodyItem = props => (
   <View style={[styles.bodyItem]}>
     <View style={[styles.bodyImage]}>
-      <Image
-        source={props.image}
-        style={{ width: 60, height: 60, borderRadius: 30, padding: 0 }}
-      />
+      <SVGIcon source={props.image} noFill width={50} height={50} />
     </View>
 
     <View style={styles.bodyContent}>
@@ -30,7 +34,6 @@ const BodyItem = props => (
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    StatusBar.setBarStyle("light-content");
   }
 
   navigate(screen) {
@@ -40,7 +43,17 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ParentScreenHeader title="That They All May Be One" />
+        <HeaderContainer>
+          <View style={{ flexDirection: "row" }}>
+            <Image
+              source={require("../../assets/images/logo.png")}
+              style={{ width: 30, height: 40, marginRight: 10 }}
+            />
+            <View>
+              <StyledHeaderInverse>Presby Companion</StyledHeaderInverse>
+            </View>
+          </View>
+        </HeaderContainer>
 
         <ScrollView contentContainerStyle={[styles.body]}>
           {homeItemsList.map(item => {
@@ -67,21 +80,18 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "#F4F6F8"
   },
 
-  body: {
-    paddingTop: 30,
-    paddingLeft: 20,
-    paddingRight: 40,
-    paddingBottom: 100,
-    backgroundColor: "#FFFFFF"
-  },
+  body: {},
 
   bodyItem: {
-    marginBottom: 20,
+    marginBottom: 15,
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#FFFFFF",
+    paddingHorizontal: 20,
+    paddingVertical: 15
   },
 
   bodyImage: {
@@ -95,3 +105,10 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+const HeaderContainer = styled.View`
+  background-color: #387ecb;
+  height: 60px;
+  justify-content: center;
+  padding-left: 50px;
+`;

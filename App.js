@@ -1,6 +1,7 @@
 import React from "react";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
+import StatusBar from './components/StatusBar';
 import loadAppNavigation from "./navigation/AppNavigator";
 import FlashMessage from "react-native-flash-message";
 import apolloClient from "./graphql/client";
@@ -28,6 +29,7 @@ export default class App extends React.Component {
       const AppNavigator = loadAppNavigation(this.state.mobiletoken);
       return (
         <ApolloProvider client={this.state.client}>
+          <StatusBar/>
           <AppNavigator />
           <FlashMessage position="bottom" />
         </ApolloProvider>

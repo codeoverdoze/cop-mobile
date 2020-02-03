@@ -4,6 +4,9 @@ import { StyledText, StyledTextInverse } from "../../components/Typography";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
 import { useQuery, gql } from "@apollo/client";
 import LoadingState from "../../components/LoadingState";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
+import SVGIcon from "../../components/SVGIcon";
+import { forwardIcon } from "../../assets/icons";
 
 const query = gql`
   query {
@@ -57,7 +60,7 @@ export default function PresbyterySelection({ navigation }) {
           </View>
 
           <View>
-            <EvilIcons name={"chevron-right"} size={20} />
+            <SVGIcon source={forwardIcon} width={15} />
           </View>
         </View>
       </TouchableOpacity>
@@ -72,22 +75,7 @@ export default function PresbyterySelection({ navigation }) {
     const { presbyteries } = data;
     return (
       <View style={[styles.container]}>
-        <View style={[styles.headerBar]}>
-          <View style={{ paddingLeft: 20 }}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Ionicons
-                name={"ios-arrow-back"}
-                size={30}
-                color="#FFFFFF"
-                style={{ justifyContent: "center" }}
-              />
-            </TouchableOpacity>
-          </View>
-          <StyledTextInverse style={{ fontSize: 20, alignSelf: "center" }}>
-            Presbytery Selection
-          </StyledTextInverse>
-          <View style={{ paddingRight: 20 }} />
-        </View>
+        <ChildScreenHeader title="Presbytery Selection" />
         <View style={{ paddingBottom: 70 }}>
           <FlatList
             data={presbyteries}

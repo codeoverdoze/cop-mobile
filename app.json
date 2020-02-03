@@ -23,6 +23,9 @@
       "bundleIdentifier": "com.polymorphlabs.presbycompanion",
       "icon": "./assets/icons/ios_icon.png"
     },
+    "androidStatusBar": {
+      "backgroundColor": "#387ecb"
+    },
     "android": {
       "package": "com.polymorphlabs.presbycompanion"
     }

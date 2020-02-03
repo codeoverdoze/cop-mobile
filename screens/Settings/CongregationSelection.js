@@ -10,6 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { StyledText, StyledTextInverse } from "../../components/Typography";
 import Colors from "../../constants/Colors";
 import { gql, useQuery } from "@apollo/client";
+import ChildScreenHeader from "../../components/ChildScreenHeader";
 
 const query = gql`
   query($district: ID!) {
@@ -57,27 +58,9 @@ const CongregationSelection = ({ navigation }) => {
   }
 
   const { congregations, memberProfile } = data;
-  console.log("This is data", data);
   return (
     <View style={[styles.container]}>
-      <View style={[styles.headerBar]}>
-        <View style={{ paddingLeft: 20 }}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons
-              name={"ios-arrow-back"}
-              size={30}
-              color="#FFFFFF"
-              style={{ justifyContent: "center" }}
-            />
-          </TouchableOpacity>
-        </View>
-
-        <StyledTextInverse style={{ fontSize: 20, alignSelf: "center" }}>
-          Set Congregation
-        </StyledTextInverse>
-
-        <View style={{ paddingRight: 20 }} />
-      </View>
+      <ChildScreenHeader title="Set Congregation" />
 
       <View style={{ justifyContent: "center", width: "100%" }}>
         <View style={[styles.list]}>

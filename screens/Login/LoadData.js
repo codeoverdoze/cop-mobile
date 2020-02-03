@@ -1,5 +1,5 @@
 import React from "react";
-import {ActivityIndicator, Image, TouchableOpacity, View} from "react-native";
+import { ActivityIndicator, Image, TouchableOpacity, View } from "react-native";
 import {
   StyledHeader,
   StyledHeaderInverse,
@@ -9,7 +9,7 @@ import Colors from "../../constants/Colors";
 import { gql, useQuery } from "@apollo/client";
 import { SimpleAnimation } from "react-native-simple-animations";
 import Layout from "../../constants/Layout";
-import {RFValue} from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
 
 const queries = gql`
   query {
@@ -77,36 +77,70 @@ function LoadData({ navigation }) {
     }
   });
 
-
   if (error) {
     console.log("error", error);
   }
 
   if (doneLoading) {
     return (
-      <View style={{ flex: 1, marginTop: Layout.window.height / 4, alignItems: "center" }}>
-        <SimpleAnimation delay={500} duration={1000} slide direction="up" staticType="zoom">
-        <Image source={require('../../assets/images/logo.png')} style={{ width: 115, height: 150, marginBottom: 50, opacity: 0.6 }}/>
+      <View
+        style={{
+          flex: 1,
+          marginTop: Layout.window.height / 4,
+          alignItems: "center"
+        }}
+      >
+        <SimpleAnimation
+          delay={500}
+          duration={1000}
+          slide
+          direction="up"
+          staticType="zoom"
+        >
+          <Image
+            source={require("../../assets/images/logo.png")}
+            style={{ width: 115, height: 150, marginBottom: 50, opacity: 0.6 }}
+          />
         </SimpleAnimation>
 
         <View style={{ alignItems: "center" }}>
-          <SimpleAnimation delay={1000} duration={3000} slide direction="up" staticType="zoom">
-            <StyledHeader style={{ fontSize: RFValue(25), textTransform: 'capitalize'}}>{`Hi, ${data.memberProfile.firstName}!`}</StyledHeader>
+          <SimpleAnimation
+            delay={1000}
+            duration={3000}
+            slide
+            direction="up"
+            staticType="zoom"
+          >
+            <StyledHeader
+              style={{ fontSize: RFValue(25), textTransform: "capitalize" }}
+            >{`Hi, ${data.memberProfile.firstName}!`}</StyledHeader>
           </SimpleAnimation>
 
           <SimpleAnimation delay={1500} duration={3000} fade staticType="zoom">
-            <StyledHeader style={{ fontSize: RFValue(25)}}>{`${data.memberProfile.group} Member`}</StyledHeader>
+            <StyledHeader
+              style={{ fontSize: RFValue(25) }}
+            >{`${data.memberProfile.group} Member`}</StyledHeader>
           </SimpleAnimation>
 
           <SimpleAnimation delay={2000} duration={3000} fade staticType="zoom">
-            <StyledHeader style={{ fontSize: RFValue(25)}}>{`${data.memberProfile.congregation.name} Congregation`}</StyledHeader>
+            <StyledHeader
+              style={{ fontSize: RFValue(25) }}
+            >{`${data.memberProfile.congregation.name} Congregation`}</StyledHeader>
           </SimpleAnimation>
-
 
           <SimpleAnimation delay={2500} duration={3000} fade staticType="zoom">
             <View style={{ marginTop: 20 }}>
-              <TouchableOpacity onPress={() => navigation.navigate('Main')}>
-                <View style={{ borderColor: '#c3c3c3', borderWidth: 1, borderRadius: 5, width: Layout.window.width - 50, paddingVertical: 10, alignItems: 'center'}}>
+              <TouchableOpacity onPress={() => navigation.navigate("Main")}>
+                <View
+                  style={{
+                    borderColor: "#c3c3c3",
+                    borderWidth: 1,
+                    borderRadius: 5,
+                    width: Layout.window.width - 50,
+                    paddingVertical: 10,
+                    alignItems: "center"
+                  }}
+                >
                   <StyledText>Let's Begin . . .</StyledText>
                 </View>
               </TouchableOpacity>
@@ -114,7 +148,15 @@ function LoadData({ navigation }) {
           </SimpleAnimation>
 
           <SimpleAnimation delay={3000} duration={2000} fade staticType="zoom">
-            <StyledText style={{ fontSize: RFValue(12), textAlign: 'center', marginTop: 10}}>Presby Companion &copy; 2020. Polymorph Labs</StyledText>
+            <StyledText
+              style={{
+                fontSize: RFValue(12),
+                textAlign: "center",
+                marginTop: 10
+              }}
+            >
+              Presby Companion &copy; 2020. Polymorph Labs
+            </StyledText>
           </SimpleAnimation>
         </View>
       </View>

@@ -7,10 +7,12 @@ import {
   ScrollView
 } from "react-native";
 import { StyledHeader, StyledText } from "../../components/Typography";
-import { Ionicons } from "@expo/vector-icons";
 import { useQuery, gql } from "@apollo/client";
 import LoadingState from "../../components/LoadingState";
 import ParentScreenHeader from "../../components/ParentScreenHeader";
+import styled from "styled-components";
+import SVGIcon from "../../components/SVGIcon";
+import { forwardIcon } from "../../assets/icons";
 
 const userProfileImage = require("../../assets/images/placeholder-image.png");
 const query = gql`
@@ -88,65 +90,31 @@ export default function SettingsScreen({ navigation }) {
             </StyledHeader>
           </View>
           <View style={{ marginBottom: 40 }}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("MembershipDetails")}
-            >
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    borderBottomWidth: 0.3,
-                    borderBottomColor: "#cecece",
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>
-                      Membership Details
-                    </StyledText>
-                  </View>
+            <ListBlock>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("MembershipDetails")}
+              >
+                <ListItem>
+                  <StyledText style={{ fontSize: 16 }}>
+                    Membership Details
+                  </StyledText>
 
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
+                  <SVGIcon source={forwardIcon} width={15} />
+                </ListItem>
+              </TouchableOpacity>
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate("ChurchSelection")}
-            >
-              <View style={[styles.mainItem]}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginLeft: 20,
-                    marginRight: 20,
-                    paddingTop: 15,
-                    paddingBottom: 15
-                  }}
-                >
-                  <View style={{ flexDirection: "row" }}>
-                    <StyledText style={{ fontSize: 16 }}>
-                      Congregation Selection
-                    </StyledText>
-                  </View>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ChurchSelection")}
+              >
+                <ListItem>
+                  <StyledText style={{ fontSize: 16 }}>
+                    Congregation Selection
+                  </StyledText>
 
-                  <Ionicons
-                    name={"ios-arrow-forward"}
-                    size={16}
-                    color="#3E4E5B"
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
+                  <SVGIcon source={forwardIcon} width={15} />
+                </ListItem>
+              </TouchableOpacity>
+            </ListBlock>
           </View>
           <TouchableOpacity>
             <View style={[styles.mainItem]}>
@@ -159,7 +127,8 @@ export default function SettingsScreen({ navigation }) {
                   borderBottomWidth: 0.3,
                   borderBottomColor: "#cecece",
                   paddingTop: 15,
-                  paddingBottom: 15
+                  paddingBottom: 15,
+                  alignItems: "center"
                 }}
               >
                 <View style={{ flexDirection: "row" }}>
@@ -168,11 +137,7 @@ export default function SettingsScreen({ navigation }) {
                   </StyledText>
                 </View>
 
-                <Ionicons
-                  name={"ios-arrow-forward"}
-                  size={16}
-                  color="#3E4E5B"
-                />
+                <SVGIcon source={forwardIcon} width={15} />
               </View>
             </View>
           </TouchableOpacity>
@@ -197,11 +162,7 @@ export default function SettingsScreen({ navigation }) {
                   </StyledText>
                 </View>
 
-                <Ionicons
-                  name={"ios-arrow-forward"}
-                  size={16}
-                  color="#3E4E5B"
-                />
+                <SVGIcon source={forwardIcon} width={15} />
               </View>
             </View>
           </TouchableOpacity>
@@ -218,14 +179,12 @@ export default function SettingsScreen({ navigation }) {
                   paddingBottom: 15
                 }}
               >
-                <View style={{ flexDirection: "row" }}>
+                <View
+                  style={{ flexDirection: "row", justifyContent: "center" }}
+                >
                   <StyledText style={{ fontSize: 16 }}>Credits</StyledText>
                 </View>
-                <Ionicons
-                  name={"ios-arrow-forward"}
-                  size={16}
-                  color="#3E4E5B"
-                />
+                <SVGIcon source={forwardIcon} width={15} />
               </View>
             </View>
           </TouchableOpacity>
@@ -265,3 +224,17 @@ const styles = StyleSheet.create({
     paddingTop: 40
   }
 });
+
+const ListBlock = styled.View`
+  background-color: #ffffff;
+  padding-horizontal: 20px;
+  padding-vertical: 5px;
+`;
+
+const ListItem = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-vertical: 10px;
+  border-bottom-width: 0.5px;
+  border-bottom-color: #e3e3e3;
+`;

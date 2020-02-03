@@ -5,6 +5,7 @@ import {
   TransitionPresets
 } from "react-navigation-stack";
 import TabBarIcon from "../components/TabBarIcon";
+import TabBarLabel from "../components/TabBarLabel";
 import Colors from "../constants/Colors";
 
 // Icons
@@ -15,7 +16,6 @@ import {
   paymentIcon,
   settingsIcon
 } from "../assets/icons";
-
 
 // Home screen stack
 import HomeIndex from "../screens/Home/HomeScreen";
@@ -28,8 +28,8 @@ import BibleBook from "../screens/Bible/BibleBook";
 import BibleChapter from "../screens/Bible/BibleChapter";
 
 // Hymnary Screen stack
-import HymnaryIndex from "../screens/Hymnary/Index";
-import HymnSelection from "../screens/Hymnary/HymnSelection";
+import HymnaryIndex from "../screens/Hymnary/Hymn";
+import HymnSelection from "../screens/Hymnary/HymnSelectionScreen";
 
 // Almanac Screen Stack
 import YearSelection from "../screens/Almanac/Index";
@@ -140,7 +140,7 @@ HomeStack.navigationOptions = ({ navigation }) => {
 const HymnaryStack = createStackNavigator(
   {
     HymnSelection,
-    Hymnary: HymnaryIndex
+    HymnaryContent: HymnaryIndex
   },
   config
 );
@@ -245,7 +245,13 @@ export default createBottomTabNavigator(
   {
     tabBarOptions: {
       activeTintColor: Colors.tintColor,
-      style: { backgroundColor: "#f6f6f7" }
+      labelStyle: { fontFamily: "regular" },
+      style: {
+        backgroundColor: "#ffffff",
+        borderTopColor: "#e3e3e3",
+        height: 55,
+        fontFamily: "regular"
+      }
     }
   }
 );
