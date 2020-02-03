@@ -10,6 +10,7 @@ export { default as circledMenuIcon } from "./circled-menu";
 export { default as closeIcon } from "./close";
 export { default as communicateIcon } from "./communicate";
 export { default as coupleIcon } from "./couple";
+export { default as downloadIcon } from "./download";
 export { default as emptyIcon } from "./empty";
 export { default as eventIcon } from "./event";
 export { default as forwardIcon } from "./forward";

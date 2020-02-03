@@ -1,9 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
 import SVGIcon from '../../../components/SVGIcon';
-import { pauseIcon, playIcon } from '../../../assets/icons';
+import { downloadIcon, pauseIcon, playIcon } from '../../../assets/icons';
 import usePlayer from './usePlayer';
+import { showMessage } from 'react-native-flash-message';
+import Colors from '../../../constants/Colors';
 
 function HymnPlayer() {
   const { isPaused, isPlaying, play, pause } = usePlayer();
@@ -22,7 +24,20 @@ function HymnPlayer() {
         elevation: 14,
       }}
     >
+      <View />
       {isPlaying ? renderPaused() : isPaused ? renderPlay() : renderLoading()}
+
+      <TouchableOpacity
+        onPress={() => {
+          showMessage({
+            type: 'info',
+            backgroundColor: Colors.tintColor,
+            message: 'You have found a future feature. \n Download feature will be added soon',
+          });
+        }}
+      >
+        <SVGIcon source={downloadIcon} />
+      </TouchableOpacity>
     </PlayerContainer>
   );
 
@@ -49,11 +64,10 @@ function HymnPlayer() {
 
 const PlayerContainer = styled.View`
   background-color: #ffffff;
-  height: 50px;
+  height: 80px;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  border-radius: 50px;
 `;
 
 export default HymnPlayer;
