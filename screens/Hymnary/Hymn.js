@@ -118,7 +118,11 @@ export default class extends Component {
                 minHeight: heightPercentageToDP("70%")
               }}
             >
-              <FlatList data={hymn.verses} renderItem={this.renderVerses} keyExtractor={item => item}/>
+              <FlatList
+                data={hymn.verses}
+                renderItem={this.renderVerses}
+                keyExtractor={item => item}
+              />
             </View>
           </View>
         )}

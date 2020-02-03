@@ -15,7 +15,7 @@ import {
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { showMessage } from "react-native-flash-message";
 import { Ionicons } from "@expo/vector-icons";
-
+import ChildScreenHeader from "../../components/ChildScreenHeader";
 
 export default class extends Component {
   constructor(props) {
@@ -65,24 +65,7 @@ export default class extends Component {
     return (
       <View style={[styles.container]}>
         <StatusBar backgroundColor="#387ecb" barStyle="light-content" />
-        <View style={[styles.header]}>
-          <View style={{ paddingLeft: 20, paddingRight: 20 }}>
-            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-              <Ionicons
-                name={"ios-arrow-back"}
-                size={30}
-                color="#FFFFFF"
-                style={{ justifyContent: "center" }}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <StyledTextInverse style={{ fontSize: 20, paddingTop: 5 }}>
-            Make Payment For {this.package.name}
-          </StyledTextInverse>
-
-          <View style={{ paddingRight: 20 }} />
-        </View>
+        <ChildScreenHeader title={`Make payment for ${this.package.name}`} />
 
         <KeyboardAwareScrollView style={[styles.body]}>
           <View style={[styles.bodyItem]}>

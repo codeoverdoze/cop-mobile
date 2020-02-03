@@ -1,28 +1,28 @@
 import React from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
-import { StyledSubtitle, StyledHeader } from "../../components/Typography";
+import { StyledSubtitle } from "../../components/Typography";
 import Colors from "../../constants/Colors";
 import PinView from "react-native-pin-view";
 import Color from "../../constants/Colors";
+import { withNavigation } from "react-navigation";
 
 import AnimatedItem from "../../components/AnimatedItem";
 import Layout from "../../constants/NewLayout";
 
 const { heightPercentageToDP } = Layout;
 
-const HymnSelection = ({ navigation }) => {
+const EnglishHymnSelectionScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <View style={{ alignItems: "center" }}>
+    <View>
+      <View style={styles.container}>
         <AnimatedItem
           animation={require("../../assets/animations/hymnary.json")}
           loop={true}
           style={{ width: 400, height: 200 }}
           speed={2}
         />
-        <StyledHeader>English Hymnary</StyledHeader>
       </View>
       <View
         style={{
@@ -46,7 +46,10 @@ const HymnSelection = ({ navigation }) => {
         buttonBgColor="#fff"
         deleteText={<Ionicons name="ios-backspace" size={25} />}
         onComplete={value =>
-          navigation.navigate("Hymnary", { HymnNumber: value })
+        {
+          console.log("We are going");
+          navigation.navigate("Hymn", { HymnNumber: value })
+        }
         }
         keyboardViewStyle={{
           height: 60,
@@ -63,7 +66,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    paddingTop: heightPercentageToDP("2%")
+    paddingTop: heightPercentageToDP("2%"),
+    alignItems: "center"
   },
 
   main: {
@@ -144,4 +148,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HymnSelection;
+export default withNavigation(EnglishHymnSelectionScreen);

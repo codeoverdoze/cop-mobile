@@ -34,7 +34,6 @@ export default class extends Component {
         this.forceUpdate();
       }
     );
-    StatusBar.setBarStyle("light-content");
     this.currentDate = new XDate();
 
     this.currentMonth = monthNames[this.currentDate.getMonth()];

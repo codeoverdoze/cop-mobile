@@ -5,24 +5,19 @@ import styled from "styled-components";
 // components
 import { StyledHeaderInverse } from "./Typography";
 
-function ParentScreenHeader({ title }) {
+function ParentScreenHeader({ title, children }) {
   return (
     <Container>
-      <StyledHeaderInverse>{title}</StyledHeaderInverse>
+      {children ? children : <StyledHeaderInverse>{title}</StyledHeaderInverse>}
     </Container>
   );
 }
 
-ParentScreenHeader.propTypes = {
-  title: propTypes.string.isRequired
-};
-
 const Container = styled.View`
   background-color: #387ecb;
-  height: 80px;
+  height: 60px;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
 `;
 
 export default ParentScreenHeader;

@@ -23,27 +23,26 @@ function ChildScreenHeader({ title, navigation }) {
 }
 
 ChildScreenHeader.propTypes = {
-  title: propTypes.string.isRequired,
+  title: propTypes.string.isRequired
 };
 
 const Container = styled.View`
   background-color: #387ecb;
-  height: 80px;
-  padding-top: 45px;
+  height: 60px;
   flex-direction: row;
 `;
 
 const BackButton = styled.TouchableOpacity`
   width: 50px;
   position: absolute;
-  padding-top: 40px;
   padding-left: 15px;
-  justify-content: center;
+  top: 20%;
 `;
 
 const Title = styled.View`
   width: 100%;
   align-items: center;
+  justify-content: center;
 `;
 
 export default withNavigation(ChildScreenHeader);
