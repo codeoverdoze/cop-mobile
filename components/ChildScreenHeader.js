@@ -35,6 +35,7 @@ const Container = styled.View`
 const BackButton = styled.TouchableOpacity`
   width: 50px;
   position: absolute;
+  z-index: 1;
   padding-left: 15px;
   top: 20%;
 `;

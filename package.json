@@ -53,6 +53,7 @@
     "xdate": "^0.8.2"
   },
   "devDependencies": {
-    "jest-expo": "^36.0.0"
+    "jest-expo": "^36.0.0",
+    "prettier": "^1.19.1"
   }
 }

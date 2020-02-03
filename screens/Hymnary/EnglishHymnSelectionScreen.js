@@ -47,7 +47,6 @@ const EnglishHymnSelectionScreen = ({ navigation }) => {
         deleteText={<Ionicons name="ios-backspace" size={25} />}
         onComplete={value =>
         {
-          console.log("We are going");
           navigation.navigate("Hymn", { HymnNumber: value })
         }
         }
