@@ -2,17 +2,13 @@ import React from "react";
 import {
   StyleSheet,
   FlatList,
-  SafeAreaView,
   View,
   TouchableOpacity
 } from "react-native";
 import {
-  StyledHeader,
-  StyledHeaderInverse,
   StyledText,
   StyledTextInverse
 } from "../../components/Typography";
-import { Ionicons, EvilIcons } from "@expo/vector-icons";
 import ChildScreenHeader from "../../components/ChildScreenHeader";
 import SVGIcon from "../../components/SVGIcon";
 import { forwardIcon } from "../../assets/icons";
