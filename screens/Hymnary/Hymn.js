@@ -73,10 +73,9 @@ const EmptyHymn = styled.View`
 
 const PlayerContainer = styled.View`
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
   right: 0;
-  margin: 20px;
 `;
 
 export default Hymn;
