@@ -42,10 +42,12 @@ export default class extends Component {
         />
         <ScrollView>
           <View style={[styles.gridContainer]}>
-            <StyledHeader style={{ fontSize: 20, marginTop: 5, paddingHorizontal: 5 }}>
-              {book.name} - King James Version
-            </StyledHeader>
-            <StyledText style={{ marginBottom: 10, paddingHorizontal: 5}}>Please select appropriate chapter.</StyledText>
+            <View style={{ alignItems: "center" }}>
+              <StyledHeader style={{ fontSize: 20, marginTop: 5, paddingHorizontal: 5 }}>
+                {book.name}
+              </StyledHeader>
+              <StyledText style={{ marginBottom: 10, paddingHorizontal: 5}}>Please select appropriate chapter.</StyledText>
+            </View>
             <View
               style={[styles.grid, { flexDirection: "row", flexWrap: "wrap" }]}
             >
@@ -93,7 +95,9 @@ const styles = StyleSheet.create({
     margin: 0,
     color: "#FFFFFF",
     marginBottom: 20,
-    padding: 0
+    padding: 0,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   gridItem: {
