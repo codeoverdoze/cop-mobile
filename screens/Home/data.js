@@ -45,28 +45,28 @@ const homeItemsList = [
   {
     image: lithurgicalOrderIcon,
     title: "Liturgical Order Book",
-    content: "Easy access to order of service.",
+    content: "Quick access to both normal and ordinance liturgy. Details of all order of services available at one place.",
     key: "Liturgical Order Book",
     link: "LiturgyTypeSelection"
   },
   {
     image: eventIcon,
     title: "Special Events",
-    content: "View upcoming church events and be ready for them.",
+    content: "No matter the time, date or venue for special events, we've got you covered. \nView all upcoming church events",
     key: "Special Events",
     link: "Events"
   },
   {
     image: prayerRequestIcon,
     title: "Prayer Requests",
-    content: "Ask for favours from the good Lord.",
+    content: "Are you burdened with trials and tribulations? Take it to the Lord in Prayers. \nRequest for support in prayers!",
     key: "Prayer Requests",
     link: "PrayerRequests"
   },
   {
     image: previousSermonsIcon,
     title: "Previous Sermons",
-    content: "Refer to previous sermons.",
+    content: "Previous sermons available to aid in personal spiritual growth. Listen to your favourite sermons many times and over.",
     key: "Previous Sermons",
     link: "Almanac"
   }

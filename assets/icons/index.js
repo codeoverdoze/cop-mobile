@@ -39,6 +39,7 @@ export { default as ringingPhoneIcon } from "./ringing-phone";
 export { default as settingsIcon } from "./settings";
 export { default as soundIcon } from "./sound";
 export { default as speakerIcon } from "./speaker";
+export { default as starIcon } from "./star";
 export { default as thinkingBubbleIcon } from "./thinking-bubble";
 export { default as thinkingMaleIcon } from "./thinking-male";
 export { default as userAccountIcon } from "./user-account";

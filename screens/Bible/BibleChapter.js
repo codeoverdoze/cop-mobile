@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
-import { StyledText } from "../../components/Typography";
+import { StyledHeader, StyledText } from '../../components/Typography';
 
 import Bible from "../../store/Bible";
 import BibleBar from "./components/BibleBar";
 
 import bible from "../../sample-data/bible-kjv-shell.json";
+import { ScrollView } from 'react-navigation';
 
 export default class extends Component {
   setBibleChapter(chapter) {
@@ -39,32 +40,38 @@ export default class extends Component {
             this
           )}
         />
-        <View style={[styles.gridContainer]}>
-          <View
-            style={[styles.grid, { flexDirection: "row", flexWrap: "wrap" }]}
-          >
-            {book.chapters.map(chapter => {
-              return (
-                <View style={{ margin: 5 }} key={chapter}>
-                  <TouchableOpacity
-                    onPress={() => this.setBibleChapter(chapter)}
-                  >
-                    <View
-                      style={[
-                        styles.gridItem,
-                        { alignItems: "center", width: 50 }
-                      ]}
+        <ScrollView>
+          <View style={[styles.gridContainer]}>
+            <StyledHeader style={{ fontSize: 20, marginTop: 5, paddingHorizontal: 5 }}>
+              {book.name} - King James Version
+            </StyledHeader>
+            <StyledText style={{ marginBottom: 10, paddingHorizontal: 5}}>Please select appropriate chapter.</StyledText>
+            <View
+              style={[styles.grid, { flexDirection: "row", flexWrap: "wrap" }]}
+            >
+              {book.chapters.map(chapter => {
+                return (
+                  <View style={{ margin: 5 }} key={chapter}>
+                    <TouchableOpacity
+                      onPress={() => this.setBibleChapter(chapter)}
                     >
-                      <StyledText style={{ fontSize: 20 }}>
-                        {chapter}
-                      </StyledText>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
+                      <View
+                        style={[
+                          styles.gridItem,
+                          { alignItems: "center", width: 60, height: 60, justifyContent: 'center' }
+                        ]}
+                      >
+                        <StyledText style={{ fontSize: 16, color: "#FFFFFF" }}>
+                          {chapter}
+                        </StyledText>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                );
+              })}
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }
@@ -79,26 +86,21 @@ const styles = StyleSheet.create({
   gridContainer: {
     padding: 20,
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5
   },
 
   grid: {
     backgroundColor: "#FFFFFF",
     margin: 0,
+    color: "#FFFFFF",
     marginBottom: 20,
     padding: 0
   },
 
   gridItem: {
     borderWidth: 1,
+    backgroundColor: "#387ecb",
     borderColor: "#F0F0F0",
-    padding: 10
+    color: "#FFFFFF",
+    padding: 10, borderRadius: 30
   }
 });

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import { StyledText } from "../../components/Typography";
+import { StyledHeader, StyledText } from '../../components/Typography';
 
 import Bible from "../../store/Bible";
 import BibleBar from "./components/BibleBar";
@@ -31,64 +31,49 @@ export default class extends Component {
           )}
         />
         <ScrollView style={[styles.gridContainer]}>
-          <StyledText style={{ fontSize: 20, margin: 5 }}>
-            Old Testament
-          </StyledText>
+          <StyledHeader style={{ fontSize: 20, marginTop: 5, paddingHorizontal: 5 }}>
+            Bible Books - King James Version
+          </StyledHeader>
+          <StyledText style={{ marginBottom: 10, paddingHorizontal: 5}}>Select the book followed by the chapter.</StyledText>
           <View
             style={[styles.grid, { flexDirection: "row", flexWrap: "wrap" }]}
           >
-            {bible.slice(0, 38).map(book => {
+            {bible.map((book, index) => {
               return (
                 // We make use of key to set bible name because we made changes to some values for name. 2Kings, etc
-                <View style={{ margin: 5 }} key={book.name}>
+                <View style={{ margin: 4 }} key={book.name}>
                   <TouchableOpacity
                     onPress={() => this.setBibleBook(book.name)}
                     key={book.key}
                   >
-                    <View style={[styles.gridItem, { alignItems: "center" }]}>
-                      <StyledText
-                        style={{
-                          fontSize: 18,
-                          color: "#FFFFFF",
-                          fontWeight: "bold",
-                          width: 40
-                        }}
-                      >
-                        {book.key.substring(0, 3)}
-                      </StyledText>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-          </View>
-
-          <StyledText style={{ fontSize: 20, margin: 5 }}>
-            New Testament
-          </StyledText>
-          <View
-            style={[styles.grid, { flexDirection: "row", flexWrap: "wrap" }]}
-          >
-            {bible.slice(39).map(book => {
-              return (
-                // We make use of key to set bible name because we made changes to some values for name. 2Kings, etc
-                <View style={{ margin: 5 }} key={book.name}>
-                  <TouchableOpacity
-                    onPress={() => this.setBibleBook(book.name)}
-                    key={book.key}
-                  >
-                    <View style={[styles.gridItem, { alignItems: "center" }]}>
-                      <StyledText
-                        style={{
-                          fontSize: 18,
-                          color: "#FFFFFF",
-                          fontWeight: "bold",
-                          width: 40
-                        }}
-                      >
-                        {book.key.substring(0, 3)}
-                      </StyledText>
-                    </View>
+                    {
+                      index < 39 ?
+                        <View style={[styles.gridItemOldTestament, { alignItems: "center" }]}>
+                          <StyledText
+                            style={{
+                              fontSize: 15,
+                              color: "#FFFFFF",
+                              fontWeight: "bold",
+                              width: 35
+                            }}
+                          >
+                            {book.key.substring(0, 3)}
+                          </StyledText>
+                        </View>
+                        :
+                        <View style={[styles.gridItemNewTestament, { alignItems: "center" }]}>
+                          <StyledText
+                            style={{
+                              fontSize: 15,
+                              color: "#FFFFFF",
+                              fontWeight: "bold",
+                              width: 35
+                            }}
+                          >
+                            {book.key.substring(0, 3)}
+                          </StyledText>
+                        </View>
+                    }
                   </TouchableOpacity>
                 </View>
               );
@@ -107,7 +92,7 @@ const styles = StyleSheet.create({
   },
 
   gridContainer: {
-    padding: 20
+    padding: 10
   },
 
   grid: {
@@ -117,10 +102,17 @@ const styles = StyleSheet.create({
     padding: 0
   },
 
-  gridItem: {
+  gridItemOldTestament: {
     borderWidth: 1,
     borderColor: "#F0F0F0",
     padding: 10,
     backgroundColor: "#387ecb"
+  },
+
+  gridItemNewTestament: {
+    borderWidth: 1,
+    borderColor: "#F0F0F0",
+    padding: 10,
+    backgroundColor: "#db7238"
   }
 });
