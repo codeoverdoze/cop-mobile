@@ -41,7 +41,7 @@ export default class App extends React.Component {
         regular: require('./assets/fonts/Cereal-Book.ttf'),
         bold: require('./assets/fonts/Cereal-Bold.ttf'),
         light: require('./assets/fonts/Cereal-Book.ttf'),
-        bible: require('./assets/fonts/Cereal-Book.ttf'),
+        bible: require('./assets/fonts/Quattrocento-Regular.ttf'),
         'bible-italic': require('./assets/fonts/zila-slab-italic.ttf'),
       }),
       retrieveAuthToken().then(token => this.setState({ mobiletoken: token })),
