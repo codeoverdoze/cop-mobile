@@ -107,6 +107,16 @@ const LiturgyStack = createStackNavigator(
   },
   config
 );
+const MakePrayerRequestStack = createStackNavigator(
+  {
+    MakePrayerRequest
+  },
+  {
+    headerMode: "none",
+    mode: "modal",
+    gestureEnabled: true
+  }
+);
 
 const HomeStack = createStackNavigator(
   {
@@ -116,7 +126,8 @@ const HomeStack = createStackNavigator(
     LiturgyStack,
     Events,
     BibleStudy: BibleStudyStack,
-    PrayerRequests
+    PrayerRequests,
+    MakePrayerRequest: MakePrayerRequestStack
   },
   config
 );
@@ -135,6 +146,8 @@ HomeStack.navigationOptions = ({ navigation }) => {
     tabBarVisible: navigation.state.index <= 0
   };
 };
+
+
 
 const HymnaryStack = createStackNavigator(
   {
@@ -197,17 +210,6 @@ PaymentStack.navigationOptions = {
   )
 };
 
-const MakePrayerRequestStack = createStackNavigator(
-  {
-    MakePrayerRequest
-  },
-  {
-    headerMode: "none",
-    mode: "modal",
-    gestureEnabled: true
-  }
-);
-
 const SettingsStack = createStackNavigator(
   {
     SettingsDashboard,
@@ -216,7 +218,6 @@ const SettingsStack = createStackNavigator(
     DistrictSelection,
     CongregationSelection,
     MembershipDetails,
-    MakePrayerRequest: MakePrayerRequestStack
   },
   config
 );
