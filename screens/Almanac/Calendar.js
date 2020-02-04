@@ -210,7 +210,6 @@ export default class extends Component {
             paddingVertical: 20,
             paddingHorizontal: Layout.paddingHorizontal,
             marginBottom: 0,
-            backgroundColor: "#e9e9e9"
           }}
         >
           <StyledHeader style={{ fontSize: 15 }}>Occasion</StyledHeader>
@@ -368,7 +367,8 @@ export default class extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#F4F6F8"
   },
 
   header: {

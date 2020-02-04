@@ -10,8 +10,8 @@
     "orientation": "portrait",
     "icon": "./assets/icons/ios_icon.png",
     "splash": {
-      "image": "./assets/images/splash_logo.png",
-      "backgroundColor": "#0f1126"
+      "image": "./assets/images/splash.png",
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 30

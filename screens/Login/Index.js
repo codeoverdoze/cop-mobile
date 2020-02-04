@@ -105,7 +105,6 @@ const renderSlider = ({ item, index }) => (
 );
 
 const Index = ({ navigation }) => {
-  StatusBar.setBarStyle("dark-content");
   const [activeSlide, setActiveSlide] = useState(0);
   const [phone, setPhone] = useState("");
   const [loginMember, { loading }] = useMutation(loginMemberMutation, {
@@ -135,8 +134,7 @@ const Index = ({ navigation }) => {
 
   return (
     <KeyboardAwareScrollView
-      contentContainerStyle={{ flex: 1 }}
-      enableOnAndroid
+      contentContainerStyle={{ flex: 1, backgroundColor: "#f2f4f6" }}
     >
       <View
         style={{
