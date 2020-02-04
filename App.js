@@ -30,7 +30,7 @@ export default class App extends React.Component {
         <ApolloProvider client={this.state.client}>
           <CustomStatusBar />
           <AppNavigator />
-          <FlashMessage position="top" />
+          <FlashMessage position="bottom" />
         </ApolloProvider>
       );
     }
