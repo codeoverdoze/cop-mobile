@@ -2,7 +2,6 @@ import React from "react";
 import { ActivityIndicator, Image, TouchableOpacity, View } from "react-native";
 import {
   StyledHeader,
-  StyledHeaderInverse,
   StyledText
 } from "../../components/Typography";
 import Colors from "../../constants/Colors";
@@ -13,63 +12,63 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 const queries = gql`
   query {
-    memberProfile {
-      _id
-      firstName
-      middleName
-      surname
-      communicant
-      gender
-      group
-      address
-      hometown
-      maritalStatus
-      contact {
-        primaryTelephone
-        secondaryTelephone
-        email
-        nextOfKin {
-          name
-          telephone
-        }
-      }
-      congregation {
-        _id
-        name
-        location
-        catechist
-        phone
-        residentPastor
-        district {
-          name
-          presbytery {
-            name
+      memberProfile {
+          _id
+          firstName
+          middleName
+          surname
+          communicant
+          gender
+          group
+          address
+          hometown
+          maritalStatus
+          contact {
+              primaryTelephone
+              secondaryTelephone
+              email
+              nextOfKin {
+                  name
+                  telephone
+              }
           }
-        }
+          congregation {
+              _id
+              name
+              location
+              catechist
+              phone
+              residentPastor
+              district {
+                  name
+                  presbytery {
+                      name
+                  }
+              }
+          }
       }
-    }
-    presbyteries {
-      _id
-      name
-      zone
-    }
-    districts {
-      _id
-      name
-    }
-    congregations {
-      _id
-      name
-      catechist
-      location
-      residentPastor
-    }
+      presbyteries {
+          _id
+          name
+          zone
+      }
+      districts {
+          _id
+          name
+      }
+      congregations {
+          _id
+          name
+          catechist
+          location
+          residentPastor
+      }
   }
 `;
 
 function LoadData({ navigation }) {
   const [doneLoading, setDoneLoading] = React.useState(false);
-  const { loading, data, error } = useQuery(queries, {
+  const { data, error } = useQuery(queries, {
     onCompleted: () => {
       setTimeout(() => {
         setDoneLoading(true);
