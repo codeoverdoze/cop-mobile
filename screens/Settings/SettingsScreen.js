@@ -17,6 +17,11 @@ const query = gql`
       middleName
       surname
       communicant
+      gender
+      group
+      address
+      hometown
+      maritalStatus
       contact {
         primaryTelephone
         secondaryTelephone
@@ -27,6 +32,7 @@ const query = gql`
         }
       }
       congregation {
+        _id
         name
         location
         catechist
@@ -39,6 +45,22 @@ const query = gql`
           }
         }
       }
+    }
+    presbyteries {
+      _id
+      name
+      zone
+    }
+    districts {
+      _id
+      name
+    }
+    congregations {
+      _id
+      name
+      catechist
+      location
+      residentPastor
     }
   }
 `;
