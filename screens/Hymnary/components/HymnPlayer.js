@@ -25,7 +25,7 @@ function HymnPlayer() {
       }}
     >
       <PlayerItem>
-        <SVGIcon source={starIcon} fill="orange"/>
+        <SVGIcon source={starIcon} fill="orange" />
       </PlayerItem>
       <PlayerItem>
         {isPlaying ? renderPaused() : isPaused ? renderPlay() : renderLoading()}

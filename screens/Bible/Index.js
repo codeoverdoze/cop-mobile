@@ -35,7 +35,7 @@ export default class extends Component {
 
     this.currentMonth = monthNames[this.currentDate.getMonth()];
     this.currentDay = this.currentDate.getDate();
-    this.almanac = almanac[this.currentMonth][this.currentDay - 1];
+    this.almanac = almanac['2020'][this.currentMonth][this.currentDay - 1];
 
     this.state = {
       almanacModalOpen: false,

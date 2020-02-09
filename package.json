@@ -26,6 +26,7 @@
     "expo-svg-uri": "^1.1.0",
     "graphql": "^14.5.8",
     "lottie-react-native": "~2.6.1",
+    "number-to-words": "^1.2.4",
     "pouchdb-adapter-react-native-sqlite": "2.0.0",
     "pouchdb-react-native": "^6.4.1",
     "prop-types": "^15.7.2",

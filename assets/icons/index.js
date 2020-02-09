@@ -31,6 +31,7 @@ export { default as paymentIcon } from "./payment";
 export { default as phoneIcon } from "./phone";
 export { default as playIcon } from "./play";
 export { default as prayerRequestIcon } from "./prayerRequest";
+export { default as preacherIcon } from "./preacher";
 export { default as previousSermonsIcon } from "./previousSermons";
 export { default as profileIcon } from "./profile";
 export { default as purposefulManIcon } from "./purposeful-man";

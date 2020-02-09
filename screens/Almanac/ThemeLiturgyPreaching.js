@@ -1,62 +1,34 @@
-import React from "react";
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  StatusBar,
-  SafeAreaView
-} from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
-import SVGIcon from "../../components/SVGIcon";
-import {
-  StyledHeader,
-  StyledSubtitle,
-  StyledText,
-  SubtitleText
-} from "../../components/Typography";
-import { NavigationActions } from "react-navigation";
-import Layout from "../../constants/NewLayout";
-import ChildScreenHeader from "../../components/ChildScreenHeader";
-
-import { chiefComplaintIcon, closeIcon } from "../../assets/icons";
+import React from 'react';
+import { View, ScrollView } from 'react-native';
+import { StyledText } from '../../components/Typography';
+import Layout from '../../constants/NewLayout';
+import ChildScreenHeader from '../../components/ChildScreenHeader';
+import SVGIcon from '../../components/SVGIcon';
+import { preacherIcon, userAccountIcon } from '../../assets/icons';
+import numberToWords from 'number-to-words';
 
 function ThemeLiturgyPreaching({ navigation }) {
-  const serviceTheme = navigation.getParam("theme");
-  const serviceDate = navigation.getParam("date");
-  const theme = {
-    tintColor: "#1565c0",
-    tintColorlight: "#ffffff",
-    supportingColor: "#e3e3e3",
-    borderColor: "#e3e3e3"
-  };
-
-  function goBack() {
-    navigation.dispatch(NavigationActions.back());
-  }
-
+  const serviceTheme = navigation.getParam('theme');
+  const liturgists = navigation.getParam('liturgists');
+  const preachers = navigation.getParam('preachers');
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: theme.tintColorlight
+        backgroundColor: '#fff',
       }}
     >
-      <ChildScreenHeader title={"Theme, Lithurgy & Preaching"} />
+      <ChildScreenHeader title={'Theme, Lithurgy & Preaching'} />
       <View style={{ padding: Layout.paddingHorizontal }}>
-        <ScrollView
-          style={{ marginTop: 10, paddingVertical: 10, height: "100%" }}
-        >
+        <ScrollView style={{ marginTop: 10 }}>
           <View
             style={{
               borderBottomWidth: 0.5,
-              borderBottomColor: theme.borderColor,
-              paddingBottom: 10
+              borderBottomColor: '#e3e3e3',
+              paddingBottom: 10,
             }}
           >
-            <StyledText style={{ fontWeight: "bold", color: "#333333" }}>
-              Theme
-            </StyledText>
+            <StyledText style={{ fontWeight: 'bold', color: '#333333' }}>Theme</StyledText>
           </View>
           <View style={{ marginTop: 15 }}>
             <StyledText>{serviceTheme}</StyledText>
@@ -65,35 +37,52 @@ function ThemeLiturgyPreaching({ navigation }) {
           <View
             style={{
               borderBottomWidth: 0.5,
-              borderBottomColor: theme.borderColor,
+              borderBottomColor: '#e3e3e3',
               paddingBottom: 10,
-              marginTop: 40
+              marginTop: 40,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}
           >
-            <StyledText style={{ fontWeight: "bold", color: "#333333" }}>
-              Liturgy:
-            </StyledText>
+            <StyledText style={{ fontWeight: 'bold', color: '#333333' }}>Liturgy</StyledText>
+            <View style={{ fontWeight: 'bold', color: '#333333' }}>
+              <SVGIcon source={userAccountIcon} />
+            </View>
           </View>
           <View style={{ marginTop: 15 }}>
-            <StyledText>1st Service : Catechist Bright Adofo Anim</StyledText>
-            <StyledText>2nd Service: Dennis Danso</StyledText>
+            {!liturgists ? (
+              <StyledText>No Liturgy available</StyledText>
+            ) : (
+              liturgists.map(liturgist => <StyledText>{liturgist}</StyledText>)
+            )}
           </View>
 
           <View
             style={{
               borderBottomWidth: 0.5,
-              borderBottomColor: theme.borderColor,
+              borderBottomColor: '#e3e3e3',
               paddingBottom: 10,
-              marginTop: 40
+              marginTop: 40,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}
           >
-            <StyledText style={{ fontWeight: "bold", color: "#333333" }}>
-              Preacher:
-            </StyledText>
+            <StyledText style={{ fontWeight: 'bold', color: '#333333' }}>Preachers</StyledText>
+            <View style={{ fontWeight: 'bold', color: '#333333' }}>
+              <SVGIcon source={preacherIcon} />
+            </View>
           </View>
           <View style={{ marginTop: 15 }}>
-            <StyledText>1st Service : Mr. Vincent Odjaho</StyledText>
-            <StyledText>2nd Service: Rev. Joshua Bbossman</StyledText>
+            {!preachers ? (
+              <StyledText>No Preachers available</StyledText>
+            ) : (
+              preachers.map((preacher, i) => (
+                <View style={{ marginBottom: 10}}>
+                  <StyledText>{numberToWords.toOrdinal(i + 1)} service</StyledText>
+                  <StyledText>{preacher}</StyledText>
+                </View>
+              ))
+            )}
           </View>
         </ScrollView>
       </View>
@@ -102,7 +91,7 @@ function ThemeLiturgyPreaching({ navigation }) {
 }
 
 ThemeLiturgyPreaching.navigationOptions = {
-  headerMode: "none"
+  headerMode: 'none',
 };
 
 export default ThemeLiturgyPreaching;
