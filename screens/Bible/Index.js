@@ -1,39 +1,36 @@
-import React, { Component } from "react";
-import { View, StyleSheet, FlatList, StatusBar } from "react-native";
-import { StyledText, StyledTextInverse } from "../../components/Typography";
-import ActionSheet from "react-native-actionsheet";
-import XDate from "xdate";
-import BibleBar from "./components/BibleBar";
+import React, { Component } from 'react';
+import { View, StyleSheet, FlatList, StatusBar } from 'react-native';
+import { StyledText, StyledTextInverse } from '../../components/Typography';
+import ActionSheet from 'react-native-actionsheet';
+import XDate from 'xdate';
+import BibleBar from './components/BibleBar';
 
-import bible from "../../sample-data/bible-kjv.json";
-import Bible from "../../store/Bible";
-import almanac from "../../sample-data/almanac-2019";
+import bible from '../../sample-data/bible-kjv.json';
+import Bible from '../../store/Bible';
+import almanac from '../../sample-data/almanac-2019';
 
 const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
 export default class extends Component {
   constructor(props) {
     super(props);
     // Event listener to reload changes in bible
-    const focusSubscription = this.props.navigation.addListener(
-      "willFocus",
-      () => {
-        this.forceUpdate();
-      }
-    );
+    const focusSubscription = this.props.navigation.addListener('willFocus', () => {
+      this.forceUpdate();
+    });
     this.currentDate = new XDate();
 
     this.currentMonth = monthNames[this.currentDate.getMonth()];
@@ -41,7 +38,7 @@ export default class extends Component {
     this.almanac = almanac[this.currentMonth][this.currentDay - 1];
 
     this.state = {
-      almanacModalOpen: false
+      almanacModalOpen: false,
     };
   }
 
@@ -49,12 +46,10 @@ export default class extends Component {
     if (verse) {
       return (
         <View style={[styles.gridItem]}>
-          <View style={{ alignSelf: "flex-start", paddingRight: 10 }}>
-            <StyledText style={{ color: "#ef5350" }}>
-              {verse.index + 1}
-            </StyledText>
+          <View style={{ alignSelf: 'flex-start', paddingRight: 10 }}>
+            <StyledText style={{ color: '#ef5350' }}>{verse.index + 1}</StyledText>
           </View>
-          <View style={{ width: "90%" }}>
+          <View style={{ width: '90%' }}>
             <StyledText bible style={{ fontSize: 18 }}>
               {verse.item}
             </StyledText>
@@ -65,11 +60,11 @@ export default class extends Component {
   };
 
   navigateToBibleBookScreen() {
-    this.props.navigation.navigate("BibleBook");
+    this.props.navigation.navigate('BibleBook');
   }
 
   navigateToBibleChapterScreen() {
-    this.props.navigation.navigate("BibleChapter");
+    this.props.navigation.navigate('BibleChapter');
   }
 
   openAlmanacModal() {
@@ -91,9 +86,7 @@ export default class extends Component {
       <View style={[styles.container]}>
         <BibleBar
           navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
-          navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(
-            this
-          )}
+          navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
           openAlmanacModal={this.openAlmanacModal.bind(this)}
         />
         <ActionSheet
@@ -109,6 +102,7 @@ export default class extends Component {
             data={book.chapters[selectedChapter - 1]}
             renderItem={this.renderVerses}
             keyExtractor={verse => verse}
+            contentContainerStyle={{ paddingBottom: 100 }}
           />
         </View>
       </View>
@@ -119,21 +113,11 @@ export default class extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    paddingBottom: 60
-  },
-
-  gridContainer: {
-    shadowColor: "#000",
-    paddingBottom: 20
-  },
-
-  grid: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#FFFFFF',
   },
 
   gridItem: {
-    flexDirection: "row",
-    padding: 10
-  }
+    flexDirection: 'row',
+    padding: 10,
+  },
 });
