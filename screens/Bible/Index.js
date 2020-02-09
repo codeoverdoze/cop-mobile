@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, FlatList, StatusBar } from 'react-native';
-import { StyledText, StyledTextInverse } from '../../components/Typography';
-import ActionSheet from 'react-native-actionsheet';
-import XDate from 'xdate';
-import BibleBar from './components/BibleBar';
+import React, { Component } from "react";
+import { View, StyleSheet, FlatList } from "react-native";
+import { StyledText } from "../../components/Typography";
+import ActionSheet from "react-native-actionsheet";
+import XDate from "xdate";
+import BibleBar from "./components/BibleBar";
 
-import bible from '../../sample-data/bible-kjv.json';
-import Bible from '../../store/Bible';
-import almanac from '../../sample-data/almanac-2019';
+import bible from "../../sample-data/bible-kjv.json";
+import Bible from "../../store/Bible";
+import almanac from "../../sample-data/almanac";
 
 const monthNames = [
   'January',
