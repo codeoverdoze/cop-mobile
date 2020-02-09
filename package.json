@@ -37,7 +37,7 @@
     "react-native-gesture-handler": "~1.5.0",
     "react-native-grid-component": "^2.0.1",
     "react-native-keyboard-aware-scroll-view": "^0.9.1",
-    "react-native-pin-view": "3.0.0",
+    "react-native-pin-view": "^2.5.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-responsive-fontsize": "0.4.3",
     "react-native-safe-area-context": "0.6.0",

@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Audio } from "expo-av";
-
-
+import { Audio } from 'expo-av';
 
 // components
 import ChildScreenHeader from '../../components/ChildScreenHeader';
@@ -27,10 +25,15 @@ function Hymn({ navigation }) {
         </EmptyHymn>
       ) : (
         <>
-          <FlatList data={hymn.verses} renderItem={renderVerses} keyExtractor={item => item} />
+          <FlatList
+            data={hymn.verses}
+            renderItem={renderVerses}
+            keyExtractor={item => item}
+            contentContainerStyle={{ paddingBottom: 100 }}
+          />
 
           <PlayerContainer>
-            <HymnPlayer/>
+            <HymnPlayer />
           </PlayerContainer>
         </>
       )}
