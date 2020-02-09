@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, FlatList, View, TouchableOpacity } from "react-native";
 import { StyledText, StyledTextInverse } from "../../components/Typography";
-import { Ionicons, EvilIcons } from "@expo/vector-icons";
+import { EvilIcons } from "@expo/vector-icons";
 import ChildScreenHeader from "../../components/ChildScreenHeader";
 
 const months = [
