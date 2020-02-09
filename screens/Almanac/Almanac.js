@@ -1,12 +1,26 @@
 import React from 'react';
 import almanacData from '../../sample-data/almanac';
-import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import ChildScreenHeader from '../../components/ChildScreenHeader';
-import { Calendar, LocaleConfig } from 'react-native-calendars';
+import { Calendar } from 'react-native-calendars';
 import Layout from '../../constants/NewLayout';
 import { StyledHeader, StyledSubtitle, StyledText } from '../../components/Typography';
 import SVGIcon from '../../components/SVGIcon';
 import { bibleIcon, profileIcon, thinkingBubbleIcon } from '../../assets/icons';
+import { useLazyQuery, gql } from '@apollo/client';
+import { showMessage } from 'react-native-flash-message';
+
+const query = gql`
+  query($effectiveDate: Date!) {
+    preachingPlanForMember(effectiveDate: $effectiveDate) {
+      liturgists
+      preachers
+      readers
+      readings
+      theme
+    }
+  }
+`;
 
 function Almanac({ navigation }) {
   const monthName = navigation.getParam('monthName');
@@ -25,6 +39,16 @@ function Almanac({ navigation }) {
     selected: true,
     selectedColor: '#387ecb',
   };
+
+  const [fetchPreachingPlan, { loading, data, error }] = useLazyQuery(query);
+
+  if (error) {
+    showMessage({
+      type: 'error',
+      message: 'Oops, we failed to fetch preaching plan',
+      description: 'Please check your network connection',
+    });
+  }
 
   return (
     <View style={[styles.container]}>
@@ -72,21 +96,31 @@ function Almanac({ navigation }) {
           paddingVertical: 20,
           paddingHorizontal: Layout.paddingHorizontal,
           marginBottom: 0,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <StyledHeader style={{ fontSize: 15 }}>Occasion</StyledHeader>
-        <StyledSubtitle style={{ fontSize: 13 }}>
-          {resolveAlmanacData(almanac.selectedAlmanac.occasion, 'occasion')}
-        </StyledSubtitle>
+        <View>
+          <StyledHeader style={{ fontSize: 15 }}>Occasion</StyledHeader>
+          <StyledSubtitle style={{ fontSize: 13 }}>
+            {resolveAlmanacData(almanac.selectedAlmanac.occasion, 'occasion')}
+          </StyledSubtitle>
+        </View>
+
+        <View>{loading ? <ActivityIndicator /> : null}</View>
       </View>
       <ScrollView style={{ marginTop: 0 }}>
         <View style={{ paddingTop: 0 }}>
           <View style={{ backgroundColor: '#fff' }}>
             <TouchableOpacity
+              disabled={loading}
               onPress={() =>
-               navigation.navigate('ThemeLiturgyPreaching', {
+                navigation.navigate('ThemeLiturgyPreaching', {
                   date: almanac.selectedDate,
                   theme: resolveAlmanacData(almanac.selectedAlmanac.theme, 'theme'),
+                  liturgists: data.preachingPlanForMember.liturgists,
+                  preachers: data.preachingPlanForMember.preachers,
                 })
               }
             >
@@ -122,13 +156,12 @@ function Almanac({ navigation }) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
+              disabled={loading}
               onPress={() =>
                 navigation.navigate('ScriptureReadings', {
                   date: almanac.selectedDate,
-                  readings: resolveAlmanacData(
-                    almanac.selectedAlmanac.readings,
-                    'readings',
-                  ),
+                  readings: resolveAlmanacData(almanac.selectedAlmanac.readings, 'readings'),
+                  readers: data.preachingPlanForMember.readers,
                 })
               }
             >
@@ -211,24 +244,27 @@ function Almanac({ navigation }) {
       selectedMonth: day.month,
       selectedAlmanac: almanacData[yearName][resolvedMonth][Number(day.day) - 1],
     });
+    fetchPreachingPlan({
+      variables: {
+        effectiveDate: almanac.selectedDate,
+      },
+    });
   }
 
   function resolveMonthNameWithIndex(index) {
-    // Don't want to create a new array so will use the data structure inside LocalConfig as my months
-    // Subtracting 1 from index to fit array keys
     const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
     ];
     index = index - 1;
     return months[index];
@@ -260,5 +296,3 @@ const styles = StyleSheet.create({
 });
 
 export default Almanac;
-
-
