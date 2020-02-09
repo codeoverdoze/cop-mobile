@@ -17,14 +17,14 @@ import BibleIndex from '../screens/Bible/Index';
 import BibleBook from '../screens/Bible/BibleBook';
 import BibleChapter from '../screens/Bible/BibleChapter';
 
-// Hymnary Screen stack
+// Hymnal Screen stack
 import Hymn from '../screens/Hymnary/Hymn';
 import HymnSelection from '../screens/Hymnary/HymnSelectionScreen';
 
 // Almanac Screen Stack
 import YearSelection from '../screens/Almanac/Index';
 import MonthSelection from '../screens/Almanac/MonthSelection';
-import AlmanacCalendar from '../screens/Almanac/Calendar';
+import AlmanacCalendar from '../screens/Almanac/Almanac';
 import ThemeLiturgyPreaching from '../screens/Almanac/ThemeLiturgyPreaching';
 import CalendarAnnouncements from '../screens/Almanac/CalendarAnnouncements';
 import ScriptureReadings from '../screens/Almanac/ScriptureReadings';

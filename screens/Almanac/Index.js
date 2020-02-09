@@ -12,11 +12,6 @@ const years = [
 ];
 
 function YearSelection({ navigation }) {
-  function goBack() {
-    console.log("Going back");
-    navigation.goBack();
-  }
-
   return (
     <View style={[styles.container]}>
       <ChildScreenHeader title="Almanac by year" />
