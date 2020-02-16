@@ -3,15 +3,10 @@ import {
   TouchableOpacity,
   View,
   Image,
-  StatusBar,
-  FlatList
 } from "react-native";
-import Grid from "react-native-grid-component";
 
 import {
-  StyledText,
   StyledHeader,
-  StyledHeaderInverse,
   StyledTextInverse
 } from "../../components/Typography";
 
