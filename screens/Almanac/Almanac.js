@@ -44,6 +44,14 @@ function Almanac({ navigation }) {
 
   const [fetchPreachingPlan, { loading, data, error }] = useLazyQuery(query);
 
+  React.useEffect(() => {
+    fetchPreachingPlan({
+      variables: {
+        effectiveDate: almanac.selectedDate,
+      },
+    });
+  }, [almanac.selectedDate]);
+
   if (error) {
     showMessage({
       type: 'error',
@@ -110,7 +118,7 @@ function Almanac({ navigation }) {
           </StyledSubtitle>
         </View>
 
-        <View>{loading ? <ActivityIndicator /> : null}</View>
+        <View>{!data && loading ? <ActivityIndicator /> : null}</View>
       </View>
       <ScrollView style={{ marginTop: 0 }}>
         <View style={{ paddingTop: 0 }}>
@@ -245,11 +253,6 @@ function Almanac({ navigation }) {
       selectedDay: day.day,
       selectedMonth: day.month,
       selectedAlmanac: almanacData[yearName][resolvedMonth][Number(day.day) - 1],
-    });
-    fetchPreachingPlan({
-      variables: {
-        effectiveDate: almanac.selectedDate,
-      },
     });
   }
 

@@ -1,22 +1,14 @@
-import React from "react";
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-  Image
-} from "react-native";
-import {
-  StyledHeader,
-  StyledHeaderInverse,
-  StyledText,
-  StyledTextInverse
-} from "../../components/Typography";
-import { homeItemsList } from "./data";
-import ParentScreenHeader from "../../components/ParentScreenHeader";
-import SVGIcon from "../../components/SVGIcon";
-import styled from "styled-components";
+import React from 'react';
+import { View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { StyledHeader, StyledHeaderInverse, StyledText } from '../../components/Typography';
+import SVGIcon from '../../components/SVGIcon';
+import styled from 'styled-components';
+
+// data
+import { homeItemsList } from './data';
+
+// icons
+import { activeNotificationIcon } from '../../assets/icons';
 
 const BodyItem = props => (
   <View style={[styles.bodyItem]}>
@@ -44,15 +36,11 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <HeaderContainer>
-          <View style={{ flexDirection: "row" }}>
-            <Image
-              source={require("../../assets/images/logo.png")}
-              style={{ width: 30, height: 40, marginRight: 10 }}
-            />
-            <View>
-              <StyledHeaderInverse>Presby Companion</StyledHeaderInverse>
-            </View>
-          </View>
+          <StyledHeaderInverse style={{ fontSize: 30 }}>Home</StyledHeaderInverse>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Notifications')}>
+            <SVGIcon source={activeNotificationIcon} noFill />
+          </TouchableOpacity>
         </HeaderContainer>
 
         <ScrollView contentContainerStyle={[styles.body]}>
@@ -80,35 +68,37 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F4F6F8"
+    backgroundColor: '#F4F6F8',
   },
 
   body: {},
 
   bodyItem: {
     marginBottom: 15,
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundColor: "#FFFFFF",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
     paddingHorizontal: 20,
-    paddingVertical: 15
+    paddingVertical: 15,
   },
 
   bodyImage: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   bodyContent: {
     flex: 3,
-    justifyContent: "center"
-  }
+    justifyContent: 'center',
+  },
 });
 
 const HeaderContainer = styled.View`
   background-color: #387ecb;
   height: 60px;
-  justify-content: center;
-  padding-left: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-horizontal: 40px;
 `;

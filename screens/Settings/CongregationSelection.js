@@ -69,7 +69,7 @@ const CongregationSelection = ({ navigation }) => {
     },
   });
 
-  if (loading) {
+  if (!data && loading) {
     return (
       <View>
         <ActivityIndicator />

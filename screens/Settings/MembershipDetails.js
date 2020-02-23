@@ -53,7 +53,7 @@ const query = gql`
 const MembershipDetails = () => {
   const { loading, data, error } = useQuery(query);
 
-  if (loading) {
+  if (!data && loading) {
     return <LoadingState />;
   }
 

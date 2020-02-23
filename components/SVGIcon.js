@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 import Colors from "../constants/Colors";
 
 function SVGIcon({ source, color, noFill, ...otherProps }) {
-  const fill = noFill ? {} : { fill: Colors.tintColor };
+  const fill = noFill ? {} : { fill: color || Colors.tintColor };
   return (
     <SvgUri
       width="33"

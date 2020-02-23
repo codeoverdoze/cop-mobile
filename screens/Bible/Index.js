@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { View, StyleSheet, FlatList } from "react-native";
-import { StyledText } from "../../components/Typography";
-import ActionSheet from "react-native-actionsheet";
-import XDate from "xdate";
-import BibleBar from "./components/BibleBar";
+import React, { Component } from 'react';
+import { View, StyleSheet, FlatList } from 'react-native';
+import { StyledText } from '../../components/Typography';
+import ActionSheet from 'react-native-actionsheet';
+import XDate from 'xdate';
+import BibleBar from './components/BibleBar';
 
-import bible from "../../sample-data/bible-kjv.json";
-import Bible from "../../store/Bible";
-import almanac from "../../sample-data/almanac";
+import bible from '../../sample-data/bible-kjv.json';
+import Bible from '../../store/Bible';
+import almanac from '../../sample-data/almanac';
+import ParentScreenHeader from '../../components/ParentScreenHeader';
 
 const monthNames = [
   'January',
@@ -84,6 +85,7 @@ export default class extends Component {
 
     return (
       <View style={[styles.container]}>
+        <ParentScreenHeader title="Bible" />
         <BibleBar
           navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
           navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}
@@ -93,7 +95,7 @@ export default class extends Component {
           ref={o => (this.ActionSheet = o)}
           title={"Today's reading"}
           options={this.almanac.readings}
-          onPress={index => {
+          onPress={() => {
             /* do something */
           }}
         />

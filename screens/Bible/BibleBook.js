@@ -6,6 +6,7 @@ import Bible from '../../store/Bible';
 import BibleBar from './components/BibleBar';
 
 import bible from '../../sample-data/bible-kjv-shell.json';
+import ChildScreenHeader from '../../components/ChildScreenHeader';
 
 export default class extends Component {
   setBibleBook(book) {
@@ -24,6 +25,7 @@ export default class extends Component {
   render() {
     return (
       <View style={[styles.container]}>
+        <ChildScreenHeader title="Select Book" />
         <BibleBar
           navigateToBibleBookScreen={this.navigateToBibleBookScreen.bind(this)}
           navigateToBibleChapterScreen={this.navigateToBibleChapterScreen.bind(this)}

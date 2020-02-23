@@ -12,6 +12,7 @@ import HomeIndex from '../screens/Home/HomeScreen';
 import PrayerRequests from '../screens/PrayerRequest/PrayerRequests';
 import MakePrayerRequest from '../screens/PrayerRequest/MakePrayerRequest';
 import PreviousSermons from '../screens/PreviousSermons/PreviousSermonsScreen';
+import Notifications from '../screens/Home/Notifications';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
@@ -122,6 +123,7 @@ const HomeStack = createStackNavigator(
     PrayerRequests,
     MakePrayerRequest: MakePrayerRequestStack,
     PreviousSermons,
+    Notifications,
   },
   config,
 );
@@ -129,9 +131,7 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = ({ navigation }) => {
   return {
     tabBarLabel: 'Home',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon focused={focused} name="home" type="feather" icon={homeIcon} />
-    ),
+    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} icon={homeIcon} />,
     tabBarVisible: navigation.state.index <= 0,
   };
 };
@@ -147,9 +147,7 @@ const HymnaryStack = createStackNavigator(
 HymnaryStack.navigationOptions = ({ navigation }) => {
   return {
     tabBarLabel: 'Hymnary',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon focused={focused} type="feather" name="book-open" icon={hymnaryIcon} />
-    ),
+    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} icon={hymnaryIcon} />,
     tabBarVisible: navigation.state.index <= 0,
   };
 };
@@ -165,9 +163,7 @@ const BibleStack = createStackNavigator(
 
 BibleStack.navigationOptions = {
   tabBarLabel: 'Bible',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} type="feather" name="book" icon={bibleIcon} />
-  ),
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} icon={bibleIcon} />,
 };
 
 const PaymentStack = createStackNavigator(
@@ -182,9 +178,7 @@ const PaymentStack = createStackNavigator(
 
 PaymentStack.navigationOptions = {
   tabBarLabel: 'Payments',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} type="feather" name="credit-card" icon={paymentIcon} />
-  ),
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} icon={paymentIcon} />,
 };
 
 const SettingsStack = createStackNavigator(
@@ -202,9 +196,7 @@ const SettingsStack = createStackNavigator(
 SettingsStack.navigationOptions = ({ navigation }) => {
   return {
     tabBarLabel: 'Settings',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon focused={focused} name="settings" type="feather" icon={settingsIcon} />
-    ),
+    tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} icon={settingsIcon} />,
     tabBarVisible: navigation.state.index <= 0,
   };
 };

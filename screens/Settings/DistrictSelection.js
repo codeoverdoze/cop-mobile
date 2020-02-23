@@ -23,7 +23,7 @@ const query = gql`
 
 function DistrictSelection({ navigation }) {
   const presbytery = navigation.getParam("presbytery");
-  const { data, loading, error } = useQuery(query, {
+  const { data, loading } = useQuery(query, {
     variables: {
       presbytery: presbytery._id
     }
@@ -71,7 +71,7 @@ function DistrictSelection({ navigation }) {
     );
   }
 
-  if (loading) {
+  if (!data && loading) {
     return (
       <View>
         <ActivityIndicator />

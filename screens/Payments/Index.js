@@ -29,6 +29,6 @@ export default function Payments() {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#f4f6f8',
   },
 };

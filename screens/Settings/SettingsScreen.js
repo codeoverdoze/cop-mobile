@@ -68,7 +68,7 @@ const query = gql`
 export default function SettingsScreen({ navigation }) {
   const { data, loading, error } = useQuery(query);
 
-  if (loading) {
+  if (!data && loading) {
     return <LoadingState />;
   }
 

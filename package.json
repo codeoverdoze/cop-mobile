@@ -16,6 +16,7 @@
     "@apollo/client": "3.0.0-beta.33",
     "@expo/vector-icons": "^10.0.0",
     "@react-native-community/masked-view": "0.1.5",
+    "apollo-cache-persist": "^0.1.1",
     "apollo-link-context": "^1.0.19",
     "expo": "^36.0.0",
     "expo-av": "~8.0.0",
