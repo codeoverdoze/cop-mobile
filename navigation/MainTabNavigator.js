@@ -11,6 +11,7 @@ import { homeIcon, bibleIcon, hymnaryIcon, paymentIcon, settingsIcon } from '../
 import HomeIndex from '../screens/Home/HomeScreen';
 import PrayerRequests from '../screens/PrayerRequest/PrayerRequests';
 import MakePrayerRequest from '../screens/PrayerRequest/MakePrayerRequest';
+import PreviousSermons from '../screens/PreviousSermons/PreviousSermonsScreen';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
@@ -120,6 +121,7 @@ const HomeStack = createStackNavigator(
     BibleStudy: BibleStudyStack,
     PrayerRequests,
     MakePrayerRequest: MakePrayerRequestStack,
+    PreviousSermons,
   },
   config,
 );
