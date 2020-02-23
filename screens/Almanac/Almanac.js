@@ -24,11 +24,13 @@ const query = gql`
 
 function Almanac({ navigation }) {
   const monthName = navigation.getParam('monthName');
-  const monthIndex = String(navigation.getParam('monthIndex')).padStart(2, '0');
+  const monthIndex = navigation.getParam('monthIndex');
   const yearName = navigation.getParam('yearName');
 
+  const resolvedMonth = String(monthIndex + 1).padStart(2, '0');
+
   const [almanac, setAlmanac] = React.useState({
-    selectedDate: `${yearName}-${monthIndex}-01`,
+    selectedDate: `${yearName}-${resolvedMonth}-01`,
     selectedDay: 1,
     selectedMonth: monthName,
     selectedAlmanac: almanacData[yearName][monthName][0],
