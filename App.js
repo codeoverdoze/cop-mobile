@@ -13,8 +13,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoadingComplete: false, mobiletoken: null, client: null };
-    StatusBar.setBarStyle("light-content")
+    StatusBar.setBarStyle('light-content');
   }
+
   render() {
     if ((!this.state.isLoadingComplete || !this.state.client) && !this.props.skipLoadingScreen) {
       return (
@@ -35,6 +36,7 @@ export default class App extends React.Component {
       );
     }
   }
+
   _loadResourcesAsync = async () => {
     return Promise.all([
       Font.loadAsync({
@@ -50,9 +52,11 @@ export default class App extends React.Component {
       }),
     ]);
   };
+
   _handleLoadingError = error => {
     console.warn(error);
   };
+
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
   };
