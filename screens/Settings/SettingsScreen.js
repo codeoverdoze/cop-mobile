@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import SVGIcon from '../../components/SVGIcon';
 import { forwardIcon } from '../../assets/icons';
 
+
 const userProfileImage = require('../../assets/images/placeholder-image.png');
 const query = gql`
   query {

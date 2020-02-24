@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, Vibration } from 'react-native';
 import { AppLoading, Notifications } from 'expo';
 import * as Font from 'expo-font';
 import CustomStatusBar from './components/StatusBar';
@@ -13,7 +13,12 @@ import Colors from './constants/Colors';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoadingComplete: false, mobiletoken: null, client: null };
+    this.state = {
+      isLoadingComplete: false,
+      mobiletoken: null,
+      client: null,
+      redirectToNotifications: false,
+    };
     StatusBar.setBarStyle('light-content');
   }
 
@@ -35,7 +40,7 @@ export default class App extends React.Component {
       return (
         <ApolloProvider client={this.state.client}>
           <CustomStatusBar />
-          <AppNavigator />
+          <AppNavigator/>
           <FlashMessage position="bottom" />
         </ApolloProvider>
       );
@@ -43,12 +48,17 @@ export default class App extends React.Component {
   }
 
   _handleNotification = notification => {
-    console.log('This is notification', notification);
-    showMessage({
-      message: 'You have received a new notification',
-      position: 'bottom',
-      backgroundColor: Colors.tintColor,
-    });
+    Vibration.vibrate();
+    // If notification was selected we navigate straight to notifications screen
+    // else we just show a banner for received notification
+    if (notification.origin === 'selected') {
+      this.setState({ redirectToNotifications: true });
+    } else {
+      showMessage({
+        message: 'You have received a new notification',
+        backgroundColor: Colors.tintColor,
+      });
+    }
   };
 
   _loadResourcesAsync = async () => {

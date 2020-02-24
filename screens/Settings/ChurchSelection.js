@@ -6,6 +6,9 @@ import LoadingState from '../../components/LoadingState';
 import ChildScreenHeader from '../../components/ChildScreenHeader';
 import SVGIcon from '../../components/SVGIcon';
 import { forwardIcon } from '../../assets/icons';
+import ColorHash from 'color-hash';
+
+const colorHash = new ColorHash();
 
 const query = gql`
   query {
@@ -25,6 +28,7 @@ export default function PresbyterySelection({ navigation }) {
   }
 
   function renderPresbytery(presbytery) {
+    const firstLetterInPresbytery = presbytery.item.name.substring(0, 1);
     return (
       <TouchableOpacity onPress={() => navigateToDistrictSelection(presbytery.item)}>
         <View style={[styles.listItem]}>
@@ -33,15 +37,13 @@ export default function PresbyterySelection({ navigation }) {
               style={[
                 styles.circleShapeView,
                 {
-                  backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
-                    Math.random() * 255,
-                  )}, ${Math.floor(Math.random() * 255)})`,
+                  backgroundColor: colorHash.hex(firstLetterInPresbytery),
                   borderRadius: 50,
                 },
               ]}
             >
               <StyledTextInverse style={{ fontSize: 16 }}>
-                {presbytery.item.name.substring(0, 1)}
+                {firstLetterInPresbytery}
               </StyledTextInverse>
             </View>
             <View style={{ justifyContent: 'center' }}>
@@ -67,13 +69,11 @@ export default function PresbyterySelection({ navigation }) {
     return (
       <View style={[styles.container]}>
         <ChildScreenHeader title="Presbytery Selection" />
-        <View style={{ paddingBottom: 70 }}>
-          <FlatList
-            data={presbyteries}
-            renderItem={renderPresbytery}
-            keyExtractor={item => item._id}
-          />
-        </View>
+        <FlatList
+          data={presbyteries}
+          renderItem={renderPresbytery}
+          keyExtractor={item => item._id}
+        />
       </View>
     );
   }

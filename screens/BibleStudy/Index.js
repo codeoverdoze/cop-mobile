@@ -5,6 +5,9 @@ import { useQuery, gql } from '@apollo/client';
 import ChildScreenHeader from '../../components/ChildScreenHeader';
 import LoadingState from '../../components/LoadingState';
 import SVGIcon from '../../components/SVGIcon';
+import ColorHash from 'color-hash';
+
+const colorHash = new ColorHash();
 
 // icons
 import { forwardIcon } from '../../assets/icons';
@@ -43,6 +46,7 @@ export default function StudyGuideIndex({ navigation }) {
   }
 
   function renderTableOfContent({ item: bsg }) {
+    const firstLetterInBSG = bsg.scripture.substring(0, 1);
     return (
       <TouchableOpacity onPress={() => navigateToStudyGuideHome(bsg)}>
         <View style={[styles.listItem]}>
@@ -51,16 +55,12 @@ export default function StudyGuideIndex({ navigation }) {
               style={[
                 styles.circleShapeView,
                 {
-                  backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
-                    Math.random() * 255,
-                  )}, ${Math.floor(Math.random() * 255)})`,
+                  backgroundColor: colorHash.hex(firstLetterInBSG),
                   borderRadius: 50,
                 },
               ]}
             >
-              <StyledTextInverse style={{ fontSize: 16 }}>
-                {bsg.scripture.substring(0, 1)}
-              </StyledTextInverse>
+              <StyledTextInverse style={{ fontSize: 16 }}>{firstLetterInBSG}</StyledTextInverse>
             </View>
             <View style={{ justifyContent: 'center' }}>
               <StyledText style={{ fontSize: 16 }}>{bsg.year}</StyledText>
