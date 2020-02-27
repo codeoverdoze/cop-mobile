@@ -47,6 +47,7 @@ export default class HomeScreen extends React.Component {
           {homeItemsList.map(item => {
             return (
               <TouchableOpacity
+                activeOpacity={0.5}
                 onPress={() => this.props.navigation.navigate(item.link)}
                 key={item.title}
               >
