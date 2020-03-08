@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
 });
 
 const HeaderContainer = styled.View`
-  background-color: #387ecb;
+  background-color: #25569c;
   height: 60px;
   flex-direction: row;
   justify-content: space-between;

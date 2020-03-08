@@ -31,7 +31,7 @@ ChildScreenHeader.propTypes = {
 };
 
 const Container = styled.View`
-  background-color: #387ecb;
+  background-color: #25569c;
   height: 60px;
   flex-direction: row;
 `;

@@ -80,7 +80,7 @@ export default class extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#387ecb',
+    backgroundColor: '#25569c',
     paddingHorizontal: 40,
     paddingVertical: 10,
     justifyContent: 'center',

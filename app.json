@@ -23,7 +23,7 @@
       "icon": "./assets/icons/ios_icon.png"
     },
     "androidStatusBar": {
-      "backgroundColor": "#387ecb"
+      "backgroundColor": "#25569c"
     },
     "android": {
       "package": "com.polymorphlabs.presbycompanion"

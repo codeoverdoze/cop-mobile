@@ -23,7 +23,7 @@ ParentScreenHeader.propTypes = {
 };
 
 const Container = styled.View`
-  background-color: #387ecb;
+  background-color: #25569c;
   height: 60px;
   justify-content: center;
   padding-horizontal: 40px;
