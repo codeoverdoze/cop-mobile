@@ -36,18 +36,6 @@ function District({ navigation }) {
       <TouchableOpacity onPress={() => navigateToCongregationSelection(district.item)}>
         <View style={[styles.listItem]}>
           <View style={[{ flexDirection: 'row' }]}>
-            <View
-              style={[
-                styles.circleShapeView,
-                {
-                  backgroundColor: colorHash.hex(firstLetterInDistrictName),
-                },
-              ]}
-            >
-              <StyledTextInverse style={{ fontSize: 16 }}>
-                {firstLetterInDistrictName}
-              </StyledTextInverse>
-            </View>
             <View style={{ justifyContent: 'center' }}>
               <StyledText style={{ fontSize: 16 }}>{district.item.name}</StyledText>
             </View>

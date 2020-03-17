@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'react-native';
-import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, Image, ActivityIndicator } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import styled from 'styled-components';
 import Banner from '../../components/shared/Banner';
@@ -8,10 +8,8 @@ import Button from '../../components/FormInput/Button';
 import Input from '../../components/FormInput/Input';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Colors from '../../constants/Colors';
-import { useActionSheet, ActionSheetProvider } from '@expo/react-native-action-sheet';
-import { gql, useQuery } from '@apollo/client';
+import { useActionSheet } from '@expo/react-native-action-sheet';
 import LoadingState from '../../components/LoadingState';
-import RNPickerSelect from 'react-native-picker-select';
 import { useMutation } from '@apollo/client';
 
 // mutations
@@ -20,116 +18,40 @@ import { showMessage } from 'react-native-flash-message';
 
 const imgPlaceholder = require('../../assets/images/placeholder-image.png');
 
-const query = gql`
-  query {
-    congregations {
-      name
-      _id
-      district {
-        _id
-      }
-    }
-
-    districts {
-      name
-      _id
-      presbytery {
-        _id
-      }
-    }
-
-    presbyteries {
-      name
-      _id
-    }
-  }
-`;
-
 const SignUp = ({ navigation }) => {
   const { showActionSheetWithOptions } = useActionSheet();
 
-  let transformedPresbyteries = [];
-  const { data, loading, error } = useQuery(query);
   const [surname, setSurname] = useState('');
   const [othernames, setOthernames] = useState('');
-  const [presbytery, setSelectedPresbytery] = useState('');
-  const [district, setSelectedDistrict] = useState('');
-  const [congregation, setSelectedCongregation] = useState('');
-  const [transformedDistricts, setTransformedDistricts] = useState([]);
-  const [transformedCongregations, setTransformedCongregations] = useState([]);
   const [displayImage, setDisplayImage] = useState(imgPlaceholder);
   const [isComplete, setIsComplete] = useState(false);
 
-  const [onboardNewUser, { loading: onboardLoading, error: onboardError }] = useMutation(
-    onboardNewUserMutation,
-    {
-      variables: {
-        surname,
-        firstName: othernames,
-        congregation,
-      },
-      onCompleted: () => {
-        navigation.navigate('LoadData');
-      },
-      onError: ({ graphqlErrors }) => {
-        showMessage({
-          type: 'warning',
-          message: 'Error occurred while setting up your account',
-          description: 'Please try again'
-        });
-      },
+  const [onboardNewUser, { loading: onboardLoading }] = useMutation(onboardNewUserMutation, {
+    variables: {
+      surname,
+      firstName: othernames,
     },
-  );
-
-  useEffect(() => {
-    if (presbytery) {
-      let transformedDistricts = data?.districts?.map(d => {
-        if (d.presbytery._id === presbytery) {
-          return {
-            label: d.name,
-            value: d._id,
-          };
-        }
+    onCompleted: () => {
+      navigation.navigate('SignUpCS');
+    },
+    onError: () => {
+      showMessage({
+        type: 'warning',
+        message: 'Error occurred while setting up your account',
+        description: 'Please try again',
       });
-      setTransformedDistricts(transformedDistricts);
-    } else {
-      setTransformedDistricts([]);
-    }
-  }, [presbytery]);
-
-  useEffect(() => {
-    if (district) {
-      console.log('Selected district', district);
-      let transformedCongregations = data?.congregations?.map(c => {
-        if (c.district._id === district) {
-          return {
-            label: c.name,
-            value: c._id,
-          };
-        }
-      });
-      console.log('Our trnsformed congs', transformedCongregations);
-      setTransformedCongregations(transformedCongregations);
-    } else {
-      setTransformedCongregations([]);
-    }
-  }, [district]);
-
-  if (!data && loading) {
-    return <LoadingState />;
-  }
-
-  if (error) {
-    console.log(error);
-  }
-
-  // Transforming data to label and value
-  transformedPresbyteries = data.presbyteries.map(p => {
-    return {
-      label: p.name,
-      value: p._id,
-    };
+    },
   });
+
+
+  useEffect(() => {
+    if (!surname.length || !othernames.length) {
+      setIsComplete(false);
+    } else {
+      setIsComplete(true);
+    }
+  }, [surname, othernames]);
+
 
   const phone = navigation.getParam('phone');
   return (
@@ -180,108 +102,6 @@ const SignUp = ({ navigation }) => {
                   </View>
                 </View>
               </TouchableOpacity>
-              <View style={{ marginTop: 10 }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    borderWidth: 0.8,
-                    borderColor: '#e3e3e3',
-                    paddingRight: 10,
-                    paddingLeft: 20,
-                    backgroundColor: '#ffffff',
-                    paddingVertical: 13,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 5,
-                  }}
-                >
-                  <RNPickerSelect
-                    textInputProps={{
-                      style: {
-                        fontFamily: 'regular',
-                      },
-                    }}
-                    onValueChange={setSelectedPresbytery}
-                    items={transformedPresbyteries}
-                    placeholder={{ value: null, label: 'Select your presbytery', color: '#eeeeee' }}
-                  />
-                  <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
-                    <EvilIcons name="chevron-down" size={20} color="black" />
-                  </View>
-                </View>
-              </View>
-              <View style={{ marginTop: 10 }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    borderWidth: 0.8,
-                    borderColor: '#e3e3e3',
-                    paddingRight: 10,
-                    paddingLeft: 20,
-                    backgroundColor: '#ffffff',
-                    paddingVertical: 13,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 5,
-                  }}
-                >
-                  <RNPickerSelect
-                    textInputProps={{
-                      style: {
-                        fontFamily: 'regular',
-                      },
-                    }}
-                    onValueChange={setSelectedDistrict}
-                    items={
-                      transformedDistricts.length > 0
-                        ? transformedDistricts
-                        : [{ label: 'Select district', value: '' }]
-                    }
-                    placeholder={{ value: null, label: 'Select your district', color: '#eeeeee' }}
-                  />
-                  <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
-                    <EvilIcons name="chevron-down" size={20} color="black" />
-                  </View>
-                </View>
-              </View>
-              <View style={{ marginTop: 10 }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    borderWidth: 0.8,
-                    borderColor: '#e3e3e3',
-                    paddingRight: 10,
-                    paddingLeft: 20,
-                    backgroundColor: '#ffffff',
-                    paddingVertical: 13,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 5,
-                  }}
-                >
-                  <RNPickerSelect
-                    textInputProps={{
-                      style: {
-                        fontFamily: 'regular',
-                      },
-                    }}
-                    onValueChange={setPresbytery => {}}
-                    items={
-                      transformedCongregations.length > 0
-                        ? transformedCongregations
-                        : [{ label: 'Select your congregation', value: '' }]
-                    }
-                    placeholder={{
-                      value: null,
-                      label: 'Select your congregation',
-                      color: '#eeeeee',
-                    }}
-                  />
-                  <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
-                    <EvilIcons name="chevron-down" size={20} color="black" />
-                  </View>
-                </View>
-              </View>
               <View style={{ flexDirection: 'row', flex: 1, marginTop: 0 }}>
                 <View style={{ flex: 0.45, marginRight: 5 }}>
                   <Input value={surname} onChangeText={setSurname} placeholder="Surname" />
@@ -295,7 +115,7 @@ const SignUp = ({ navigation }) => {
               </View>
 
               <TouchableOpacity
-                onPress={() => navigation.navigate('OTPVerification')}
+                onPress={onboardNewUser}
                 disabled={!isComplete}
               >
                 <Button
@@ -305,9 +125,11 @@ const SignUp = ({ navigation }) => {
                     backgroundColor: isComplete ? Colors.tintColor : '#afafaf',
                   }}
                 >
-                  <Text style={{ color: '#ffffff', fontFamily: 'bold' }}>
-                    Joint Presby Companion
-                  </Text>
+                  {onboardLoading ? (
+                    <ActivityIndicator />
+                  ) : (
+                    <Text style={{ color: '#ffffff', fontFamily: 'bold' }}>Next</Text>
+                  )}
                 </Button>
               </TouchableOpacity>
               <Text
@@ -328,14 +150,6 @@ const SignUp = ({ navigation }) => {
       </MainContainer>
     </KeyboardAwareScrollView>
   );
-
-  function onPresbyteryChange(presbytery) {
-    setSelectedPresbytery(presbytery);
-  }
-
-  function onDistrictChange(district) {
-    setSelectedDistrict(district);
-  }
 
   async function handleSheetAction(buttonIndex) {
     if (buttonIndex === 0) {

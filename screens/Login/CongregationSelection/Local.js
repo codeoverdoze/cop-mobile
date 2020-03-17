@@ -6,24 +6,16 @@ import Colors from '../../../constants/Colors';
 import { gql, useQuery, useMutation } from '@apollo/client';
 import ChildScreenHeader from '../../../components/ChildScreenHeader';
 import { showMessage } from 'react-native-flash-message';
+import { onboardNewUser as onboardNewUserMutation } from '../../../graphql/mutations';
+import LoadingState from '../../../components/LoadingState';
 
 const query = gql`
-    query($district: ID!) {
-        congregations(filter: { district: $district }) {
-            _id
-            name
-        }
+  query($district: ID!) {
+    congregations(filter: { district: $district }) {
+      _id
+      name
     }
-`;
-
-const mutation = gql`
-    mutation setCongregation($congregation: ID!) {
-        setMemberCongregation(input: { congregation: $congregation }) {
-            congregation {
-                name
-            }
-        }
-    }
+  }
 `;
 
 function renderCheckMark(checkValue, checkBox) {
@@ -39,33 +31,29 @@ const Local = ({ navigation }) => {
       district: district._id,
     },
   });
-  const [setCongregation, { loading: setCongregationLoading }] = useMutation(mutation, {
-    refetchQueries: [{ query, variables: { district: district._id } }],
-    awaitRefetchQueries: true,
-    onCompleted: ({ setMemberCongregation }) => {
-      showMessage({
-        backgroundColor: Colors.tintColor,
-        message: 'Congregation has been set successfully',
-        description: `You switched to ${setMemberCongregation.congregation.name} congregation.`,
-      });
-      navigation.navigate('Settings');
+  const [onboardNewUser, { loading: setCongregationLoading }] = useMutation(
+    onboardNewUserMutation,
+    {
+      onCompleted: () => {
+        showMessage({
+          backgroundColor: Colors.tintColor,
+          message: 'Congregation has been set successfully',
+        });
+        navigation.navigate('LoadData');
+      },
+      onError: e => {
+        console.error(e.graphQLErrors[0]);
+        showMessage({
+          type: 'danger',
+          message: 'Ooops',
+          description: `We failed to set your congregation. Please try later.`,
+        });
+      },
     },
-    onError: e => {
-      console.error(e.graphQLErrors[0]);
-      showMessage({
-        type: 'danger',
-        message: 'Ooops',
-        description: `We failed to switch your congregation. Pleasee try later.`,
-      });
-    },
-  });
+  );
 
   if (!data && loading) {
-    return (
-      <View>
-        <ActivityIndicator />
-      </View>
-    );
+    return <LoadingState />;
   }
 
   if (error) {
@@ -87,7 +75,7 @@ const Local = ({ navigation }) => {
               return (
                 <TouchableOpacity
                   onPress={() =>
-                    setCongregation({
+                    onboardNewUser({
                       variables: {
                         congregation: congregation._id,
                       },

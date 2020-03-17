@@ -14,14 +14,12 @@ function VerifyScreen({ navigation }) {
   const phone = navigation.getParam('phone');
   const [validateLoginMember, { loading }] = useMutation(validateLoginMemberMutation, {
     onError: ({ graphqlErrors }) => {
-      console.log("Error", graphqlErrors[0])
       showMessage({
         type: 'warning',
         message: 'Invalid PIN',
       });
     },
     onCompleted: async ({ validateLoginMember }) => {
-      console.log("This completed", validateLoginMember)
       await saveAuthToken(validateLoginMember.mobileToken);
       if (!validateLoginMember.newUser) {
         navigation.navigate('Permissions');

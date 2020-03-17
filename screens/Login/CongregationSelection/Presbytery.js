@@ -7,17 +7,18 @@ import ChildScreenHeader from '../../../components/ChildScreenHeader';
 import SVGIcon from '../../../components/SVGIcon';
 import { forwardIcon } from '../../../assets/icons';
 import ColorHash from 'color-hash';
+import ParentScreenHeader from '../../../components/ParentScreenHeader';
 
 const colorHash = new ColorHash();
 
 const query = gql`
-    query {
-        presbyteries {
-            name
-            zone
-            _id
-        }
+  query {
+    presbyteries {
+      name
+      zone
+      _id
     }
+  }
 `;
 
 export default function Presbytery({ navigation }) {
@@ -68,7 +69,7 @@ export default function Presbytery({ navigation }) {
     const { presbyteries } = data;
     return (
       <View style={[styles.container]}>
-        <ChildScreenHeader title="Presbytery Selection" />
+        <ParentScreenHeader title="Presbytery Selection" />
         <FlatList
           data={presbyteries}
           renderItem={renderPresbytery}
