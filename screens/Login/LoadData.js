@@ -100,11 +100,13 @@ function LoadData({ navigation }) {
             >{`Hi, ${data.memberProfile.firstName}!`}</StyledHeader>
           </SimpleAnimation>
 
-          <SimpleAnimation delay={1500} duration={3000} fade staticType="zoom">
-            <StyledHeader
-              style={{ fontSize: RFValue(25) }}
-            >{`${data.memberProfile.group} Member`}</StyledHeader>
-          </SimpleAnimation>
+          {data.memberProfile.group ? (
+            <SimpleAnimation delay={1500} duration={3000} fade staticType="zoom">
+              <StyledHeader
+                style={{ fontSize: RFValue(25) }}
+              >{`${data.memberProfile.group} Member`}</StyledHeader>
+            </SimpleAnimation>
+          ) : null}
 
           <SimpleAnimation delay={2000} duration={3000} fade staticType="zoom">
             <StyledHeader

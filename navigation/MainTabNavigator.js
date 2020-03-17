@@ -62,6 +62,14 @@ import Announcements from '../screens/Announcements/Index';
 // Events Screen Stack
 import Events from '../screens/Events/Index';
 
+//Congregation Selection During Registration Stack
+import Local from '../screens/Login/CongregationSelection/Local';
+import District from '../screens/Login/CongregationSelection/District';
+import Presbytery from '../screens/Login/CongregationSelection/Presbytery';
+
+
+
+
 const config = {
   headerMode: 'none',
   defaultNavigationOptions: {
@@ -70,6 +78,7 @@ const config = {
     gestureEnabled: true,
   },
 };
+
 
 const AlmanacStack = createStackNavigator(
   {
@@ -207,7 +216,8 @@ export default createBottomTabNavigator(
     BibleStack,
     HymnaryStack,
     PaymentStack,
-    SettingsStack,
+    SettingsStack
+
   },
   {
     tabBarOptions: {
