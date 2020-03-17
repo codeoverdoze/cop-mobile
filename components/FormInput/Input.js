@@ -37,16 +37,22 @@ function Input({ placeholderLabel, placeholderPrefix, ...props }) {
           flex: 5,
           fontFamily: 'regular',
           color: '#222222',
+          paddingVertical: 12,
             fontSize: 14
         }}
         {...props}
       />
-      <View style={{
-        justifyContent: 'center', paddingVertical: 15,
-      }}
-      >
-        <StyledText style={{ fontSize: RFValue(10) }}>{placeholderLabel}</StyledText>
-      </View>
+      {
+        placeholderLabel ? (
+          <View style={{
+            justifyContent: 'center', paddingVertical: 12,
+          }}
+          >
+            <StyledText style={{ fontSize: RFValue(13), color: "#dedede" }}>{placeholderLabel}</StyledText>
+          </View>
+
+        ) : null
+      }
     </View>
   );
 }

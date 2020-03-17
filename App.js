@@ -8,6 +8,8 @@ import FlashMessage, { showMessage } from 'react-native-flash-message';
 import apolloClient from './graphql/client';
 import { retrieveAuthToken } from './utils';
 import { ApolloProvider } from '@apollo/client';
+import { ActionSheetProvider } from '@expo/react-native-action-sheet';
+
 import Colors from './constants/Colors';
 
 export default class App extends React.Component {
@@ -40,7 +42,10 @@ export default class App extends React.Component {
       return (
         <ApolloProvider client={this.state.client}>
           <CustomStatusBar />
-          <AppNavigator/>
+          <ActionSheetProvider>
+            <AppNavigator />
+          </ActionSheetProvider>
+
           <FlashMessage position="bottom" />
         </ApolloProvider>
       );

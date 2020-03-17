@@ -26,6 +26,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { useMutation } from "@apollo/client";
 import { loginMember as loginMemberMutation } from "../../graphql/mutations";
 import { showMessage, hideMessage } from "react-native-flash-message";
+import Colors from '../../constants/Colors';
 
 const sliders = [
   {
@@ -89,7 +90,7 @@ const renderSlider = ({ item, index }) => (
     <View style={{ justifyContent: "center", marginTop: 10 }}>
       <StyledHeaderInverse
         style={{
-          fontSize: RFValue(32),
+          fontSize: RFValue(24),
           textAlign: "center",
           paddingHorizontal: 15,
           color: "#3E4E5B"
@@ -165,11 +166,12 @@ const Index = ({ navigation }) => {
                 value={phone}
                 onChangeText={setPhone}
                 keyboardType="numeric"
+                maxLength={10}
               />
             </View>
             <View>
-              <TouchableOpacity onPress={loginMember}>
-                <Button>
+              <TouchableOpacity disabled={phone.length < 10 || Number(phone.charAt(0)) !== 0} onPress={loginMember}>
+                <Button style={{ backgroundColor: (phone.length === 10 && Number(phone.charAt(0)) === 0)  ? Colors.tintColor : '#afafaf',}}>
                   {!loading ? (
                     <StyledHeader style={{ color: "#fff" }}>
                       Create Account
