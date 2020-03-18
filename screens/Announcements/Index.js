@@ -1,178 +1,133 @@
-import React from "react";
-import { StyleSheet, FlatList, View, TouchableOpacity } from "react-native";
-import { StyledText, StyledTextInverse } from "../../components/Typography";
-import { EvilIcons } from "@expo/vector-icons";
-import ChildScreenHeader from "../../components/ChildScreenHeader";
+import React from 'react';
+import { View, FlatList, TouchableOpacity, Alert } from 'react-native';
+import styled from 'styled-components';
+import { EvilIcons } from '@expo/vector-icons';
+// components
+import { StyledText } from '../../components/Typography';
+import AnimatedItem from '../../components/AnimatedItem';
+import ChildScreenHeader from '../../components/ChildScreenHeader';
+import { announceIcon, audioIcon, circlePlayIcon } from '../../assets/icons';
+import SVGIcon from '../../components/SVGIcon';
+import { RFValue } from 'react-native-responsive-fontsize';
+import Colors from '../../constants/Colors';
+import RBSheet from "react-native-raw-bottom-sheet";
 
-const months = [
+const sermons = [
   {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
+    _id: 1,
+    title: 'The Holy Spirit and you',
+    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
+    effectiveDate: new Date(),
+    type: "audio",
+    coverPhoto: ""
   },
   {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
+    _id: 2,
+    title: 'The Holy Spirit and you',
+    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
+    effectiveDate: new Date(),
+    type: "audio",
+    coverPhoto: ""
   },
   {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
+    _id: 3,
+    title: 'The Holy Spirit and you',
+    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
+    effectiveDate: new Date(),
+    type: "audio",
+    coverPhoto: ""
   },
-  {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
-  },
-  {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
-  },
-  {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
-  },
-  {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
-  },
-  {
-    title: "Raaj Ahiable weds Daya Polanka",
-    sender: "Ernest Acheampong",
-    content: "Lorem Ipsum Dolor Sit Amet Lorem Lorem Lorem",
-    key: "January",
-    color: "#474f85"
-  }
 ];
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.navigateToCalendar = this.navigateToCalendar.bind(this);
-    this.renderAnnouncement = this.renderAnnouncement.bind(this);
-  }
 
-  navigateToCalendar(monthName, monthIndex) {
-    this.props.navigation.navigate("AlmanacCalendar", {
-      monthName,
-      monthIndex
-    });
-  }
 
-  renderAnnouncement(announcement) {
+export default function Payments({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <ChildScreenHeader title="Announcements" />
+      <View
+        style={{
+          marginTop: 20,
+          flex: 1,
+        }}
+      >
+        <StyledText style={{ marginLeft: 20, fontFamily: "bold"}}> All Announcements</StyledText>
+        <FlatList data={sermons} renderItem={AnnouncementCard} keyExtractor={item => item._id} />
+      </View>
+    </View>
+  );
+
+  function AnnouncementCard ({item}) {
+
     return (
-      <TouchableOpacity>
-        <View style={[styles.listItem]}>
-          <View style={[{ flexDirection: "row" }]}>
+      <TouchableOpacity activeOpacity={0.55} onPress={() => navigation.navigate("SermonPlayer", { item })}>
+        <SermonContainer
+          style={{
+            flexDirection: 'row',
+          }}
+        >
+          <View style={{ flex: 0.2 }}>
             <View
-              style={[
-                styles.circleShapeView,
-                {
-                  backgroundColor: announcement.item.color,
-                  alignSelf: "center"
-                }
-              ]}
+              style={{
+                borderWidth: 1,
+                borderColor: '#e3e3e3',
+                width: 60,
+                height: 60,
+                borderRadius: 35,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
-              <StyledTextInverse style={{ fontSize: 20 }}>
-                {announcement.item.sender.substring(0, 1)}
-              </StyledTextInverse>
+              <SVGIcon source={announceIcon} height={30} width={30} noFill />
             </View>
-            <View style={{ justifyContent: "center" }}>
-              <StyledText style={{ fontSize: 20, marginBottom: 5 }}>
-                {announcement.item.sender}
-              </StyledText>
-              <StyledText style={{ fontSize: 16 }}>
-                {announcement.item.title}
-              </StyledText>
-              <StyledText style={{ fontSize: 13 }}>
-                {announcement.item.content}
+          </View>
+          <View style={{ flex: 0.60, justifyContent: 'center', paddingLeft: 5 }}>
+            <StyledText style={{ fontFamily: 'bold', fontSize: RFValue(14), marginBottom: 0, color: Colors.tintColor }}>
+              { item.title }
+            </StyledText>
+            <StyledText style={{ fontSize: RFValue(11), marginBottom: 5, color: "#aeaeae" }} numberOfLines={1}>Some details for the sermon, that could scroll</StyledText>
+            <View style={{ flexDirection: "row", justifyContent: "flex-start"}}>
+              <EvilIcons name="calendar" size={25} color="#9d9d9d" />
+              <StyledText style={{ color: '#9d9d9d' }}>
+                { item.effectiveDate.toDateString() }
               </StyledText>
             </View>
           </View>
+          <View style={{ flex: 0.20, justifyContent: 'flex-start', alignItems: "flex-end" }}>
+            <StyledText style={{ fontSize: 12, marginBottom: 0 }}>{ item.effectiveDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) }</StyledText>
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
 
-          <View
-            style={{
-              justifyContent: "space-between",
-              height: 50,
-              alignItems: "center"
-            }}
-          >
-            <StyledText style={{ fontSize: 10 }}>2:20 PM</StyledText>
-            <TouchableOpacity>
-              <EvilIcons name={"star"} size={20} color="#757575" />
-            </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        </SermonContainer>
       </TouchableOpacity>
     );
   }
 
-  render() {
-    return (
-      <View style={[styles.container]}>
-        <ChildScreenHeader title="Announcements" />
-
-        <View style={[styles.list]}>
-          <FlatList data={months} renderItem={this.renderAnnouncement} />
-        </View>
-      </View>
-    );
-  }
 }
 
-const styles = StyleSheet.create({
+const SermonContainer = styled.View`
+  box-shadow: 0px 12px 5px rgba(213, 213, 213, 0.5);
+  background-color: #fefefe;
+  border-radius: 5px;
+  margin: 10px 20px;
+  padding: 15px 10px;
+`;
+
+const FavouriteSermonContainer = styled.View`
+  box-shadow: 0px 12px 5px rgba(213, 213, 213, 0.5);
+  background-color: #fefefe;
+  height: 120px;
+  width: 120px;
+  border-radius: 5px;
+  margin: 10px 0px 10px 20px;
+  padding: 15px 10px;
+  align-items: center;
+`;
+
+const styles = {
   container: {
     flex: 1,
-    paddingBottom: 20,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: '#f2f4f6',
   },
-
-  header: {
-    backgroundColor: "#387ecb",
-    height: 80,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingTop: 40
-  },
-
-  list: {
-    marginBottom: 70
-  },
-
-  listItem: {
-    padding: 15,
-    borderBottomWidth: 0.3,
-    borderBottomColor: "#cecece",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
-  },
-
-  circleShapeView: {
-    width: 40,
-    height: 40,
-    borderRadius: 150 / 2,
-    backgroundColor: "#00BCD4",
-    marginRight: 20,
-    justifyContent: "center",
-    alignItems: "center"
-  }
-});
+};

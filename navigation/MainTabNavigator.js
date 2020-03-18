@@ -13,6 +13,7 @@ import PrayerRequests from '../screens/PrayerRequest/PrayerRequests';
 import MakePrayerRequest from '../screens/PrayerRequest/MakePrayerRequest';
 import PreviousSermons from '../screens/PreviousSermons/PreviousSermonsScreen';
 import Notifications from '../screens/Home/Notifications';
+import SermonPlayer from '../screens/PreviousSermons/SermonPlayer';
 
 // Bible screen stack
 import BibleIndex from '../screens/Bible/Index';
@@ -121,6 +122,18 @@ const MakePrayerRequestStack = createStackNavigator(
   },
 );
 
+const SermonStack = createStackNavigator(
+  {
+    PreviousSermons,
+    SermonPlayer
+  },
+  {
+    headerMode: 'none',
+    mode: 'modal',
+    gestureEnabled: true,
+  },
+);
+
 const HomeStack = createStackNavigator(
   {
     Home: HomeIndex,
@@ -131,7 +144,8 @@ const HomeStack = createStackNavigator(
     BibleStudy: BibleStudyStack,
     PrayerRequests,
     MakePrayerRequest: MakePrayerRequestStack,
-    PreviousSermons,
+    Sermons: SermonStack,
+
     Notifications,
   },
   config,
