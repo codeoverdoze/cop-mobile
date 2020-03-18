@@ -47,3 +47,10 @@ export { default as thinkingBubbleIcon } from './thinking-bubble';
 export { default as thinkingMaleIcon } from './thinking-male';
 export { default as userAccountIcon } from './user-account';
 export { default as voiceIcon } from './voice';
+export { default as audioIcon } from './audio-file';
+export { default as circlePlayIcon } from './circle-play';
+export { default as sermonPlay } from './sermon-play';
+export { default as fastForward } from './fast-forward';
+export { default as fastRewind } from './fast-rewind';
+export { default as announceIcon } from './announcement-icon';
+
