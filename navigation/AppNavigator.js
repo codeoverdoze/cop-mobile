@@ -16,6 +16,7 @@ import LoadData from "../screens/Login/LoadData";
 import Presbytery from '../screens/Login/CongregationSelection/Presbytery';
 import District from '../screens/Login/CongregationSelection/District';
 import Local from '../screens/Login/CongregationSelection/Local';
+import OtherCongregation from '../screens/Login/CongregationSelection/OtherCongregation';
 
 
 const CongregationSelectionStack = createStackNavigator({
@@ -37,7 +38,8 @@ const Login = createStackNavigator(
     OnBoard: Index,
     Verification,
     SignUp,
-    SignUpCS: CongregationSelectionStack
+    SignUpCS: CongregationSelectionStack,
+    OtherCongregation
   },
   { headerMode: "none" }
 );

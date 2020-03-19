@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
           </TouchableOpacity>
         </HeaderContainer>
 
-        <ScrollView contentContainerStyle={[styles.body]}>
+        <ScrollView contentContainerStyle={[styles.body]} showsVerticalScrollIndicator={false}>
           {homeItemsList.map(item => {
             return (
               <TouchableOpacity
