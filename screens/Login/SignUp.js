@@ -15,14 +15,19 @@ import { useMutation } from '@apollo/client';
 // mutations
 import { onboardNewUser as onboardNewUserMutation } from '../../graphql/mutations';
 import { showMessage } from 'react-native-flash-message';
-
 const imgPlaceholder = require('../../assets/images/placeholder-image.png');
+
+const denominations = [
+  { key: 1, title: 'Presbyterian' },
+  { key: 2, title: 'Other Denomination' }
+];
 
 const SignUp = ({ navigation }) => {
   const { showActionSheetWithOptions } = useActionSheet();
 
   const [surname, setSurname] = useState('');
   const [othernames, setOthernames] = useState('');
+  const [denomination, setDenomination] = useState('');
   const [displayImage, setDisplayImage] = useState(imgPlaceholder);
   const [isComplete, setIsComplete] = useState(false);
 
@@ -32,7 +37,8 @@ const SignUp = ({ navigation }) => {
       firstName: othernames,
     },
     onCompleted: () => {
-      navigation.navigate('SignUpCS');
+
+      navigation.navigate(denomination === "Presbyterian" ? 'SignUpCS' : 'OtherCongregation');
     },
     onError: () => {
       showMessage({
@@ -55,7 +61,7 @@ const SignUp = ({ navigation }) => {
 
   const phone = navigation.getParam('phone');
   return (
-    <KeyboardAwareScrollView contentContainerStyle={{ flex: 1, backgroundColor: '#f2f4f6' }}>
+    <KeyboardAwareScrollView contentContainerStyle={{ flex: 1, backgroundColor: '#f2f4f6' }} showsVerticalScrollIndicator={false}>
       <MainContainer>
         <Banner
           top=""
@@ -98,7 +104,7 @@ const SignUp = ({ navigation }) => {
                     />
                   </ProfileView>
                   <View style={{ position: 'absolute', paddingTop: 70, paddingLeft: 55 }}>
-                    <Ionicons name="ios-camera" size={30} color={Colors.tintColor} />
+                    <Ionicons name="ios-camera" size={30} color="#efefef" />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -113,6 +119,38 @@ const SignUp = ({ navigation }) => {
               <View>
                 <Input placeholderLabel="Phone Number" value={phone} editable={false} />
               </View>
+              <View style={{ marginTop: 20 }}>
+                <FormContainer>
+                  <InputHeader style={{ fontFamily: "bold" }}>Congregation / Denomination</InputHeader>
+                  <View style={{ flexDirection: 'row', paddingVertical: 10, flexWrap: 'wrap' }}>
+                    {denominations.map((value) => (
+                      <TouchableOpacity
+                        activeOpacity={0.8}
+                        onPress={() => setDenomination(value.title)}
+                        style={{
+                          paddingRight: 10,
+                          flexDirection: 'row',
+                          justifyContent: 'center',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <Ionicons
+                          style={{ marginRight: 5 }}
+                          name='ios-checkmark-circle'
+                          size={25}
+                          color={
+                            denomination === value.title
+                              ? Colors.tintColor
+                              : 'grey'
+                          }
+                        />
+                        <Text style={{ fontFamily: "regular", fontSize: 14}}>{value.title}</Text>
+                      </TouchableOpacity>
+                    ))}
+                  </View>
+                </FormContainer>
+              </View>
+
 
               <TouchableOpacity
                 onPress={onboardNewUser}
@@ -175,6 +213,15 @@ const SignUp = ({ navigation }) => {
     }
   }
 };
+
+const FormContainer = styled.View`
+	padding-horizontal: 10px;
+	margin-top: 10px;
+`;
+
+const InputHeader = styled.Text`
+	font-family: "bold";
+`;
 
 const SectionContainer = styled.View`
   justify-content: center;
