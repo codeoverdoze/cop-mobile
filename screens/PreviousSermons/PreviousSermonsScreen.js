@@ -1,44 +1,47 @@
-import React, { useRef } from 'react';
-import { View, FlatList, TouchableOpacity, Alert } from 'react-native';
+import React from 'react';
+import { View, FlatList, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
 import { EvilIcons } from '@expo/vector-icons';
 // components
 import { StyledText } from '../../components/Typography';
-import AnimatedItem from '../../components/AnimatedItem';
 import ChildScreenHeader from '../../components/ChildScreenHeader';
-import { audioIcon, circlePlayIcon } from '../../assets/icons';
+import { audioIcon, circlePlayIcon, videoIcon } from '../../assets/icons';
 import SVGIcon from '../../components/SVGIcon';
 import { RFValue } from 'react-native-responsive-fontsize';
 import Colors from '../../constants/Colors';
-import RBSheet from "react-native-raw-bottom-sheet";
+import { gql, useQuery } from '@apollo/client';
+import LoadingState from '../../components/LoadingState';
 
-const sermons = [
-  {
-    _id: 1,
-    title: 'The Holy Spirit and you',
-    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
-    effectiveDate: new Date(),
-    type: "audio"
-  },
-  {
-    _id: 2,
-    title: 'The Holy Spirit and you',
-    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
-    effectiveDate: new Date(),
-    type: "audio"
-  },
-  {
-    _id: 3,
-    title: 'The Holy Spirit and you',
-    url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
-    effectiveDate: new Date(),
-    type: "audio"
-  },
-];
+const sermonsQuery = gql`
+  query {
+    userSermons {
+      title
+      url
+      effectiveDate
+      type
+    }
+  }
+`;
 
+export default function PreviousSermons({ navigation }) {
+  const { loading, data, error } = useQuery(sermonsQuery);
 
+  if (loading && !data) {
+    return (
+      <LoadingState>
+        <StyledText>Loading sermons..</StyledText>
+      </LoadingState>
+    );
+  }
 
-export default function Payments({ navigation }) {
+  if (error) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <StyledText>Failed to load sermons</StyledText>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <ChildScreenHeader title="Sermons" />
@@ -48,25 +51,38 @@ export default function Payments({ navigation }) {
           flex: 0.35,
         }}
       >
-        <StyledText style={{ marginLeft: 20, fontFamily: "bold"}}> Favourite Sermons</StyledText>
-        <FlatList data={sermons} horizontal={true} showsHorizontalScrollIndicator={false} renderItem={FavouriteSermonCard} keyExtractor={item => item._id} />
+        <StyledText style={{ marginLeft: 20, fontFamily: 'bold' }}> Favourite Sermons</StyledText>
+        <FlatList
+          data={data.userSermons}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          renderItem={FavouriteSermonCard}
+          keyExtractor={item => item._id}
+        />
       </View>
       <View
         style={{
-          marginTop: 20,
-          flex: 1,
+          marginTop: 5,
+          flex: 1.2,
         }}
       >
-        <StyledText style={{ marginLeft: 20, fontFamily: "bold"}}> All Sermons</StyledText>
-        <FlatList data={sermons} renderItem={SermonCard} keyExtractor={item => item._id} />
+        <StyledText style={{ marginLeft: 20, fontFamily: 'bold' }}> All Sermons</StyledText>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={data.userSermons}
+          renderItem={SermonCard}
+          keyExtractor={item => item._id}
+        />
       </View>
     </View>
   );
 
-  function SermonCard ({item}) {
-
+  function SermonCard({ item }) {
     return (
-      <TouchableOpacity activeOpacity={0.55} onPress={() => navigation.navigate("SermonPlayer", { item })}>
+      <TouchableOpacity
+        activeOpacity={0.55}
+        onPress={() => navigation.navigate('SermonPlayer', { sermon: item })}
+      >
         <SermonContainer
           style={{
             flexDirection: 'row',
@@ -84,23 +100,45 @@ export default function Payments({ navigation }) {
                 alignItems: 'center',
               }}
             >
-              <SVGIcon source={audioIcon} height={30} width={30} />
+              {item.type === 'audio' ? (
+                <SVGIcon source={audioIcon} height={30} width={30} />
+              ) : (
+                <SVGIcon source={videoIcon} height={30} width={30} />
+              )}
             </View>
           </View>
-          <View style={{ flex: 0.60, justifyContent: 'center', paddingLeft: 5 }}>
-            <StyledText style={{ fontFamily: 'bold', fontSize: RFValue(14), marginBottom: 0, color: Colors.tintColor }}>
-              { item.title }
+          <View style={{ flex: 0.6, justifyContent: 'center', paddingLeft: 5 }}>
+            <StyledText
+              style={{
+                fontFamily: 'bold',
+                fontSize: RFValue(14),
+                marginBottom: 0,
+                color: Colors.tintColor,
+              }}
+            >
+              {item.title}
             </StyledText>
-            <StyledText style={{ fontSize: RFValue(11), marginBottom: 5, color: "#aeaeae" }} numberOfLines={1}>Some details for the sermon, that could scroll</StyledText>
-            <View style={{ flexDirection: "row", justifyContent: "flex-start"}}>
+            <StyledText
+              style={{ fontSize: RFValue(11), marginBottom: 5, color: '#aeaeae' }}
+              numberOfLines={1}
+            >
+              Some details for the sermon, that could scroll
+            </StyledText>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
               <EvilIcons name="calendar" size={25} color="#9d9d9d" />
               <StyledText style={{ color: '#9d9d9d' }}>
-                { item.effectiveDate.toDateString() }
+                {new Date(item.effectiveDate).toDateString()}
               </StyledText>
             </View>
           </View>
-          <View style={{ flex: 0.20, justifyContent: 'center' }}>
-            <StyledText style={{ fontSize: 12, marginBottom: 0 }}>{ item.effectiveDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) }</StyledText>
+          <View style={{ flex: 0.2, justifyContent: 'center' }}>
+            <StyledText style={{ fontSize: 12, marginBottom: 0, textAlign: 'center' }}>
+              {new Date(item.effectiveDate).toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true,
+              })}
+            </StyledText>
             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <SVGIcon source={circlePlayIcon} height={40} width={40} />
             </View>
@@ -110,9 +148,11 @@ export default function Payments({ navigation }) {
     );
   }
   function FavouriteSermonCard({ item }) {
-
     return (
-      <TouchableOpacity activeOpacity={0.55} onPress={() => navigation.navigate("SermonPlayer", { item })}>
+      <TouchableOpacity
+        activeOpacity={0.55}
+        onPress={() => navigation.navigate('SermonPlayer', { item })}
+      >
         <FavouriteSermonContainer>
           <View
             style={{
@@ -123,14 +163,12 @@ export default function Payments({ navigation }) {
               borderRadius: 35,
               justifyContent: 'center',
               alignItems: 'center',
-              marginBottom: 5
+              marginBottom: 5,
             }}
           >
             <SVGIcon source={audioIcon} height={30} width={30} />
           </View>
-          <StyledText style={{ textAlign: "center", fontSize: 12}}>
-            { item.title }
-          </StyledText>
+          <StyledText style={{ textAlign: 'center', fontSize: 12 }}>{item.title}</StyledText>
         </FavouriteSermonContainer>
       </TouchableOpacity>
     );

@@ -60,7 +60,7 @@ const CongregationSelection = ({ navigation }) => {
       navigation.navigate('Settings');
     },
     onError: e => {
-      console.error(e.graphQLErrors[0]);
+      console.error(e);
       showMessage({
         type: 'danger',
         message: 'Ooops',
