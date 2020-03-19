@@ -54,4 +54,5 @@ export { default as fastForward } from './fast-forward';
 export { default as fastRewind } from './fast-rewind';
 export { default as announceIcon } from './announcement-icon';
 export { default as videoIcon } from './video';
+export { default as inviteFriends } from './invite-friends';
 

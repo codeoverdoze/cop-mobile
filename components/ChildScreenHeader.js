@@ -17,7 +17,7 @@ function ChildScreenHeader({ title, navigation }) {
 
       <TitleContainer>
         <Title>
-          <StyledTextInverse style={{ fontSize: 20, textAlign: 'center' }} numberOfLines={1}>
+          <StyledTextInverse style={{ fontSize: 17, textAlign: 'center' }} numberOfLines={2}>
             {title}
           </StyledTextInverse>
         </Title>

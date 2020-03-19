@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "Presby Companion",
-    "description": "Mobile app companion for the Presbyterian Church of Ghana",
-    "slug": "presby-companion",
+    "name": "Worship Companion",
+    "description": "Mobile app companion for the Christians",
+    "slug": "worship-companion",
     "privacy": "unlisted",
     "sdkVersion": "36.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icons/android_icon.png",
@@ -16,17 +19,20 @@
     "updates": {
       "fallbackToCacheTimeout": 30
     },
-    "assetBundlePatterns": ["assets/images/*", "assets/icons/*"],
+    "assetBundlePatterns": [
+      "assets/images/*",
+      "assets/icons/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.polymorphlabs.presbycompanion",
+      "bundleIdentifier": "com.polymorphlabs.worshipcompanion",
       "icon": "./assets/icons/ios_icon.png"
     },
     "androidStatusBar": {
       "backgroundColor": "#25569c"
     },
     "android": {
-      "package": "com.polymorphlabs.presbycompanion"
+      "package": "com.polymorphlabs.worshipcompanion"
     }
   }
 }

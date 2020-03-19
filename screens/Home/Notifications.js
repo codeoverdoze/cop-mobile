@@ -10,6 +10,7 @@ import ChildScreenHeader from '../../components/ChildScreenHeader';
 import LoadingState from '../../components/LoadingState';
 import { StyledText, StyledTextInverse } from '../../components/Typography';
 import Layout from '../../constants/Layout';
+import { Ionicons } from '@expo/vector-icons';
 
 const colorHash = new ColorHash();
 
@@ -19,6 +20,9 @@ const query = gql`
       title
       message
       createdAt
+        congregation{
+            name
+        }
     }
   }
 `;
@@ -32,13 +36,42 @@ export default function Notifications() {
 
   return (
     <Container>
-      <ChildScreenHeader title="Notifications" />
+      <ChildScreenHeader title={`Notifications for ${data.memberNotifications.congregation?.name}`}/>
+      {
+        data.memberNotifications.length > 0 ?
+          (<FlatList
+            data={data.memberNotifications}
+            renderItem={renderNotification}
+            keyExtractor={item => item.createdAt}
+          />)
+          :
+          (<View
+            style={{
+              height: 60,
+              alignItems: "center",
+              marginHorizontal: 20,
+              marginVertical: 20,
+              padding: 10,
+              backgroundColor: '#fff',
+              flexDirection: 'row',
+              borderRadius: 5,
+              borderWidth: 0.3,
+              borderColor: '#d7d7d7',
+            }}
+          >
+            <View style={{ flex: 0.10, justifyContent: "center", alignItems: "center"}}>
+              <Ionicons
+                name="ios-information-circle-outline"
+                size={25}
+                style={{ marginRight: 5, color: 'orange' }}
+              />
+            </View>
+            <View style={{ flex: 0.90}}>
+              <StyledText>Sorry, there are no announcements.</StyledText>
+            </View>
+          </View>)
+      }
 
-      <FlatList
-        data={data.memberNotifications}
-        renderItem={renderNotification}
-        keyExtractor={item => item.createdAt}
-      />
     </Container>
   );
 

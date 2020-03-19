@@ -33,7 +33,7 @@ const sliders = [
     imageURI: Slider1,
     caption: "Your companion, your spiritual growth",
     description:
-      "Presby companion is a free to download tool to streamline your worship as a presbyterian."
+      "Worship companion is a free to download tool to streamline your christian worship."
   },
   {
     imageURI: Slider2,
@@ -121,7 +121,7 @@ const Index = ({ navigation }) => {
           type: "warning",
           message: "You have not been registered",
           description:
-            "Please register as a member at your local Presby church and login with the phone provided"
+            "Please register as a member at your congregation and login with the phone provided"
         });
       } else {
         showMessage({
