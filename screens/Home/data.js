@@ -6,10 +6,11 @@ import {
   lithurgicalOrderIcon,
   eventIcon,
   prayerRequestIcon,
-  previousSermonsIcon,
+  previousSermonsIcon, paymentIcon,
 } from '../../assets/icons';
 
 const homeItemsList = [
+  /*
   {
     image: almanacIcon,
     title: 'Almanac',
@@ -18,14 +19,16 @@ const homeItemsList = [
     key: 'Almanac',
     link: 'Almanac',
   },
+  */
   {
     image: announcementIcon,
-    title: 'Announcements and Notifications',
+    title: 'Announcements',
     content:
       'Announcements from Presbytery, District and Local. Reminders on Bible reading and preaching.',
     key: 'Announcements and Notifications',
     link: 'Announcements',
   },
+  /*
   {
     image: bibleStudyGuideIcon,
     title: 'Bible Study Guide',
@@ -58,6 +61,8 @@ const homeItemsList = [
     key: 'Special Events',
     link: 'Events',
   },
+  */
+
   {
     image: prayerRequestIcon,
     title: 'Prayer Requests',
@@ -74,6 +79,15 @@ const homeItemsList = [
     key: 'Previous Sermons',
     link: 'PreviousSermons',
   },
+  {
+    image: paymentIcon,
+    title: 'Payments & Seed',
+    content:
+      'Pay your tithes, offertories, redeem pledges and support the work of the ministry with your substance ',
+    key: 'Payments',
+    link: 'PaymentDashboard',
+  },
+
 ];
 
 export { homeItemsList };

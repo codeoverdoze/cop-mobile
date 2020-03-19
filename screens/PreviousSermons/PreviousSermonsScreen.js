@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
-import { EvilIcons } from '@expo/vector-icons';
+import { EvilIcons, Ionicons } from '@expo/vector-icons';
 // components
 import { StyledText } from '../../components/Typography';
 import ChildScreenHeader from '../../components/ChildScreenHeader';
@@ -45,35 +45,96 @@ export default function PreviousSermons({ navigation }) {
   return (
     <View style={styles.container}>
       <ChildScreenHeader title="Sermons" />
-      <View
-        style={{
-          marginTop: 10,
-          flex: 0.35,
-        }}
-      >
-        <StyledText style={{ marginLeft: 20, fontFamily: 'bold' }}> Favourite Sermons</StyledText>
-        <FlatList
-          data={data.userSermons}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          renderItem={FavouriteSermonCard}
-          keyExtractor={item => item._id}
-        />
-      </View>
-      <View
-        style={{
-          marginTop: 5,
-          flex: 1.2,
-        }}
-      >
-        <StyledText style={{ marginLeft: 20, fontFamily: 'bold' }}> All Sermons</StyledText>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={data.userSermons}
-          renderItem={SermonCard}
-          keyExtractor={item => item._id}
-        />
-      </View>
+      <StyledText style={{ marginLeft: 20, fontFamily: 'bold', marginTop: 20 }}>
+        {' '}
+        Favourite Sermons
+      </StyledText>
+
+      {data.userSermons?.length > 0 ? (
+        <View
+          style={{
+            marginTop: 10,
+            flex: 0.35,
+          }}
+        >
+          <FlatList
+            data={data.userSermons}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={FavouriteSermonCard}
+            keyExtractor={item => item._id}
+          />
+        </View>
+      ) : (
+        <View
+          style={{
+            height: 60,
+            alignItems: 'center',
+            marginHorizontal: 20,
+            marginVertical: 20,
+            padding: 10,
+            backgroundColor: '#fff',
+            flexDirection: 'row',
+            borderRadius: 5,
+            borderWidth: 0.3,
+            borderColor: '#d7d7d7',
+          }}
+        >
+          <View style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>
+            <Ionicons
+              name="ios-information-circle-outline"
+              size={25}
+              style={{ marginRight: 5, color: 'orange' }}
+            />
+          </View>
+          <View style={{ flex: 0.9 }}>
+            <StyledText>Sorry, no saved favourites yet.</StyledText>
+          </View>
+        </View>
+      )}
+
+      <StyledText style={{ marginLeft: 20, fontFamily: 'bold' }}> All Sermons</StyledText>
+      {data.userSermons.length > 0 ? (
+        <View
+          style={{
+            marginTop: 5,
+            flex: 1.2,
+          }}
+        >
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={data.userSermons}
+            renderItem={SermonCard}
+            keyExtractor={item => item._id}
+          />
+        </View>
+      ) : (
+        <View
+          style={{
+            height: 60,
+            alignItems: 'center',
+            marginHorizontal: 20,
+            marginVertical: 20,
+            padding: 10,
+            backgroundColor: '#fff',
+            flexDirection: 'row',
+            borderRadius: 5,
+            borderWidth: 0.3,
+            borderColor: '#d7d7d7',
+          }}
+        >
+          <View style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center' }}>
+            <Ionicons
+              name="ios-information-circle-outline"
+              size={25}
+              style={{ marginRight: 5, color: 'orange' }}
+            />
+          </View>
+          <View style={{ flex: 0.9 }}>
+            <StyledText>There are no sermons available yet.</StyledText>
+          </View>
+        </View>
+      )}
     </View>
   );
 

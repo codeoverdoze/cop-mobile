@@ -51,12 +51,12 @@ const SignUp = ({ navigation }) => {
 
 
   useEffect(() => {
-    if (!surname.length || !othernames.length) {
+    if (!surname.length || !othernames.length || !denomination) {
       setIsComplete(false);
     } else {
       setIsComplete(true);
     }
-  }, [surname, othernames]);
+  }, [surname, othernames, denomination]);
 
 
   const phone = navigation.getParam('phone');
@@ -66,7 +66,7 @@ const SignUp = ({ navigation }) => {
         <Banner
           top=""
           middle="Sign Up & Registration"
-          bottom="User registration - Presby Companion"
+          bottom="User registration - Worship Companion"
         />
         <View style={{ paddingHorizontal: 20, flex: 1, justifyContent: 'center' }}>
           <ScrollView showsVerticalScrollIndicator={false}>

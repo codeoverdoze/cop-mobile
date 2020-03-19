@@ -16,6 +16,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { showMessage } from "react-native-flash-message";
 import { Ionicons } from "@expo/vector-icons";
 import ChildScreenHeader from "../../components/ChildScreenHeader";
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class extends Component {
   constructor(props) {
@@ -65,9 +66,33 @@ export default class extends Component {
     return (
       <View style={[styles.container]}>
         <StatusBar backgroundColor="#387ecb" barStyle="light-content" />
-        <ChildScreenHeader title={`Make payment for ${this.package.name}`} />
+        <ChildScreenHeader  title={`Make payment for ${this.package.name}`} />
 
         <KeyboardAwareScrollView style={[styles.body]}>
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              marginHorizontal: 20,
+              padding: 10,
+              backgroundColor: '#fff',
+              flexDirection: 'row',
+              borderRadius: 5,
+              borderWidth: 0.3,
+              borderColor: '#d7d7d7',
+            }}
+          >
+            <View style={{ flex: 0.10}}>
+              <Ionicons
+                name="ios-information-circle-outline"
+                size={25}
+                style={{ marginRight: 5, color: 'orange' }}
+              />
+            </View>
+            <View style={{ flex: 0.90}}>
+              <StyledText>You may change your congregation in settings. Tap to change</StyledText>
+            </View>
+          </View>
           <View style={[styles.bodyItem]}>
             <View style={[styles.amountBar]}>
               <StyledText style={{ fontSize: 40 }}>GHS</StyledText>
@@ -95,9 +120,10 @@ export default class extends Component {
                 PACKAGE
               </StyledHeader>
 
-              <StyledText style={{ fontSize: 30, color: "#eaa15d" }}>
+              <StyledText style={{ fontSize: 20, color: "#eaa15d" }}>
                 {this.package.name}
               </StyledText>
+              <StyledText>Congregation Name Goes Here</StyledText>
             </View>
 
             <View style={[styles.packageBar]}>

@@ -141,7 +141,7 @@ function LoadData({ navigation }) {
                 marginTop: 10,
               }}
             >
-              Presby Companion &copy; 2020. Polymorph Labs
+              Worship Companion &copy; 2020. Polymorph Labs
             </StyledText>
           </SimpleAnimation>
         </View>
