@@ -53,4 +53,5 @@ export { default as sermonPlay } from './sermon-play';
 export { default as fastForward } from './fast-forward';
 export { default as fastRewind } from './fast-rewind';
 export { default as announceIcon } from './announcement-icon';
+export { default as videoIcon } from './video';
 

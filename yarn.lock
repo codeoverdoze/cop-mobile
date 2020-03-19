@@ -3502,6 +3502,19 @@ expo-svg-uri@^1.1.0:
     react-native-svg "^9.9.4"
     xmldom "^0.1.27"
 
+expo-video-player@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.npmjs.org/expo-video-player/-/expo-video-player-1.5.7.tgz#5d97319f47cd0c4e4b6d0df2932715ac231ba9db"
+  integrity sha512-zqfSPanHcvV6VUmZaXx3k1+hSW/kmjW8jqzgB9tP5gPmo80hhDBQq2GeMVX++NiaNsqHT3DBlnhmZPdMhHykmA==
+  dependencies:
+    tslib "^1.10.0"
+    with-default-props "^0.2.1"
+
+expo-video-thumbnails@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/expo-video-thumbnails/-/expo-video-thumbnails-4.0.0.tgz#d9e6e6387c1f7b1f36d8d02b564fc54ebe22111a"
+  integrity sha512-X9ciy0mh1NX00IhS0hGEIW5Vtc3gI8i7nUk0nSXL2tKfp++fhqaYP5wUhmAMKcV7ONkCjiNhcW4sQO9Y4yEZWA==
+
 expo-web-browser@~8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-8.0.0.tgz#8a4451c744c115569a4c810dac8851f219a21c72"
@@ -8781,6 +8794,11 @@ wide-align@^1.1.0:
   integrity sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==
   dependencies:
     string-width "^1.0.2 || 2"
+
+with-default-props@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/with-default-props/-/with-default-props-0.2.1.tgz#41470545d2fa945308993c86a81c7481c298cb95"
+  integrity sha512-yTrBg7EGzFwpZLCN5M4ropSbZ/V+scx5DXBE6HZhKCevsRaYCRBBf/69UvfaWxu/zRaWX5j9Y/F4YFs1Q1yg4w==
 
 wordwrap@^1.0.0, wordwrap@~1.0.0:
   version "1.0.0"
