@@ -39,7 +39,7 @@ const Local = ({ navigation }) => {
           backgroundColor: Colors.tintColor,
           message: 'Congregation has been set successfully',
         });
-        navigation.navigate('LoadData');
+        navigation.navigate('Permissions');
       },
       onError: e => {
         console.error(e.graphQLErrors[0]);
