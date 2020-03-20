@@ -9,11 +9,10 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { useActionSheet } from '@expo/react-native-action-sheet';
 import SVGIcon from '../../components/SVGIcon';
 import {
-  activeNotificationIcon, adminSettingsMaleIcon,
-  announceIcon, downloadIcon,
-  forwardIcon,
-  inviteFriends,
-  notificationIcon, paymentIcon,
+  adminSettingsMaleIcon,
+  downloadIcon,
+  notificationIcon,
+  paymentIcon,
   preacherIcon,
   userAccountIcon,
 } from '../../assets/icons';
@@ -25,62 +24,62 @@ const settings = [
   {
     _id: 1,
     title: 'Follow and Invite Friends',
-    subtitle: "Share Worship Companion with loved ones",
+    subtitle: 'Share Worship Companion with loved ones',
     icon: userAccountIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
   {
     _id: 2,
     title: 'Notifications',
-    subtitle: "Notifications from your congregation",
+    subtitle: 'Notifications from your congregation',
     icon: notificationIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
   {
     _id: 3,
     title: 'Privacy and Security',
-    subtitle: "Read our Privacy Policy Document",
+    subtitle: 'Read our Privacy Policy Document',
     icon: preacherIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
   {
     _id: 4,
     title: 'Payments & Seed',
-    subtitle: "Pay your tithes, offertories, etc",
+    subtitle: 'Pay your tithes, offertories, etc',
     icon: paymentIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
   {
     _id: 5,
     title: 'Help & Support',
-    subtitle: "Pay your tithes, offertories, etc",
+    subtitle: 'Pay your tithes, offertories, etc',
     icon: downloadIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
   {
     _id: 6,
     title: 'About Worship Companion',
-    subtitle: "Pay your tithes, offertories, etc",
+    subtitle: 'Pay your tithes, offertories, etc',
     icon: adminSettingsMaleIcon,
     url: 'https://res.cloudinary.com/demo-live/video/upload/whfikltyyajry8bfejya.mp4',
     effectiveDate: new Date(),
-    type: "audio",
-    coverPhoto: ""
+    type: 'audio',
+    coverPhoto: '',
   },
 ];
 
@@ -162,7 +161,7 @@ export default function SettingsScreen({ navigation }) {
 
       <ScrollView style={{ flex: 1, paddingBottom: 30 }} showsVerticalScrollIndicator={false}>
         <View style={[styles.header, { marginBottom: 0 }]}>
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: 'row' }}>
             <View style={{ flex: 0.35 }}>
               <TouchableOpacity
                 activeOpacity={0.2}
@@ -202,16 +201,19 @@ export default function SettingsScreen({ navigation }) {
                 </View>
               </TouchableOpacity>
             </View>
-            <View style={{ flex: 0.65, justifyContent: "center" }}>
-              <StyledHeader style={{ fontSize: 16 }}>{`${memberProfile.firstName} ${memberProfile?.surname}`}</StyledHeader>
-              <StyledText style={{ fontSize: RFValue(11)}}>{memberProfile?.congregation?.name}</StyledText>
+            <View style={{ flex: 0.65, justifyContent: 'center' }}>
+              <StyledHeader
+                style={{ fontSize: 16 }}
+              >{`${memberProfile.firstName} ${memberProfile?.surname}`}</StyledHeader>
+              <StyledText style={{ fontSize: RFValue(11) }}>
+                {memberProfile?.congregation?.name}
+              </StyledText>
               <StyledText>{memberProfile.contact.primaryTelephone}</StyledText>
             </View>
           </View>
         </View>
 
         <FlatList data={settings} renderItem={SettingsCard} keyExtractor={item => item._id} />
-
       </ScrollView>
     </View>
   );
@@ -239,10 +241,12 @@ export default function SettingsScreen({ navigation }) {
     }
   }
 
-  function SettingsCard ({item}) {
-
+  function SettingsCard({ item }) {
     return (
-      <TouchableOpacity activeOpacity={0.55} onPress={() => navigation.navigate("Credits", { item })}>
+      <TouchableOpacity
+        activeOpacity={0.55}
+        onPress={() => navigation.navigate('Credits', { item })}
+      >
         <SettingsContainer
           style={{
             flexDirection: 'row',
@@ -259,14 +263,21 @@ export default function SettingsScreen({ navigation }) {
             </View>
           </View>
           <View style={{ flex: 0.78, justifyContent: 'center', paddingLeft: 5 }}>
-            <StyledText style={{ fontFamily: 'regular', fontSize: RFValue(14), marginBottom: 0, color: Colors.tintColor }}>
-              { item.title }
+            <StyledText
+              style={{
+                fontFamily: 'regular',
+                fontSize: RFValue(14),
+                marginBottom: 0,
+                color: Colors.tintColor,
+              }}
+            >
+              {item.title}
             </StyledText>
-            <StyledText style={{ fontSize: RFValue(11)}} numberOfLines={1}>
-              { item.subtitle }
+            <StyledText style={{ fontSize: RFValue(11) }} numberOfLines={1}>
+              {item.subtitle}
             </StyledText>
           </View>
-          <View style={{ flex: 0.07, justifyContent: 'center', alignItems: "center" }}>
+          <View style={{ flex: 0.07, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <EvilIcons name="chevron-right" size={25} />
             </View>
@@ -276,8 +287,6 @@ export default function SettingsScreen({ navigation }) {
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -310,9 +319,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-
 const SettingsContainer = styled.View`
   box-shadow: 0px 3px 5px rgba(213, 213, 213, 0.5);
   background-color: #fefefe;
@@ -325,4 +331,3 @@ const ProfileView = styled.View`
   box-shadow: 0px 12px 5px rgba(183, 183, 183, 0.5);
   border: 1px solid #acacac;
 `;
-

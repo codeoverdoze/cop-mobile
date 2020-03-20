@@ -29,7 +29,8 @@ const OtherCongregation = ({ navigation }) => {
   const [onboardNewUser, { loading: setCongregationLoading }] = useMutation(
     onboardNewUserMutation,
     {
-      onCompleted: () => {
+      onCompleted: (data) => {
+        console.log("Onboard data", data)
         showMessage({
           backgroundColor: Colors.tintColor,
           message: 'Congregation has been set successfully',
