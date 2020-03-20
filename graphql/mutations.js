@@ -30,9 +30,6 @@ const onboardNewUser = gql`
     ) {
       surname
       firstName
-      congregation {
-          name
-      }
     }
   }
 `;

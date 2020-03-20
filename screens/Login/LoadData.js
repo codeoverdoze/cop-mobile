@@ -12,12 +12,22 @@ const queries = gql`
     memberProfile {
       _id
       firstName
+      middleName
       surname
+      communicant
+      gender
       group
+      address
+      hometown
+      maritalStatus
       contact {
         primaryTelephone
         secondaryTelephone
         email
+        nextOfKin {
+          name
+          telephone
+        }
       }
       congregation {
         _id
@@ -26,7 +36,29 @@ const queries = gql`
         catechist
         phone
         residentPastor
+        district {
+          name
+          presbytery {
+            name
+          }
+        }
       }
+    }
+    presbyteries {
+      _id
+      name
+      zone
+    }
+    districts {
+      _id
+      name
+    }
+    congregations {
+      _id
+      name
+      catechist
+      location
+      residentPastor
     }
   }
 `;

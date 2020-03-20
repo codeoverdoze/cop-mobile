@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 // components
 import { StyledHeaderInverse } from './Typography';
-import Colors from '../constants/Colors';
 
 function ParentScreenHeader({ title, children }) {
   return (
@@ -24,7 +23,7 @@ ParentScreenHeader.propTypes = {
 };
 
 const Container = styled.View`
-  background-color: ${Colors.tintColor};
+  background-color: #25569c;
   height: 60px;
   justify-content: center;
   padding-horizontal: 40px;

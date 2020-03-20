@@ -9,7 +9,6 @@ import { homeItemsList } from './data';
 
 // icons
 import { activeNotificationIcon } from '../../assets/icons';
-import Colors from '../../constants/Colors';
 
 const BodyItem = props => (
   <View style={[styles.bodyItem]}>
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
 });
 
 const HeaderContainer = styled.View`
-  background-color: ${Colors.tintColor};
+  background-color: #25569c;
   height: 60px;
   flex-direction: row;
   justify-content: space-between;

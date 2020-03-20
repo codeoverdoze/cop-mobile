@@ -6,7 +6,7 @@ import { AsyncStorage } from 'react-native';
 
 module.exports = async () => {
   const httpLink = createHttpLink({
-    uri: 'https://api.wcompanion.com/graphql',
+    uri: 'https://api.presbycompanion.com/graphql',
   });
 
   const authLink = setContext(async (_, { headers }) => {
