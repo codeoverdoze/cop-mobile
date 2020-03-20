@@ -25,7 +25,7 @@ function HymnPlayer() {
       }}
     >
       <PlayerItem>
-        <SVGIcon source={starIcon} fill="grey" />
+        <SVGIcon source={starIcon} fill="orange" />
       </PlayerItem>
       <PlayerItem>
         {isPlaying ? renderPaused() : isPaused ? renderPlay() : renderLoading()}
@@ -37,9 +37,7 @@ function HymnPlayer() {
             showMessage({
               type: 'info',
               backgroundColor: Colors.tintColor,
-              message: 'You have found a future feature',
-              description:
-                'A download feature will be added soon so you can keep your favourite tunes in Worship Companion',
+              message: 'You have found a future feature. \n Download feature will be added soon',
             });
           }}
         >
@@ -51,16 +49,7 @@ function HymnPlayer() {
 
   function renderPlay() {
     return (
-      <TouchableOpacity
-        onPress={() => {
-          showMessage({
-            type: 'info',
-            backgroundColor: Colors.tintColor,
-            message: 'You have found a future feature',
-            description: 'Very soon you can play your hymn tunes directly from Worship Companion',
-          });
-        }}
-      >
+      <TouchableOpacity onPress={play}>
         <SVGIcon source={playIcon} />
       </TouchableOpacity>
     );

@@ -21,9 +21,13 @@ function VerifyScreen({ navigation }) {
     },
     onCompleted: async ({ validateLoginMember }) => {
       await saveAuthToken(validateLoginMember.mobileToken);
-      navigation.navigate('SignUp', {
-        phone: validateLoginMember.member.contact.primaryTelephone,
-      });
+      if (!validateLoginMember.newUser) {
+        navigation.navigate('Permissions');
+      } else {
+        navigation.navigate('SignUp', {
+          phone: validateLoginMember.member.contact.primaryTelephone,
+        });
+      }
     },
   });
   return (
