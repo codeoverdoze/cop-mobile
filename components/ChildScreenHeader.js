@@ -7,6 +7,7 @@ import { withNavigation } from 'react-navigation';
 import SVGIcon from './SVGIcon';
 import { StyledTextInverse } from './Typography';
 import { backIcon } from '../assets/icons';
+import Colors from '../constants/Colors';
 
 function ChildScreenHeader({ title, navigation }) {
   return (
@@ -31,7 +32,7 @@ ChildScreenHeader.propTypes = {
 };
 
 const Container = styled.View`
-  background-color: #25569c;
+  background-color: ${Colors.tintColor};
   height: 60px;
   flex-direction: row;
 `;

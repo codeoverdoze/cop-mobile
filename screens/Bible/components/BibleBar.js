@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { StyledTextInverse } from '../../../components/Typography';
 import Bible from '../../../store/Bible';
 import { EvilIcons } from '@expo/vector-icons';
+import Colors from '../../../constants/Colors';
 
 export default class extends Component {
   constructor(props) {
@@ -80,7 +81,7 @@ export default class extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#25569c',
+    backgroundColor: Colors.tintColor,
     paddingHorizontal: 40,
     paddingVertical: 10,
     justifyContent: 'center',

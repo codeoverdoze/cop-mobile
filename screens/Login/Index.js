@@ -116,20 +116,11 @@ const Index = ({ navigation }) => {
       navigation.navigate("Verification", { phone });
     },
     onError: ({ graphQLErrors }) => {
-      if (graphQLErrors[0].message === "MemberNotExist") {
-        showMessage({
-          type: "warning",
-          message: "You have not been registered",
-          description:
-            "Please register as a member at your congregation and login with the phone provided"
-        });
-      } else {
         showMessage({
           type: "warning",
           message: "Oops, error occurred",
           description: "Please check your network connection and try again"
         });
-      }
     }
   });
 

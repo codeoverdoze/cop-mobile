@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
-        "url": "https://api.presbycompanion.com/graphql",
+        "url": "https://api.wcompanion.com/graphql",
         "headers": {
           "user-agent": "JS GraphQL"
         },

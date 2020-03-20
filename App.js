@@ -46,7 +46,7 @@ export default class App extends React.Component {
             <AppNavigator />
           </ActionSheetProvider>
 
-          <FlashMessage position="bottom" />
+          <FlashMessage position="top" />
         </ApolloProvider>
       );
     }
